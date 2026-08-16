@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# ÖBS'den inen ham HTML sayfaları — istenildiği an yeniden üretilebilir
+veri/ham/
+
+# Paylaşım paketleri
+*.zip
+
+# Paylaşım klasörünün proje içine alınmış kopyaları.
+# Asıl paylaşım sürümü ayrı bir depodur: github.com/muhal1/itu-ders-secim-paneli
+DersSecimPanel-Paylasim/
+
+# Not: veri/*.json dosyaları BİLEREK depoda tutulur.
+# Bu depo kişisel (private): ders planın, aldığın dersler ve program
+# profillerin burada yedeklenir. Depoyu herkese açık yapacaksan önce
+# aşağıdaki satırın başındaki # işaretini kaldır:
+# veri/

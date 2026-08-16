@@ -1,0 +1,13 @@
+{
+  "aktif": "Ders Programı 1",
+  "profiller": [
+    {
+      "ad": "Ders Programı 1",
+      "crnler": [
+        "13683",
+        "14782",
+        "14785"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "planId": 2561,
+  "planAdi": "Kontrol ve Otomasyon Mühendisliği Yüksek Lisans Ders Planı",
+  "kaynak": "https://obs.itu.edu.tr/public/DersPlan/DersPlanDetay/2561",
+  "cekilme": "2026-08-16 20:55",
+  "gereksinimler": [
+    {
+      "ad": "Tez Çalışması",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 60.0,
+      "tur": "Z",
+      "grupId": null,
+      "sabit": true,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "KOM YLT",
+          "ad": "Tez Çalışması",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 60.0
+        }
+      ]
+    },
+    {
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12821,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "KOM 596E",
+          "ad": "Scien.Rese., Ethic&Seminar",
+          "dil": "English",
+          "kredi": 0.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 596",
+          "ad": "Bilimsel Araş.,Etik ve Seminer",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MKM 596",
+          "ad": "Bilimsel Araş.,Etik ve Seminer",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Matematik Dersi",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "ZM",
+      "grupId": 12820,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "ELE 514E",
+          "ad": "System Theory",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "ELE 514",
+          "ad": "Sistem Teorisi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "ELE 519",
+          "ad": "Elekt.Müh.Matematiksel Yönt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 505",
+          "ad": "Olasılık Kuramı&Rastlan.Süreçl",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 505E",
+          "ad": "Probability Theory&Stochast.Pr",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12817,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "KOM 501E",
+          "ad": "Cont.Sist.With Paramet. Uncert",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 507E",
+          "ad": "Numerical Methods in Optimiz.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 508",
+          "ad": "Endüstriyel Otomasyon Sist.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 509E",
+          "ad": "Design of Discrete Cont.Sys.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 510E",
+          "ad": "Optimal Control Theory",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 511",
+          "ad": "Uyarlamalı Kontrol Sistemleri",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12818,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "KOM 501E",
+          "ad": "Cont.Sist.With Paramet. Uncert",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 507E",
+          "ad": "Numerical Methods in Optimiz.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 508",
+          "ad": "Endüstriyel Otomasyon Sist.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 509E",
+          "ad": "Design of Discrete Cont.Sys.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 510E",
+          "ad": "Optimal Control Theory",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 511",
+          "ad": "Uyarlamalı Kontrol Sistemleri",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12819,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "KOM 501E",
+          "ad": "Cont.Sist.With Paramet. Uncert",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 507E",
+          "ad": "Numerical Methods in Optimiz.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 508",
+          "ad": "Endüstriyel Otomasyon Sist.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 509E",
+          "ad": "Design of Discrete Cont.Sys.",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 510E",
+          "ad": "Optimal Control Theory",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KOM 511",
+          "ad": "Uyarlamalı Kontrol Sistemleri",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": null,
+      "akts": null,
+      "tur": "LUS",
+      "grupId": 12813,
+      "sabit": false,
+      "serbest": true,
+      "dersler": []
+    },
+    {
+      "ad": "Seçime Bağlı Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": null,
+      "akts": null,
+      "tur": "LUS",
+      "grupId": 12815,
+      "sabit": false,
+      "serbest": true,
+      "dersler": []
+    },
+    {
+      "ad": "Seçime Bağlı Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": null,
+      "akts": null,
+      "tur": "LUS",
+      "grupId": 12814,
+      "sabit": false,
+      "serbest": true,
+      "dersler": []
+    },
+    {
+      "ad": "Seçime Bağlı Ders IV",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": null,
+      "akts": null,
+      "tur": "LUS",
+      "grupId": 12816,
+      "sabit": false,
+      "serbest": true,
+      "dersler": []
+    }
+  ]
+}
