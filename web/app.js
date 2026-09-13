@@ -222,6 +222,35 @@ function planIlerlemesi(alinanKodlari) {
 const STORAGE_ALINAN_KEY = "dsp_alinan";
 const STORAGE_SECIM_KEY = "dsp_secim";
 const STORAGE_GIZLENEN_KEY = "dsp_gizlenen";
+const STORAGE_SURUM_KEY = "dsp_surum";
+const GUNCEL_SURUM = "2";
+
+function normalDizi(veri, alan) {
+  if (Array.isArray(veri)) return veri;
+  if (veri && typeof veri === "object" && Array.isArray(veri[alan])) return veri[alan];
+  return [];
+}
+
+function depolamaGocEt() {
+  try {
+    if (typeof localStorage === "undefined") return;
+    const surum = localStorage.getItem(STORAGE_SURUM_KEY);
+    if (surum !== GUNCEL_SURUM) {
+      // Önceki sürümde statik modda yanlışlıkla boş dizi yazılan verileri temizle
+      const yerelGizlenen = storageJsonYukle(STORAGE_GIZLENEN_KEY, null);
+      if (Array.isArray(yerelGizlenen) && yerelGizlenen.length === 0) {
+        localStorage.removeItem(STORAGE_GIZLENEN_KEY);
+      }
+      const yerelAlinan = storageJsonYukle(STORAGE_ALINAN_KEY, null);
+      if (Array.isArray(yerelAlinan) && yerelAlinan.length === 0) {
+        localStorage.removeItem(STORAGE_ALINAN_KEY);
+      }
+      localStorage.setItem(STORAGE_SURUM_KEY, GUNCEL_SURUM);
+    }
+  } catch {
+    // Depolama kapalıysa devam et
+  }
+}
 
 function storageJsonYukle(anahtar, varsayilan) {
   try {
@@ -243,6 +272,7 @@ function storageJsonKaydet(anahtar, deger) {
 }
 
 async function veriYukle() {
+  depolamaGocEt();
   let veri = null;
   durum.statikMod = false;
 
@@ -270,9 +300,9 @@ async function veriYukle() {
     const ayarlar = ayarlarRes && ayarlarRes.ok ? await ayarlarRes.json() : {};
     const plan = planRes && planRes.ok ? await planRes.json() : null;
     const dersler = derslerRes && derslerRes.ok ? await derslerRes.json() : null;
-    const varsayilanAlinan = alinanRes && alinanRes.ok ? await alinanRes.json() : [];
+    const varsayilanAlinan = normalDizi(alinanRes && alinanRes.ok ? await alinanRes.json() : [], "alinan");
     const varsayilanSecim = secimRes && secimRes.ok ? await secimRes.json() : null;
-    const varsayilanGizlenen = gizlenenRes && gizlenenRes.ok ? await gizlenenRes.json() : [];
+    const varsayilanGizlenen = normalDizi(gizlenenRes && gizlenenRes.ok ? await gizlenenRes.json() : [], "kodlar");
 
     const yerelAlinan = storageJsonYukle(STORAGE_ALINAN_KEY, null);
     const yerelSecim = storageJsonYukle(STORAGE_SECIM_KEY, null);
@@ -282,15 +312,15 @@ async function veriYukle() {
       ayarlar,
       plan,
       dersler,
-      alinan: yerelAlinan !== null ? yerelAlinan : varsayilanAlinan,
+      alinan: yerelAlinan !== null ? normalDizi(yerelAlinan, "alinan") : varsayilanAlinan,
       secim: yerelSecim !== null ? yerelSecim : varsayilanSecim,
-      gizlenen: yerelGizlenen !== null ? yerelGizlenen : varsayilanGizlenen,
+      gizlenen: yerelGizlenen !== null ? normalDizi(yerelGizlenen, "kodlar") : varsayilanGizlenen,
     };
   }
 
   Object.assign(durum, veri);
-  durum.alinan = Array.isArray(veri.alinan) ? veri.alinan : [];
-  durum.gizlenen = Array.isArray(veri.gizlenen) ? veri.gizlenen : [];
+  durum.alinan = normalDizi(veri.alinan, "alinan");
+  durum.gizlenen = normalDizi(veri.gizlenen, "kodlar");
   bransSuzgeciYukle();
 
   const gelen = veri.secim;
@@ -951,10 +981,11 @@ function cizGizlenen() {
   const dersler = durum.dersler?.dersler || [];
   for (const kod of [...durum.gizlenen].sort()) {
     const ders = dersler.find((d) => d.kod === kod);
+    const ad = ders?.ad || dersAdi(kod);
     const satir = el("div", "gizlenen");
     const orta = el("div", "orta");
     orta.append(el("div", "kod", kod));
-    if (ders?.ad) orta.append(el("div", "soluk", ders.ad));
+    if (ad) orta.append(el("div", "soluk", ad));
 
     const goster = el("button", "dugme kucuk", "Göster");
     goster.addEventListener("click", () => dersiGoster(kod));

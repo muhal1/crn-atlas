@@ -633,20 +633,51 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
 /* ------------------------------------------------------------ seçim listesi */
 
 .secim-listesi { max-height: 230px; overflow-y: auto; }
-.gizlenen-listesi { max-height: 180px; overflow-y: auto; }
-.secim,
-.gizlenen {
+.gizlenen-listesi { max-height: 120px; overflow-y: auto; }
+.gizlenen-listesi .bos { padding: 10px 12px; font-size: 12px; }
+.kutu:has(.gizlenen-listesi) .kutu-baslik { padding: 8px 12px; }
+.secim {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 8px 14px;
   border-bottom: 1px solid var(--cizgi);
 }
-.secim:last-child,
-.gizlenen:last-child { border-bottom: none; }
-.secim .orta,
-.gizlenen .orta { flex: 1; min-width: 0; }
+.secim:last-child { border-bottom: none; }
+.secim .orta { flex: 1; min-width: 0; }
 .secim .ust-satir { display: flex; gap: 8px; align-items: baseline; }
+
+.gizlenen {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-bottom: 1px solid var(--cizgi);
+}
+.gizlenen:last-child { border-bottom: none; }
+.gizlenen .orta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.gizlenen .kod {
+  font-weight: 600;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+.gizlenen .soluk {
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gizlenen .dugme.kucuk {
+  padding: 2px 7px;
+  font-size: 10.5px;
+  line-height: 1.2;
+}
 
 .crn-alani { padding: 12px 14px; border-top: 1px solid var(--cizgi); }
 .crn-alani label { display: block; font-size: 12px; color: var(--soluk); margin-bottom: 6px; }
