@@ -1,10 +1,19 @@
 {
-  "aktif": "Ana Ders Programı",
+  "aktif": "sis + endoto",
   "profiller": [
     {
-      "ad": "Ana Ders Programı",
+      "ad": "sis + endoto",
       "crnler": [
+        "13683",
+        "14786",
         "14780",
+        "14788",
+        "14778"
+      ]
+    },
+    {
+      "ad": "Program 2",
+      "crnler": [
         "13683"
       ]
     }

@@ -11,6 +11,11 @@ Kısaca: İTÜ ÖBS'den bölümün ders planını ve o dönem açılan dersleri 
 çeker, sadece kullanıcının planına sayan dersleri saklar, tarayıcıda ders seçim
 paneli açar.
 
+Kodda veya arayüz davranışında değişiklik yapmadan önce
+`docs/MAINTENANCE_NOTES.md` dosyasını da oku. Orada bu kişisel kurulumda
+edinilmiş tasarım kararları, ÖBS veri çekme tuzakları, filtre/gizleme davranışı
+ve doğrulama adımları sistematik olarak tutulur.
+
 ---
 
 ## Ön koşul

@@ -428,14 +428,16 @@ def donem_derslerini_topla(
 ) -> dict:
     """Sadece plandaki derslerin bu dönem açılan şubelerini toplar.
 
-    Plandan hangi branş kodlarının gerektiği çıkarılır (ör. KOM, ELE, MKM);
-    yalnızca o branşların ders programı indirilir ve plandaki kodlara göre
-    süzülür. 'ek_brans_kodlari' ile serbest seçmeli için ek branşlar eklenebilir.
+    Plandan hangi branş kodlarının gerektiği çıkarılır (ör. KOM, ELE, MKM).
+    Planda serbest seçmeli slotu varsa istenen branşlardaki plan dışı dersler de
+    serbest seçmeli adayı olarak tutulur. 'ek_brans_kodlari' ile bu havuz
+    genişletilebilir.
     """
     ek_brans_kodlari = [k.strip().upper() for k in (ek_brans_kodlari or []) if k.strip()]
     kod_eslemesi = plan_ders_kodlari(plan)
     plan_branslari = sorted({brans_kodu(k) for k in kod_eslemesi if brans_kodu(k)})
     istenen = sorted(set(plan_branslari) | set(ek_brans_kodlari))
+    serbest_var = any(g.get("serbest") for g in plan.get("gereksinimler", []))
 
     log(f"  Aktif dönem sorgulanıyor ({seviye}) ...")
     donem = aktif_donem(seviye)
@@ -456,9 +458,9 @@ def donem_derslerini_topla(
         for ders in acilanlar:
             gruplar = kod_eslemesi.get(ders["kod"], [])
             planda_var = bool(gruplar)
-            # Plandaki dersler her zaman alınır. Ek branş kodlarından gelenler
-            # ise yalnızca serbest seçmeli adayı olarak eklenir.
-            if not planda_var and kod not in ek_brans_kodlari:
+            # Plandaki dersler her zaman alınır. Serbest seçmeli slotu olan
+            # planlarda istenen branşlardaki diğer dersler aday havuzunda kalır.
+            if not planda_var and not serbest_var and kod not in ek_brans_kodlari:
                 continue
             ders["gereksinimler"] = gruplar
             ders["plandaVar"] = planda_var

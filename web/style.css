@@ -8,8 +8,12 @@
   --vurgu: #4c8dff;
   --yesil: #35c46b;
   --sari: #e0b341;
+  --turuncu: #f59e0b;
   --kirmizi: #ef5b5b;
   --mor: #a071ff;
+  --turkuaz: #14b8a6;
+  --indigo: #818cf8;
+  --pembe: #f472b6;
   --r: 10px;
 }
 
@@ -21,6 +25,11 @@
     --cizgi: #dde1ea;
     --yazi: #1a1d24;
     --soluk: #666e7d;
+    --turuncu: #d97706;
+    --turkuaz: #0f766e;
+    --indigo: #4f46e5;
+    --pembe: #db2777;
+    --mor: #7c3aed;
   }
 }
 
@@ -93,10 +102,14 @@ h2 { font-size: 14px; }
   color: var(--soluk);
   white-space: nowrap;
 }
-.rozet.mavi   { color: var(--vurgu);  border-color: color-mix(in srgb, var(--vurgu) 45%, transparent); }
-.rozet.yesil  { color: var(--yesil);  border-color: color-mix(in srgb, var(--yesil) 45%, transparent); }
-.rozet.kirmizi{ color: var(--kirmizi);border-color: color-mix(in srgb, var(--kirmizi) 45%, transparent); }
-.rozet.mor    { color: var(--mor);    border-color: color-mix(in srgb, var(--mor) 45%, transparent); }
+.rozet.mavi   { color: var(--vurgu);  border-color: color-mix(in srgb, var(--vurgu) 45%, transparent); background: color-mix(in srgb, var(--vurgu) 8%, var(--kart-2)); }
+.rozet.yesil  { color: var(--yesil);  border-color: color-mix(in srgb, var(--yesil) 45%, transparent); background: color-mix(in srgb, var(--yesil) 8%, var(--kart-2)); }
+.rozet.kirmizi{ color: var(--kirmizi);border-color: color-mix(in srgb, var(--kirmizi) 45%, transparent); background: color-mix(in srgb, var(--kirmizi) 8%, var(--kart-2)); }
+.rozet.mor    { color: var(--mor);    border-color: color-mix(in srgb, var(--mor) 45%, transparent); background: color-mix(in srgb, var(--mor) 8%, var(--kart-2)); }
+.rozet.turuncu{ color: var(--turuncu);border-color: color-mix(in srgb, var(--turuncu) 45%, transparent); background: color-mix(in srgb, var(--turuncu) 8%, var(--kart-2)); }
+.rozet.turkuaz{ color: var(--turkuaz);border-color: color-mix(in srgb, var(--turkuaz) 45%, transparent); background: color-mix(in srgb, var(--turkuaz) 8%, var(--kart-2)); }
+.rozet.indigo { color: var(--indigo); border-color: color-mix(in srgb, var(--indigo) 45%, transparent); background: color-mix(in srgb, var(--indigo) 8%, var(--kart-2)); }
+.rozet.pembe  { color: var(--pembe);  border-color: color-mix(in srgb, var(--pembe) 45%, transparent); background: color-mix(in srgb, var(--pembe) 8%, var(--kart-2)); }
 
 /* -------------------------------------------------------------- düğmeler */
 
@@ -181,6 +194,9 @@ h2 { font-size: 14px; }
   border: 1px solid var(--cizgi);
   border-radius: var(--r);
   overflow: hidden;
+}
+.kutu:has(.suzgecler) {
+  overflow: visible;
 }
 
 .kutu-baslik {
@@ -332,6 +348,21 @@ h2 { font-size: 14px; }
   color: var(--yazi);
   background: color-mix(in srgb, var(--vurgu) 12%, var(--zemin));
 }
+.suzgec-nokta {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 8px;
+  margin: 0 4px 0 2px;
+}
+.suzgec-nokta.mavi   { background: var(--vurgu); }
+.suzgec-nokta.mor    { background: var(--mor); }
+.suzgec-nokta.turuncu{ background: var(--turuncu); }
+.suzgec-nokta.turkuaz{ background: var(--turkuaz); }
+.suzgec-nokta.indigo { background: var(--indigo); }
+.suzgec-nokta.pembe  { background: var(--pembe); }
+.suzgec-nokta.yesil  { background: var(--yesil); }
 .suzgec-alt-kodlar {
   display: flex;
   flex-direction: column;
@@ -387,7 +418,7 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
 
 /* ----------------------------------------------------------- ders listesi */
 
-.ders-listesi { max-height: 560px; overflow-y: auto; }
+.ders-listesi { min-height: 360px; max-height: 560px; overflow-y: auto; }
 
 .ders {
   display: flex;
@@ -481,7 +512,19 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
 .gun-ipucu-saat { font-size: 12px; margin-top: 3px; font-variant-numeric: tabular-nums; }
 .gun-ipucu-alt { display: flex; align-items: center; gap: 7px; margin-top: 5px; flex-wrap: wrap; }
 .gun-ipucu-alt .hoca { font-size: 11.5px; color: var(--soluk); }
-.gun-ipucu-alt .rozet { margin-left: auto; }
+.gun-ipucu-alt .rozet.paket {
+  padding: 1px 7px;
+  font-size: 10.5px;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gun-ipucu-alt .rozet.paket:not(.mavi):not(.turuncu):not(.mor):not(.turkuaz):not(.indigo):not(.pembe):not(.yesil):not(.kirmizi) {
+  color: var(--mor);
+  border-color: color-mix(in srgb, var(--mor) 45%, transparent);
+}
+.gun-ipucu-alt .rozet:not(.paket) { margin-left: auto; }
 
 /* ------------------------------------------------------- haftalık program */
 
@@ -489,8 +532,8 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
 
 .program-izgara {
   display: grid;
-  grid-template-columns: 52px repeat(5, minmax(92px, 1fr));
-  min-width: 560px;
+  grid-template-columns: 52px repeat(5, minmax(105px, 1fr));
+  min-width: 580px;
 }
 .program-izgara .gun-basi {
   text-align: center;
@@ -519,7 +562,9 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
 }
 .blok {
   position: absolute;
-  left: 3px; right: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  box-sizing: border-box;
   border-radius: 6px;
   padding: 4px 6px;
   font-size: 11px;
@@ -527,10 +572,37 @@ input:focus, select:focus { outline: none; border-color: var(--vurgu); }
   overflow: hidden;
   background: color-mix(in srgb, var(--vurgu) 26%, var(--kart));
   border: 1px solid color-mix(in srgb, var(--vurgu) 60%, transparent);
+  cursor: pointer;
+  transition: border-color .12s, background .12s, transform .12s;
+}
+.blok:hover {
+  background: color-mix(in srgb, var(--vurgu) 34%, var(--kart));
+  border-color: color-mix(in srgb, var(--vurgu) 82%, transparent);
+  transform: translateY(-1px);
+  z-index: 5;
 }
 .blok.cakisan {
   background: color-mix(in srgb, var(--kirmizi) 26%, var(--kart));
   border-color: color-mix(in srgb, var(--kirmizi) 65%, transparent);
+}
+.blok.cakisan:hover {
+  background: color-mix(in srgb, var(--kirmizi) 34%, var(--kart));
+  border-color: color-mix(in srgb, var(--kirmizi) 82%, transparent);
+  z-index: 5;
+}
+.blok.yan-yana {
+  padding: 3px 4px;
+}
+.blok.yan-yana .blok-kod {
+  font-size: 10px;
+  letter-spacing: -0.01em;
+}
+.blok.yan-yana .blok-ad {
+  font-size: 9.5px;
+  line-height: 1.15;
+}
+.blok.yan-yana .blok-hoca {
+  font-size: 9px;
 }
 .blok b,
 .blok span { display: block; min-width: 0; }
