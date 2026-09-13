@@ -58,6 +58,8 @@ jobs:
 
       - name: GitHub Pages Yapilandir
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Dagitim Paketini Yukle
         uses: actions/upload-pages-artifact@v3
