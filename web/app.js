@@ -8,12 +8,15 @@ const durum = {
   plan: null,
   dersler: null,
   alinan: [],
+  gizlenen: [],
   // Birden çok alternatif ders programı: {aktif, profiller:[{ad, crnler}]}
   secim: { aktif: "Program 1", profiller: [{ ad: "Program 1", crnler: [] }] },
 };
 
 const HAFTA = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
 const KISA = { Pazartesi: "Pzt", Salı: "Sal", Çarşamba: "Çar", Perşembe: "Per", Cuma: "Cum", Cumartesi: "Cmt", Pazar: "Paz" };
+const BRANS_SUZGECI_KEY = "dersSecimPanel.secimeBagliKapaliBranslar";
+let secimeBagliKapaliBranslar = new Set();
 
 const $ = (secici) => document.querySelector(secici);
 const el = (etiket, sinif, metin) => {
@@ -40,6 +43,106 @@ const cakisirMi = (a, b) =>
 
 const dersBul = (crn) => (durum.dersler?.dersler || []).find((d) => d.crn === crn);
 const alindiMi = (kod) => durum.alinan.some((d) => d.kod === kod);
+const gizliMi = (kod) => durum.gizlenen.includes(kod);
+const bransKodu = (kod) => String(kod || "").split(/\s+/)[0] || "";
+
+const ROMA_DEGER = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10 };
+const ROMA_YAZI = Object.fromEntries(Object.entries(ROMA_DEGER).map(([roma, sayi]) => [sayi, roma]));
+
+const gereksinimGrubu = (ad) =>
+  String(ad || "")
+    .replace(/\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)$/i, "")
+    .trim();
+
+const gereksinimSira = (ad) => {
+  const eslesme = String(ad || "").trim().match(/\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)$/i);
+  return eslesme ? ROMA_DEGER[eslesme[1].toUpperCase()] : null;
+};
+
+function gereksinimGrupEtiketi(kok) {
+  const gereksinimler = durum.plan?.gereksinimler || [];
+  const siralar = gereksinimler
+    .filter((g) => gereksinimGrubu(g.ad) === kok)
+    .map((g) => gereksinimSira(g.ad))
+    .filter((sira) => sira != null)
+    .sort((a, b) => a - b);
+
+  if (!siralar.length) return kok;
+  const tekil = [...new Set(siralar)];
+  if (tekil.length === 1) return `${kok} ${ROMA_YAZI[tekil[0]]}`;
+  return `${kok} ${ROMA_YAZI[tekil[0]]}-${ROMA_YAZI[tekil[tekil.length - 1]]}`;
+}
+
+function dersFiltreAnahtarlari(ders) {
+  if (!ders.plandaVar) return [serbestGereksinimAnahtari()];
+  return [...new Set((ders.gereksinimler || []).map(gereksinimGrubu).filter(Boolean))];
+}
+
+function seciliGereksinimAnahtarlari() {
+  return new Set(
+    [...document.querySelectorAll('#gereksinimSuzgeci .suzgec-grup-input:checked')].map((girdi) => girdi.value)
+  );
+}
+
+function bransSuzgeciYukle() {
+  try {
+    if (typeof localStorage === "undefined") return;
+    secimeBagliKapaliBranslar = new Set(JSON.parse(localStorage.getItem(BRANS_SUZGECI_KEY) || "[]"));
+  } catch {
+    secimeBagliKapaliBranslar = new Set();
+  }
+}
+
+function bransSuzgeciKaydet() {
+  try {
+    if (typeof localStorage === "undefined") return;
+    localStorage.setItem(BRANS_SUZGECI_KEY, JSON.stringify([...secimeBagliKapaliBranslar]));
+  } catch {
+    // Saklama kapalıysa filtre yine mevcut oturumda çalışır.
+  }
+}
+
+function secimeBagliBranslar() {
+  const branslar = new Map();
+  for (const ders of durum.dersler?.dersler || []) {
+    if (ders.plandaVar || gizliMi(ders.kod)) continue;
+    if (!dersFiltreAnahtarlari(ders).includes(serbestGereksinimAnahtari())) continue;
+    const brans = bransKodu(ders.kod);
+    if (!brans) continue;
+    const bilgi = branslar.get(brans) || { brans, adet: 0 };
+    bilgi.adet += 1;
+    branslar.set(brans, bilgi);
+  }
+  return [...branslar.values()].sort((a, b) => a.brans.localeCompare(b.brans, "tr"));
+}
+
+const dersRozetAdlari = (ders) =>
+  [...new Set((ders.gereksinimler || []).map(gereksinimGrubu).filter(Boolean))].map(gereksinimGrupEtiketi);
+
+const serbestGereksinimAnahtari = () => {
+  const serbest = (durum.plan?.gereksinimler || []).find((g) => g.serbest);
+  return serbest ? gereksinimGrubu(serbest.ad) : "__serbest__";
+};
+
+const serbestGereksinimEtiketi = () => {
+  const serbest = (durum.plan?.gereksinimler || []).find((g) => g.serbest);
+  return serbest ? gereksinimGrupEtiketi(gereksinimGrubu(serbest.ad)) : "Seçime Bağlı Ders";
+};
+
+function guncelleGereksinimSuzgeciOzeti() {
+  const suzgec = $("#gereksinimSuzgeci");
+  const dugme = suzgec?.querySelector(".suzgec-ac");
+  if (!dugme) return;
+
+  const kutular = [...suzgec.querySelectorAll(".suzgec-grup-input")];
+  const secili = kutular.filter((girdi) => girdi.checked);
+  let metin = "Gereksinim seç";
+  if (secili.length === kutular.length) metin = "Tüm gereksinimler";
+  else if (secili.length === 1) metin = secili[0].closest("label")?.textContent.trim() || metin;
+  else if (secili.length > 1) metin = `${secili.length} gereksinim seçili`;
+
+  dugme.querySelector(".suzgec-ac-metin").textContent = metin;
+}
 
 /* --------------------------------------------------------- program profilleri */
 
@@ -101,6 +204,8 @@ async function veriYukle() {
   const veri = await yanit.json();
   Object.assign(durum, veri);
   durum.alinan = veri.alinan || [];
+  durum.gizlenen = veri.gizlenen || [];
+  bransSuzgeciYukle();
 
   const gelen = veri.secim;
   if (gelen && Array.isArray(gelen.profiller) && gelen.profiller.length) {
@@ -124,6 +229,7 @@ async function kaydet(yol, govde) {
 
 const alinanKaydet = () => kaydet("/api/alinan", { alinan: durum.alinan });
 const secimKaydet = () => kaydet("/api/secim", durum.secim);
+const gizlenenKaydet = () => kaydet("/api/gizlenen", { kodlar: durum.gizlenen });
 
 /* ------------------------------------------------------------- çizim: üst */
 
@@ -209,7 +315,7 @@ function cizGereksinimler() {
         durumDugumu = dolduranEtiketi(aday.kod, "(seçildi)");
       } else {
         kutu.append(el("span", "isaret", "○"));
-        durumMetni = g.serbest ? "serbest seçmeli" : `${g.dersler.length} seçenek`;
+        durumMetni = g.serbest ? `${serbestGereksinimEtiketi()} adayı` : `${g.dersler.length} seçenek`;
       }
     }
 
@@ -237,21 +343,20 @@ function cizGereksinimler() {
 
 function suzgectenGecenler() {
   const arama = $("#arama").value.trim().toLocaleLowerCase("tr");
-  const gereksinim = $("#gereksinimSuzgeci").value;
+  const seciliGereksinimler = seciliGereksinimAnahtarlari();
   const alinaniGizle = $("#alinaniGizle").checked;
   const cakisaniGizle = $("#cakisaniGizle").checked;
   const doluGizle = $("#doluGizle").checked;
   const secililer = seciliDersler();
 
   return (durum.dersler?.dersler || []).filter((d) => {
+    if (gizliMi(d.kod)) return false;
     if (arama) {
       const havuz = `${d.kod} ${d.ad} ${d.ogretimUyesi} ${d.crn}`.toLocaleLowerCase("tr");
       if (!havuz.includes(arama)) return false;
     }
-    if (gereksinim) {
-      const uyar = gereksinim === "__serbest__" ? !d.plandaVar : (d.gereksinimler || []).includes(gereksinim);
-      if (!uyar) return false;
-    }
+    if (!dersFiltreAnahtarlari(d).some((anahtar) => seciliGereksinimler.has(anahtar))) return false;
+    if (!d.plandaVar && secimeBagliKapaliBranslar.has(bransKodu(d.kod))) return false;
     if (alinaniGizle && alindiMi(d.kod)) return false;
     if (doluGizle && d.kontenjan > 0 && d.yazilan >= d.kontenjan) return false;
     if (cakisaniGizle && !aktifCrnler().includes(d.crn)) {
@@ -295,8 +400,8 @@ function cizDersListesi() {
     alt.append(el("span", "saat", saatMetni(ders)));
     if (ders.ogretimUyesi) alt.append(el("span", "hoca", "· " + ders.ogretimUyesi));
 
-    for (const ad of ders.gereksinimler || []) alt.append(el("span", "rozet mavi", ad));
-    if (!ders.plandaVar) alt.append(el("span", "rozet mor", "serbest seçmeli"));
+    for (const ad of dersRozetAdlari(ders)) alt.append(el("span", "rozet mavi", ad));
+    if (!ders.plandaVar) alt.append(el("span", "rozet mor", serbestGereksinimEtiketi()));
     if (alindi) alt.append(el("span", "rozet yesil", "bu dersi aldın"));
     if (cakisan) alt.append(el("span", "rozet kirmizi", "çakışıyor"));
     orta.append(alt);
@@ -307,7 +412,10 @@ function cizDersListesi() {
 
     const dugme = el("button", "dugme kucuk" + (secili ? "" : " birincil"), secili ? "Kaldır" : "Seç");
     dugme.addEventListener("click", () => secimDegistir(ders));
-    sag.append(dugme);
+    const gizle = el("button", "dugme kucuk sessiz", "Gizle");
+    gizle.title = "Bu ders kodunu listeden gizle";
+    gizle.addEventListener("click", () => dersiGizle(ders));
+    sag.append(dugme, gizle);
 
     satir.addEventListener("mouseenter", () => ipucuAc(ders, satir));
     satir.addEventListener("mouseleave", ipucuGizleGecikmeli);
@@ -491,6 +599,20 @@ function secimDegistir(ders) {
   ciz();
 }
 
+async function dersiGizle(ders) {
+  if (!gizliMi(ders.kod)) durum.gizlenen.push(ders.kod);
+  const profil = aktifProfil();
+  profil.crnler = profil.crnler.filter((crn) => dersBul(crn)?.kod !== ders.kod);
+  await Promise.all([gizlenenKaydet(), secimKaydet()]);
+  ciz();
+}
+
+async function dersiGoster(kod) {
+  durum.gizlenen = durum.gizlenen.filter((gizliKod) => gizliKod !== kod);
+  await gizlenenKaydet();
+  ciz();
+}
+
 /* --------------------------------------------------- çizim: haftalık program */
 
 function cizProgram() {
@@ -550,8 +672,9 @@ function cizProgram() {
       const blok = el("div", "blok" + (carpisan ? " cakisan" : ""));
       blok.style.top = `${(a.bas - basSaat * 60) * oran}px`;
       blok.style.height = `${Math.max(22, (a.bit - a.bas) * oran - 3)}px`;
-      blok.append(el("b", null, a.ders.kod));
-      blok.append(el("span", null, `${a.ders.ogretimUyesi || ""}`));
+      blok.append(el("b", "blok-kod", a.ders.kod));
+      blok.append(el("span", "blok-ad", a.ders.ad || ""));
+      if (a.ders.ogretimUyesi) blok.append(el("span", "blok-hoca", a.ders.ogretimUyesi));
       blok.title = `${a.ders.kod} — ${a.ders.ad}\nCRN ${a.ders.crn}\n${a.ders.ogretimUyesi}\nDerslik: ${a.derslik || "—"}`;
       sutun.append(blok);
     }
@@ -631,6 +754,34 @@ function cizSecim() {
   $("#secimOzet").textContent = `${secililer.length} ders${kredi ? `  ·  ${kredi} kredi (plandan)` : ""}`;
 }
 
+/* ---------------------------------------------------- çizim: gizlenenler */
+
+function cizGizlenen() {
+  const kap = $("#gizlenenListesi");
+  if (!kap) return;
+  kap.replaceChildren();
+  $("#gizlenenSayisi").textContent = durum.gizlenen.length ? `${durum.gizlenen.length} ders` : "";
+
+  if (!durum.gizlenen.length) {
+    kap.append(el("div", "bos", "Gizlediğin dersler burada görünür."));
+    return;
+  }
+
+  const dersler = durum.dersler?.dersler || [];
+  for (const kod of [...durum.gizlenen].sort()) {
+    const ders = dersler.find((d) => d.kod === kod);
+    const satir = el("div", "gizlenen");
+    const orta = el("div", "orta");
+    orta.append(el("div", "kod", kod));
+    if (ders?.ad) orta.append(el("div", "soluk", ders.ad));
+
+    const goster = el("button", "dugme kucuk", "Göster");
+    goster.addEventListener("click", () => dersiGoster(kod));
+    satir.append(orta, goster);
+    kap.append(satir);
+  }
+}
+
 /* -------------------------------------------------------- çizim: yan panel */
 
 function cizAlinan() {
@@ -664,20 +815,80 @@ function cizAlinan() {
 
 function cizSecenekler() {
   const suzgec = $("#gereksinimSuzgeci");
-  const secili = suzgec.value;
-  suzgec.replaceChildren(el("option", null, "Tüm gereksinimler"));
-  suzgec.firstChild.value = "";
+  const onceki = [...suzgec.querySelectorAll(".suzgec-grup-input:checked")].map((girdi) => girdi.value);
+  const ilkCizim = !suzgec.querySelector(".suzgec-grup-input");
+  suzgec.replaceChildren();
 
-  // Aynı gereksinim adı birden çok yarıyılda geçebilir; listede bir kez görünsün
-  for (const ad of [...new Set((durum.plan?.gereksinimler || []).map((g) => g.ad))]) {
-    const secenek = el("option", null, ad);
-    secenek.value = ad;
-    suzgec.append(secenek);
+  const gruplar = [];
+  const gorulenGruplar = new Set();
+  for (const g of durum.plan?.gereksinimler || []) {
+    const ad = gereksinimGrubu(g.ad);
+    if (!ad || gorulenGruplar.has(ad)) continue;
+    gorulenGruplar.add(ad);
+    gruplar.push({ anahtar: ad, etiket: gereksinimGrupEtiketi(ad) });
   }
-  const serbest = el("option", null, "Plan dışı / serbest");
-  serbest.value = "__serbest__";
-  suzgec.append(serbest);
-  suzgec.value = secili;
+  if (!gruplar.some((g) => g.anahtar === serbestGereksinimAnahtari())) {
+    gruplar.push({ anahtar: "__serbest__", etiket: serbestGereksinimEtiketi() });
+  }
+
+  const secili = ilkCizim ? new Set(gruplar.map((g) => g.anahtar)) : new Set(onceki);
+  const dugme = el("button", "suzgec-ac", null);
+  dugme.type = "button";
+  dugme.setAttribute("aria-expanded", "false");
+  dugme.append(el("span", "suzgec-ac-metin", "Tüm gereksinimler"), el("span", "suzgec-ok", "▾"));
+
+  const menu = el("div", "suzgec-menu");
+
+  for (const grup of gruplar) {
+    const etiket = el("label", "suzgec-kutu");
+    const girdi = document.createElement("input");
+    girdi.type = "checkbox";
+    girdi.className = "suzgec-grup-input";
+    girdi.value = grup.anahtar;
+    girdi.checked = secili.has(grup.anahtar);
+    girdi.addEventListener("change", () => {
+      for (const kodGirdisi of menu.querySelectorAll(`[data-ust="${CSS.escape(grup.anahtar)}"]`)) {
+        kodGirdisi.disabled = !girdi.checked;
+      }
+      guncelleGereksinimSuzgeciOzeti();
+      cizDersListesi();
+    });
+    etiket.append(girdi, document.createTextNode(grup.etiket));
+    menu.append(etiket);
+
+    if (grup.anahtar === serbestGereksinimAnahtari()) {
+      const altListe = el("div", "suzgec-alt-kodlar");
+      for (const brans of secimeBagliBranslar()) {
+        const kodEtiket = el("label", "suzgec-kod");
+        const kodGirdisi = document.createElement("input");
+        kodGirdisi.type = "checkbox";
+        kodGirdisi.className = "suzgec-kod-input";
+        kodGirdisi.value = brans.brans;
+        kodGirdisi.dataset.ust = grup.anahtar;
+        kodGirdisi.checked = !secimeBagliKapaliBranslar.has(brans.brans);
+        kodGirdisi.disabled = !girdi.checked;
+        kodGirdisi.addEventListener("change", () => {
+          if (kodGirdisi.checked) secimeBagliKapaliBranslar.delete(brans.brans);
+          else secimeBagliKapaliBranslar.add(brans.brans);
+          bransSuzgeciKaydet();
+          cizDersListesi();
+        });
+
+        const kod = el("span", "suzgec-kod-kod", brans.brans);
+        const ad = el("span", "suzgec-kod-ad", `${brans.adet} ders`);
+        kodEtiket.append(kodGirdisi, kod, ad);
+        altListe.append(kodEtiket);
+      }
+      menu.append(altListe);
+    }
+  }
+
+  dugme.addEventListener("click", () => {
+    const acik = suzgec.classList.toggle("acik");
+    dugme.setAttribute("aria-expanded", String(acik));
+  });
+  suzgec.append(dugme, menu);
+  guncelleGereksinimSuzgeciOzeti();
 
   const liste = $("#planDersleri");
   liste.replaceChildren();
@@ -717,6 +928,7 @@ function ciz() {
   cizProfiller();
   cizProgram();
   cizSecim();
+  cizGizlenen();
   cizAlinan();
 }
 
@@ -770,12 +982,19 @@ async function verileriYenile() {
 /* ------------------------------------------------------------- olay bağları */
 
 function olaylariBagla() {
-  for (const secici of ["#arama", "#gereksinimSuzgeci", "#alinaniGizle", "#cakisaniGizle", "#doluGizle"]) {
+  for (const secici of ["#arama", "#alinaniGizle", "#cakisaniGizle", "#doluGizle"]) {
     const dugum = $(secici);
     dugum.addEventListener(dugum.type === "search" ? "input" : "change", () => {
       cizDersListesi();
     });
   }
+
+  document.addEventListener("click", (olay) => {
+    const suzgec = $("#gereksinimSuzgeci");
+    if (!suzgec || suzgec.contains(olay.target)) return;
+    suzgec.classList.remove("acik");
+    suzgec.querySelector(".suzgec-ac")?.setAttribute("aria-expanded", "false");
+  });
 
   // Liste kaydırılınca / pencere boyutlanınca konum bozulmasın.
   // Kutunun kendi içindeki kaydırma bunu tetiklememeli.
@@ -798,7 +1017,13 @@ function olaylariBagla() {
   };
   $("#alinanKapat").addEventListener("click", kapat);
   $("#perde").addEventListener("click", kapat);
-  document.addEventListener("keydown", (olay) => olay.key === "Escape" && kapat());
+  document.addEventListener("keydown", (olay) => {
+    if (olay.key !== "Escape") return;
+    kapat();
+    const suzgec = $("#gereksinimSuzgeci");
+    suzgec?.classList.remove("acik");
+    suzgec?.querySelector(".suzgec-ac")?.setAttribute("aria-expanded", "false");
+  });
 
   // Ders kodu kutusu boşaltılınca formun kalanı da temizlensin
   $("#yeniKod").addEventListener("input", (olay) => {

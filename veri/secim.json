@@ -1,12 +1,11 @@
 {
-  "aktif": "Ders Programı 1",
+  "aktif": "Ana Ders Programı",
   "profiller": [
     {
-      "ad": "Ders Programı 1",
+      "ad": "Ana Ders Programı",
       "crnler": [
-        "13683",
-        "14782",
-        "14785"
+        "14780",
+        "13683"
       ]
     }
   ]

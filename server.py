@@ -23,6 +23,7 @@ PLAN = VERI / "plan.json"
 DERSLER = VERI / "dersler.json"
 ALINAN = VERI / "alinan.json"
 SECIM = VERI / "secim.json"
+GIZLENEN = VERI / "gizlenen.json"
 
 # Panelden tetiklenen yenilemenin üst üste binmesini engeller
 YENILEME_KILIDI = threading.Lock()
@@ -160,6 +161,7 @@ class Istek(SimpleHTTPRequestHandler):
                     "dersler": json_oku(DERSLER, None),
                     "alinan": json_oku(ALINAN, {"alinan": []}).get("alinan", []),
                     "secim": secim_oku(),
+                    "gizlenen": json_oku(GIZLENEN, {"kodlar": []}).get("kodlar", []),
                 }
             )
             return
@@ -235,6 +237,20 @@ class Istek(SimpleHTTPRequestHandler):
                 SECIM,
                 {"aktif": aktif if aktif in adlar else adlar[0], "profiller": temiz},
             )
+            self._json_gonder({"tamam": True, "adet": len(temiz)})
+            return
+
+        if yol == "/api/gizlenen":
+            kodlar = govde.get("kodlar")
+            if not isinstance(kodlar, list):
+                self._json_gonder({"hata": "'kodlar' bir liste olmalı"}, 400)
+                return
+            temiz = []
+            for kod in kodlar:
+                kod = str(kod).strip().upper()
+                if kod and kod not in temiz:
+                    temiz.append(kod)
+            json_yaz(GIZLENEN, {"kodlar": temiz})
             self._json_gonder({"tamam": True, "adet": len(temiz)})
             return
 

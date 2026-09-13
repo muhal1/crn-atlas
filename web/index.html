@@ -49,15 +49,21 @@
 
       <div class="suzgecler">
         <input id="arama" type="search" placeholder="Ders kodu, ad veya hoca ara…" autocomplete="off">
-        <select id="gereksinimSuzgeci">
-          <option value="">Tüm gereksinimler</option>
-        </select>
+        <div id="gereksinimSuzgeci" class="suzgec-kutular" aria-label="Gereksinim süzgeçleri"></div>
         <label class="onay"><input type="checkbox" id="alinaniGizle" checked> Aldıklarımı gizle</label>
         <label class="onay"><input type="checkbox" id="cakisaniGizle"> Çakışanları gizle</label>
         <label class="onay"><input type="checkbox" id="doluGizle"> Kontenjanı doluları gizle</label>
       </div>
 
       <div id="dersListesi" class="ders-listesi"></div>
+    </div>
+
+    <div class="kutu">
+      <div class="kutu-baslik">
+        <h2>Gizlenen Dersler</h2>
+        <span id="gizlenenSayisi" class="soluk"></span>
+      </div>
+      <div id="gizlenenListesi" class="gizlenen-listesi"></div>
     </div>
   </section>
 
