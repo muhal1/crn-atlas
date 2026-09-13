@@ -219,12 +219,78 @@ function planIlerlemesi(alinanKodlari) {
 
 /* ------------------------------------------------------------- sunucu ile */
 
+const STORAGE_ALINAN_KEY = "dsp_alinan";
+const STORAGE_SECIM_KEY = "dsp_secim";
+const STORAGE_GIZLENEN_KEY = "dsp_gizlenen";
+
+function storageJsonYukle(anahtar, varsayilan) {
+  try {
+    if (typeof localStorage === "undefined") return varsayilan;
+    const ham = localStorage.getItem(anahtar);
+    return ham ? JSON.parse(ham) : varsayilan;
+  } catch {
+    return varsayilan;
+  }
+}
+
+function storageJsonKaydet(anahtar, deger) {
+  try {
+    if (typeof localStorage === "undefined") return;
+    localStorage.setItem(anahtar, JSON.stringify(deger));
+  } catch {
+    // Saklama kapalıysa hata vermeden devam et
+  }
+}
+
 async function veriYukle() {
-  const yanit = await fetch("/api/veri");
-  const veri = await yanit.json();
+  let veri = null;
+  durum.statikMod = false;
+
+  try {
+    const yanit = await fetch("/api/veri");
+    if (yanit.ok) {
+      veri = await yanit.json();
+    }
+  } catch {
+    veri = null;
+  }
+
+  // Sunucu yanıt vermediyse (GitHub Pages / statik barındırma)
+  if (!veri) {
+    durum.statikMod = true;
+    const [ayarlarRes, planRes, derslerRes, alinanRes, secimRes, gizlenenRes] = await Promise.all([
+      fetch("veri/ayarlar.json").catch(() => null),
+      fetch("veri/plan.json").catch(() => null),
+      fetch("veri/dersler.json").catch(() => null),
+      fetch("veri/alinan.json").catch(() => null),
+      fetch("veri/secim.json").catch(() => null),
+      fetch("veri/gizlenen.json").catch(() => null),
+    ]);
+
+    const ayarlar = ayarlarRes && ayarlarRes.ok ? await ayarlarRes.json() : {};
+    const plan = planRes && planRes.ok ? await planRes.json() : null;
+    const dersler = derslerRes && derslerRes.ok ? await derslerRes.json() : null;
+    const varsayilanAlinan = alinanRes && alinanRes.ok ? await alinanRes.json() : [];
+    const varsayilanSecim = secimRes && secimRes.ok ? await secimRes.json() : null;
+    const varsayilanGizlenen = gizlenenRes && gizlenenRes.ok ? await gizlenenRes.json() : [];
+
+    const yerelAlinan = storageJsonYukle(STORAGE_ALINAN_KEY, null);
+    const yerelSecim = storageJsonYukle(STORAGE_SECIM_KEY, null);
+    const yerelGizlenen = storageJsonYukle(STORAGE_GIZLENEN_KEY, null);
+
+    veri = {
+      ayarlar,
+      plan,
+      dersler,
+      alinan: yerelAlinan !== null ? yerelAlinan : varsayilanAlinan,
+      secim: yerelSecim !== null ? yerelSecim : varsayilanSecim,
+      gizlenen: yerelGizlenen !== null ? yerelGizlenen : varsayilanGizlenen,
+    };
+  }
+
   Object.assign(durum, veri);
-  durum.alinan = veri.alinan || [];
-  durum.gizlenen = veri.gizlenen || [];
+  durum.alinan = Array.isArray(veri.alinan) ? veri.alinan : [];
+  durum.gizlenen = Array.isArray(veri.gizlenen) ? veri.gizlenen : [];
   bransSuzgeciYukle();
 
   const gelen = veri.secim;
@@ -237,19 +303,32 @@ async function veriYukle() {
       profiller: [{ ad: "Program 1", crnler: Array.isArray(gelen) ? gelen : [] }],
     };
   }
+
+  storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
+  storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
+  storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
 }
 
-async function kaydet(yol, govde) {
-  await fetch(yol, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(govde),
-  });
+async function kaydet(yol, govde, storageKey, storageVal) {
+  if (storageKey) {
+    storageJsonKaydet(storageKey, storageVal);
+  }
+  if (!durum.statikMod) {
+    try {
+      await fetch(yol, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(govde),
+      });
+    } catch (hata) {
+      console.error("Kaydetme hatası:", hata);
+    }
+  }
 }
 
-const alinanKaydet = () => kaydet("/api/alinan", { alinan: durum.alinan });
-const secimKaydet = () => kaydet("/api/secim", durum.secim);
-const gizlenenKaydet = () => kaydet("/api/gizlenen", { kodlar: durum.gizlenen });
+const alinanKaydet = () => kaydet("/api/alinan", { alinan: durum.alinan }, STORAGE_ALINAN_KEY, durum.alinan);
+const secimKaydet = () => kaydet("/api/secim", durum.secim, STORAGE_SECIM_KEY, durum.secim);
+const gizlenenKaydet = () => kaydet("/api/gizlenen", { kodlar: durum.gizlenen }, STORAGE_GIZLENEN_KEY, durum.gizlenen);
 
 /* ------------------------------------------------------------- çizim: üst */
 
@@ -1050,6 +1129,16 @@ function bilgiGoster(metin, tur = "bilgi") {
 async function verileriYenile() {
   const dugme = $("#yenileDugmesi");
   if (dugme.disabled) return;
+
+  if (durum.statikMod) {
+    const cekilme = durum.dersler?.cekilme || "belirtilmemiş";
+    bilgiGoster(
+      `Canlı sitede dersler ve kontenjanlar GitHub Actions ile periyodik olarak otomatik güncellenir (Son güncelleme: ${cekilme}).`,
+      "basari"
+    );
+    setTimeout(() => $("#uyari").classList.add("gizli"), 5000);
+    return;
+  }
 
   const eskiMetin = dugme.textContent;
   dugme.disabled = true;

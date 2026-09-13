@@ -127,3 +127,15 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
 - Sunucu eski kodu kullanıyorsa portu tutan `python panel.py` süreçlerini
   kapatıp tek temiz süreç başlat. Birden fazla eski panel süreci kalırsa API
   beklenen yeni alanları döndürmeyebilir.
+
+## GitHub Pages ve Dağıtım
+
+- Panel çift modlu (dual-mode) çalışır:
+  - Yerel sunucu varken (`/api/veri` erişilebilir) değişiklikler sunucuya yazılır.
+  - Canlı statik ortamda (GitHub Pages) `/api/veri` bulunamazsa statik JSON dosyaları
+    (`veri/plan.json`, `veri/dersler.json`, `veri/ayarlar.json`) okunur; seçimler,
+    alınan dersler ve gizlenenler `localStorage` üzerinde saklanır.
+- Dağıtım `.github/workflows/deploy.yml` üzerinden GitHub Actions ile yapılır.
+  Depo ayarlarından `Settings -> Pages -> Source: GitHub Actions` seçilmelidir.
+- Otomatik zamanlanmış cron (sabah ve akşam) veya GitHub arayüzünden manuel tetikleme
+  ile `python panel.py dersler` çalıştırılarak ÖBS kontenjanları güncellenir.
