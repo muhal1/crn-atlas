@@ -67,6 +67,94 @@ body {
   font: 14px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
+/* --------------------------------------------------------- giriş ve profil */
+
+.giris-ekrani {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(340px, 460px);
+  gap: clamp(40px, 8vw, 120px);
+  align-items: center;
+  padding: clamp(28px, 7vw, 96px);
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--vurgu) 9%, transparent), transparent 45%),
+    var(--zemin);
+}
+
+.giris-marka { display: flex; align-items: center; gap: 20px; max-width: 620px; }
+.marka-isareti {
+  display: grid;
+  place-items: center;
+  width: 82px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--vurgu) 55%, var(--cizgi));
+  color: var(--vurgu);
+  font-size: 24px;
+  font-weight: 700;
+}
+.giris-marka h1 { font-size: clamp(30px, 4vw, 54px); line-height: 1.08; }
+.giris-marka p { margin: 12px 0 0; color: var(--soluk); font-size: 16px; }
+
+.giris-kutu {
+  background: var(--kart);
+  border: 1px solid var(--cizgi);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+}
+.giris-baslik h2 { font-size: 20px; }
+.giris-baslik p { margin: 7px 0 22px; color: var(--soluk); }
+.giris-sekmeler { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--cizgi); margin-bottom: 20px; }
+.giris-sekmeler button {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+  background: transparent;
+  color: var(--soluk);
+  font: inherit;
+  cursor: pointer;
+}
+.giris-sekmeler button.aktif { color: var(--yazi); border-bottom-color: var(--vurgu); }
+.giris-form { display: grid; gap: 14px; }
+.giris-form label { display: grid; gap: 6px; color: var(--soluk); font-size: 12px; }
+.giris-form input { width: 100%; }
+.giris-form .dugme { margin-top: 4px; padding-block: 10px; }
+.metin-dugmesi { border: 0; background: transparent; color: var(--vurgu); font: inherit; cursor: pointer; }
+.giris-mesaji { margin-top: 16px; padding: 10px 12px; border: 1px solid color-mix(in srgb, var(--yesil) 45%, transparent); color: var(--yesil); }
+.giris-mesaji.hata { border-color: color-mix(in srgb, var(--kirmizi) 45%, transparent); color: var(--kirmizi); }
+.giris-notu { margin: 22px 0 0; color: var(--soluk); font-size: 11px; }
+
+.profil-alani { position: relative; }
+.profil-dugmesi { display: flex; align-items: center; gap: 8px; border: 0; background: transparent; color: var(--yazi); font: inherit; cursor: pointer; }
+.profil-harf { display: grid; place-items: center; width: 32px; aspect-ratio: 1; border-radius: 50%; background: var(--vurgu); color: white; font-weight: 700; }
+.profil-ok { color: var(--soluk); }
+.profil-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 40;
+  display: grid;
+  gap: 8px;
+  min-width: 230px;
+  padding: 14px;
+  background: var(--kart);
+  border: 1px solid var(--cizgi);
+  border-radius: 8px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, .3);
+}
+.profil-menu .dugme { margin-top: 5px; text-align: left; }
+
+@media (max-width: 760px) {
+  .giris-ekrani { grid-template-columns: 1fr; align-content: center; gap: 34px; padding: 24px; }
+  .giris-marka { align-items: flex-start; }
+  .marka-isareti { width: 56px; font-size: 17px; }
+  .giris-marka h1 { font-size: 28px; }
+  .giris-marka p { font-size: 14px; }
+  .giris-kutu { padding: 22px; }
+  #profilAdi, .profil-ok { display: none; }
+}
+
 h1, h2 { margin: 0; font-weight: 600; }
 h1 { font-size: 17px; }
 h2 { font-size: 14px; }

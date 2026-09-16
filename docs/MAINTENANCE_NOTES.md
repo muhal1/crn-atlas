@@ -131,10 +131,15 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
 ## GitHub Pages ve Dağıtım
 
 - Panel çift modlu (dual-mode) çalışır:
-  - Yerel sunucu varken (`/api/veri` erişilebilir) değişiklikler sunucuya yazılır.
-  - Canlı statik ortamda (GitHub Pages) `/api/veri` bulunamazsa statik JSON dosyaları
-    (`veri/plan.json`, `veri/dersler.json`, `veri/ayarlar.json`) okunur; seçimler,
-    alınan dersler ve gizlenenler `localStorage` üzerinde saklanır.
+  - Yerel sunucu varken (`/api/veri` erişilebilir) değişiklikler kişisel JSON dosyalarına yazılır.
+  - Canlı statik ortamda ortak `plan.json`, `dersler.json`, `ayarlar.json` okunur;
+    kişisel veriler Supabase Auth kullanıcısına ait `user_profiles` satırında tutulur.
+- Giriş/kayıt akışı `web/auth.js`, güvenlik kuralları `supabase/schema.sql`, kurulum
+  adımları `docs/ACCOUNT_SETUP.md` içindedir.
+- Kişisel veriler otomatik olarak ilk giriş yapan hesaba taşınmaz. Profil
+  menüsündeki JSON içe/dışa aktarma ile kullanıcı açıkça taşıma yapar.
+- `veri/alinan.json`, `veri/secim.json`, `veri/gizlenen.json` yerelde kalır;
+  Git tarafından izlenmez ve Pages dağıtımına eklenmez.
 - Dağıtım `.github/workflows/deploy.yml` üzerinden GitHub Actions ile yapılır.
   Depo ayarlarından `Settings -> Pages -> Source: GitHub Actions` seçilmelidir.
 - Otomatik zamanlanmış cron (sabah ve akşam) veya GitHub arayüzünden manuel tetikleme

@@ -12,8 +12,8 @@ veri/ham/
 # Asıl paylaşım sürümü ayrı bir depodur: github.com/muhal1/itu-ders-secim-paneli
 DersSecimPanel-Paylasim/
 
-# Not: veri/*.json dosyaları BİLEREK depoda tutulur.
-# Bu depo kişisel (private): ders planın, aldığın dersler ve program
-# profillerin burada yedeklenir. Depoyu herkese açık yapacaksan önce
-# aşağıdaki satırın başındaki # işaretini kaldır:
-# veri/
+# Ortak plan ve dönem verisi depoda kalır; aşağıdaki kullanıcı verileri
+# yalnızca yerel sunucu tarafından okunur ve GitHub Pages'e dağıtılmaz.
+veri/alinan.json
+veri/secim.json
+veri/gizlenen.json

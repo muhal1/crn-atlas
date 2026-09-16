@@ -47,14 +47,20 @@ jobs:
           python panel.py dersler || echo "OBS sorgusu tamamlanamadi, mevcut veriyle devam ediliyor"
 
       - name: Dagitim Klasorunu Hazirla (dist)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
         run: |
           mkdir -p dist
           cp -r web/* dist/
           mkdir -p dist/veri
           cp -r veri/ayarlar.json veri/plan.json veri/dersler.json dist/veri/ || true
-          [ -f veri/alinan.json ] && cp veri/alinan.json dist/veri/ || echo "[]" > dist/veri/alinan.json
-          [ -f veri/secim.json ] && cp veri/secim.json dist/veri/ || echo '{"aktif":"Program 1","profiller":[{"ad":"Program 1","crnler":[]}]}' > dist/veri/secim.json
-          [ -f veri/gizlenen.json ] && cp veri/gizlenen.json dist/veri/ || echo "[]" > dist/veri/gizlenen.json
+          cat > dist/config.js <<EOF
+          window.DSP_CONFIG = {
+            supabaseUrl: "${SUPABASE_URL}",
+            supabasePublishableKey: "${SUPABASE_PUBLISHABLE_KEY}",
+          };
+          EOF
 
       - name: GitHub Pages Yapilandir
         uses: actions/configure-pages@v5

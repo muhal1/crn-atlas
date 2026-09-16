@@ -1,14 +1,14 @@
 # Ders Seçim Paneli
 
-İTÜ ders kayıt dönemi için yerel çalışan bir ders seçim paneli.
+İTÜ ders kayıt dönemi için yerelde veya GitHub Pages üzerinde çalışan bir ders seçim paneli.
 Bölümünün ders planını ve o dönem **gerçekten açılan** dersleri
 `obs.itu.edu.tr` üzerinden çeker, sadece **seni ilgilendiren** dersleri
 saklar; haftalık programını kurmanı, çakışmaları görmeni ve ders kayıt
 ekranına yapıştıracağın CRN listesini üretmeni sağlar.
 
-* Giriş ekranı yok, hesap yok, internete bir şey gönderilmez.
-* Kurulum yok: **sadece Python 3.9+** yeter, tek bir paket bile kurmazsın.
-* Veriler proje klasöründe düz JSON olarak durur.
+* Canlı sürümde e-posta ile hesap açılır; herkesin seçimleri kendi profilinde tutulur.
+* Yerel kullanımda **sadece Python 3.9+** yeter ve hesap gerekmez.
+* Ortak plan/dönem verileri JSON, kullanıcı profilleri canlı sürümde Supabase üzerinde saklanır.
 
 > ⚠️ **Resmî bir İTÜ uygulaması değildir.** İstanbul Teknik Üniversitesi ile
 > bağlantısı yoktur, üniversite tarafından desteklenmez. Yalnızca ÖBS'nin
@@ -23,7 +23,7 @@ ekranına yapıştıracağın CRN listesini üretmeni sağlar.
 ## 🚀 Hızlı başlangıç
 
 **Tek ön koşul:** bilgisayarında Python 3.9+ kurulu olsun. Başka hiçbir şey
-gerekmez — `pip install` yok, hesap yok, kurulum sihirbazı yok.
+gerekmez — `pip install` yok, kurulum sihirbazı yok.
 
 ```bash
 git clone https://github.com/muhal1/itu-ders-secim-paneli
@@ -134,8 +134,8 @@ birden çok alternatif program tutabilirsin ("Program 1", "Plan B" …). Yanınd
 düğmeler: `+` yeni boş program, `⧉` bu programın kopyası (bir varyantı
 denemenin en hızlı yolu), `✎` adını değiştir, `×` sil. Listede her programın
 kaç ders içerdiği görünür. Profiller arasında geçtiğinde ders listesi, haftalık
-program ve CRN kutusu o profile göre yenilenir; hepsi `veri/secim.json` içinde
-saklanır.
+program ve CRN kutusu o profile göre yenilenir. Yerelde `veri/secim.json`, canlı
+sitede giriş yapan kullanıcının özel profil kaydı kullanılır.
 
 **Seçilen dersler + CRN** — Seçimin altında ders kayıt ekranına yapıştırılacak
 CRN listesi hazır durur, "Kopyala" ile panoya alırsın. Aynı dersin başka bir
@@ -220,7 +220,7 @@ görmek istersen ilgilendiğin branşları `veri/ayarlar.json` içine ekle:
 { "ekBransKodlari": ["BLG", "EHB", "MAT"] }
 ```
 
-Bu branşlardan gelen dersler panelde `serbest seçmeli` rozetiyle görünür.
+Bu branşlardan gelen dersler panelde `Seçime Bağlı Ders I-IV` rozetiyle görünür.
 
 ---
 
@@ -237,12 +237,17 @@ veri/               KİŞİSEL VERİN (paylaşırken bu klasör dışarıda kal�
   ayarlar.json        bölüm, planId, seviye, ek branş kodları
   plan.json           çekilmiş ders planı
   dersler.json        bu dönem açılan dersler (CRN'li)
-  alinan.json         şimdiye kadar aldığın dersler
-  secim.json          program profilleri (alternatif ders programların)
+  alinan.json         yerelde şimdiye kadar aldığın dersler (Git tarafından yok sayılır)
+  secim.json          yerel program profilleri (Git tarafından yok sayılır)
+  gizlenen.json       yerelde gizlenen dersler (Git tarafından yok sayılır)
   ham/                ÖBS'den inen ham HTML sayfaları
 
 sablon/             boş başlangıç dosyaları (paylaşım için)
+supabase/schema.sql canlı kullanıcı profili tablosu ve güvenlik kuralları
 ```
+
+Canlı hesap sisteminin kurulumu için [Kullanıcı Hesapları Kurulumu](docs/ACCOUNT_SETUP.md)
+belgesine bak.
 
 `veri/ham/` klasörü, ÖBS sayfalarının indirildiği andaki ham hâlini tutar.
 ÖBS sayfa yapısını değiştirip ayrıştırma bozulursa hatayı buradan görebilirsin;

@@ -101,6 +101,9 @@ function bransSuzgeciKaydet() {
   } catch {
     // Saklama kapalıysa filtre yine mevcut oturumda çalışır.
   }
+  if (durum.statikMod && window.DSPAuth?.uzakProfil()) {
+    window.DSPAuth.profilKaydet(profilVerisi()).catch((hata) => console.error("Branş süzgeci kaydedilemedi:", hata));
+  }
 }
 
 function secimeBagliBranslar() {
@@ -188,6 +191,57 @@ function profilEkle(crnler = []) {
   return ad;
 }
 
+function kisiselVeriDisariAktar() {
+  const icerik = JSON.stringify({
+    alinan: durum.alinan,
+    secim: durum.secim,
+    gizlenen: durum.gizlenen,
+    kapaliBranslar: [...secimeBagliKapaliBranslar],
+  }, null, 2);
+  const adres = URL.createObjectURL(new Blob([icerik], { type: "application/json" }));
+  const baglanti = document.createElement("a");
+  baglanti.href = adres;
+  baglanti.download = "ders-secim-profilim.json";
+  baglanti.click();
+  setTimeout(() => URL.revokeObjectURL(adres), 1000);
+}
+
+async function kisiselVeriIceriAktar(dosyalar) {
+  const okunan = {};
+  for (const dosya of dosyalar) {
+    const icerik = JSON.parse(await dosya.text());
+    const ad = dosya.name.toLowerCase();
+    if (ad === "alinan.json") okunan.alinan = normalDizi(icerik, "alinan");
+    else if (ad === "secim.json") okunan.secim = icerik;
+    else if (ad === "gizlenen.json") okunan.gizlenen = normalDizi(icerik, "kodlar");
+    else if (icerik && typeof icerik === "object" && Array.isArray(icerik.alinan) &&
+             Array.isArray(icerik.gizlenen) && icerik.secim) Object.assign(okunan, icerik);
+    else throw new Error(`Tanınmayan dosya: ${dosya.name}`);
+  }
+  if (okunan.alinan && !Array.isArray(okunan.alinan)) throw new Error("Alınan ders verisi geçersiz.");
+  if (okunan.gizlenen && !Array.isArray(okunan.gizlenen)) throw new Error("Gizlenen ders verisi geçersiz.");
+  if (okunan.secim && (!Array.isArray(okunan.secim.profiller) || !okunan.secim.profiller.length)) {
+    throw new Error("Program profili verisi geçersiz.");
+  }
+  if (!Object.keys(okunan).length) throw new Error("İçe aktarılacak veri bulunamadı.");
+  if (!confirm("Seçilen dosyalar bu profildeki mevcut verilerin üzerine yazılsın mı?")) return;
+  Object.assign(durum, {
+    alinan: okunan.alinan ?? durum.alinan,
+    secim: okunan.secim ?? durum.secim,
+    gizlenen: okunan.gizlenen ?? durum.gizlenen,
+  });
+  if (Array.isArray(okunan.kapaliBranslar)) secimeBagliKapaliBranslar = new Set(okunan.kapaliBranslar);
+  storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
+  storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
+  storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
+  if (durum.statikMod && window.DSPAuth.uzakProfil()) {
+    await window.DSPAuth.profilKaydet(profilVerisi());
+  }
+  cizSecenekler();
+  ciz();
+  bilgiGoster("Profil verileri içe aktarıldı.", "basari");
+}
+
 const saatMetni = (ders) => {
   const liste = araliklar(ders);
   if (!liste.length) return "Program belirtilmemiş";
@@ -225,6 +279,18 @@ const STORAGE_GIZLENEN_KEY = "dsp_gizlenen";
 const STORAGE_SURUM_KEY = "dsp_surum";
 const GUNCEL_SURUM = "2";
 
+const storageAnahtari = (anahtar) => {
+  const kullaniciId = window.DSPAuth?.kullaniciId();
+  return kullaniciId && kullaniciId !== "yerel" ? `${anahtar}:${kullaniciId}` : anahtar;
+};
+
+const profilVerisi = () => ({
+  alinan: durum.alinan,
+  secim: durum.secim,
+  gizlenen: durum.gizlenen,
+  kapaliBranslar: [...secimeBagliKapaliBranslar],
+});
+
 function normalDizi(veri, alan) {
   if (Array.isArray(veri)) return veri;
   if (veri && typeof veri === "object" && Array.isArray(veri[alan])) return veri[alan];
@@ -255,7 +321,7 @@ function depolamaGocEt() {
 function storageJsonYukle(anahtar, varsayilan) {
   try {
     if (typeof localStorage === "undefined") return varsayilan;
-    const ham = localStorage.getItem(anahtar);
+    const ham = localStorage.getItem(storageAnahtari(anahtar));
     return ham ? JSON.parse(ham) : varsayilan;
   } catch {
     return varsayilan;
@@ -265,7 +331,7 @@ function storageJsonYukle(anahtar, varsayilan) {
 function storageJsonKaydet(anahtar, deger) {
   try {
     if (typeof localStorage === "undefined") return;
-    localStorage.setItem(anahtar, JSON.stringify(deger));
+    localStorage.setItem(storageAnahtari(anahtar), JSON.stringify(deger));
   } catch {
     // Saklama kapalıysa hata vermeden devam et
   }
@@ -288,40 +354,44 @@ async function veriYukle() {
   // Sunucu yanıt vermediyse (GitHub Pages / statik barındırma)
   if (!veri) {
     durum.statikMod = true;
-    const [ayarlarRes, planRes, derslerRes, alinanRes, secimRes, gizlenenRes] = await Promise.all([
+    const [ayarlarRes, planRes, derslerRes] = await Promise.all([
       fetch("veri/ayarlar.json").catch(() => null),
       fetch("veri/plan.json").catch(() => null),
       fetch("veri/dersler.json").catch(() => null),
-      fetch("veri/alinan.json").catch(() => null),
-      fetch("veri/secim.json").catch(() => null),
-      fetch("veri/gizlenen.json").catch(() => null),
     ]);
 
     const ayarlar = ayarlarRes && ayarlarRes.ok ? await ayarlarRes.json() : {};
     const plan = planRes && planRes.ok ? await planRes.json() : null;
     const dersler = derslerRes && derslerRes.ok ? await derslerRes.json() : null;
-    const varsayilanAlinan = normalDizi(alinanRes && alinanRes.ok ? await alinanRes.json() : [], "alinan");
-    const varsayilanSecim = secimRes && secimRes.ok ? await secimRes.json() : null;
-    const varsayilanGizlenen = normalDizi(gizlenenRes && gizlenenRes.ok ? await gizlenenRes.json() : [], "kodlar");
+    const yerelProfil = !window.DSPAuth?.uzakProfil();
+    const yerelAlinan = yerelProfil ? storageJsonYukle(STORAGE_ALINAN_KEY, null) : null;
+    const yerelSecim = yerelProfil ? storageJsonYukle(STORAGE_SECIM_KEY, null) : null;
+    const yerelGizlenen = yerelProfil ? storageJsonYukle(STORAGE_GIZLENEN_KEY, null) : null;
+    let uzakProfil = null;
+    if (!yerelProfil) uzakProfil = await window.DSPAuth.profilYukle();
 
-    const yerelAlinan = storageJsonYukle(STORAGE_ALINAN_KEY, null);
-    const yerelSecim = storageJsonYukle(STORAGE_SECIM_KEY, null);
-    const yerelGizlenen = storageJsonYukle(STORAGE_GIZLENEN_KEY, null);
+    const bosSecim = { aktif: "Program 1", profiller: [{ ad: "Program 1", crnler: [] }] };
 
     veri = {
       ayarlar,
       plan,
       dersler,
-      alinan: yerelAlinan !== null ? normalDizi(yerelAlinan, "alinan") : varsayilanAlinan,
-      secim: yerelSecim !== null ? yerelSecim : varsayilanSecim,
-      gizlenen: yerelGizlenen !== null ? normalDizi(yerelGizlenen, "kodlar") : varsayilanGizlenen,
+      alinan: uzakProfil?.alinan ?? yerelAlinan ?? [],
+      secim: uzakProfil?.secim ?? yerelSecim ?? bosSecim,
+      gizlenen: uzakProfil?.gizlenen ?? yerelGizlenen ?? [],
+      kapaliBranslar: uzakProfil?.kapali_branslar ?? [],
+      eskiProfilVar: Boolean(uzakProfil),
     };
   }
 
   Object.assign(durum, veri);
   durum.alinan = normalDizi(veri.alinan, "alinan");
   durum.gizlenen = normalDizi(veri.gizlenen, "kodlar");
-  bransSuzgeciYukle();
+  if (Array.isArray(veri.kapaliBranslar)) {
+    secimeBagliKapaliBranslar = new Set(veri.kapaliBranslar);
+  } else {
+    bransSuzgeciYukle();
+  }
 
   const gelen = veri.secim;
   if (gelen && Array.isArray(gelen.profiller) && gelen.profiller.length) {
@@ -337,6 +407,13 @@ async function veriYukle() {
   storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
   storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
   storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
+  if (durum.statikMod && window.DSPAuth?.uzakProfil() && !veri.eskiProfilVar) {
+    try {
+      await window.DSPAuth.profilKaydet(profilVerisi());
+    } catch (hata) {
+      console.error("Profil ilk kez kaydedilemedi:", hata);
+    }
+  }
 }
 
 async function kaydet(yol, govde, storageKey, storageVal) {
@@ -352,6 +429,12 @@ async function kaydet(yol, govde, storageKey, storageVal) {
       });
     } catch (hata) {
       console.error("Kaydetme hatası:", hata);
+    }
+  } else if (window.DSPAuth?.uzakProfil()) {
+    try {
+      await window.DSPAuth.profilKaydet(profilVerisi());
+    } catch (hata) {
+      bilgiGoster("Profil değişiklikleri kaydedilemedi. İnternet bağlantını kontrol et.", "hata");
     }
   }
 }
@@ -1207,6 +1290,17 @@ async function verileriYenile() {
 /* ------------------------------------------------------------- olay bağları */
 
 function olaylariBagla() {
+  $("#veriDisariAktar").addEventListener("click", kisiselVeriDisariAktar);
+  $("#veriIceriAktar").addEventListener("click", () => $("#veriDosyalari").click());
+  $("#veriDosyalari").addEventListener("change", async (olay) => {
+    try {
+      await kisiselVeriIceriAktar([...olay.target.files]);
+    } catch (hata) {
+      bilgiGoster(`Veriler içe aktarılamadı: ${hata.message}`, "hata");
+    } finally {
+      olay.target.value = "";
+    }
+  });
   for (const secici of ["#arama", "#alinaniGizle", "#cakisaniGizle", "#doluGizle"]) {
     const dugum = $(secici);
     dugum.addEventListener(dugum.type === "search" ? "input" : "change", () => {
@@ -1376,6 +1470,8 @@ function olaylariBagla() {
 /* ------------------------------------------------------------------ başlat */
 
 (async function baslat() {
+  const oturumVar = await window.DSPAuth.baslat();
+  if (!oturumVar) return;
   olaylariBagla();
   try {
     await veriYukle();
