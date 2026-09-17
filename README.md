@@ -1,14 +1,16 @@
 # CRN Atlas
 
-İTÜ ders kayıt dönemi için yerelde veya GitHub Pages üzerinde çalışan bir ders seçim paneli.
-Bölümünün ders planını ve o dönem **gerçekten açılan** dersleri
-`obs.itu.edu.tr` üzerinden çeker, sadece **seni ilgilendiren** dersleri
-saklar; haftalık programını kurmanı, çakışmaları görmeni ve ders kayıt
-ekranına yapıştıracağın CRN listesini üretmeni sağlar.
+İTÜ ders kayıt dönemi için bir ders seçim paneli. Bölümünün ders planını ve o
+dönem **gerçekten açılan** dersleri `obs.itu.edu.tr` üzerinden çeker, sadece
+**seni ilgilendiren** dersleri gösterir; haftalık programını kurmanı,
+çakışmaları görmeni ve ders kayıt ekranına yapıştıracağın CRN listesini
+üretmeni sağlar.
 
-* Canlı sürümde e-posta ile hesap açılır; herkesin seçimleri kendi profilinde tutulur.
-* Yerel kullanımda **sadece Python 3.9+** yeter ve hesap gerekmez.
-* Ortak plan/dönem verileri JSON, kullanıcı profilleri canlı sürümde Supabase üzerinde saklanır.
+**Kurulum yok.** Canlı sürüm tarayıcıda çalışır, e-posta ile saniyeler içinde
+hesap açılır. Seçimlerin, aldığın dersler ve gizlediklerin hesabına kaydedilir;
+başka bir cihazdan girdiğinde de yerinde durur.
+
+👉 **[muhal1.github.io/crn-atlas](https://muhal1.github.io/crn-atlas/)**
 
 > ⚠️ **Resmî bir İTÜ uygulaması değildir.** İstanbul Teknik Üniversitesi ile
 > bağlantısı yoktur, üniversite tarafından desteklenmez. Yalnızca ÖBS'nin
@@ -16,92 +18,69 @@ ekranına yapıştıracağın CRN listesini üretmeni sağlar.
 > gereksinimlerinde **resmî kaynak her zaman ÖBS'dir**; ders kaydını da ÖBS
 > üzerinden sen yaparsın.
 
-![Ders Seçim Paneli genel görünüm](docs/01-genel.png)
+![CRN Atlas genel görünüm](docs/01-genel.png)
 
 ---
 
-## 🚀 Hızlı başlangıç
+## 🚀 Nasıl kullanılır
 
-**Tek ön koşul:** bilgisayarında Python 3.9+ kurulu olsun. Başka hiçbir şey
-gerekmez — `pip install` yok, kurulum sihirbazı yok.
+1. **[muhal1.github.io/crn-atlas](https://muhal1.github.io/crn-atlas/)** adresine git.
+2. E-posta ile hesap aç — ücretsiz, saniyeler sürer, doğrulama e-postası dışında bir şey istemez.
+3. Bölümünü ve seviyeni seç (lisans, yüksek lisans/doktora, ön lisans…).
+4. Panel senin planına sayan dersleri kendisi bulur. Ders seçtikçe haftalık
+   programın kurulur, çakışmalar kırmızı görünür.
+5. Altta hazır duran CRN listesini kopyala, ÖBS ders kayıt ekranına yapıştır.
+
+Kaydı panel yapmaz — CRN listesini üretir, kaydı ÖBS üzerinden sen yaparsın.
+
+<br>
+
+> 💡 **Zaten aldığın dersleri girmek zorunda değilsin.** Sağ üstteki
+> **"Alınan Dersler"** düğmesinden istediğin zaman ekleyip silebilirsin; hem
+> gereksinim takibinde hem "bu dersi aldın" işaretinde kullanılır.
+
+---
+
+## 🖥️ Yerelde çalıştırma (isteğe bağlı)
+
+Canlı sürüm çoğu kişi için yeterli. Yerel kurulum şu durumlarda işine yarar:
+hesap açmadan, tamamen kendi bilgisayarında çalıştırmak istiyorsan; ya da
+koda dokunacaksan.
+
+**Tek ön koşul:** Python 3.9+. Başka hiçbir şey gerekmez — `pip install` yok.
 
 ```bash
 git clone https://github.com/muhal1/crn-atlas
 ```
 
-Sonrasında iki yol var:
-
-| Seçenek | Kime uygun | Süre |
-|---|---|---|
-| 🤖 **Agent ile kurulum** | Terminalle uğraşmak istemeyene | 2 soruya cevap ver, gerisini o yapar |
-| 🔧 **Elle kurulum** | Kontrolü elinde tutmak isteyene | 4 komut, ~2 dakika |
-
-<br>
-
-### 🤖 Seçenek 1 — Agent ile kurulum
-
-**En kolayı. Teknik bilgi gerekmez.**
-
-Proje klasöründeki [`AGENTS.md`](AGENTS.md) dosyasını yapay zekâ asistanına
-(Claude Code, Cursor, Copilot…) ver ve şunu söyle:
+En kolayı, klasördeki [`AGENTS.md`](AGENTS.md) dosyasını bir yapay zekâ
+asistanına (Claude Code, Cursor, Copilot…) verip şunu söylemek:
 
 > *AGENTS.md dosyasındaki adımları izleyerek bu paneli benim bölümüme göre kur.*
 
-Asistan sırasıyla şunları yapar:
+Asistan bölümünü sorar, plan numarasını ÖBS'den kendisi bulur, veriyi çeker
+ve paneli tarayıcında açar — senin yapman gereken tek şey birkaç soruya
+cevap vermek.
 
-| | |
-|---|---|
-| 🎓 | **"Hangi bölümdesin?"** diye sorar |
-| 🔍 | Bölümünün plan numarasını ÖBS'den kendisi bulur |
-| 📥 | Ders planını ve bu dönem açılan dersleri çeker |
-| 📝 | **"Şimdiye kadar hangi dersleri aldın?"** diye sorar |
-| 🖥️ | Paneli tarayıcıda açar |
-
-Senin yapman gereken tek şey iki soruya cevap vermek.
-
-<br>
-
-### 🔧 Seçenek 2 — Elle kurulum
-
-#### 1️⃣ Bölümünün plan numarasını bul
+Elle kurmak istersen:
 
 ```bash
-python panel.py ara "bilgisayar" --seviye LS
+python panel.py ara "bilgisayar" --seviye LS   # 1) plan numaranı bul
 ```
 
 Seviye kodları: `LS` lisans · `LU` yüksek lisans/doktora · `OL` ön lisans ·
-`LUI` lisansüstü 2. öğretim
-
-Çıktıda programın ve plan sürümleri listelenir; genelde **en güncel** olan
-(en büyük `planId`) doğrudur.
-
-#### 2️⃣ Plan numarasını ayarlara yaz
-
-`veri/ayarlar.json` dosyasını aç, `planId` ve `seviye` alanlarını doldur:
+`LUI` lisansüstü 2. öğretim. Çıktıdaki `planId`'yi `veri/ayarlar.json`'a yaz:
 
 ```json
 { "bolum": "Bilgisayar Mühendisliği Lisans", "planId": 1561, "seviye": "LS", "ekBransKodlari": [] }
 ```
 
-#### 3️⃣ Veriyi çek
+Sonra:
 
 ```bash
-python panel.py guncelle
+python panel.py guncelle   # 2) veriyi çek
+python panel.py            # 3) paneli aç — http://127.0.0.1:8730
 ```
-
-#### 4️⃣ Paneli aç
-
-```bash
-python panel.py
-```
-
-Tarayıcıda <http://127.0.0.1:8730> açılır. 🎉
-
-<br>
-
-> 💡 **Alınan dersleri kurulumda girmek zorunda değilsin.** Panelin sağ
-> üstündeki **"Alınan Dersler"** düğmesinden istediğin zaman ekleyip
-> silebilirsin.
 
 ---
 
@@ -278,15 +257,13 @@ veriyi yeniden çekmeden inceleyebilirsin.
 
 ## Başkasına verirken
 
-En kolayı depo adresini vermek:
+En kolayı, canlı sürümün adresini paylaşmak: kimse bir şey kurmaz, sadece
+hesap açar. Bölümü kendi seçer, dersleri kendi görür — kurulum tamamen
+gereksiz hâle geldi.
 
-```bash
-git clone https://github.com/muhal1/crn-atlas
-```
-
-Karşı taraf `AGENTS.md`'yi kendi asistanına verir, kurulum kendiliğinden ilerler.
-Depoda kişisel veri yoktur; `veri/` klasörü `.gitignore`'dadır ve herkes kendi
-verisini `sablon/`'dan oluşturur.
+Yerelde çalıştırmak isteyen biri için: `AGENTS.md`'yi kendi asistanına verir,
+kurulum kendiliğinden ilerler. Depoda kişisel veri yoktur; `veri/` klasörü
+`.gitignore`'dadır ve herkes kendi verisini `sablon/`'dan oluşturur.
 
 Git kullanmayan birine göndereceksen zip üret:
 
@@ -294,7 +271,7 @@ Git kullanmayan birine göndereceksen zip üret:
 python panel.py paketle
 ```
 
-Üst klasörde `DersSeçimPanel-paylasim.zip` oluşur. İçinde kodun tamamı ve
+Üst klasörde `crn-atlas-paylasim.zip` oluşur. İçinde kodun tamamı ve
 `AGENTS.md` vardır; **senin plan, alınan ders ve seçim verilerin yoktur** —
 karşı taraf `veri/` klasörünü boş şablondan başlatır.
 
@@ -336,14 +313,12 @@ snapshot'lar karşılaştırma için oradadır.
 ## Katkı ve lisans
 
 Katkıya açık — hata bildirimi, özellik önerisi ve pull request hepsi olur.
-Başlamadan önce [`CONTRIBUTING.md`](CONTRIBUTING.md) dosyasına göz at; projenin
-birkaç bilinçli tercihi var (bağımlılık eklenmez, adlandırma Türkçedir).
+Projenin birkaç bilinçli tercihi var: bağımlılığa gerek olmadıkça eklenmez,
+adlandırma Türkçedir, kaydı panel yapmaz.
 
 * 🐛 Bir şey bozulduysa [issue aç](../../issues/new/choose)
-* 🔒 Güvenlik sorunlarını herkese açık issue yerine
-  [özel bildirimle](../../security/advisories/new) gönder — bkz.
-  [`SECURITY.md`](SECURITY.md)
-* 🤝 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
+* 🔒 Güvenlik sorununu herkese açık issue yerine
+  [özel bildirimle](../../security/advisories/new) gönder
 
 ÖBS arayüzü değiştiğinde ayrıştırma kırılabilir; **en değerli katkı bu tür hata
 bildirimleridir.** Bildirirken bölümünü, `planId`'ni ve hata çıktısını eklemen
