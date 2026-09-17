@@ -10,6 +10,10 @@
   /* arayüz vurgusu - camgöbeği, hiçbir kategori rengiyle aynı aileden değil */
   --vurgu: #0e7490;
   --vurgu-yazi: #ffffff;
+  --vurgu-hover: #0b6274;
+  /* Buton dolgusu: Apple'ın sistem fill grileri. Kenarlık yok, ayrım dolgudan. */
+  --dugme-yuzey: rgba(120, 120, 128, .12);
+  --dugme-yuzey-2: rgba(120, 120, 128, .20);
   /* kategori renkleri - validate_palette.js ile doğrulandı */
   --turuncu: #a96b00;
   --turkuaz: #00945a;
@@ -41,6 +45,9 @@
     --soluk: #97a3b6;
     --vurgu: #22d3ee;
     --vurgu-yazi: #06232b;
+    --vurgu-hover: #67e3f6;
+    --dugme-yuzey: rgba(120, 120, 128, .24);
+    --dugme-yuzey-2: rgba(120, 120, 128, .36);
     --turuncu: #ffb330;
     --turkuaz: #00bc7b;
     --mavi: #4c99f8;
@@ -67,6 +74,9 @@
   --soluk: #97a3b6;
   --vurgu: #22d3ee;
   --vurgu-yazi: #06232b;
+  --vurgu-hover: #67e3f6;
+  --dugme-yuzey: rgba(120, 120, 128, .24);
+  --dugme-yuzey-2: rgba(120, 120, 128, .36);
   --turuncu: #ffb330;
   --turkuaz: #00bc7b;
   --mavi: #4c99f8;
@@ -204,8 +214,8 @@ body {
 .giris-notu { margin: 22px 0 0; color: var(--soluk); font-size: 12px; }
 
 .profil-alani { position: relative; }
-.profil-dugmesi { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 3px 6px; border: 1px solid transparent; border-radius: var(--r); background: transparent; color: var(--yazi); font: inherit; cursor: pointer; }
-.profil-dugmesi:hover { background: var(--kart-2); border-color: var(--cizgi); }
+.profil-dugmesi { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 3px 6px 3px 12px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--yazi); font: inherit; cursor: pointer; }
+.profil-dugmesi:hover { background: var(--dugme-yuzey); }
 .profil-harf { display: grid; place-items: center; width: 30px; aspect-ratio: 1; border-radius: 50%; background: var(--vurgu); color: var(--vurgu-yazi); font-weight: 700; }
 .profil-ok { color: var(--soluk); }
 .profil-menu {
@@ -316,51 +326,49 @@ h2 { font-size: 15px; }
 /* -------------------------------------------------------------- düğmeler */
 
 .dugme {
-  background: var(--kart-2);
+  background: var(--dugme-yuzey);
   color: var(--yazi);
-  border: 1px solid var(--cizgi);
-  border-radius: var(--r);
+  border: 1px solid transparent;
+  border-radius: 999px;
   min-height: 36px;
-  padding: 7px 12px;
+  padding: 7px 14px;
   font: inherit;
   font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
-  background-image: linear-gradient(180deg, var(--cam-parlama), transparent 58%);
-  box-shadow: inset 0 1px 0 var(--cam-parlama);
-  transition: border-color .12s, background .12s, box-shadow .12s;
+  transition: background .15s ease, transform .1s ease, color .15s ease;
 }
-.dugme:hover { border-color: var(--vurgu); background: color-mix(in srgb, var(--vurgu) 8%, var(--kart)); }
-.dugme.kucuk { min-height: 32px; padding: 5px 10px; font-size: 12px; }
-.dugme.minik { width: 32px; min-height: 32px; padding: 3px; font-size: 16px; line-height: 1; color: var(--soluk); }
+.dugme:hover { background: var(--dugme-yuzey-2); }
+.dugme:active { transform: scale(.96); }
+.dugme.kucuk { min-height: 32px; padding: 5px 12px; font-size: 12px; }
+.dugme.minik { width: 32px; height: 32px; min-height: 32px; padding: 0; border-radius: 50%; font-size: 16px; line-height: 1; color: var(--soluk); }
 .dugme.minik:hover { color: var(--yazi); }
 .dugme:disabled { opacity: .35; cursor: default; }
-.dugme:disabled:hover { border-color: var(--cizgi); color: var(--soluk); }
+.dugme:disabled:hover { background: var(--dugme-yuzey); transform: none; }
 
 .profil-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
 .profil-bar h2 { margin-right: 4px; }
 #profilSecici { padding: 5px 8px; font-size: 13px; max-width: 190px; }
 #aktifProfilAdi { font-weight: 400; }
+/* Apple'ın "plain" butonu: dururken yalnız metin, üzerine gelince dolgu.
+   Hover kuralı .dugme:hover'dan sonra gelmeli, yoksa transparan zemin kazanıyor. */
 .dugme.sessiz { background: transparent; color: var(--soluk); }
+.dugme.sessiz:hover { background: var(--dugme-yuzey); color: var(--yazi); }
 .dugme.birincil {
   background: var(--vurgu);
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 60%);
-  border-color: color-mix(in srgb, var(--vurgu) 70%, #000);
+  border-color: transparent;
   color: var(--vurgu-yazi);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .45),
-    0 6px 18px color-mix(in srgb, var(--vurgu) 35%, transparent);
+  font-weight: 600;
 }
-.dugme.birincil:hover { background: color-mix(in srgb, var(--vurgu) 85%, #000); }
-@media (prefers-color-scheme: dark) {
-  .dugme.birincil:hover { background: color-mix(in srgb, var(--vurgu) 86%, #fff); }
-}
+/* Hover tonu token'dan gelir; media sorgusuna bağlarsak elle seçilen temada çalışmaz. */
+.dugme.birincil:hover { background: var(--vurgu-hover); }
 
 .sayac {
   display: inline-block;
   min-width: 20px;
-  padding: 0 6px;
-  margin-left: 4px;
-  border-radius: 4px;
+  padding: 0 7px;
+  margin-left: 6px;
+  border-radius: 999px;
   background: var(--vurgu);
   color: var(--vurgu-yazi);
   font-size: 11px;
@@ -544,11 +552,11 @@ h2 { font-size: 15px; }
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: var(--kart);
+  background: var(--dugme-yuzey);
   color: var(--yazi);
-  border: 1px solid var(--cizgi);
-  border-radius: 8px;
-  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 7px 14px;
   font: inherit;
   font-size: 13px;
   text-align: left;
@@ -673,16 +681,18 @@ h2 { font-size: 15px; }
   font-size: 11px;
 }
 
-input, select {
-  background: var(--kart);
+input:not([type="checkbox"]):not([type="radio"]), select {
+  background: var(--dugme-yuzey);
   color: var(--yazi);
-  border: 1px solid var(--cizgi);
-  border-radius: var(--r);
-  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  min-height: 36px;
+  padding: 7px 14px;
   font: inherit;
   font-size: 13px;
   min-width: 0;
 }
+input:not([type="checkbox"]):not([type="radio"])::placeholder { color: var(--soluk); }
 input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible {
   outline: 2px solid var(--vurgu);
   outline-offset: 2px;
@@ -1112,6 +1122,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   width: 36px;
   height: 36px;
   padding: 0;
+  border-radius: 50%;
   font-size: 15px;
   line-height: 1;
 }

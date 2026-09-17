@@ -190,6 +190,26 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
 - Dönem etiketi (`#donemEtiketi`) kategori rengi almaz; nötr rozettir.
 - Altıncı bir kromatik kategori **ekleme**; beş slot eşikleri ancak tutuyor.
 
+## Buton ve Alan Dili
+
+- Butonlar Apple'ın sistem butonlarına benzetilmiştir: **kapsül yarıçap
+  (`999px`), kenarlık yok, parlama/gradyan yok.** Ayrım kenarlıktan değil
+  dolgudan gelir: `--dugme-yuzey` / `--dugme-yuzey-2` (Apple'ın
+  `rgba(120,120,128,a)` sistem fill grileri; koyu temada .24/.36, açıkta
+  .12/.20). Butona kenarlık veya `linear-gradient` gloss ekleme.
+- Basılı durum `transform: scale(.96)`. Hover yalnızca dolguyu koyulaştırır;
+  eski "hover'da kenarlık vurgu rengine döner" davranışı kaldırıldı.
+- `.dugme.sessiz` Apple'ın "plain" butonudur: dururken yalnız metin, hover'da
+  dolgu. Hover kuralı `.dugme:hover`'dan **sonra** gelmeli, aksi hâlde
+  transparan zemin eşit özgüllükle kazanır ve düğme hover geri bildirimi vermez.
+- `.dugme.minik` ve tema düğmesi daire (`border-radius: 50%`).
+- Metin alanları, `select`'ler ve gereksinim açılır düğmesi de aynı dili
+  konuşur (dolgulu, kenarlıksız, kapsül). Onay/radyo kutuları seçiciden
+  **hariç tutulur** (`input:not([type="checkbox"]):not([type="radio"])`),
+  yoksa daireye dönüşürler.
+- `--vurgu-hover` token'dır. Hover tonunu `@media (prefers-color-scheme)`
+  içine yazma — elle seçilen temada çalışmaz.
+
 ## Cam Yüzeyler ve Tema Anahtarı
 
 - Cam efekti (`backdrop-filter: blur() saturate()` + üst parlama + yumuşak gölge)
