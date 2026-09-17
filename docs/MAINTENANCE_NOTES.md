@@ -157,11 +157,39 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   `scrollbar-width` ve `::-webkit-scrollbar` stilleri korunmalıdır.
 - Filtre menüsü ve tooltip'ler koyu tema ile uyumlu olmalı, metinler taşmamalı,
   yatay kaydırmalı filtre şeridi kullanılmamalıdır.
-- 2026 tasarım yenilemesi (`codex/design-language-refresh`, bordo vurgulu düz
-  yüzey dili) denendi ve **geri alındı**; depo sahibi baştan beri kullanılan
-  mavi vurgulu görünümü tercih ediyor. `web/style.css` bu yüzden `1c19bdf`
-  hâline döndürüldü. Dal silinmedi ama referans dışında kullanılmamalıdır.
-  Yeni bir görsel dil denemesi doğrudan `main`'e push edilmemelidir.
+- 2026 tasarım yenilemesinin **düzeni korunur** (`58c2ab6`: ortalanmış giriş
+  ekranı, 6px köşe, düz yüzeyler). Yalnızca **renk katmanı** değiştirildi; bordo/
+  pembe vurgulu ilk palet beğenilmedi ve atıldı.
+- Palet kuralı: **renk yalnızca veriye aittir.** Arayüz vurgusu (`--vurgu`)
+  kasıtlı olarak renksizdir (açık temada koyu arduvaz, koyu temada kırık beyaz),
+  çünkü gereksinim türleri + durum renkleri renk çarkını zaten doldurur. Vurgu
+  rengini bir gereksinim rengiyle aynı aileden seçme — eski palette `--vurgu`
+  mavisi `Zorunlu Seçmeli Ders` mavisiyle çakışıyordu.
+- Vurgu üstündeki metin `--vurgu-yazi` token'ıyla yönetilir; `#fff` sabiti yazma
+  (koyu temada açık vurgu üstüne beyaz yazı okunmuyordu).
+- Rozetler **nötr ink + renkli nokta** kalıbını kullanır (`--rozet-renk`).
+  Rozet metnini kategori rengiyle boyama: renk hem 4.5:1 metin kontrastı hem
+  kategori ayrımı sağlamak zorunda kalınca ikisi birden tutmuyor.
+- Gereksinim renkleri `dataviz` skill'indeki `validate_palette.js` ile
+  doğrulandı. Ekranda gerçekten görünen dört kategori (kehribar `--turuncu`,
+  deniz yeşili `--turkuaz`, mavi `--mavi`, mor `--mor`) her iki temada da tüm
+  çiftlerde geçer: en kötü çift açık temada ΔE 12.2 (CVD) / 16.7 (normal),
+  koyu temada ΔE 11.5 / 16.6.
+- `--pembe` (sosyal/İTB) beşinci slottur ve tüm-çift CVD eşiğini geçmez
+  (koyu temada `--turkuaz` ile ΔE ~4). Kabul edilebilir çünkü rozet her zaman
+  kendi metnini taşır; renk tek başına anlam taşımaz. Altıncı bir kromatik
+  kategori **ekleme** - geçmez.
+- Seminer/tez/etik artık kategori rengi değil nötr (`--notr`) kullanır. Eski
+  `--indigo` ile `--mor` çifti deuteranopide ΔE 1.0 idi, yani pratikte aynı
+  renkti. `GEREKSINIM_RENK_PALETI` bu yüzden beş kromatik slot tutar.
+- Dönem etiketi (`#donemEtiketi`) kategori rengi almaz; nötr rozettir.
+- Palet değiştirirken doğrula:
+
+```bash
+node <skill>/scripts/validate_palette.js "#8a6200,#00897a,#3a6fd8,#7a2490" --mode light --surface "#ffffff" --pairs all
+node <skill>/scripts/validate_palette.js "#bd8a22,#2aa694,#6b90ee,#8f4fbb" --mode dark --surface "#171a1f" --pairs all
+```
+
 - Ders listesi minimum yüksekliği ve filtre menüsünün taşmadan açılması korunur.
   Haftalık programdaki saat çizgileri `app.js` tarafından çizilir; dekoratif
   sabit aralıklı CSS çizgileri eklenmemelidir.

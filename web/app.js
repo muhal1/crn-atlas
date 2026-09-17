@@ -138,7 +138,7 @@ const serbestGereksinimEtiketi = () => {
   return serbest ? gereksinimGrupEtiketi(gereksinimGrubu(serbest.ad)) : "Seçime Bağlı Ders";
 };
 
-const GEREKSINIM_RENK_PALETI = ["turuncu", "mavi", "mor", "turkuaz", "indigo", "pembe"];
+const GEREKSINIM_RENK_PALETI = ["turuncu", "mavi", "mor", "turkuaz", "pembe"];
 
 /** Gereksinim/paket adına göre belirgin ve ayırt edici rozet renk sınıfı döndürür. */
 function gereksinimRozetRengi(ad) {
@@ -146,7 +146,7 @@ function gereksinimRozetRengi(ad) {
   if (metin.includes("matematik")) return "turuncu";
   if (metin.includes("zorunlu seçmeli")) return "mavi";
   if (metin.includes("seçime bağlı") || metin.includes("serbest")) return "mor";
-  if (metin.includes("seminer") || metin.includes("tez") || metin.includes("etik")) return "indigo";
+  if (metin.includes("seminer") || metin.includes("tez") || metin.includes("etik")) return "notr";
   if (metin.includes("sosyal") || metin.includes("itb") || metin.includes("insan ve toplum")) return "pembe";
   if (metin.includes("zorunlu")) return "turkuaz";
   if (metin.includes("seçmeli")) return "mavi";
@@ -587,7 +587,8 @@ function cizUst() {
   }
   $("#bolumAdi").textContent = durum.ayarlar.bolum || durum.plan?.planAdi || "Ders Seçim Paneli";
   $("#donemEtiketi").textContent = durum.dersler?.donem || "Dönem verisi yok";
-  $("#donemEtiketi").className = "rozet " + (durum.dersler ? "mavi" : "");
+  // Dönem bilgisi bir gereksinim kategorisi değildir; kategori rengi almaz.
+  $("#donemEtiketi").className = "rozet";
   $("#veriTarihi").textContent = durum.dersler?.cekilme ? `veri: ${durum.dersler.cekilme}` : "";
   $("#alinanSayi").textContent = durum.alinan.length;
 
