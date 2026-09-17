@@ -132,6 +132,11 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   paketleri bu planın listesi diye birleştirme; farklı müfredat olabilir.
 
 - Ders satırına gelince aynı gün, saat çakışması olmayan adaylar önerilir.
+- Kutu `min(430px, 100vw - 32px)` genişliğindedir ve alt satır **sarmaz**
+  (`flex-wrap: nowrap`): hoca adı üç nokta ile kısalır, eylem rozeti
+  (`ekle` / `seçili - kaldır` / `seçiminle çakışır`) hep sağ uçta kalır.
+  Sarmaya izin verince rozet kendi satırına düşüyor ve liste dağınık görünüyor.
+  Eylem rozetleri kendi metinlerini taşıdığı için renkli nokta almaz.
 - Önerilerde `KOM` kodlu dersler her zaman üstte sıralanmalıdır; diğerleri kod
   ve CRN'e göre sıralanabilir.
 - Her öneride küçük paket etiketi de görünmelidir:
