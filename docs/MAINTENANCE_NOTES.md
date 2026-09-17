@@ -157,13 +157,14 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   `scrollbar-width` ve `::-webkit-scrollbar` stilleri korunmalıdır.
 - Filtre menüsü ve tooltip'ler koyu tema ile uyumlu olmalı, metinler taşmamalı,
   yatay kaydırmalı filtre şeridi kullanılmamalıdır.
-- 2026 tasarım yenilemesi `codex/design-language-refresh` kolunda başlatıldı.
-  `web/style.css` semantik renk değişkenleriyle açık/koyu temayı sistem tercihine
-  göre gösterir. Bordo ana işlem vurgusudur; gereksinim türlerinin ayrı renkleri
-  veri anlamını korur. Ana bölümler düz yüzey ve ayırıcı çizgilerle düzenlenir.
+- 2026 tasarım yenilemesi (`codex/design-language-refresh`, bordo vurgulu düz
+  yüzey dili) denendi ve **geri alındı**; depo sahibi baştan beri kullanılan
+  mavi vurgulu görünümü tercih ediyor. `web/style.css` bu yüzden `1c19bdf`
+  hâline döndürüldü. Dal silinmedi ama referans dışında kullanılmamalıdır.
+  Yeni bir görsel dil denemesi doğrudan `main`'e push edilmemelidir.
 - Ders listesi minimum yüksekliği ve filtre menüsünün taşmadan açılması korunur.
-  Haftalık programdaki saat çizgileri `app.js` tarafından gerçek saat ölçeğiyle
-  çizilir; dekoratif sabit aralıklı CSS çizgileri eklenmemelidir.
+  Haftalık programdaki saat çizgileri `app.js` tarafından çizilir; dekoratif
+  sabit aralıklı CSS çizgileri eklenmemelidir.
 - Görsel değişiklikler masaüstü ve dar ekranlarda, açık/koyu tema ve klavye
   odağıyla kontrol edilmelidir.
 
