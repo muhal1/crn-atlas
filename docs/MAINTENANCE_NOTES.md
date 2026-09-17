@@ -152,6 +152,11 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   stiliyle anlaşılır olmalıdır.
 - Uzun ders adları blok içinde taşmamalı; iki satıra kadar kırpılarak
   gösterilmelidir.
+- Blok ayrıntıları için tarayıcının `title` balonu **kullanılmaz**; o balon
+  biçimlendirilemiyor ve panelin diliyle uyuşmuyor. Yerine tek bir `.blok-ipucu`
+  kutusu üretilip yeniden kullanılır (cam yüzey, bloğun sağına/soluna
+  yerleşir, pencereye sıkıştırılır). Bloklar `role="button"` + `tabindex="0"`
+  olduğu için ipucu klavyeyle de (focus) açılır.
 - Aynı gün saatleri çakışan dersler üst üste binip birbirini kapatmaz;
   `aralikSutunlariniHesapla` fonksiyonu ile alt sütunlara bölünerek yan yana
   (`.blok.yan-yana`) gösterilir. Hover edildiğinde `z-index: 5` ile öne çıkar.
@@ -207,6 +212,11 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   konuşur (dolgulu, kenarlıksız, kapsül). Onay/radyo kutuları seçiciden
   **hariç tutulur** (`input:not([type="checkbox"]):not([type="radio"])`),
   yoksa daireye dönüşürler.
+- **Alanların dolgusu donuk olmalı** (`--alan-yuzey`, `color-mix` ile üretilir).
+  `select`'e yarı saydam `rgba()` dolgu verme: tarayıcının yerel açılır listesi
+  saydamlığı taşıyamıyor, beyaz zemine düşüyor ve seçenekler soluk/devre dışı
+  görünüyor. `option { background: var(--kart); color: var(--yazi); }` de gerekli.
+  Butonlar yarı saydam kalabilir, onlarda yerel açılır liste yok.
 - `--vurgu-hover` token'dır. Hover tonunu `@media (prefers-color-scheme)`
   içine yazma — elle seçilen temada çalışmaz.
 

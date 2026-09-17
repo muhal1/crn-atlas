@@ -906,6 +906,61 @@ function ayniGunAdaylari(ders) {
 }
 
 /** Sadece ilgilenilen günlere düşen saatleri yazar. */
+/* --------------------------------------- haftalık program blok ipucu */
+
+/* Bloklarda tarayıcının kendi `title` balonu kullanılıyordu; o balon
+   biçimlendirilemez ve panelin diliyle uyuşmuyor. Yerine tek bir kutu
+   üretilip yeniden kullanılır. */
+let blokIpucu = null;
+
+const dakikaSaati = (dk) =>
+  `${String(Math.floor(dk / 60)).padStart(2, "0")}:${String(dk % 60).padStart(2, "0")}`;
+
+function blokIpucuKutusu() {
+  if (!blokIpucu) {
+    blokIpucu = el("div", "blok-ipucu gizli");
+    document.body.append(blokIpucu);
+  }
+  return blokIpucu;
+}
+
+function blokIpucuGizle() {
+  if (blokIpucu) blokIpucu.classList.add("gizli");
+}
+
+function blokIpucuGoster(blok, aralik) {
+  const kutu = blokIpucuKutusu();
+  const ders = aralik.ders;
+  kutu.replaceChildren();
+
+  const ust = el("div", "blok-ipucu-ust");
+  ust.append(el("b", "kod", ders.kod));
+  ust.append(el("span", "crn", `CRN ${ders.crn}`));
+  kutu.append(ust);
+
+  if (ders.ad) kutu.append(el("div", "blok-ipucu-ad", ders.ad));
+  kutu.append(el("div", "blok-ipucu-satir",
+    `${KISA[aralik.gun] || aralik.gun} ${dakikaSaati(aralik.bas)}–${dakikaSaati(aralik.bit)}`));
+  if (ders.ogretimUyesi) kutu.append(el("div", "blok-ipucu-satir", ders.ogretimUyesi));
+  kutu.append(el("div", "blok-ipucu-satir", `Derslik: ${aralik.derslik || "—"}`));
+  kutu.append(el("div", "blok-ipucu-ipucu", "Tıklayınca programdan çıkarılır"));
+
+  kutu.classList.remove("gizli");
+
+  // Bloğun sağına koy; sığmıyorsa soluna al, dikeyde pencereye sıkıştır.
+  const alan = blok.getBoundingClientRect();
+  const kendi = kutu.getBoundingClientRect();
+  const bosluk = 10;
+  let sol = alan.right + bosluk;
+  if (sol + kendi.width > window.innerWidth - 8) sol = alan.left - kendi.width - bosluk;
+  if (sol < 8) sol = 8;
+  let tepe = alan.top;
+  if (tepe + kendi.height > window.innerHeight - 8) tepe = window.innerHeight - kendi.height - 8;
+  if (tepe < 8) tepe = 8;
+  kutu.style.left = `${sol}px`;
+  kutu.style.top = `${tepe}px`;
+}
+
 function gunSaatMetni(ders, gunler) {
   return araliklar(ders)
     .filter((a) => gunler.includes(a.gun))
@@ -1202,8 +1257,24 @@ function cizProgram() {
       blok.append(el("b", "blok-kod", a.ders.kod));
       blok.append(el("span", "blok-ad", a.ders.ad || ""));
       if (a.ders.ogretimUyesi) blok.append(el("span", "blok-hoca", a.ders.ogretimUyesi));
-      blok.title = `${a.ders.kod} — ${a.ders.ad}\nCRN ${a.ders.crn}\n${a.ders.ogretimUyesi}\nDerslik: ${a.derslik || "—"}\nTıklayınca programdan çıkarılır.`;
-      blok.addEventListener("click", () => secimDegistir(a.ders));
+      blok.tabIndex = 0;
+      blok.setAttribute("role", "button");
+      blok.setAttribute("aria-label",
+        `${a.ders.kod} ${a.ders.ad || ""} — programdan çıkarmak için etkinleştir`);
+      blok.addEventListener("mouseenter", () => blokIpucuGoster(blok, a));
+      blok.addEventListener("focus", () => blokIpucuGoster(blok, a));
+      blok.addEventListener("mouseleave", blokIpucuGizle);
+      blok.addEventListener("blur", blokIpucuGizle);
+      blok.addEventListener("click", () => {
+        blokIpucuGizle();
+        secimDegistir(a.ders);
+      });
+      blok.addEventListener("keydown", (olay) => {
+        if (olay.key !== "Enter" && olay.key !== " ") return;
+        olay.preventDefault();
+        blokIpucuGizle();
+        secimDegistir(a.ders);
+      });
       sutun.append(blok);
     }
     izgara.append(sutun);
