@@ -6,10 +6,18 @@
 <title>CRN Atlas | Ders Seçim Paneli</title>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script>
+  // Sayfa boyanmadan önce çalışır; aksi hâlde koyu temada beyaz bir çakma olur.
+  try {
+    var t = localStorage.getItem("dsp_tema");
+    if (t === "acik" || t === "koyu") document.documentElement.setAttribute("data-tema", t);
+  } catch (e) {}
+</script>
 </head>
 <body>
 
 <section id="girisEkrani" class="giris-ekrani">
+  <button class="dugme tema-dugmesi" type="button" data-tema-dugmesi aria-label="Tema değiştir"></button>
   <div class="giris-marka">
     <span class="marka-isareti" aria-hidden="true">CA</span>
     <div>
@@ -63,6 +71,7 @@
     </div>
   </div>
   <div class="ust-sag">
+    <button class="dugme tema-dugmesi" type="button" data-tema-dugmesi aria-label="Tema değiştir"></button>
     <button id="yenileDugmesi" class="dugme"
             title="Açılan dersleri ve kontenjanları ÖBS'den yeniden çeker">
       ⟳ Kontenjan yenile

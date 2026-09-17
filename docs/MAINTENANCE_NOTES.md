@@ -157,38 +157,51 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   `scrollbar-width` ve `::-webkit-scrollbar` stilleri korunmalıdır.
 - Filtre menüsü ve tooltip'ler koyu tema ile uyumlu olmalı, metinler taşmamalı,
   yatay kaydırmalı filtre şeridi kullanılmamalıdır.
-- 2026 tasarım yenilemesinin **düzeni korunur** (`58c2ab6`: ortalanmış giriş
-  ekranı, 6px köşe, düz yüzeyler). Yalnızca **renk katmanı** değiştirildi; bordo/
-  pembe vurgulu ilk palet beğenilmedi ve atıldı.
-- Palet kuralı: **renk yalnızca veriye aittir.** Arayüz vurgusu (`--vurgu`)
-  kasıtlı olarak renksizdir (açık temada koyu arduvaz, koyu temada kırık beyaz),
-  çünkü gereksinim türleri + durum renkleri renk çarkını zaten doldurur. Vurgu
-  rengini bir gereksinim rengiyle aynı aileden seçme — eski palette `--vurgu`
-  mavisi `Zorunlu Seçmeli Ders` mavisiyle çakışıyordu.
-- Vurgu üstündeki metin `--vurgu-yazi` token'ıyla yönetilir; `#fff` sabiti yazma
-  (koyu temada açık vurgu üstüne beyaz yazı okunmuyordu).
-- Rozetler **nötr ink + renkli nokta** kalıbını kullanır (`--rozet-renk`).
-  Rozet metnini kategori rengiyle boyama: renk hem 4.5:1 metin kontrastı hem
-  kategori ayrımı sağlamak zorunda kalınca ikisi birden tutmuyor.
-- Gereksinim renkleri `dataviz` skill'indeki `validate_palette.js` ile
-  doğrulandı. Ekranda gerçekten görünen dört kategori (kehribar `--turuncu`,
-  deniz yeşili `--turkuaz`, mavi `--mavi`, mor `--mor`) her iki temada da tüm
-  çiftlerde geçer: en kötü çift açık temada ΔE 12.2 (CVD) / 16.7 (normal),
-  koyu temada ΔE 11.5 / 16.6.
-- `--pembe` (sosyal/İTB) beşinci slottur ve tüm-çift CVD eşiğini geçmez
-  (koyu temada `--turkuaz` ile ΔE ~4). Kabul edilebilir çünkü rozet her zaman
-  kendi metnini taşır; renk tek başına anlam taşımaz. Altıncı bir kromatik
-  kategori **ekleme** - geçmez.
-- Seminer/tez/etik artık kategori rengi değil nötr (`--notr`) kullanır. Eski
-  `--indigo` ile `--mor` çifti deuteranopide ΔE 1.0 idi, yani pratikte aynı
-  renkti. `GEREKSINIM_RENK_PALETI` bu yüzden beş kromatik slot tutar.
+- 2026 tasarım yenilemesinin **düzeni korunur** (`58c2ab6`); renk katmanı iki kez
+  değişti. İlk bordo/pembe palet beğenilmedi; ikinci nötr palet "soluk" bulundu.
+  Yürürlükteki yön: **canlı renkler, camgöbeği arayüz vurgusu, cam yüzeyler** —
+  referans bir borsa uygulamasının görünümü.
+- Palet kuralı: **renk yalnızca veriye aittir.** Arayüz vurgusu `--vurgu`
+  camgöbeğidir (koyu `#22d3ee`, açık `#0e7490`) ve kasıtlı olarak hiçbir kategori
+  rengiyle aynı aileden değildir; en yakın kategoriden ΔE 15+ uzaktadır. Vurguyu
+  bir kategori rengiyle aynı yapma — ilk palette mavi vurgu `Zorunlu Seçmeli
+  Ders` mavisiyle çakışıyordu.
+- Vurgu üstündeki metin `--vurgu-yazi` token'ıyla gelir; `#fff` sabiti yazma.
+- Rozetler **nötr ink + renkli nokta** kalıbını kullanır (`--rozet-renk`). Rozet
+  metnini kategori rengiyle boyama: renk aynı anda hem 4.5:1 metin kontrastı hem
+  kategori ayrımı sağlayamıyor.
+- Kategori renkleri `dataviz` skill'indeki `validate_palette.js` ile seçildi.
+  Hue'lar sabit (kehribar 75°, zümrüt 160°, mavi 255°, mor 300°, pembe 350°),
+  ayrım **parlaklık kaydırmasıyla** sağlanır. Tailwind benzeri "güzel" tonları
+  olduğu gibi alma: `#60a5fa`/`#c084fc` çifti deuteranopide ΔE 1.3 idi.
+  Yürürlükteki sonuç — koyu: CVD ΔE 9.1 / normal 17.1 (hepsi geçer);
+  açık: CVD ΔE 7.7 (6–8 uyarı bandı) / normal 18.1.
+- Koyu temada kategori renkleri parlaklık bandının (L 0.48–0.67) üstündedir.
+  Bu **bilinçli**: depo sahibi canlı renk istedi, ayrım eşikleri zaten geçiyor.
+  Bandı gerekçe göstererek tonları soluklaştırma.
+- Seminer/tez/etik ve "bu dersi aldın" nötr (`--notr`) kullanır. Yeşil artık
+  `Zorunlu Ders` kategorisinin rengi; durum yeşili yalnızca `.uyari.basari`.
+  Eski `--indigo`/`--mor` çifti deuteranopide ΔE 1.0 idi, yani aynı renkti.
 - Dönem etiketi (`#donemEtiketi`) kategori rengi almaz; nötr rozettir.
-- Palet değiştirirken doğrula:
+- Altıncı bir kromatik kategori **ekleme**; beş slot eşikleri ancak tutuyor.
 
-```bash
-node <skill>/scripts/validate_palette.js "#8a6200,#00897a,#3a6fd8,#7a2490" --mode light --surface "#ffffff" --pairs all
-node <skill>/scripts/validate_palette.js "#bd8a22,#2aa694,#6b90ee,#8f4fbb" --mode dark --surface "#171a1f" --pairs all
-```
+## Cam Yüzeyler ve Tema Anahtarı
+
+- Cam efekti (`backdrop-filter: blur() saturate()` + üst parlama + yumuşak gölge)
+  yalnızca **chrome** yüzeylerine uygulanır: başlık, açılır menüler, profil
+  menüsü, ipucu, yan panel, giriş kutusu. Uzun metin listelerine uygulama —
+  kaydırırken metin okunaksızlaşır ve performans düşer.
+- `backdrop-filter` desteklenmeyen tarayıcıda `@supports not` bloğu düz
+  `var(--kart)` zeminine döner; saydam yüzey yalnız başına bırakılmaz.
+- Tema üç durumludur: `sistem` → `acik` → `koyu`. Kullanıcı seçimi kökteki
+  `data-tema` ile taşınır ve `dsp_tema` localStorage anahtarında saklanır.
+  CSS'te üç kapsam da tanımlı olmalı: `:root` (açık),
+  `@media (prefers-color-scheme: dark) :root:not([data-tema="acik"])`,
+  `:root[data-tema="koyu"]`. Bir rengi yalnız media bloğunda tanımlama.
+- `index.html` içindeki küçük satır içi script tema tercihini **stil
+  yüklenmeden** uygular; onu kaldırma, yoksa koyu temada beyaz çakma olur.
+- Tema düğmesi hem başlıkta hem giriş ekranında vardır (`[data-tema-dugmesi]`);
+  giriş ekranı oturum açılmadan göründüğü için ikisi de gerekir.
 
 - Ders listesi minimum yüksekliği ve filtre menüsünün taşmadan açılması korunur.
   Haftalık programdaki saat çizgileri `app.js` tarafından çizilir; dekoratif

@@ -1,50 +1,101 @@
 :root {
   color-scheme: light;
-  /* yüzeyler ve metin - nötr gri, renk yalnızca veriye ayrılmıştır */
-  --zemin: #f4f6f8;
+  /* yüzeyler */
+  --zemin: #eef1f6;
   --kart: #ffffff;
-  --kart-2: #eef1f5;
-  --cizgi: #dbe0e7;
-  --yazi: #121821;
-  --soluk: #55606e;
-  /* arayüz vurgusu: kasıtlı olarak renksiz; hiçbir veri rengiyle yarışmaz */
-  --vurgu: #1f2937;
+  --kart-2: #e9edf4;
+  --cizgi: #d3dae6;
+  --yazi: #0d1420;
+  --soluk: #4e5a6c;
+  /* arayüz vurgusu - camgöbeği, hiçbir kategori rengiyle aynı aileden değil */
+  --vurgu: #0e7490;
   --vurgu-yazi: #ffffff;
-  /* gereksinim (kategori) renkleri - validate_palette.js ile doğrulandı */
-  --turuncu: #8a6200;
-  --turkuaz: #00897a;
-  --mavi: #3a6fd8;
-  --mor: #7a2490;
-  --pembe: #c72f6e;
-  --notr: #4d5765;
-  /* durum renkleri - kategori renkleri olarak asla kullanılmaz */
-  --yesil: #12714a;
-  --kirmizi: #b3261e;
+  /* kategori renkleri - validate_palette.js ile doğrulandı */
+  --turuncu: #a96b00;
+  --turkuaz: #00945a;
+  --mavi: #0a72da;
+  --mor: #6529a9;
+  --pembe: #b22578;
+  --notr: #46536b;
+  /* durum renkleri - kategori olarak asla kullanılmaz */
+  --yesil: #0f7a43;
+  --kirmizi: #c62026;
   --sari: #9a6b00;
+  /* cam yüzeyler */
+  --cam-yuzey: rgba(255, 255, 255, .72);
+  --cam-kenar: rgba(13, 20, 32, .10);
+  --cam-parlama: rgba(255, 255, 255, .85);
+  --cam-golge: rgba(13, 20, 32, .12);
   --r: 6px;
 }
 
+/* Koyu tema: sistem tercihi, ama kullanıcının seçimi her iki yönde de kazanır. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-tema="acik"]) {
     color-scheme: dark;
-    --zemin: #0e1114;
-    --kart: #171a1f;
-    --kart-2: #1e222a;
-    --cizgi: #2c323b;
-    --yazi: #e8ecf2;
-    --soluk: #99a3b2;
-    --vurgu: #e8ecf2;
-    --vurgu-yazi: #14171c;
-    --turuncu: #bd8a22;
-    --turkuaz: #2aa694;
-    --mavi: #6b90ee;
-    --mor: #8f4fbb;
-    --pembe: #e0709c;
-    --notr: #9aa5b3;
-    --yesil: #3fb883;
-    --kirmizi: #f0736f;
-    --sari: #d4a63c;
+    --zemin: #0b0e13;
+    --kart: #12161d;
+    --kart-2: #1a1f28;
+    --cizgi: #272e3a;
+    --yazi: #eef2f8;
+    --soluk: #97a3b6;
+    --vurgu: #22d3ee;
+    --vurgu-yazi: #06232b;
+    --turuncu: #ffb330;
+    --turkuaz: #00bc7b;
+    --mavi: #4c99f8;
+    --mor: #814ec6;
+    --pembe: #d14e95;
+    --notr: #93a1b8;
+    --yesil: #4ade80;
+    --kirmizi: #ff5f6d;
+    --sari: #f5c343;
+    --cam-yuzey: rgba(18, 22, 29, .68);
+    --cam-kenar: rgba(255, 255, 255, .10);
+    --cam-parlama: rgba(255, 255, 255, .14);
+    --cam-golge: rgba(0, 0, 0, .45);
   }
+}
+
+:root[data-tema="koyu"] {
+  color-scheme: dark;
+  --zemin: #0b0e13;
+  --kart: #12161d;
+  --kart-2: #1a1f28;
+  --cizgi: #272e3a;
+  --yazi: #eef2f8;
+  --soluk: #97a3b6;
+  --vurgu: #22d3ee;
+  --vurgu-yazi: #06232b;
+  --turuncu: #ffb330;
+  --turkuaz: #00bc7b;
+  --mavi: #4c99f8;
+  --mor: #814ec6;
+  --pembe: #d14e95;
+  --notr: #93a1b8;
+  --yesil: #4ade80;
+  --kirmizi: #ff5f6d;
+  --sari: #f5c343;
+  --cam-yuzey: rgba(18, 22, 29, .68);
+  --cam-kenar: rgba(255, 255, 255, .10);
+  --cam-parlama: rgba(255, 255, 255, .14);
+  --cam-golge: rgba(0, 0, 0, .45);
+}
+
+/* ------------------------------------------------------------------ cam */
+/* Blur + ince üst parlama + yumuşak gölge. Yalnızca "chrome" yüzeylerine
+   uygulanır (başlık, menüler, paneller); uzun metin listelerine değil. */
+.cam {
+  background: var(--cam-yuzey);
+  border: 1px solid var(--cam-kenar);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  box-shadow:
+    inset 0 1px 0 var(--cam-parlama),
+    0 10px 34px var(--cam-golge);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .cam { background: var(--kart); }
 }
 
 * { box-sizing: border-box; }
@@ -76,7 +127,11 @@
 
 body {
   margin: 0;
-  background: var(--zemin);
+  background:
+    radial-gradient(1100px 520px at 12% -8%, color-mix(in srgb, var(--vurgu) 16%, transparent), transparent 70%),
+    radial-gradient(900px 460px at 88% -2%, color-mix(in srgb, var(--mor) 13%, transparent), transparent 72%),
+    var(--zemin);
+  background-attachment: fixed;
   color: var(--yazi);
   font: 14px/1.5 "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
@@ -118,11 +173,13 @@ body {
 
 .giris-kutu {
   width: min(100%, 440px);
-  background: var(--kart);
-  border: 1px solid var(--cizgi);
+  background: var(--cam-yuzey);
+  border: 1px solid var(--cam-kenar);
   border-radius: var(--r);
   padding: 26px;
-  box-shadow: 0 12px 35px rgba(19, 45, 36, .08);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 0 var(--cam-parlama), 0 18px 48px var(--cam-golge);
 }
 .giris-baslik h2 { font-size: 20px; }
 .giris-baslik p { margin: 7px 0 22px; color: var(--soluk); }
@@ -160,7 +217,9 @@ body {
   gap: 8px;
   min-width: 230px;
   padding: 14px;
-  background: var(--kart);
+  background: var(--cam-yuzey);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--cizgi);
   border-radius: 8px;
   box-shadow: 0 16px 44px rgba(0, 0, 0, .3);
@@ -193,8 +252,11 @@ h2 { font-size: 15px; }
   align-items: center;
   gap: 20px;
   padding: 16px 24px;
-  background: var(--kart);
-  border-bottom: 1px solid var(--cizgi);
+  background: var(--cam-yuzey);
+  border-bottom: 1px solid var(--cam-kenar);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: inset 0 1px 0 var(--cam-parlama), 0 6px 24px var(--cam-golge);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -263,7 +325,9 @@ h2 { font-size: 15px; }
   font: inherit;
   font-size: 13px;
   cursor: pointer;
-  transition: border-color .12s, background .12s;
+  background-image: linear-gradient(180deg, var(--cam-parlama), transparent 58%);
+  box-shadow: inset 0 1px 0 var(--cam-parlama);
+  transition: border-color .12s, background .12s, box-shadow .12s;
 }
 .dugme:hover { border-color: var(--vurgu); background: color-mix(in srgb, var(--vurgu) 8%, var(--kart)); }
 .dugme.kucuk { min-height: 32px; padding: 5px 10px; font-size: 12px; }
@@ -277,7 +341,15 @@ h2 { font-size: 15px; }
 #profilSecici { padding: 5px 8px; font-size: 13px; max-width: 190px; }
 #aktifProfilAdi { font-weight: 400; }
 .dugme.sessiz { background: transparent; color: var(--soluk); }
-.dugme.birincil { background: var(--vurgu); border-color: var(--vurgu); color: var(--vurgu-yazi); }
+.dugme.birincil {
+  background: var(--vurgu);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 60%);
+  border-color: color-mix(in srgb, var(--vurgu) 70%, #000);
+  color: var(--vurgu-yazi);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .45),
+    0 6px 18px color-mix(in srgb, var(--vurgu) 35%, transparent);
+}
 .dugme.birincil:hover { background: color-mix(in srgb, var(--vurgu) 85%, #000); }
 @media (prefers-color-scheme: dark) {
   .dugme.birincil:hover { background: color-mix(in srgb, var(--vurgu) 86%, #fff); }
@@ -506,10 +578,12 @@ h2 { font-size: 15px; }
   max-height: 270px;
   overflow-y: auto;
   padding: 6px;
-  border: 1px solid var(--cizgi);
+  border: 1px solid var(--cam-kenar);
   border-radius: 8px;
-  background: var(--kart);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+  background: var(--cam-yuzey);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 0 var(--cam-parlama), 0 14px 32px var(--cam-golge);
 }
 .suzgec-kutular.acik .suzgec-menu {
   display: flex;
@@ -657,7 +731,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   width: 330px;
   max-height: min(460px, 80vh);
   overflow-y: auto;
-  background: var(--kart);
+  background: var(--cam-yuzey);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--vurgu);
   border-radius: var(--r);
   box-shadow: 0 12px 34px rgba(0, 0, 0, .45);
@@ -938,7 +1014,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   top: 0; right: 0;
   height: 100%;
   width: min(440px, 100vw);
-  background: var(--kart);
+  background: var(--cam-yuzey);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border-left: 1px solid var(--cizgi);
   z-index: 40;
   display: flex;
@@ -1012,3 +1090,21 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* ------------------------------------------------------------ tema anahtarı */
+
+.tema-dugmesi {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+}
+.giris-ekrani .tema-dugmesi {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.giris-ekrani { position: relative; }

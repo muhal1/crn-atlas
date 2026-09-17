@@ -850,7 +850,7 @@ function cizDersListesi() {
       alt.append(el("span", `rozet ${gereksinimRozetRengi(etiket)}`, etiket));
       alt.append(el("span", "danisman-onayi", "Danışman onayı"));
     }
-    if (alindi) alt.append(el("span", "rozet yesil", "bu dersi aldın"));
+    if (alindi) alt.append(el("span", "rozet notr", "bu dersi aldın"));
     if (cakisan) alt.append(el("span", "rozet kirmizi", "çakışıyor"));
     orta.append(alt);
 
@@ -1713,9 +1713,55 @@ function olaylariBagla() {
   });
 }
 
+/* --------------------------------------------------------------------- tema */
+
+const TEMA_ANAHTARI = "dsp_tema";
+const TEMA_SIRASI = ["sistem", "acik", "koyu"];
+const TEMA_GORUNUM = {
+  sistem: { simge: "◐", ad: "Tema: sistem" },
+  acik: { simge: "☀", ad: "Tema: açık" },
+  koyu: { simge: "☾", ad: "Tema: koyu" },
+};
+
+function temaOku() {
+  try {
+    const secim = localStorage.getItem(TEMA_ANAHTARI);
+    return TEMA_SIRASI.includes(secim) ? secim : "sistem";
+  } catch {
+    return "sistem";
+  }
+}
+
+/** data-tema kökte yoksa sistem tercihi geçerlidir; varsa kullanıcı seçimi kazanır. */
+function temaUygula(tema) {
+  const kok = document.documentElement;
+  if (tema === "sistem") kok.removeAttribute("data-tema");
+  else kok.setAttribute("data-tema", tema);
+  const gorunum = TEMA_GORUNUM[tema];
+  for (const dugme of document.querySelectorAll("[data-tema-dugmesi]")) {
+    dugme.textContent = gorunum.simge;
+    dugme.title = gorunum.ad + " — değiştirmek için tıkla";
+    dugme.setAttribute("aria-label", gorunum.ad);
+  }
+}
+
+function temaBaslat() {
+  temaUygula(temaOku());
+  for (const dugme of document.querySelectorAll("[data-tema-dugmesi]")) {
+    dugme.addEventListener("click", () => {
+      const sonraki = TEMA_SIRASI[(TEMA_SIRASI.indexOf(temaOku()) + 1) % TEMA_SIRASI.length];
+      try {
+        localStorage.setItem(TEMA_ANAHTARI, sonraki);
+      } catch {}
+      temaUygula(sonraki);
+    });
+  }
+}
+
 /* ------------------------------------------------------------------ başlat */
 
 (async function baslat() {
+  temaBaslat();
   const oturumVar = await window.DSPAuth.baslat();
   if (!oturumVar) return;
   olaylariBagla();
