@@ -23,7 +23,7 @@
       <p>Ders seçimlerin, aldığın dersler ve gizlediklerin profilinde saklanır.</p>
     </div>
     <div id="girisFormlari">
-      <div class="giris-sekmeler" role="tablist">
+      <div class="giris-sekmeler">
         <button id="girisSekmesi" class="aktif" type="button">Giriş yap</button>
         <button id="kayitSekmesi" type="button">Yeni kayıt</button>
       </div>
@@ -108,7 +108,7 @@
       </div>
 
       <div class="suzgecler">
-        <input id="arama" type="search" placeholder="Ders kodu, ad veya hoca ara…" autocomplete="off">
+        <input id="arama" type="search" aria-label="Ders kodu, adı veya hocasına göre ara" placeholder="Ders kodu, ad veya hoca ara…" autocomplete="off">
         <div id="gereksinimSuzgeci" class="suzgec-kutular" aria-label="Gereksinim süzgeçleri"></div>
         <label class="onay"><input type="checkbox" id="alinaniGizle" checked> Aldıklarımı gizle</label>
         <label class="onay"><input type="checkbox" id="cakisaniGizle"> Çakışanları gizle</label>
@@ -135,10 +135,10 @@
         <div class="profil-bar">
           <h2>Haftalık Program</h2>
           <select id="profilSecici" title="Program profili"></select>
-          <button id="profilYeni" class="dugme minik" title="Yeni boş program ekle">+</button>
-          <button id="profilKopyala" class="dugme minik" title="Bu programın kopyasını çıkar">⧉</button>
-          <button id="profilAd" class="dugme minik" title="Adını değiştir">✎</button>
-          <button id="profilSil" class="dugme minik" title="Bu programı sil">×</button>
+          <button id="profilYeni" class="dugme minik" type="button" title="Yeni boş program ekle" aria-label="Yeni boş program ekle">+</button>
+          <button id="profilKopyala" class="dugme minik" type="button" title="Bu programın kopyasını çıkar" aria-label="Programın kopyasını çıkar">⧉</button>
+          <button id="profilAd" class="dugme minik" type="button" title="Adını değiştir" aria-label="Programın adını değiştir">✎</button>
+          <button id="profilSil" class="dugme minik" type="button" title="Bu programı sil" aria-label="Programı sil">×</button>
         </div>
         <span id="cakismaUyari" class="rozet kirmizi gizli">Çakışma var</span>
       </div>
