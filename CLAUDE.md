@@ -21,7 +21,7 @@ Commit'lerin tek yazarı depo sahibidir.
 
 * Paylaşıma açık sürüm: <https://github.com/muhal1/itu-ders-secim-paneli>
   (`veri/` hariç — kişisel veri asla buraya gitmez)
-* Kişisel kopya: <https://github.com/muhal1/ders-secim-paneli-kisisel> (private,
-  `veri/*.json` dahil)
+* Kişisel kopya: <https://github.com/muhal1/crn-atlas> (private, `veri/*.json`
+  dahil). Canlı sürüm: <https://muhal1.github.io/crn-atlas/>
 
 Kod değişikliklerinin ikisine de yansıması gerekir.
