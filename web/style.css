@@ -348,6 +348,46 @@ h2 { font-size: 14px; }
   font-size: 12px;
   text-align: right;
 }
+.gereksinim:hover, .gereksinim:focus-visible { outline: 1px solid var(--vurgu); }
+
+.paket-ipucu {
+  position: fixed;
+  z-index: 51;
+  width: min(390px, calc(100vw - 16px));
+  max-height: min(470px, 75vh);
+  overflow-y: auto;
+  background: var(--kart);
+  border: 1px solid var(--vurgu);
+  border-radius: var(--r);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .45);
+}
+.paket-ipucu-baslik {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--kart-2);
+  border-bottom: 1px solid var(--cizgi);
+  font-size: 12px;
+  color: var(--soluk);
+}
+.paket-ipucu-baslik strong { color: var(--yazi); font-size: 13px; }
+.paket-ipucu-baslik span { flex: none; }
+.paket-ipucu-not { padding: 8px 12px; color: var(--soluk); font-size: 12px; border-bottom: 1px solid var(--cizgi); }
+.paket-ipucu-satir {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--cizgi);
+  font-size: 12px;
+}
+.paket-ipucu-satir:last-child { border-bottom: 0; }
+.paket-ipucu-satir .kod { flex: none; min-width: 70px; font-weight: 600; }
+.paket-ipucu-ad { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.paket-ipucu-acik { flex: none; color: var(--yesil); font-size: 11px; }
 
 .dolduran-ders { display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .dolduran-kod { color: var(--yazi); font-weight: 600; white-space: nowrap; }

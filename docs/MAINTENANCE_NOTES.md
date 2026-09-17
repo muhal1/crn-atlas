@@ -122,6 +122,15 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
 
 ## Aynı Gün Öneri Kutusu
 
+- Mezuniyet gereksinimi satırları fareyle veya klavyeyle odaklandığında
+  plandaki ders kodu/adı ve bu dönem açılma durumu ayrı bir ipucunda gösterilir.
+  Resmî ders listesi olmayan seçime bağlı slotlarda yalnızca o dönemki plan
+  dışı adaylar danışman onayı notuyla görünür; eksik kaynak olan gruplarda
+  eksik liste tamamlanmış gibi gösterilmez. İpucu sayfa taşmasına göre konumlanır.
+- Uzay Mühendisliği İngilizce için kaydedilmiş plan 2628 ve ders kodları
+  UZM'dir. Uçak ve Uzay Mühendisliği / UUM ekran görüntülerindeki
+  paketleri bu planın listesi diye birleştirme; farklı müfredat olabilir.
+
 - Ders satırına gelince aynı gün, saat çakışması olmayan adaylar önerilir.
 - Önerilerde `KOM` kodlu dersler her zaman üstte sıralanmalıdır; diğerleri kod
   ve CRN'e göre sıralanabilir.

@@ -629,6 +629,7 @@ function dolduranEtiketi(kod, ek = "") {
 /* ----------------------------------------------------- çizim: gereksinimler */
 
 function cizGereksinimler() {
+  paketIpucuGizle();
   const kap = $("#gereksinimListesi");
   kap.replaceChildren();
   if (!durum.plan) {
@@ -644,6 +645,12 @@ function cizGereksinimler() {
   for (const satir of ilerleme.satirlar) {
     const g = satir.gereksinim;
     const kutu = el("div", "gereksinim");
+    kutu.tabIndex = 0;
+    kutu.setAttribute("aria-label", g.ad + ", ders listesini göster");
+    kutu.addEventListener("mouseenter", () => paketIpucuAc(g, kutu));
+    kutu.addEventListener("mouseleave", paketIpucuGizleGecikmeli);
+    kutu.addEventListener("focus", () => paketIpucuAc(g, kutu, true));
+    kutu.addEventListener("blur", paketIpucuGizleGecikmeli);
     let durumMetni = "";
     let durumDugumu = null;
 
@@ -688,6 +695,91 @@ function cizGereksinimler() {
   $("#ilerlemeOzet").textContent =
     `${tamamlanan} / ${ilerleme.satirlar.length} tamamlandı` +
     (ilerleme.artan.length ? `  ·  ${ilerleme.artan.length} fazladan ders` : "");
+}
+
+/* ------------------------------------------ plan paketi ipucu (fare üstünde) */
+
+let paketIpucuKutusu = null;
+let paketIpucuAcZaman = null;
+let paketIpucuGizleZaman = null;
+
+function paketIpucuHazirla() {
+  if (paketIpucuKutusu) return paketIpucuKutusu;
+  paketIpucuKutusu = el("div", "paket-ipucu gizli");
+  paketIpucuKutusu.addEventListener("mouseenter", () => clearTimeout(paketIpucuGizleZaman));
+  paketIpucuKutusu.addEventListener("mouseleave", paketIpucuGizleGecikmeli);
+  document.body.append(paketIpucuKutusu);
+  return paketIpucuKutusu;
+}
+
+function paketIpucuIcerik(g) {
+  const kutu = paketIpucuHazirla();
+  kutu.replaceChildren();
+  const acilanKodlar = new Set((durum.dersler?.dersler || []).map((d) => d.kod));
+  const dersler = g.serbest
+    ? [...new Map((durum.dersler?.dersler || []).filter((d) => !d.plandaVar).map((d) => [d.kod, { kod: d.kod, ad: d.ad }])).values()]
+    : [...(g.dersler || [])];
+  dersler.sort((a, b) => anaBransOnce(a) - anaBransOnce(b) || a.kod.localeCompare(b.kod, "tr"));
+
+  const baslik = el("div", "paket-ipucu-baslik");
+  baslik.append(el("strong", null, g.ad), el("span", null, dersler.length + " ders"));
+  kutu.append(baslik);
+  if (g.serbest) kutu.append(el("div", "paket-ipucu-not", "Bu dönemin plan dışı adayları; danışman onayı gerekir."));
+  if (g.eksikKaynak) kutu.append(el("div", "paket-ipucu-not", "ÖBS ders listesinin bir bölümü alınamadı; liste eksik olabilir."));
+
+  if (!dersler.length) {
+    kutu.append(el("div", "gun-ipucu-bos", g.serbest ? "Bu dönem plan dışı aday bulunamadı." : g.eksikKaynak ? "Ders listesi ÖBS'den alınamadı." : "Bu pakette ders listesi bulunmuyor."));
+    return;
+  }
+
+  const liste = el("div", "paket-ipucu-liste");
+  for (const ders of dersler) {
+    const satir = el("div", "paket-ipucu-satir");
+    satir.append(el("span", "kod", ders.kod), el("span", "paket-ipucu-ad", ders.ad));
+    if (acilanKodlar.has(ders.kod)) satir.append(el("span", "paket-ipucu-acik", "Açık"));
+    liste.append(satir);
+  }
+  kutu.append(liste);
+}
+
+function paketIpucuKonumla(satir) {
+  const kutu = paketIpucuKutusu;
+  kutu.classList.remove("gizli");
+  const r = satir.getBoundingClientRect();
+  const k = kutu.getBoundingClientRect();
+  const bosluk = 10;
+  let sol = r.right + bosluk;
+  if (sol + k.width > window.innerWidth - 8) sol = r.left - k.width - bosluk;
+  if (sol < 8) sol = Math.max(8, Math.min(r.left, window.innerWidth - k.width - 8));
+  let ust = r.top;
+  if (sol < r.right && sol + k.width > r.left) {
+    ust = r.bottom + bosluk + k.height <= window.innerHeight - 8
+      ? r.bottom + bosluk
+      : r.top - k.height - bosluk;
+  }
+  kutu.style.left = sol + "px";
+  kutu.style.top = Math.max(8, Math.min(ust, window.innerHeight - k.height - 8)) + "px";
+}
+
+function paketIpucuAc(g, satir, hemen = false) {
+  ipucuGizle();
+  clearTimeout(paketIpucuGizleZaman);
+  clearTimeout(paketIpucuAcZaman);
+  paketIpucuAcZaman = setTimeout(() => {
+    paketIpucuIcerik(g);
+    paketIpucuKonumla(satir);
+  }, hemen ? 0 : 180);
+}
+
+function paketIpucuGizle() {
+  clearTimeout(paketIpucuAcZaman);
+  if (paketIpucuKutusu) paketIpucuKutusu.classList.add("gizli");
+}
+
+function paketIpucuGizleGecikmeli() {
+  clearTimeout(paketIpucuAcZaman);
+  clearTimeout(paketIpucuGizleZaman);
+  paketIpucuGizleZaman = setTimeout(paketIpucuGizle, 220);
 }
 
 /* ------------------------------------------------------ çizim: ders listesi */
@@ -923,6 +1015,7 @@ function ipucuKonumla(satir) {
 }
 
 function ipucuAc(ders, satir) {
+  paketIpucuGizle();
   clearTimeout(ipucuGizleZaman);
   clearTimeout(ipucuAcZaman);
   ipucuAcZaman = setTimeout(() => {
