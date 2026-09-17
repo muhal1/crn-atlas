@@ -728,7 +728,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .gun-ipucu {
   position: fixed;
   z-index: 50;
-  width: 330px;
+  width: min(430px, calc(100vw - 32px));
   max-height: min(460px, 80vh);
   overflow-y: auto;
   background: var(--cam-yuzey);
@@ -785,12 +785,22 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 
 .gun-ipucu-ad { font-size: 12.5px; margin-top: 1px; }
 .gun-ipucu-saat { font-size: 12px; margin-top: 3px; font-variant-numeric: tabular-nums; }
-.gun-ipucu-alt { display: flex; align-items: center; gap: 7px; margin-top: 5px; flex-wrap: wrap; }
-.gun-ipucu-alt .hoca { font-size: 11.5px; color: var(--soluk); }
+/* Tek satır: hoca adı kısalır, eylem rozeti hep sağda kalır. Sarmalarsa
+   satırlar birbirine karışıyor ve liste dağınık görünüyor. */
+.gun-ipucu-alt { display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: nowrap; }
+.gun-ipucu-alt .hoca {
+  font-size: 11.5px;
+  color: var(--soluk);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .gun-ipucu-alt .rozet.paket {
+  flex: 0 0 auto;
   padding: 1px 7px;
   font-size: 10.5px;
-  max-width: 140px;
+  max-width: 170px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -810,7 +820,10 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   background: var(--rozet-renk);
   vertical-align: 1px;
 }
-.gun-ipucu-alt .rozet:not(.paket) { margin-left: auto; }
+/* Eylem rozeti kendi metnini taşır (ekle / kaldır / çakışır); nokta yalnızca
+   yer kaplıyor ve satırı sarmaya itiyor. */
+.gun-ipucu-alt .rozet:not(.paket) { margin-left: auto; flex: 0 0 auto; }
+.gun-ipucu-alt .rozet:not(.paket)::before { content: none; }
 
 /* ------------------------------------------------------- haftalık program */
 
