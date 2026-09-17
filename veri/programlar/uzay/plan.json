@@ -1,0 +1,467 @@
+{
+  "planId": 2628,
+  "planAdi": "Uzay Mühendisliği (İngilizce) Yüksek Lisans Ders Planı",
+  "kaynak": "https://obs.itu.edu.tr/public/DersPlan/DersPlanDetay/2628",
+  "cekilme": "2026-09-17 11:42",
+  "gereksinimler": [
+    {
+      "ad": "Tez Çalışması",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 60.0,
+      "tur": "Z",
+      "grupId": null,
+      "sabit": true,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM YLT",
+          "ad": "Tez Çalışması",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 60.0
+        }
+      ]
+    },
+    {
+      "ad": "Scien.Rese., Ethic&Seminar",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 13270,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM 596E",
+          "ad": "Scien.Research, Ethic&Seminar",
+          "dil": "English",
+          "kredi": 0.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Matematik Dersi",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "ZM",
+      "grupId": 13271,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM 501E",
+          "ad": "Enginering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 13263,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM 503E",
+          "ad": "Space Structures and Mechanisms",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 507E",
+          "ad": "Spacecraft Dynamics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 508E",
+          "ad": "Spacecraft Architecture and Subsystems Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 13264,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM 503E",
+          "ad": "Space Structures and Mechanisms",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 507E",
+          "ad": "Spacecraft Dynamics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 508E",
+          "ad": "Spacecraft Architecture and Subsystems Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 13265,
+      "sabit": false,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "UZM 503E",
+          "ad": "Space Structures and Mechanisms",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 507E",
+          "ad": "Spacecraft Dynamics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 508E",
+          "ad": "Spacecraft Architecture and Subsystems Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 13266,
+      "sabit": false,
+      "serbest": true,
+      "dersler": [
+        {
+          "kod": "UZM 502E",
+          "ad": "Spacecraft Thermal Control",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 504E",
+          "ad": "High Speed Flows",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 505E",
+          "ad": "Launch Vehicle Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 506E",
+          "ad": "Celestial and Applied Orbital Mechanics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 509E",
+          "ad": "Space Physics I",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 510E",
+          "ad": "Spacecraft Control Systems",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 511E",
+          "ad": "Plasma Theory for Space Applications",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 512E",
+          "ad": "Reliability Analysis in Aerospace Engineering",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 513E",
+          "ad": "Space Sciences",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 13267,
+      "sabit": false,
+      "serbest": true,
+      "dersler": [
+        {
+          "kod": "UZM 502E",
+          "ad": "Spacecraft Thermal Control",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 504E",
+          "ad": "High Speed Flows",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 505E",
+          "ad": "Launch Vehicle Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 506E",
+          "ad": "Celestial and Applied Orbital Mechanics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 509E",
+          "ad": "Space Physics I",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 511E",
+          "ad": "Plasma Theory for Space Applications",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 512E",
+          "ad": "Reliability Analysis in Aerospace Engineering",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 513E",
+          "ad": "Space Sciences",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 13268,
+      "sabit": false,
+      "serbest": true,
+      "dersler": [
+        {
+          "kod": "UZM 502E",
+          "ad": "Spacecraft Thermal Control",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 504E",
+          "ad": "High Speed Flows",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 505E",
+          "ad": "Launch Vehicle Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 506E",
+          "ad": "Celestial and Applied Orbital Mechanics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 509E",
+          "ad": "Space Physics I",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 510E",
+          "ad": "Spacecraft Control Systems",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 511E",
+          "ad": "Plasma Theory for Space Applications",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 512E",
+          "ad": "Reliability Analysis in Aerospace Engineering",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 513E",
+          "ad": "Space Sciences",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders IV",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 13269,
+      "sabit": false,
+      "serbest": true,
+      "dersler": [
+        {
+          "kod": "UZM 502E",
+          "ad": "Spacecraft Thermal Control",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 504E",
+          "ad": "High Speed Flows",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 505E",
+          "ad": "Launch Vehicle Design",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 506E",
+          "ad": "Celestial and Applied Orbital Mechanics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 509E",
+          "ad": "Space Physics I",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 510E",
+          "ad": "Spacecraft Control Systems",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 511E",
+          "ad": "Plasma Theory for Space Applications",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 512E",
+          "ad": "Reliability Analysis in Aerospace Engineering",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UZM 513E",
+          "ad": "Space Sciences",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    }
+  ]
+}

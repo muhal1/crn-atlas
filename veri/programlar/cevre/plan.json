@@ -1,0 +1,1032 @@
+{
+  "planId": 2565,
+  "planAdi": "Çevre Bilimleri Mühendisliği ve Yönetimi Yüksek Lisans Ders Planı",
+  "kaynak": "https://obs.itu.edu.tr/public/DersPlan/DersPlanDetay/2565",
+  "cekilme": "2026-09-17 11:44",
+  "gereksinimler": [
+    {
+      "ad": "Tez Çalışması",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 60.0,
+      "tur": "Z",
+      "grupId": null,
+      "sabit": true,
+      "serbest": false,
+      "dersler": [
+        {
+          "kod": "CBM YLT",
+          "ad": "Tez Çalışması",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 60.0
+        }
+      ]
+    },
+    {
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yariyil": "",
+      "zorunlulukTipi": "Z",
+      "kredi": 0.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12855,
+      "sabit": false,
+      "serbest": false,
+      "eksikKaynak": false,
+      "dersler": [
+        {
+          "kod": "CBM 596",
+          "ad": "Bilimsel Araş.,Etik ve Seminer",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 596E",
+          "ad": "Scien.Rese., Ethic&Seminar",
+          "dil": "English",
+          "kredi": 0.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "ENB 596E",
+          "ad": "Scien.Rese., Ethic&Seminar",
+          "dil": "English",
+          "kredi": 0.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "ENB 596",
+          "ad": "Scien.Rese., Ethic&Seminar",
+          "dil": "Türkçe",
+          "kredi": 0.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Matematik Dersi",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "ZM",
+      "grupId": 12847,
+      "sabit": false,
+      "serbest": false,
+      "eksikKaynak": false,
+      "dersler": [
+        {
+          "kod": "CBM 533",
+          "ad": "Çevresel Sistem.Matem.Ana.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CHZ 511",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "DUM 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "EBT 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "JFM 501",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "KMM 511E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MAM 507",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MDK 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MIA 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MIA 501",
+          "ad": "Engineering Mathematics",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MKC 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MKS 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MMI 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MOT 501",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "MTA 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "ROT 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UMT 501",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UUM 535E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "UUM 535",
+          "ad": "Mühendislik Matematiği",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "YAP 501E",
+          "ad": "Engineering Mathematics",
+          "dil": "English",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12848,
+      "sabit": false,
+      "serbest": false,
+      "eksikKaynak": true,
+      "dersler": []
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12849,
+      "sabit": false,
+      "serbest": false,
+      "eksikKaynak": true,
+      "dersler": []
+    },
+    {
+      "ad": "Zorunlu Seçmeli Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "Z",
+      "grupId": 12850,
+      "sabit": false,
+      "serbest": false,
+      "eksikKaynak": true,
+      "dersler": []
+    },
+    {
+      "ad": "Seçime Bağlı Ders I",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 12851,
+      "sabit": false,
+      "serbest": true,
+      "eksikKaynak": true,
+      "dersler": []
+    },
+    {
+      "ad": "Seçime Bağlı Ders II",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 12852,
+      "sabit": false,
+      "serbest": true,
+      "eksikKaynak": false,
+      "dersler": [
+        {
+          "kod": "CBM 501",
+          "ad": "Fizikokimyasal Proses.&Arıtma",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 507",
+          "ad": "Atıksu.Biyo.Azot&Fosfor Gider.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 509",
+          "ad": "Atıksuların Kim. Yön. Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 514",
+          "ad": "Çevre Sis.Koku ve Emisyon Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 516",
+          "ad": "İçme Suyu Artm.Tesisl.Mod.Tas.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 518",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 520",
+          "ad": "Zirai Atıkların Yön.ve Kont.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 521",
+          "ad": "Arıtma Çamurlarının Susuzlaşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 523",
+          "ad": "Yeraltı Suyu Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 524",
+          "ad": "Özel Atıkların Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 525",
+          "ad": "Kentsel Altyapı ve Çev. Plan.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 533",
+          "ad": "Çevresel Sistem.Matem.Ana.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 534",
+          "ad": "Su Yönetiminde Özel Konular",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 535",
+          "ad": "Çevre Bil.&Müh.Özel Konu.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 537",
+          "ad": "Su Ekosistemlerinin Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 539",
+          "ad": "Hava Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 543",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 545",
+          "ad": "Çevre Mühendis.Özel Kon.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 553",
+          "ad": "Atık&Biyokütle.Enerji Üretimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 559",
+          "ad": "Su Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 602",
+          "ad": "Dezenfeksiyon Teorisi ve Tasr.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 603",
+          "ad": "Su&Atıksu Arı.Akış.Yatak.Reak.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 605",
+          "ad": "Bütünsel Ekosistem Modell.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 606",
+          "ad": "Kim.Arıtma Prosesl.Modellenm.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 608",
+          "ad": "Çevre Müh. Membran Prosesler",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 609",
+          "ad": "İçme Sularında Organik Mad.Kon",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 612",
+          "ad": "Su ve Atık Su Arıtım.Çökelme",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 613",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 619",
+          "ad": "Adsorp.&Exchan.in Env.Enginn",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 623",
+          "ad": "Kirlenmiş Ortamların İyileşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 625",
+          "ad": "Aerosollerin Kontrolü",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 627",
+          "ad": "Evsel ve Endüstriyel Atıksuların Kimyasal Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 628",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 630",
+          "ad": "Atık/Atıksuların Biyorafineri Yaklaşımı ile Kıymetlendirilmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders III",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 12853,
+      "sabit": false,
+      "serbest": true,
+      "eksikKaynak": false,
+      "dersler": [
+        {
+          "kod": "CBM 501",
+          "ad": "Fizikokimyasal Proses.&Arıtma",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 507",
+          "ad": "Atıksu.Biyo.Azot&Fosfor Gider.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 509",
+          "ad": "Atıksuların Kim. Yön. Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 514",
+          "ad": "Çevre Sis.Koku ve Emisyon Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 516",
+          "ad": "İçme Suyu Artm.Tesisl.Mod.Tas.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 518",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 520",
+          "ad": "Zirai Atıkların Yön.ve Kont.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 521",
+          "ad": "Arıtma Çamurlarının Susuzlaşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 523",
+          "ad": "Yeraltı Suyu Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 524",
+          "ad": "Özel Atıkların Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 525",
+          "ad": "Kentsel Altyapı ve Çev. Plan.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 533",
+          "ad": "Çevresel Sistem.Matem.Ana.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 534",
+          "ad": "Su Yönetiminde Özel Konular",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 535",
+          "ad": "Çevre Bil.&Müh.Özel Konu.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 537",
+          "ad": "Su Ekosistemlerinin Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 539",
+          "ad": "Hava Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 543",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 545",
+          "ad": "Çevre Mühendis.Özel Kon.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 553",
+          "ad": "Atık&Biyokütle.Enerji Üretimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 559",
+          "ad": "Su Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 602",
+          "ad": "Dezenfeksiyon Teorisi ve Tasr.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 603",
+          "ad": "Su&Atıksu Arı.Akış.Yatak.Reak.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 605",
+          "ad": "Bütünsel Ekosistem Modell.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 606",
+          "ad": "Kim.Arıtma Prosesl.Modellenm.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 608",
+          "ad": "Çevre Müh. Membran Prosesler",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 609",
+          "ad": "İçme Sularında Organik Mad.Kon",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 612",
+          "ad": "Su ve Atık Su Arıtım.Çökelme",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 613",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 619",
+          "ad": "Adsorp.&Exchan.in Env.Enginn",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 623",
+          "ad": "Kirlenmiş Ortamların İyileşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 625",
+          "ad": "Aerosollerin Kontrolü",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 627",
+          "ad": "Evsel ve Endüstriyel Atıksuların Kimyasal Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 628",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 630",
+          "ad": "Atık/Atıksuların Biyorafineri Yaklaşımı ile Kıymetlendirilmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    },
+    {
+      "ad": "Seçime Bağlı Ders IV",
+      "yariyil": "",
+      "zorunlulukTipi": "S",
+      "kredi": 3.0,
+      "akts": 7.5,
+      "tur": "LUS",
+      "grupId": 12854,
+      "sabit": false,
+      "serbest": true,
+      "eksikKaynak": false,
+      "dersler": [
+        {
+          "kod": "CBM 501",
+          "ad": "Fizikokimyasal Proses.&Arıtma",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 507",
+          "ad": "Atıksu.Biyo.Azot&Fosfor Gider.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 509",
+          "ad": "Atıksuların Kim. Yön. Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 514",
+          "ad": "Çevre Sis.Koku ve Emisyon Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 516",
+          "ad": "İçme Suyu Artm.Tesisl.Mod.Tas.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 518",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 520",
+          "ad": "Zirai Atıkların Yön.ve Kont.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 521",
+          "ad": "Arıtma Çamurlarının Susuzlaşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 523",
+          "ad": "Yeraltı Suyu Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 524",
+          "ad": "Özel Atıkların Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 525",
+          "ad": "Kentsel Altyapı ve Çev. Plan.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 533",
+          "ad": "Çevresel Sistem.Matem.Ana.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 534",
+          "ad": "Su Yönetiminde Özel Konular",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 535",
+          "ad": "Çevre Bil.&Müh.Özel Konu.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 537",
+          "ad": "Su Ekosistemlerinin Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 539",
+          "ad": "Hava Kirlenmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 543",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 545",
+          "ad": "Çevre Mühendis.Özel Kon.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 553",
+          "ad": "Atık&Biyokütle.Enerji Üretimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 559",
+          "ad": "Su Yönetimi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 602",
+          "ad": "Dezenfeksiyon Teorisi ve Tasr.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 603",
+          "ad": "Su&Atıksu Arı.Akış.Yatak.Reak.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 605",
+          "ad": "Bütünsel Ekosistem Modell.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 606",
+          "ad": "Kim.Arıtma Prosesl.Modellenm.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 608",
+          "ad": "Çevre Müh. Membran Prosesler",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 609",
+          "ad": "İçme Sularında Organik Mad.Kon",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 612",
+          "ad": "Su ve Atık Su Arıtım.Çökelme",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 613",
+          "ad": "Su Kimyası",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 619",
+          "ad": "Adsorp.&Exchan.in Env.Enginn",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 623",
+          "ad": "Kirlenmiş Ortamların İyileşt.",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 625",
+          "ad": "Aerosollerin Kontrolü",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 627",
+          "ad": "Evsel ve Endüstriyel Atıksuların Kimyasal Arıtımı",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 628",
+          "ad": "Katı Atık Sızıntı Suları. Kont",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        },
+        {
+          "kod": "CBM 630",
+          "ad": "Atık/Atıksuların Biyorafineri Yaklaşımı ile Kıymetlendirilmesi",
+          "dil": "Türkçe",
+          "kredi": 3.0,
+          "akts": 7.5
+        }
+      ]
+    }
+  ]
+}

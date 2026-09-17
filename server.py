@@ -138,7 +138,7 @@ class Istek(SimpleHTTPRequestHandler):
 
     def _dosya_gonder(self, yol: Path) -> None:
         if not yol.is_file():
-            self.send_error(404, "Bulunamadı")
+            self.send_error(404, "Not Found")
             return
         govde = yol.read_bytes()
         self.send_response(200)
@@ -167,7 +167,22 @@ class Istek(SimpleHTTPRequestHandler):
             return
 
         if yol.startswith("/api/"):
-            self.send_error(404, "Bilinmeyen uç")
+            self.send_error(404, "Unknown endpoint")
+            return
+
+        if yol == "/veri/programlar.json":
+            self._dosya_gonder(VERI / "programlar.json")
+            return
+        if yol.startswith("/veri/programlar/"):
+            parcalar = yol.split("/")
+            if (len(parcalar) == 5 and parcalar[3] in {"uzay", "cevre"}
+                    and parcalar[4] in {"ayarlar.json", "plan.json", "dersler.json"}):
+                self._dosya_gonder(VERI / "programlar" / parcalar[3] / parcalar[4])
+                return
+            self.send_error(404, "Not Found")
+            return
+        if yol in {"/veri/ayarlar.json", "/veri/plan.json", "/veri/dersler.json"}:
+            self._dosya_gonder(VERI / yol.rsplit("/", 1)[1])
             return
 
         ad = "index.html" if yol in ("/", "") else yol.lstrip("/")
@@ -254,7 +269,7 @@ class Istek(SimpleHTTPRequestHandler):
             self._json_gonder({"tamam": True, "adet": len(temiz)})
             return
 
-        self.send_error(404, "Bilinmeyen uç")
+        self.send_error(404, "Unknown endpoint")
 
 
 def calistir(port: int = 8730, tarayici_ac: bool = True) -> None:

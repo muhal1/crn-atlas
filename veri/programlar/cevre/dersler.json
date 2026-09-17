@@ -1,0 +1,3934 @@
+{
+  "donem": "2026-2027 Güz Dönemi",
+  "seviye": "LU",
+  "bransKodlari": [
+    "BLG",
+    "BVA",
+    "CBM",
+    "CHZ",
+    "DUM",
+    "EBT",
+    "ENB",
+    "END",
+    "JEO",
+    "JFM",
+    "KIM",
+    "KMM",
+    "MAM",
+    "MDK",
+    "MET",
+    "MIA",
+    "MKC",
+    "MKS",
+    "MMI",
+    "MOT",
+    "MTA",
+    "ROT",
+    "UMT",
+    "UUM",
+    "YAP"
+  ],
+  "cekilme": "2026-09-17 11:49",
+  "dersler": [
+    {
+      "crn": "12368",
+      "kod": "BLG 501E",
+      "ad": "Discrete Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gökhan Seçinti",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/2/0 | BLG_BG_YL/18/0 | Diğer/0/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12337",
+      "kod": "BLG 505",
+      "ad": "Doğal Dil İşleme",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gülşen Eryiğit",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/5/0 | BLG_BG_YL/12/0 | Diğer/3/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12338",
+      "kod": "BLG 506E",
+      "ad": "Computer Vision",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cihan Topal",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/5/0 | BLG_BG_YL/15/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12342",
+      "kod": "BLG 507E",
+      "ad": "Distributed Systems",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Deniz Turgay Altılar",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12351",
+      "kod": "BLG 510E",
+      "ad": "Security in Computer Networks",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mehmet Tahir Sandıkkaya",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/12/0 | BLG_BG_YL/5/0 | Diğer/3/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12370",
+      "kod": "BLG 513E",
+      "ad": "Image Processing",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İlkay Öksüz",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12357",
+      "kod": "BLG 514E",
+      "ad": "Computer Networ. Basic Protoc.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sanem Kabadayı",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12349",
+      "kod": "BLG 521E",
+      "ad": "Artificial Intelligence",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Yavuz Köroğlu",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/23/0 | BLG_BG_DR/2/0 | Diğer/0/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12360",
+      "kod": "BLG 527E",
+      "ad": "Machine Learning",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Yusuf Yaslan",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/2/0 | BLG_BG_YL/23/0 | Diğer/0/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12362",
+      "kod": "BLG 538E",
+      "ad": "Data Compression",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Uluğ Bayazıt",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12364",
+      "kod": "BLG 545E",
+      "ad": "Discrete Optimization",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Berna Kiraz",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/20/0 | Diğer/5/0",
+      "programlar": "BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12359",
+      "kod": "BLG 549E",
+      "ad": "Graph Theory and Algorithms",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Tuğçe Bilen",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/20/0 | Diğer/5/0",
+      "programlar": "BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12367",
+      "kod": "BLG 551E",
+      "ad": "Human Computer Interfaces",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gökhan İnce",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12356",
+      "kod": "BLG 553E",
+      "ad": "Special Topics in Compu.Eng.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Abdül Halim Zaim",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12355",
+      "kod": "BLG 557E",
+      "ad": "Theory of Computation",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Tolga Ovatman",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/3/0 | BLG_BG_YL/17/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12343",
+      "kod": "BLG 558E",
+      "ad": "Security and Privacy",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Şerif Bahtiyar",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/12/0 | BLG_BG_DR/3/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12350",
+      "kod": "BLG 561E",
+      "ad": "Deep Learning",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Faik Boray Tek",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/2/0 | BLG_BG_YL/23/0 | Diğer/0/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12371",
+      "kod": "BLG 563E",
+      "ad": "Guided Research",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Burak Berk Üstündağ",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/35/0 | Diğer/5/0",
+      "programlar": "BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "15081",
+      "kod": "BLG 565E",
+      "ad": "Bioinformatics Algorithms",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ali Çakmak",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12339",
+      "kod": "BLG 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Muhammet Alkan",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 55,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/50/0 | Diğer/5/0",
+      "programlar": "BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12369",
+      "kod": "BLG 601E",
+      "ad": "Pattern Recognition",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Behçet Uğur Töreyin",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12354",
+      "kod": "BLG 603E",
+      "ad": "Enhanced Processor Architec.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ayşe Yılmazer Metin",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12347",
+      "kod": "BLG 607",
+      "ad": "Veri Madenciliği",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Şule Öğüdücü",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12346",
+      "kod": "BLG 609E",
+      "ad": "Advanced Topics in Comp. Eng.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hazım Kemal Ekenel",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12345",
+      "kod": "BLG 622E",
+      "ad": "Robot Intelligence",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sanem Sarıel Uzer",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/12/0 | BLG_BG_DR/3/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12353",
+      "kod": "BLG 625",
+      "ad": "Yazılım Tasarımı Kalitesi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Feza Buzluca",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12341",
+      "kod": "BLG 627E",
+      "ad": "Guided Research",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İlkay Öksüz",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/35/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12348",
+      "kod": "BLG 638E",
+      "ad": "Deep Reinforcement Learning",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mehmet Keskinöz",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_YL/12/0 | BLG_BG_DR/5/0 | Diğer/3/0",
+      "programlar": "BLG_BG_DR, BLG_BG_YL",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12363",
+      "kod": "BLG 643E",
+      "ad": "Neuromorphic Computing",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Burak Berk Üstündağ",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12358",
+      "kod": "BLG 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ayşe Tosun Kühn",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 45,
+      "yazilan": 0,
+      "rezervasyon": "BLG_BG_DR/40/0 | Diğer/5/0",
+      "programlar": "BLG_BG_DR",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12372",
+      "kod": "BLG DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İlkay Öksüz",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12373",
+      "kod": "BLG YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İlkay Öksüz",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12374",
+      "kod": "BLG YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İlkay Öksüz",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "14026",
+      "kod": "BVA 501E",
+      "ad": "Advances in Data Science",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sefer Baday",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "ISB",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "14027",
+      "kod": "BVA 507E",
+      "ad": "Business Analytics for Managers",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Alp Üstündağ",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "14028",
+      "kod": "BVA 528E",
+      "ad": "Deep Learning App in Business",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mehmet Güray Güler",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13453",
+      "kod": "CBM 501",
+      "ad": "Fizikokimyasal Proses.&Arıtma",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nuray Işık Kabdaşlı",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13455",
+      "kod": "CBM 501E",
+      "ad": "Physicoch. Proc. and Treatment",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İdil Arslan Alaton , Derya Yüksel İmer",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13456",
+      "kod": "CBM 502E",
+      "ad": "S.Analy.for Exp.Design&Data PR",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hayrettin Güçlü İnsel , Alpaslan Ekdal",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13457",
+      "kod": "CBM 514",
+      "ad": "Çevre Sis.Koku ve Emisyon Kont",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kadir Alp",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13459",
+      "kod": "CBM 517E",
+      "ad": "Wastewater Reclamation&Reuse",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hüseyin Erdem Görgün , Fatma Fatoş Babuna",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13460",
+      "kod": "CBM 533",
+      "ad": "Çevresel Sistem.Matem.Ana.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Onur Yılmaz Özcan , Mehmet Sadık Akca",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi",
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13462",
+      "kod": "CBM 535",
+      "ad": "Çevre Bil.&Müh.Özel Konu.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ali Fuat Aydın",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13463",
+      "kod": "CBM 539",
+      "ad": "Hava Kirlenmesi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sadullah Levent Kuzu , Burçak Kaynak Tezel",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13475",
+      "kod": "CBM 542E",
+      "ad": "Eutrophication",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Melike Gürel",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13465",
+      "kod": "CBM 546E",
+      "ad": "Integrated Watershed Manag.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Alpaslan Ekdal , Melike Gürel",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13466",
+      "kod": "CBM 551E",
+      "ad": "Energy Effi.in Wastewat.Treat.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Evren Erşahin , Hale Özgün Erşahin",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13467",
+      "kod": "CBM 553",
+      "ad": "Atık&Biyokütle.Enerji Üretimi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hasan Can Okutan , Bülent İnanç , Kadir Alp",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13470",
+      "kod": "CBM 557E",
+      "ad": "Microalga.App.with Bioref.App.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mahmut Altınbaş",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13471",
+      "kod": "CBM 559",
+      "ad": "Su Yönetimi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Lütfi Akca",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "12:30",
+          "bitis": "15:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13472",
+      "kod": "CBM 560",
+      "ad": "İklim Değişikliği ve Karbon Yönetimi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sadullah Levent Kuzu",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13474",
+      "kod": "CBM 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Çiğdem Gömeç",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "11:30",
+          "bitis": "13:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Bilimsel Araş.,Etik ve Seminer"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13476",
+      "kod": "CBM 619E",
+      "ad": "Adsorp.&Ion Exch.in Env.Engin.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Vahıd Vatanpour Sargheın , Mehmet Emin Paşaoğlu",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13477",
+      "kod": "CBM 621E",
+      "ad": "Diffuse Pollution",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Melike Gürel",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13479",
+      "kod": "CBM 627",
+      "ad": "Evsel ve Endüstriyel Atıksuların Kimyasal Arıtımı",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nuray Işık Kabdaşlı",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "12:30",
+          "bitis": "15:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Seçime Bağlı Ders II",
+        "Seçime Bağlı Ders III",
+        "Seçime Bağlı Ders IV"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13480",
+      "kod": "CBM 629E",
+      "ad": "Remote Sensing of Air Pollu.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Burçak Kaynak Tezel",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13482",
+      "kod": "CBM 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kübra Altuntaş",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13485",
+      "kod": "CBM DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kübra Altuntaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13486",
+      "kod": "CBM YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kübra Altuntaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13487",
+      "kod": "CBM YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kübra Altuntaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Tez Çalışması"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13722",
+      "kod": "CHZ 511",
+      "ad": "Mühendislik Matematiği",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Yusuf Enes Pural",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "14156",
+      "kod": "DUM 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Bayram Barış Kızılsaç",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "14060",
+      "kod": "EBT 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Coşkun Fırat",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "ENB",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13491",
+      "kod": "ENB 501E",
+      "ad": "Fundamentals of Env.Biotech. I",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gülsüm Emel Zengin Balcı",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13494",
+      "kod": "ENB 503E",
+      "ad": "Metabolic Cons. in Env.Science",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ebru Dülekgürgen",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13495",
+      "kod": "ENB 506E",
+      "ad": "Research Writing in E.Science",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Seval Sözen",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13497",
+      "kod": "ENB 507E",
+      "ad": "Exp.Charac.of Bio.Treat.Syst.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Özlem Karahan Özgün , Fatma Fatoş Babuna , Mahmut Altınbaş",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13499",
+      "kod": "ENB 509E",
+      "ad": "Bio.Processing of Solid Wastes",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Osman Atilla Arıkan , Hüseyin Güven",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13501",
+      "kod": "ENB 510E",
+      "ad": "Biodegradation of Indust.Waste",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Fatma Fatoş Babuna , Fatma Gülen İskender , Serdar Doğruel",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13503",
+      "kod": "ENB DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mahmut Altınbaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13505",
+      "kod": "ENB YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mahmut Altınbaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13507",
+      "kod": "ENB YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mahmut Altınbaş",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12897",
+      "kod": "END 500E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Erkan Işıklı",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12902",
+      "kod": "END 506E",
+      "ad": "Advanced Engineering Economics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cengiz Kahraman",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12903",
+      "kod": "END 508E",
+      "ad": "Mathematical Programming",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hatice Tekiner Moğulkoç",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 34,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12905",
+      "kod": "END 513",
+      "ad": "İleri Istatistiksel Analiz",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Umut Asan",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 35,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12906",
+      "kod": "END 557E",
+      "ad": "Heuristic Optimization Methods",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Seda Yanık Özbay",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 33,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12907",
+      "kod": "END 559",
+      "ad": "Depo Tasarımı ve Yönetimi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Murat Baskak",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12910",
+      "kod": "END 574E",
+      "ad": "Business Intell.&Mac.Lear.App.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ömer Faruk Beyca",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 39,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12911",
+      "kod": "END 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ayberk Soyer",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 40,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12913",
+      "kod": "END 601E",
+      "ad": "Stochastic Models in Op.Res.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Esra Baş",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 12,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12916",
+      "kod": "END 604E",
+      "ad": "G.Decision Making Under M.Crit",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Özgür Kabak",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 12,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12918",
+      "kod": "END 606E",
+      "ad": "Fuzzy Logic and Modelling",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cengiz Kahraman",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 22,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12920",
+      "kod": "END 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Murat Baskak",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13590",
+      "kod": "END DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Başar Öztayşi",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13591",
+      "kod": "END YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Başar Öztayşi",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13588",
+      "kod": "END YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Başar Öztayşi",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13244",
+      "kod": "JEO 555",
+      "ad": "Yeraltı Sularının Değerlendir.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İrfan Yolcubal , Erkan Bozkurtoğlu",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13245",
+      "kod": "JEO 555E",
+      "ad": "Evaluation of Groundwaters",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İrfan Yolcubal",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:00",
+          "bitis": "11:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13246",
+      "kod": "JEO 561E",
+      "ad": "Selected Topics in Geochemis.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nurgül Çelik Balcı",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13247",
+      "kod": "JEO 565E",
+      "ad": "Geochemical Analysis Methods",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Emin Çiftçi",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13248",
+      "kod": "JEO 567",
+      "ad": "Hava Fotoğraflarının Yorumu",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cenk Yaltırak , Ufuk Tarı",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "12:30",
+          "bitis": "15:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13249",
+      "kod": "JEO 569",
+      "ad": "Jeokimya ve Sağlık",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Yüksel Örgün Tutay",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13250",
+      "kod": "JEO 571",
+      "ad": "Süs Taşları(Gemoloji)&Tasarımı",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Emin Çiftçi",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13252",
+      "kod": "JEO 572E",
+      "ad": "Advanced Igneous Petrology",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Şafak Altunkaynak , Alp Ünal",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13253",
+      "kod": "JEO 577",
+      "ad": "Maden Yatakları Oluştur.Ortam.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Kumral , Emin Çiftçi",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13254",
+      "kod": "JEO 579E",
+      "ad": "Tectonics&Sedimentary Basins",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gülsen Uçarkuş",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13255",
+      "kod": "JEO 580",
+      "ad": "Kil Minerolojisi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Bala Ekinci Şans",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13257",
+      "kod": "JEO 581",
+      "ad": "Jeo.Zam.Boyu.Karbo.Plat.&Res.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kürşad Kadir Eriş",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13256",
+      "kod": "JEO 583",
+      "ad": "Deniz Tabanında Jeoloj.Harit.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cenk Yaltırak",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "10:00",
+          "bitis": "12:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13226",
+      "kod": "JEO 585",
+      "ad": "Marmara Denizi&Çevresi.Jeol.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cenk Yaltırak",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13227",
+      "kod": "JEO 587",
+      "ad": "Uygulamalı Jeoloj.Harita.Tek.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hüsnü Serdar Akyüz",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13228",
+      "kod": "JEO 589E",
+      "ad": "Special Topics in Geol.Eng.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Amr Abdelnasser Alı Khalıl",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13229",
+      "kod": "JEO 591E",
+      "ad": "Geol.of Unconv.Hydroc.Resour.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sedat İnan",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13230",
+      "kod": "JEO 593",
+      "ad": "Maden Aram.Uza.Algı.Yönt.Kul.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Muhittin Karaman",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13231",
+      "kod": "JEO 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Yüksel Örgün Tutay",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13232",
+      "kod": "JEO 601E",
+      "ad": "Ground Water Hydraulics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İrfan Yolcubal",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13233",
+      "kod": "JEO 603",
+      "ad": "Mühen.Jeoloji.Seçme Konular",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ömer Ündül",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13234",
+      "kod": "JEO 612E",
+      "ad": "Regional Tectonics of Asia",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cengiz Zabcı , Gürsel Sunal",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13235",
+      "kod": "JEO 613",
+      "ad": "Magmatik Pet.Seçme Konular",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Zekiye Karacık , Fatma Gülmez Yıldırım",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13236",
+      "kod": "JEO 623E",
+      "ad": "Low-Temperature Geochemistry",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nurgül Çelik Balcı",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13237",
+      "kod": "JEO 627",
+      "ad": "Tektonik Deformasyon.Modellen.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ziyadin Çakır",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13238",
+      "kod": "JEO 629",
+      "ad": "Uygulamalı Maden Jeolojisi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Kumral",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13239",
+      "kod": "JEO 631",
+      "ad": "Karbonat Çökelme Ortamları",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kürşad Kadir Eriş",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13240",
+      "kod": "JEO 633E",
+      "ad": "The Early Earth System",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nurgül Çelik Balcı",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13241",
+      "kod": "JEO 696E",
+      "ad": "Scien.Rese., Ethic&Seminar",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Şule Gürboğa",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13242",
+      "kod": "JEO DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Zeynep Döner",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13243",
+      "kod": "JEO YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Zeynep Döner",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13258",
+      "kod": "JEO YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Zeynep Döner",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13191",
+      "kod": "JFM 501",
+      "ad": "Mühendislik Matematiği",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Emin Demirbağ",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "MDB",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13192",
+      "kod": "JFM 503E",
+      "ad": "Signal Analysis in Geophysics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gonca Örgülü",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13193",
+      "kod": "JFM 505E",
+      "ad": "Physics&Strc.of the EarthCrust",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Tuna Eken",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13195",
+      "kod": "JFM 506",
+      "ad": "Gravite ve Manyetik Yorumlama",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Turgay İşseven",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13194",
+      "kod": "JFM 517",
+      "ad": "Sismik Veri İşlem",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13196",
+      "kod": "JFM 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "15:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13197",
+      "kod": "JFM 601E",
+      "ad": "Special Topics in Seismic Expl",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Emin Demirbağ",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13198",
+      "kod": "JFM 603E",
+      "ad": "Hydro-geophysics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Doğa Doğan",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13199",
+      "kod": "JFM 605",
+      "ad": "Elek.Man.Prosp.Özel Konular",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İsmail Kaplanvural",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "MDB",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13200",
+      "kod": "JFM 609",
+      "ad": "Sismik Nitelik Analizi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hülya Kurt",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13201",
+      "kod": "JFM 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "MDB",
+          "derslik": "D106"
+        }
+      ],
+      "kontenjan": 10,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13202",
+      "kod": "JFM DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13203",
+      "kod": "JFM YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13204",
+      "kod": "JFM YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Neslihan Ocakoğlu Gökaşan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11855",
+      "kod": "KIM 503",
+      "ad": "Koordinasyon Kimyası ve Uyg.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hacer Yasemin Yenilmez",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11856",
+      "kod": "KIM 504E",
+      "ad": "Electroanalytical Methods",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İpek Becerik",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11857",
+      "kod": "KIM 512E",
+      "ad": "NMR Theo.&App.in Org.Chem.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Armağan Atsay",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 15,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11858",
+      "kod": "KIM 513E",
+      "ad": "Ionic Equlibria",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Özcan",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11859",
+      "kod": "KIM 515E",
+      "ad": "Quantum Chemistry",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mine Yurtsever",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11860",
+      "kod": "KIM 516",
+      "ad": "Kapiler Elektro.Teori ve Uyg.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Zeynep Kalaycıoğlu",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11861",
+      "kod": "KIM 519",
+      "ad": "Makrosiklik Bileşikler Kimyası",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İbrahim Özçeşmeci",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11862",
+      "kod": "KIM 525",
+      "ad": "Iyon Değiştiriciler&Uygulama.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gülçin Yılmaz",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "14:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "15143",
+      "kod": "KIM 526",
+      "ad": "Kimyasal Kinetik",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Bahire Filiz Şenkal , Erdem Yavuz",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11863",
+      "kod": "KIM 529",
+      "ad": "Çevre Analitik Kimyası",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Gülçin Yılmaz",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "11:30",
+          "bitis": "14:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11864",
+      "kod": "KIM 531",
+      "ad": "Atomik Spektroskopi",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ferah Çalışır",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11865",
+      "kod": "KIM 533",
+      "ad": "Spektroskopi I",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Barış Kışkan",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11866",
+      "kod": "KIM 537",
+      "ad": "Doğal&Sentetik Makromoleküller",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Nilgün Kızılcan",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11867",
+      "kod": "KIM 539",
+      "ad": "Organik Reak.Mekanizma. I",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İbrahim Volkan Kumbaracı",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11868",
+      "kod": "KIM 541E",
+      "ad": "Applic.of Liq.Chr./Mass Spectr",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mustafa Özcan",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11869",
+      "kod": "KIM 552E",
+      "ad": "Group Theory&Its Chemical Appl",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ozan Sanlı Şentürk",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11870",
+      "kod": "KIM 596",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hacer Yasemin Yenilmez",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "08:30",
+          "bitis": "10:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11871",
+      "kod": "KIM 606E",
+      "ad": "Design in Organic Synthesis",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ufuk Saim Günay",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11872",
+      "kod": "KIM 608",
+      "ad": "Ftalosiyaninler ve Uygulam.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Mukaddes Özçeşmeci",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11873",
+      "kod": "KIM 615E",
+      "ad": "Cyclization Reac.with Metals",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Barış Yücel",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11874",
+      "kod": "KIM 620E",
+      "ad": "Contem.The.in Poly.Chem.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Kerem Kaya",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "12:30",
+          "bitis": "15:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11875",
+      "kod": "KIM 623E",
+      "ad": "Stereochemis.&Confor.Anal.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cüneyt Hüseyin Ünlü",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "08:30",
+          "bitis": "11:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11876",
+      "kod": "KIM 628",
+      "ad": "Polimerik İlaç Salım Sistem.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Muhammet Übeydullah Kahveci",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11877",
+      "kod": "KIM 631E",
+      "ad": "Nanochemistry",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "İpek Becerik",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11878",
+      "kod": "KIM 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Abdullah Aydoğan",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13536",
+      "kod": "KIM DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Barış Kışkan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13537",
+      "kod": "KIM YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Barış Kışkan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "13535",
+      "kod": "KIM YLT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Barış Kışkan",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "12932",
+      "kod": "KMM 511E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Elif Öztürk Er",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 60,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "11970",
+      "kod": "MET 603E",
+      "ad": "Production of Refractory Metal",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Onuralp Yücel",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "10:00",
+          "bitis": "12:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11969",
+      "kod": "MET 610E",
+      "ad": "Principles of Tribology",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hüseyin Çimenoğlu , Murat Baydoğan",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11972",
+      "kod": "MET 618",
+      "ad": "Alümin.(Al),Alaş.&Üretim Tekn.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Özgül Keleş , Can Akyıl",
+      "slotlar": [
+        {
+          "gun": "Pazartesi",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11971",
+      "kod": "MET 619",
+      "ad": "Nadir Toprak&Krit.Met.Metalu.",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Sebahattin Gürmen , Mehmet Şeref Sönmez",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "14:00",
+          "bitis": "16:59",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11973",
+      "kod": "MET 696",
+      "ad": "Bilimsel Araş.,Etik ve Seminer",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cevat Fahir Arısoy",
+      "slotlar": [
+        {
+          "gun": "Çarşamba",
+          "baslangic": "15:30",
+          "bitis": "17:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11974",
+      "kod": "MET DRT",
+      "ad": "Tez Çalışması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cevat Fahir Arısoy",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "11975",
+      "kod": "MET YET",
+      "ad": "Yeterlik Aşaması",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Cevat Fahir Arısoy",
+      "slotlar": [],
+      "kontenjan": 200,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [],
+      "plandaVar": false
+    },
+    {
+      "crn": "14993",
+      "kod": "MIA 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Hakan Öksüzoğlu",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 60,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "15006",
+      "kod": "MKS 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Umut Şahin",
+      "slotlar": [
+        {
+          "gun": "Cuma",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 30,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "13309",
+      "kod": "UUM 535E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Demet Balkan",
+      "slotlar": [
+        {
+          "gun": "Perşembe",
+          "baslangic": "13:30",
+          "bitis": "16:29",
+          "bina": "MEDC",
+          "derslik": "1D10"
+        }
+      ],
+      "kontenjan": 60,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "12306",
+      "kod": "YAP 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Arcan Yanık",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "12313",
+      "kod": "YAP 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Ünal Aldemir",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 25,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    },
+    {
+      "crn": "12317",
+      "kod": "YAP 501E",
+      "ad": "Engineering Mathematics",
+      "yontem": "Fiziksel (Yüz yüze)",
+      "ogretimUyesi": "Semih Küçükarslan",
+      "slotlar": [
+        {
+          "gun": "Salı",
+          "baslangic": "09:30",
+          "bitis": "12:29",
+          "bina": "undeclared",
+          "derslik": "--"
+        }
+      ],
+      "kontenjan": 20,
+      "yazilan": 0,
+      "rezervasyon": "-",
+      "programlar": "-",
+      "onsart": "-",
+      "gereksinimler": [
+        "Zorunlu Matematik Dersi"
+      ],
+      "plandaVar": true
+    }
+  ]
+}

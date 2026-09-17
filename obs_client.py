@@ -225,7 +225,10 @@ def _grup_derslerini_cek(
     return dersler
 
 
-def ders_plani_cek(plan_id: int, ham_dizin: Path | None = None, log=print) -> dict:
+def ders_plani_cek(
+    plan_id: int, ham_dizin: Path | None = None, log=print,
+    eksik_gruplari_tolere_et: bool = False,
+) -> dict:
     """Ders planını (mezuniyet gereksinimleri + her slota sayılan dersler) çeker."""
     log(f"  Ders planı çekiliyor (planId={plan_id}) ...")
     belge = _getir(
@@ -267,7 +270,15 @@ def ders_plani_cek(plan_id: int, ham_dizin: Path | None = None, log=print) -> di
             grup = re.search(r"grupId=(\d+)", link)
             if grup:
                 grup_id = int(grup.group(1))
-                dersler = _grup_derslerini_cek(grup_id, ham_dizin, grup_onbellegi)
+                try:
+                    dersler = _grup_derslerini_cek(grup_id, ham_dizin, grup_onbellegi)
+                    eksik_kaynak = False
+                except OBSHatasi:
+                    if not eksik_gruplari_tolere_et:
+                        raise
+                    dersler = []
+                    eksik_kaynak = True
+                    log(f"    ! {ad} (grupId={grup_id}) ÖBS'den alınamadı")
                 tablo_gereksinimleri.append(
                     {
                         **ortak,
@@ -275,7 +286,8 @@ def ders_plani_cek(plan_id: int, ham_dizin: Path | None = None, log=print) -> di
                         "sabit": False,
                         # Boş grup = "Seçime Bağlı": plana özel liste yok, seviyeye
                         # uygun her kredili ders sayılır.
-                        "serbest": len(dersler) == 0,
+                        "serbest": ortak["tur"] == "LUS" or (not eksik_kaynak and len(dersler) == 0),
+                        "eksikKaynak": eksik_kaynak,
                         "dersler": dersler,
                     }
                 )
@@ -425,6 +437,7 @@ def donem_derslerini_topla(
     ek_brans_kodlari: list[str] | None = None,
     ham_dizin: Path | None = None,
     log=print,
+    serbest_brans_kodlari: list[str] | None = None,
 ) -> dict:
     """Sadece plandaki derslerin bu dönem açılan şubelerini toplar.
 
@@ -438,6 +451,7 @@ def donem_derslerini_topla(
     plan_branslari = sorted({brans_kodu(k) for k in kod_eslemesi if brans_kodu(k)})
     istenen = sorted(set(plan_branslari) | set(ek_brans_kodlari))
     serbest_var = any(g.get("serbest") for g in plan.get("gereksinimler", []))
+    serbest_branslar = set(serbest_brans_kodlari) if serbest_brans_kodlari is not None else None
 
     log(f"  Aktif dönem sorgulanıyor ({seviye}) ...")
     donem = aktif_donem(seviye)
@@ -460,7 +474,9 @@ def donem_derslerini_topla(
             planda_var = bool(gruplar)
             # Plandaki dersler her zaman alınır. Serbest seçmeli slotu olan
             # planlarda istenen branşlardaki diğer dersler aday havuzunda kalır.
-            if not planda_var and not serbest_var and kod not in ek_brans_kodlari:
+            if not planda_var and serbest_branslar is not None and kod not in serbest_branslar:
+                continue
+            if not planda_var and serbest_branslar is None and not serbest_var and kod not in ek_brans_kodlari:
                 continue
             ders["gereksinimler"] = gruplar
             ders["plandaVar"] = planda_var

@@ -9,6 +9,9 @@ on:
       - 'veri/plan.json'
       - 'veri/dersler.json'
       - 'veri/ayarlar.json'
+      - 'veri/programlar.json'
+      - 'veri/programlar/**'
+      - 'program_verisi.py'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
   schedule:
@@ -45,6 +48,7 @@ jobs:
           PYTHONUTF8: '1'
         run: |
           python panel.py dersler || echo "OBS sorgusu tamamlanamadi, mevcut veriyle devam ediliyor"
+          python program_verisi.py hepsi || echo "Ek programlar guncellenemedi, mevcut veriyle devam ediliyor"
 
       - name: Dagitim Klasorunu Hazirla (dist)
         env:
@@ -55,6 +59,8 @@ jobs:
           cp -r web/* dist/
           mkdir -p dist/veri
           cp -r veri/ayarlar.json veri/plan.json veri/dersler.json dist/veri/ || true
+          cp veri/programlar.json dist/veri/
+          cp -r veri/programlar dist/veri/
           cat > dist/config.js <<EOF
           window.DSP_CONFIG = {
             supabaseUrl: "${SUPABASE_URL}",

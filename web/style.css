@@ -67,6 +67,13 @@ body {
   font: 14px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
+.bolum-secici-etiket { color: var(--soluk); }
+#bolumSecici { max-width: min(52vw, 340px); min-width: 190px; padding: 5px 8px; }
+@media (max-width: 650px) {
+  #bolumSecici { flex: 1 1 200px; max-width: 100%; min-width: 0; }
+}
+.danisman-onayi { color: var(--soluk); font-size: 11px; white-space: nowrap; }
+
 /* --------------------------------------------------------- giriş ve profil */
 
 .giris-ekrani {
@@ -180,6 +187,14 @@ h2 { font-size: 14px; }
 
 .ust-bilgi { display: flex; align-items: center; gap: 10px; margin-top: 3px; }
 
+@media (max-width: 650px) {
+  .ust { flex-wrap: wrap; padding: 10px 14px; }
+  .ust-sol { width: 100%; min-width: 0; }
+  .ust-sol h1 { overflow-wrap: anywhere; }
+  .ust-bilgi { flex-wrap: wrap; }
+  .ust-sag { width: 100%; }
+}
+
 .rozet {
   display: inline-block;
   padding: 2px 9px;
@@ -252,6 +267,7 @@ h2 { font-size: 14px; }
   padding: 1px 6px;
   border-radius: 5px;
 }
+.uyari a { color: var(--vurgu); text-decoration: underline; }
 .uyari.basari {
   background: color-mix(in srgb, var(--yesil) 13%, var(--kart));
   border-color: color-mix(in srgb, var(--yesil) 40%, transparent);

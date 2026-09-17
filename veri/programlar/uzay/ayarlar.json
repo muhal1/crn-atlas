@@ -1,0 +1,18 @@
+{
+  "bolum": "Uzay Mühendisliği Yüksek Lisans",
+  "planId": 2628,
+  "seviye": "LU",
+  "anaBransKodlari": [
+    "UZM"
+  ],
+  "ekBransKodlari": [
+    "UUM",
+    "MAK",
+    "MKM",
+    "KOM",
+    "ELE",
+    "BLG",
+    "MAT",
+    "RBT"
+  ]
+}

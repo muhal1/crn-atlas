@@ -16,6 +16,44 @@ hatırlanması gereken kararları ve tuzakları özetler. Yeni değişiklik yapm
 
 ## ÖBS Veri Çekme
 
+### Çoklu yüksek lisans programları
+
+- Bölüm seçici `veri/programlar.json` listesini kullanır. Kontrol programının
+  verileri eski `veri/{ayarlar,plan,dersler}.json` yollarında kalır.
+- Uzay Mühendisliği İngilizce YL: `planId=2628`, ana branş `UZM`.
+  Çevre Bilimleri Mühendisliği ve Yönetimi YL: `planId=2565`, ana branş `CBM`.
+  Bu adlar güncel ÖBS ders planındaki resmi adlardır.
+- Yeni iki programın açık dersleri `program_verisi.py` ile
+  `veri/programlar/<id>/` altında üretilir. Uygun başka fakülte adayları
+  `PROGRAMLAR` içindeki `ekBransKodlari` ile sınırlandırılır. Planın açıkça
+  saydığı dersler bu sınırın dışında da korunur. Plan dışı derslerin kabulü
+  danışman onayına bağlıdır; panel bunları kesin sayılır diye sunmamalıdır.
+- Eylül 2026 kontrolünde Çevre planının `12848`, `12849`, `12850`, `12851`
+  grup uç noktaları ÖBS'de HTTP 500 dönüyordu. İlk üçü zorunlu seçmeli ders
+  listesi olduğundan `eksikKaynak` işaretli bırakılır, kullanıcıya uyarı
+  gösterilir. `12851` LUS/serbest slotudur ve ders listesi olmadan da aday
+  gösterilebilir. Zamanlanmış dağıtım planı tekrar dener ve ÖBS düzelirse
+  eksik grupları tamamlar. Yeni sorgu daha fazla grup kaybederse önceki plan
+  korunur. Elle yenilemek için `python program_verisi.py cevre` çalıştır;
+  `--sadece-dersler` planı yeniden çekmez.
+- Eksik kaynak uyarısı `#kaynakUyarisi` alanında kalıcıdır; geçici işlem
+  bildirimleri `#uyari` alanını kullanır ve kalıcı uyarıyı kapatmamalıdır.
+- Statik sitede bölüm bazlı kişisel durum, mevcut Supabase `user_profiles.secim`
+  JSON alanındaki `aktifBolum` ve `bolumler` içinde tutulur. Eski tek bölümlü
+  profil ilk okumada `kontrol` olarak yorumlanır. Ayrı şema değişikliği yoktur.
+  Yerel sunucuda diğer bölümlerin durumları `dsp_bolumler` localStorage
+  anahtarında tutulur; kontrol bölümünün eski JSON dosyaları korunur.
+- Bölüm değişiminde gereksinim filtresi sıfırlanır. Önceki bölümün filtre
+  seçimleri yeni bölümde dersleri görünmez kılmamalıdır.
+
+```powershell
+$env:PYTHONUTF8='1'
+python program_verisi.py hepsi
+python program_verisi.py hepsi --sadece-dersler
+node --check web/app.js
+python -m py_compile obs_client.py program_verisi.py server.py
+```
+
 - Lisansüstü planlarda `Seçime Bağlı Ders` satırları ÖBS'de boş ders listesiyle
   gelir; panel bunları `serbest=true` olarak yorumlar.
 - `LUS`, lisansüstü seviyede kredili ders havuzu anlamına gelir. Bu nedenle

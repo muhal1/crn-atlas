@@ -1,0 +1,18 @@
+{
+  "bolum": "Çevre Bilimleri Mühendisliği ve Yönetimi Yüksek Lisans",
+  "planId": 2565,
+  "seviye": "LU",
+  "anaBransKodlari": [
+    "CBM"
+  ],
+  "ekBransKodlari": [
+    "ENB",
+    "KIM",
+    "MET",
+    "JEO",
+    "JFM",
+    "END",
+    "BVA",
+    "BLG"
+  ]
+}

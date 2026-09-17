@@ -11,6 +11,9 @@ const durum = {
   gizlenen: [],
   // Birden çok alternatif ders programı: {aktif, profiller:[{ad, crnler}]}
   secim: { aktif: "Program 1", profiller: [{ ad: "Program 1", crnler: [] }] },
+  aktifBolum: "kontrol",
+  bolumler: [],
+  bolumVerileri: {},
 };
 
 const HAFTA = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
@@ -45,7 +48,7 @@ const dersBul = (crn) => (durum.dersler?.dersler || []).find((d) => d.crn === cr
 const alindiMi = (kod) => durum.alinan.some((d) => d.kod === kod);
 const gizliMi = (kod) => durum.gizlenen.includes(kod);
 const bransKodu = (kod) => String(kod || "").split(/\s+/)[0] || "";
-const komOnce = (ders) => (bransKodu(ders.kod) === "KOM" ? 0 : 1);
+const anaBransOnce = (ders) => ((durum.ayarlar?.anaBransKodlari || ["KOM"]).includes(bransKodu(ders.kod)) ? 0 : 1);
 
 const ROMA_DEGER = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10 };
 const ROMA_YAZI = Object.fromEntries(Object.entries(ROMA_DEGER).map(([roma, sayi]) => [sayi, roma]));
@@ -194,7 +197,7 @@ function profilEkle(crnler = []) {
 function kisiselVeriDisariAktar() {
   const icerik = JSON.stringify({
     alinan: durum.alinan,
-    secim: durum.secim,
+    secim: { ...durum.secim, aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() },
     gizlenen: durum.gizlenen,
     kapaliBranslar: [...secimeBagliKapaliBranslar],
   }, null, 2);
@@ -225,15 +228,27 @@ async function kisiselVeriIceriAktar(dosyalar) {
   }
   if (!Object.keys(okunan).length) throw new Error("İçe aktarılacak veri bulunamadı.");
   if (!confirm("Seçilen dosyalar bu profildeki mevcut verilerin üzerine yazılsın mı?")) return;
+  const yuklenenBolumler = okunan.secim?.bolumler;
+  const yuklenenBolum = okunan.secim?.aktifBolum;
+  if (yuklenenBolumler && yuklenenBolum && durum.bolumler.some((bolum) => bolum.id === yuklenenBolum)) {
+    const yeniDersler = await bolumDersleriniYukle(yuklenenBolum);
+    durum.bolumVerileri = yuklenenBolumler;
+    durum.aktifBolum = yuklenenBolum;
+    Object.assign(durum, yeniDersler);
+    bolumVerisiniUygula(yuklenenBolumler[yuklenenBolum]);
+  }
   Object.assign(durum, {
     alinan: okunan.alinan ?? durum.alinan,
-    secim: okunan.secim ?? durum.secim,
+    secim: yuklenenBolumler ? durum.secim : okunan.secim ?? durum.secim,
     gizlenen: okunan.gizlenen ?? durum.gizlenen,
   });
   if (Array.isArray(okunan.kapaliBranslar)) secimeBagliKapaliBranslar = new Set(okunan.kapaliBranslar);
   storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
   storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
   storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
+  if (!durum.statikMod) {
+    storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() });
+  }
   if (durum.statikMod && window.DSPAuth.uzakProfil()) {
     await window.DSPAuth.profilKaydet(profilVerisi());
   }
@@ -277,6 +292,7 @@ const STORAGE_ALINAN_KEY = "dsp_alinan";
 const STORAGE_SECIM_KEY = "dsp_secim";
 const STORAGE_GIZLENEN_KEY = "dsp_gizlenen";
 const STORAGE_SURUM_KEY = "dsp_surum";
+const STORAGE_BOLUMLER_KEY = "dsp_bolumler";
 const GUNCEL_SURUM = "2";
 
 const storageAnahtari = (anahtar) => {
@@ -286,10 +302,72 @@ const storageAnahtari = (anahtar) => {
 
 const profilVerisi = () => ({
   alinan: durum.alinan,
-  secim: durum.secim,
+  secim: { ...durum.secim, aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() },
   gizlenen: durum.gizlenen,
   kapaliBranslar: [...secimeBagliKapaliBranslar],
 });
+
+const bosBolumVerisi = () => ({
+  alinan: [], gizlenen: [], kapaliBranslar: [],
+  secim: { aktif: "Program 1", profiller: [{ ad: "Program 1", crnler: [] }] },
+});
+
+function tumBolumVerileri() {
+  return {
+    ...durum.bolumVerileri,
+    [durum.aktifBolum]: {
+      alinan: durum.alinan,
+      secim: durum.secim,
+      gizlenen: durum.gizlenen,
+      kapaliBranslar: [...secimeBagliKapaliBranslar],
+    },
+  };
+}
+
+function bolumVerisiniUygula(veri) {
+  const temiz = veri || bosBolumVerisi();
+  durum.alinan = normalDizi(temiz.alinan, "alinan");
+  durum.gizlenen = normalDizi(temiz.gizlenen, "kodlar");
+  durum.secim = temiz.secim?.profiller?.length ? temiz.secim : bosBolumVerisi().secim;
+  secimeBagliKapaliBranslar = new Set(temiz.kapaliBranslar || []);
+}
+
+async function bolumDersleriniYukle(id) {
+  const kok = id === "kontrol" ? "veri" : `veri/programlar/${id}`;
+  const yanitlar = await Promise.all(["ayarlar", "plan", "dersler"].map((ad) => fetch(`${kok}/${ad}.json`)));
+  if (yanitlar.some((yanit) => !yanit.ok)) throw new Error("Bölümün ders verileri yüklenemedi.");
+  const [ayarlar, plan, dersler] = await Promise.all(yanitlar.map((yanit) => yanit.json()));
+  if (!plan?.gereksinimler?.length || !Array.isArray(dersler?.dersler)) {
+    throw new Error("Bölümün ders verileri eksik.");
+  }
+  return { ayarlar, plan, dersler };
+}
+
+async function bolumDegistir(id) {
+  if (id === durum.aktifBolum) return;
+  if (!durum.bolumler.some((bolum) => bolum.id === id)) return;
+  const yeniDersler = await bolumDersleriniYukle(id);
+  const oncekiId = durum.aktifBolum;
+  durum.bolumVerileri = tumBolumVerileri();
+  durum.aktifBolum = id;
+  Object.assign(durum, yeniDersler);
+  bolumVerisiniUygula(durum.bolumVerileri[id]);
+  try {
+    if (durum.statikMod && window.DSPAuth?.uzakProfil()) {
+      await window.DSPAuth.profilKaydet(profilVerisi());
+    } else {
+      storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: id, bolumler: tumBolumVerileri() });
+    }
+  } catch (hata) {
+    durum.aktifBolum = oncekiId;
+    Object.assign(durum, await bolumDersleriniYukle(oncekiId));
+    bolumVerisiniUygula(durum.bolumVerileri[oncekiId]);
+    throw hata;
+  }
+  $("#gereksinimSuzgeci").replaceChildren();
+  cizSecenekler();
+  ciz();
+}
 
 function normalDizi(veri, alan) {
   if (Array.isArray(veri)) return veri;
@@ -339,6 +417,8 @@ function storageJsonKaydet(anahtar, deger) {
 
 async function veriYukle() {
   depolamaGocEt();
+  const bolumYaniti = await fetch("veri/programlar.json").catch(() => null);
+  durum.bolumler = bolumYaniti?.ok ? await bolumYaniti.json() : [{ id: "kontrol", ad: "Kontrol ve Otomasyon Mühendisliği Yüksek Lisans" }];
   let veri = null;
   durum.statikMod = false;
 
@@ -354,21 +434,25 @@ async function veriYukle() {
   // Sunucu yanıt vermediyse (GitHub Pages / statik barındırma)
   if (!veri) {
     durum.statikMod = true;
-    const [ayarlarRes, planRes, derslerRes] = await Promise.all([
-      fetch("veri/ayarlar.json").catch(() => null),
-      fetch("veri/plan.json").catch(() => null),
-      fetch("veri/dersler.json").catch(() => null),
-    ]);
-
-    const ayarlar = ayarlarRes && ayarlarRes.ok ? await ayarlarRes.json() : {};
-    const plan = planRes && planRes.ok ? await planRes.json() : null;
-    const dersler = derslerRes && derslerRes.ok ? await derslerRes.json() : null;
     const yerelProfil = !window.DSPAuth?.uzakProfil();
     const yerelAlinan = yerelProfil ? storageJsonYukle(STORAGE_ALINAN_KEY, null) : null;
     const yerelSecim = yerelProfil ? storageJsonYukle(STORAGE_SECIM_KEY, null) : null;
     const yerelGizlenen = yerelProfil ? storageJsonYukle(STORAGE_GIZLENEN_KEY, null) : null;
     let uzakProfil = null;
     if (!yerelProfil) uzakProfil = await window.DSPAuth.profilYukle();
+    const yerelBolumler = yerelProfil ? storageJsonYukle(STORAGE_BOLUMLER_KEY, null) : null;
+    const kayitliBolumler = uzakProfil?.secim?.bolumler || yerelBolumler?.bolumler;
+    const aktifBolum = uzakProfil?.secim?.aktifBolum || yerelBolumler?.aktifBolum || "kontrol";
+    durum.aktifBolum = durum.bolumler.some((bolum) => bolum.id === aktifBolum) ? aktifBolum : "kontrol";
+    durum.bolumVerileri = kayitliBolumler || {
+      kontrol: {
+        alinan: uzakProfil?.alinan ?? yerelAlinan ?? [],
+        secim: uzakProfil?.secim ?? yerelSecim ?? bosBolumVerisi().secim,
+        gizlenen: uzakProfil?.gizlenen ?? yerelGizlenen ?? [],
+        kapaliBranslar: uzakProfil?.kapali_branslar ?? [],
+      },
+    };
+    const { ayarlar, plan, dersler } = await bolumDersleriniYukle(durum.aktifBolum);
 
     const bosSecim = { aktif: "Program 1", profiller: [{ ad: "Program 1", crnler: [] }] };
 
@@ -376,15 +460,25 @@ async function veriYukle() {
       ayarlar,
       plan,
       dersler,
-      alinan: uzakProfil?.alinan ?? yerelAlinan ?? [],
-      secim: uzakProfil?.secim ?? yerelSecim ?? bosSecim,
-      gizlenen: uzakProfil?.gizlenen ?? yerelGizlenen ?? [],
-      kapaliBranslar: uzakProfil?.kapali_branslar ?? [],
+      alinan: durum.bolumVerileri[durum.aktifBolum]?.alinan ?? [],
+      secim: durum.bolumVerileri[durum.aktifBolum]?.secim ?? bosSecim,
+      gizlenen: durum.bolumVerileri[durum.aktifBolum]?.gizlenen ?? [],
+      kapaliBranslar: durum.bolumVerileri[durum.aktifBolum]?.kapaliBranslar ?? [],
       eskiProfilVar: Boolean(uzakProfil),
     };
   }
 
   Object.assign(durum, veri);
+  if (!durum.statikMod) {
+    const yerelBolumler = storageJsonYukle(STORAGE_BOLUMLER_KEY, null);
+    durum.aktifBolum = yerelBolumler?.aktifBolum || "kontrol";
+    durum.bolumVerileri = yerelBolumler?.bolumler || {};
+    if (durum.aktifBolum !== "kontrol") {
+      Object.assign(durum, await bolumDersleriniYukle(durum.aktifBolum));
+      bolumVerisiniUygula(durum.bolumVerileri[durum.aktifBolum]);
+      veri = { ...veri, secim: durum.secim, alinan: durum.alinan, gizlenen: durum.gizlenen, kapaliBranslar: [...secimeBagliKapaliBranslar] };
+    }
+  }
   durum.alinan = normalDizi(veri.alinan, "alinan");
   durum.gizlenen = normalDizi(veri.gizlenen, "kodlar");
   if (Array.isArray(veri.kapaliBranslar)) {
@@ -407,6 +501,12 @@ async function veriYukle() {
   storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
   storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
   storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
+  if (!durum.statikMod && durum.aktifBolum === "kontrol") {
+    durum.bolumVerileri.kontrol = {
+      alinan: durum.alinan, secim: durum.secim, gizlenen: durum.gizlenen,
+      kapaliBranslar: [...secimeBagliKapaliBranslar],
+    };
+  }
   if (durum.statikMod && window.DSPAuth?.uzakProfil() && !veri.eskiProfilVar) {
     try {
       await window.DSPAuth.profilKaydet(profilVerisi());
@@ -420,7 +520,9 @@ async function kaydet(yol, govde, storageKey, storageVal) {
   if (storageKey) {
     storageJsonKaydet(storageKey, storageVal);
   }
-  if (!durum.statikMod) {
+  if (!durum.statikMod && durum.aktifBolum !== "kontrol") {
+    storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() });
+  } else if (!durum.statikMod) {
     try {
       await fetch(yol, {
         method: "POST",
@@ -446,6 +548,26 @@ const gizlenenKaydet = () => kaydet("/api/gizlenen", { kodlar: durum.gizlenen },
 /* ------------------------------------------------------------- çizim: üst */
 
 function cizUst() {
+  const bolumSecici = $("#bolumSecici");
+  bolumSecici.replaceChildren(...durum.bolumler.map((bolum) => {
+    const secenek = el("option", null, bolum.ad);
+    secenek.value = bolum.id;
+    return secenek;
+  }));
+  bolumSecici.value = durum.aktifBolum;
+  const eksikSayisi = durum.plan?.gereksinimler?.filter((g) => g.eksikKaynak).length || 0;
+  const kaynakUyarisi = $("#kaynakUyarisi");
+  if (eksikSayisi) {
+    kaynakUyarisi.textContent = `İTÜ ÖBS ${eksikSayisi} ders grubunun listesini şu anda vermiyor. Özellikle zorunlu seçmeli dersleri danışmanınla doğrulamadan kesinleşmiş sayma. `;
+    const kaynak = el("a", null, "Resmî ders planı");
+    kaynak.href = `https://obs.itu.edu.tr/public/DersPlan/DersPlanDetay/${Number(durum.plan.planId)}`;
+    kaynak.target = "_blank";
+    kaynak.rel = "noopener noreferrer";
+    kaynakUyarisi.append(kaynak);
+    kaynakUyarisi.classList.remove("gizli");
+  } else {
+    kaynakUyarisi.classList.add("gizli");
+  }
   $("#bolumAdi").textContent = durum.ayarlar.bolum || durum.plan?.planAdi || "Ders Seçim Paneli";
   $("#donemEtiketi").textContent = durum.dersler?.donem || "Dönem verisi yok";
   $("#donemEtiketi").className = "rozet " + (durum.dersler ? "mavi" : "");
@@ -527,7 +649,7 @@ function cizGereksinimler() {
         durumDugumu = dolduranEtiketi(aday.kod, "(seçildi)");
       } else {
         kutu.append(el("span", "isaret", "○"));
-        durumMetni = g.serbest ? `${serbestGereksinimEtiketi()} adayı` : `${g.dersler.length} seçenek`;
+        durumMetni = g.serbest ? `${serbestGereksinimEtiketi()} adayı` : g.eksikKaynak ? "Liste alınamadı" : `${g.dersler.length} seçenek`;
       }
     }
 
@@ -616,6 +738,7 @@ function cizDersListesi() {
     if (!ders.plandaVar) {
       const etiket = serbestGereksinimEtiketi();
       alt.append(el("span", `rozet ${gereksinimRozetRengi(etiket)}`, etiket));
+      alt.append(el("span", "danisman-onayi", "Danışman onayı"));
     }
     if (alindi) alt.append(el("span", "rozet yesil", "bu dersi aldın"));
     if (cakisan) alt.append(el("span", "rozet kirmizi", "çakışıyor"));
@@ -668,7 +791,7 @@ function ayniGunAdaylari(ders) {
     return !cakisirMi(ders, aday);
   });
 
-  adaylar.sort((a, b) => komOnce(a) - komOnce(b) || a.kod.localeCompare(b.kod, "tr") || a.crn.localeCompare(b.crn));
+  adaylar.sort((a, b) => anaBransOnce(a) - anaBransOnce(b) || a.kod.localeCompare(b.kod, "tr") || a.crn.localeCompare(b.crn));
   return { gunler, adaylar };
 }
 
@@ -1290,6 +1413,18 @@ async function verileriYenile() {
 /* ------------------------------------------------------------- olay bağları */
 
 function olaylariBagla() {
+  $("#bolumSecici").addEventListener("change", async (olay) => {
+    const secici = olay.target;
+    secici.disabled = true;
+    try {
+      await bolumDegistir(secici.value);
+    } catch (hata) {
+      secici.value = durum.aktifBolum;
+      bilgiGoster(`Bölüm değiştirilemedi: ${hata.message}`, "hata");
+    } finally {
+      secici.disabled = false;
+    }
+  });
   $("#veriDisariAktar").addEventListener("click", kisiselVeriDisariAktar);
   $("#veriIceriAktar").addEventListener("click", () => $("#veriDosyalari").click());
   $("#veriDosyalari").addEventListener("change", async (olay) => {
