@@ -8,8 +8,7 @@ veri/ham/
 # Paylaşım paketleri
 *.zip
 
-# Paylaşım klasörünün proje içine alınmış kopyaları.
-# Asıl paylaşım sürümü ayrı bir depodur: github.com/muhal1/itu-ders-secim-paneli
+# Paylaşım klasörünün proje içine alınmış eski kopyası (iki-depo düzeninden kalma)
 DersSecimPanel-Paylasim/
 
 # Ortak plan ve dönem verisi depoda kalır; aşağıdaki kullanıcı verileri

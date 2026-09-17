@@ -26,7 +26,7 @@ ekranına yapıştıracağın CRN listesini üretmeni sağlar.
 gerekmez — `pip install` yok, kurulum sihirbazı yok.
 
 ```bash
-git clone https://github.com/muhal1/itu-ders-secim-paneli
+git clone https://github.com/muhal1/crn-atlas
 ```
 
 Sonrasında iki yol var:
@@ -281,7 +281,7 @@ veriyi yeniden çekmeden inceleyebilirsin.
 En kolayı depo adresini vermek:
 
 ```bash
-git clone https://github.com/muhal1/itu-ders-secim-paneli
+git clone https://github.com/muhal1/crn-atlas
 ```
 
 Karşı taraf `AGENTS.md`'yi kendi asistanına verir, kurulum kendiliğinden ilerler.
