@@ -104,6 +104,9 @@ function bransSuzgeciKaydet() {
   } catch {
     // Saklama kapalıysa filtre yine mevcut oturumda çalışır.
   }
+  if (!durum.statikMod || !window.DSPAuth?.uzakProfil()) {
+    storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() });
+  }
   if (durum.statikMod && window.DSPAuth?.uzakProfil()) {
     window.DSPAuth.profilKaydet(profilVerisi()).catch((hata) => console.error("Branş süzgeci kaydedilemedi:", hata));
   }
@@ -246,11 +249,24 @@ async function kisiselVeriIceriAktar(dosyalar) {
   storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
   storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
   storageJsonKaydet(STORAGE_GIZLENEN_KEY, durum.gizlenen);
-  if (!durum.statikMod) {
+  if (!durum.statikMod || !window.DSPAuth?.uzakProfil()) {
     storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() });
   }
   if (durum.statikMod && window.DSPAuth.uzakProfil()) {
     await window.DSPAuth.profilKaydet(profilVerisi());
+  } else if (!durum.statikMod && durum.aktifBolum === "kontrol") {
+    for (const [yol, govde] of [
+      ["/api/alinan", { alinan: durum.alinan }],
+      ["/api/secim", durum.secim],
+      ["/api/gizlenen", { kodlar: durum.gizlenen }],
+    ]) {
+      const yanit = await fetch(yol, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(govde),
+      });
+      if (!yanit.ok) throw new Error(`Profil kaydedilemedi (${yanit.status}).`);
+    }
   }
   cizSecenekler();
   ciz();
@@ -520,7 +536,8 @@ async function kaydet(yol, govde, storageKey, storageVal) {
   if (storageKey) {
     storageJsonKaydet(storageKey, storageVal);
   }
-  if (!durum.statikMod && durum.aktifBolum !== "kontrol") {
+  if ((!durum.statikMod && durum.aktifBolum !== "kontrol") ||
+      (durum.statikMod && !window.DSPAuth?.uzakProfil())) {
     storageJsonKaydet(STORAGE_BOLUMLER_KEY, { aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() });
   } else if (!durum.statikMod) {
     try {

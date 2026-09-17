@@ -43,6 +43,13 @@ hatırlanması gereken kararları ve tuzakları özetler. Yeni değişiklik yapm
   profil ilk okumada `kontrol` olarak yorumlanır. Ayrı şema değişikliği yoktur.
   Yerel sunucuda diğer bölümlerin durumları `dsp_bolumler` localStorage
   anahtarında tutulur; kontrol bölümünün eski JSON dosyaları korunur.
+  Supabase kullanılmayan statik yerel kullanımda da her seçim ve branş
+  filtresi değişikliğinde `dsp_bolumler` güncellenir; yalnızca bölüm
+  değişiminde kaydetmek yenileme sonrası ders kaybına yol açar.
+- JSON içe aktarma da aynı kalıcılık kuralını izler: statik uzak hesap
+  Supabase'e, girişsiz statik kullanım `dsp_bolumler` anahtarına, yerel
+  sunucudaki Kontrol bölümü ise `/api/alinan`, `/api/secim` ve
+  `/api/gizlenen` uçlarına yazılır.
 - Bölüm değişiminde gereksinim filtresi sıfırlanır. Önceki bölümün filtre
   seçimleri yeni bölümde dersleri görünmez kılmamalıdır.
 
