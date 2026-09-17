@@ -195,6 +195,7 @@ h2 { font-size: 15px; }
 }
 
 .ust-sol { min-width: 0; }
+.ust-marka { margin-bottom: 3px; color: var(--vurgu); font-size: 11px; font-weight: 700; }
 .ust-sol h1 { line-height: 1.25; }
 .ust-bilgi { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
 

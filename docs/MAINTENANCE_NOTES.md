@@ -193,6 +193,14 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
 
 ## GitHub Pages ve Dağıtım
 
+- Ürünün adı CRN Atlas'tır. Logo teslim edilene kadar girişte CA harflerinden
+  oluşan geçici işaret ve favicon kullanılır. İTÜ logosu kullanılmaz; resmî
+  uygulama olmadığı açıkça belirtilir.
+- Pages proje yolu depo adından gelir: hedef adres
+  https://muhal1.github.io/crn-atlas/ . Depo yeniden adlandırıldığında
+  eski Pages yolu otomatik yönlenmez. Supabase Auth URL Configuration'da
+  yeni adresi Site URL ve tam eşleşen Redirect URL olarak ayarla; geçişte
+  eski Redirect URL'yi mevcut e-posta bağlantıları için koru.
 - Panel çift modlu (dual-mode) çalışır:
   - Yerel sunucu varken (`/api/veri` erişilebilir) değişiklikler kişisel JSON dosyalarına yazılır.
   - Canlı statik ortamda ortak `plan.json`, `dersler.json`, `ayarlar.json` okunur;

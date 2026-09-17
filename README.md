@@ -1,4 +1,4 @@
-# Ders Seçim Paneli
+# CRN Atlas
 
 İTÜ ders kayıt dönemi için yerelde veya GitHub Pages üzerinde çalışan bir ders seçim paneli.
 Bölümünün ders planını ve o dönem **gerçekten açılan** dersleri

@@ -10,7 +10,7 @@ ilgili kullanıcının Supabase satırında tutulur.
 1. Supabase'te yeni bir proje oluştur.
 2. **SQL Editor** bölümünde `supabase/schema.sql` dosyasını çalıştır.
 3. **Authentication > URL Configuration** altında Site URL olarak GitHub Pages
-   adresini yaz: `https://muhal1.github.io/ders-secim-paneli-kisisel/`
+   adresini yaz: `https://muhal1.github.io/crn-atlas/`
 4. Aynı adresi Redirect URLs listesine de ekle.
 5. **Authentication > Providers > Email** altında e-posta sağlayıcısını açık tut.
    E-posta doğrulaması açık kalabilir.
