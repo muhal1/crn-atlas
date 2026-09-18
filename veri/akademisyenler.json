@@ -4,204 +4,545 @@
     "ad": "Abdurrahman Yılmaz",
     "unvan": "Dr. Öğr. Üyesi",
     "bolum": "kontrol",
+    "aciklama": "Abdurrahman Yılmaz'ın araştırmaları robotics software, Digital Twin, simulation, localization ve autonomous navigation ekseninde ilerlemektedir. Son dönem çalışmalarında agricultural robotics, 3D photogrammetry, autonomous mobile robot path planning ve robot–plant interaction için Digital Twin sistemleri öne çıkmaktadır.",
     "alanlar": [
-      "Robotik",
-      "Otonom Sistem Tasarımı",
-      "Kontrol Teorisi ve Uygulamaları"
+      "Robotics",
+      "Mobile Robotics",
+      "Digital Twin",
+      "Localization",
+      "Autonomous Navigation",
+      "Path Planning"
     ],
     "kaynak": "https://akademi.itu.edu.tr/yilmazabdurrah",
     "alanKaynagi": "https://akademi.itu.edu.tr/yilmazabdurrah",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Simulation",
+      "3D Reconstruction",
+      "Photogrammetry",
+      "ICP",
+      "Machine Learning",
+      "Robot Perception",
+      "Computer Vision"
+    ],
+    "uygulamaAlanlari": [
+      "Agricultural Robotics",
+      "Smart AGVs",
+      "Digital Agriculture",
+      "Autonomous Mobile Robots"
+    ],
+    "teknolojiler": "Unity, Gazebo, ROS / ROS2, 3D Reconstruction Tools, Robot Simulation Platforms",
+    "potansiyelTezKonulari": [
+      "Gazebo/Unity tabanlı robot Digital Twin",
+      "Agricultural robot autonomous navigation",
+      "Synthetic-data generation for robotics",
+      "Digital Twin validation framework",
+      "3D plant reconstruction",
+      "Robot–plant interaction simulation",
+      "Sim-to-real agricultural robotics"
+    ]
   },
   {
     "id": "ahmetonat",
     "ad": "Ahmet Onat",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
-    "alanlar": [],
+    "aciklama": "Ahmet Onat'ın araştırmaları Reinforcement Learning, Networked Control ve robotic control alanlarında yoğunlaşmaktadır. Deep Q-Network, Bayesian Learning, energy optimization ve communication-aware control son dönem çalışmalarında yer almaktadır.",
+    "alanlar": [
+      "Networked Control",
+      "Reinforcement Learning-Based Control",
+      "Robotic Control"
+    ],
     "kaynak": "https://akademi.itu.edu.tr/ahmetonat",
-    "alanKaynagi": null,
-    "dogrulamaTarihi": "2026-09-18"
+    "alanKaynagi": "https://akademi.itu.edu.tr/ahmetonat",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Deep Q-Learning",
+      "Bayesian Learning",
+      "Optimization",
+      "Sensor Systems"
+    ],
+    "uygulamaAlanlari": [
+      "Fuel Cells",
+      "Wind Turbines",
+      "Underwater Vehicles",
+      "Robot Manipulators"
+    ],
+    "potansiyelTezKonulari": [
+      "Deep Q-Network controller",
+      "AUV networked control",
+      "RL-based energy optimization",
+      "Bayesian robot trajectory control",
+      "Communication-aware autonomous systems"
+    ]
   },
   {
     "id": "ergenca",
     "ad": "Ali Fuat Ergenç",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Ali Fuat Ergenç'in araştırmaları dynamic systems modeling, control systems, industrial control, predictive maintenance ve sensing alanlarında çeşitlenmektedir.",
     "alanlar": [
-      "Mekatronik",
-      "Kontrol Teorisi ve Uygulamaları",
-      "Ölçme Tekniği",
-      "Sensörler",
-      "Otomasyon",
-      "Biyomedikal",
-      "Nesnelerin Interneti"
+      "Dynamic Systems Modeling",
+      "Control Systems",
+      "Time-Delay Systems",
+      "Industrial Control"
     ],
     "kaynak": "https://akademi.itu.edu.tr/ergenca",
     "alanKaynagi": "https://akademi.itu.edu.tr/ergenca",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Deep Learning",
+      "Image Processing",
+      "Predictive Maintenance",
+      "Sensor Systems",
+      "Data Analysis"
+    ],
+    "uygulamaAlanlari": [
+      "Connected Vehicles",
+      "Biomedical Systems",
+      "Automotive Manufacturing",
+      "Hydraulic Systems",
+      "Engine ECUs"
+    ],
+    "potansiyelTezKonulari": [
+      "Deep Learning based predictive maintenance",
+      "V2V delay-aware vehicle control",
+      "Industrial fault diagnosis",
+      "Computer Vision based industrial inspection",
+      "Embedded ECU control",
+      "Biomedical system modeling"
+    ]
   },
   {
     "id": "fhashemzadeh",
     "ad": "Farzad Hashemzadeh",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Farzad Hashemzadeh'in araştırmaları nonlinear systems, switched systems, hybrid systems ve networked control üzerine yoğunlaşmaktadır. Güncel çalışmalarında drone swarm coverage, hybrid electric vehicle control ve bidirectional DC-DC converters gibi uygulamalar bulunmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları"
+      "Nonlinear Control",
+      "Switched Systems",
+      "Hybrid Systems",
+      "Robust Control",
+      "Multi-Agent Systems"
     ],
+    "kaynak": "https://akademi.itu.edu.tr/fhashemzadeh",
     "alanKaynagi": "https://akademi.itu.edu.tr/fhashemzadeh",
     "dogrulamaTarihi": "2026-09-18",
-    "kaynak": "https://akademi.itu.edu.tr/fhashemzadeh"
+    "ikincilAlanlar": [
+      "Event-Triggered Control",
+      "H∞ Control",
+      "Teleoperation",
+      "Networked Control"
+    ],
+    "uygulamaAlanlari": [
+      "Drone Swarms",
+      "Hybrid Electric Vehicles",
+      "DC-DC Converters",
+      "Telerobotics"
+    ],
+    "potansiyelTezKonulari": [
+      "Drone swarm cooperative control",
+      "Hybrid EV converter control",
+      "Event-triggered multi-agent systems",
+      "Network-delay-tolerant teleoperation",
+      "Resilient switched systems"
+    ]
   },
   {
     "id": "caliskanf",
     "ad": "Fikret Çalışkan",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Fikret Çalışkan'ın araştırmaları aerospace control, UAV systems, fault diagnosis ve state estimation konularında yoğunlaşmaktadır. Güncel çalışmalarında quadrotor control, Sliding Mode Control, Extended Kalman Filter ve EV battery state estimation bulunmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları",
-      "Devreler ve Sistemler Teorisi",
-      "Mekatronik",
-      "Arıza Toleranslı Kontrol",
-      "Uçuş Kontrol",
-      "Estimasyon"
+      "Aerospace Control",
+      "UAV Control",
+      "Sliding Mode Control",
+      "Fault Detection and Isolation"
     ],
     "kaynak": "https://akademi.itu.edu.tr/caliskanf",
     "alanKaynagi": "https://akademi.itu.edu.tr/caliskanf",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "State Estimation",
+      "Extended Kalman Filter",
+      "Modeling and Simulation",
+      "Artificial Neural Networks"
+    ],
+    "uygulamaAlanlari": [
+      "UAVs",
+      "Quadrotors",
+      "Electric Vehicles",
+      "Hybrid-Electric Aircraft"
+    ],
+    "potansiyelTezKonulari": [
+      "UAV fault detection",
+      "Adaptive Sliding Mode Flight Control",
+      "Battery SOC estimation",
+      "Hybrid aircraft propulsion simulation",
+      "Computer Vision ile aircraft inspection",
+      "Fault-tolerant UAV control"
+    ]
   },
   {
     "id": "gulayoke",
     "ad": "Gülay Öke Günel",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Gülay Öke Günel'in çalışmaları Machine Learning tabanlı adaptive control, nonlinear control ve intelligent control konularını kapsamaktadır. Support Vector Regression, neural networks, LSTM, NARMA-L2 ve distributed optimization gibi yöntemler araştırmalarında kullanılmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları"
+      "Adaptive Control",
+      "Nonlinear Control",
+      "Intelligent Control",
+      "Inverse Optimal Control"
     ],
     "kaynak": "https://akademi.itu.edu.tr/gulayoke",
     "alanKaynagi": "https://akademi.itu.edu.tr/gulayoke",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Neural Networks",
+      "Support Vector Regression",
+      "LSTM",
+      "Machine Learning",
+      "Distributed Optimization",
+      "NARMA-L2"
+    ],
+    "uygulamaAlanlari": [
+      "Robotic Manipulators",
+      "Nonlinear Dynamical Systems",
+      "Human-Robot Interaction"
+    ],
+    "potansiyelTezKonulari": [
+      "Neural adaptive control",
+      "LSTM self-tuning control",
+      "Support Vector Regression controller",
+      "Learning-based manipulator control",
+      "Distributed optimization algorithms",
+      "Neural inverse optimal control"
+    ]
   },
   {
     "id": "temeltash",
     "ad": "Hakan Temeltaş",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Hakan Temeltaş'ın araştırmaları robotik, otonom sistemler, mobil robotlar, SLAM, lokalizasyon, çoklu robot sistemleri ve öğrenme tabanlı robot kontrolü etrafında yoğunlaşmaktadır. Son dönem çalışmalarında Deep Reinforcement Learning, quadruped robots, industrial robot inverse kinematics, autonomous exploration ve uncertainty-aware learning gibi konular öne çıkmaktadır.",
     "alanlar": [
-      "Robotik",
-      "Pekiştirmeli öğrenme",
-      "Robot kontrolü"
+      "Robotics",
+      "Mobile Robotics",
+      "Autonomous Robotics",
+      "SLAM",
+      "Robot Localization",
+      "Robot Navigation",
+      "Deep Reinforcement Learning"
     ],
     "kaynak": "https://akademi.itu.edu.tr/temeltash",
-    "alanKaynagi": "https://research.itu.edu.tr/en/persons/hakan-temelta%C5%9F/",
-    "dogrulamaTarihi": "2026-09-18"
+    "alanKaynagi": "https://akademi.itu.edu.tr/temeltash",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Point Cloud Processing",
+      "Sensor Fusion",
+      "LiDAR",
+      "State Estimation",
+      "Motion Planning",
+      "RRT",
+      "Deep Learning",
+      "Generative AI for Motion",
+      "Inverse Kinematics",
+      "Data-Driven Modeling"
+    ],
+    "uygulamaAlanlari": [
+      "Quadruped Robots",
+      "Industrial Robots",
+      "Autonomous Mobile Robots",
+      "Heterogeneous Robot Teams",
+      "Autonomous Exploration"
+    ],
+    "potansiyelTezKonulari": [
+      "Deep Reinforcement Learning ile quadruped locomotion",
+      "Multi-Agent Deep RL ile çoklu robot koordinasyonu",
+      "LiDAR tabanlı autonomous exploration ve SLAM",
+      "Model-free RL ile industrial robot inverse kinematics",
+      "Sim-to-real robot learning",
+      "Uncertainty-aware reinforcement learning",
+      "Diffusion models ile robot motion generation",
+      "Autonomous robot recovery after falling"
+    ]
   },
   {
     "id": "sirmatel",
     "ad": "Işık İlber Sırmatel",
     "unvan": "Dr. Öğr. Üyesi",
     "bolum": "kontrol",
+    "aciklama": null,
     "alanlar": [
       "Kontrol Teorisi ve Uygulamaları"
     ],
+    "kaynak": "https://akademi.itu.edu.tr/sirmatel",
     "alanKaynagi": "https://akademi.itu.edu.tr/sirmatel",
-    "dogrulamaTarihi": "2026-09-18",
-    "kaynak": "https://akademi.itu.edu.tr/sirmatel"
+    "dogrulamaTarihi": "2026-09-18"
   },
   {
     "id": "kocaarslani",
     "ad": "İlhan Kocaarslan",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
-    "alanlar": [],
+    "aciklama": "İlhan Kocaarslan'ın çalışmaları transportation systems, automation, energy systems ve mobility technologies etrafında çeşitlenmektedir.",
+    "alanlar": [
+      "Transportation Systems",
+      "Automation",
+      "Energy Systems"
+    ],
     "kaynak": "https://akademi.itu.edu.tr/kocaarslani",
-    "alanKaynagi": null,
-    "dogrulamaTarihi": "2026-09-18"
+    "alanKaynagi": "https://akademi.itu.edu.tr/kocaarslani",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Autonomous Systems",
+      "Mobility Technologies",
+      "Hydrogen Energy",
+      "System Integration"
+    ],
+    "uygulamaAlanlari": [
+      "Hyperloop",
+      "Autonomous Marine Vehicles",
+      "Mobility Platforms"
+    ],
+    "potansiyelTezKonulari": [
+      "Autonomous marine vehicle platform",
+      "Hyperloop control and simulation",
+      "Mobility-system digital platform",
+      "Energy-management software",
+      "Blockchain-enabled mobility infrastructure"
+    ]
   },
   {
     "id": "ustoglui",
     "ad": "İlker Üstoğlu",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
+    "aciklama": "İlker Üstoğlu'nun araştırmaları Model Predictive Control, aerospace control, autonomous navigation ve safety-critical systems konularında yoğunlaşmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları",
-      "Mekatronik",
-      "Otonom Sistemler"
+      "Model Predictive Control",
+      "Robust Control",
+      "Aerospace Control",
+      "Safety-Critical Control"
     ],
     "kaynak": "https://akademi.itu.edu.tr/ustoglui",
     "alanKaynagi": "https://akademi.itu.edu.tr/ustoglui",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Fault Detection",
+      "GNSS/INS Sensor Fusion",
+      "H∞ Control",
+      "Markov Models"
+    ],
+    "uygulamaAlanlari": [
+      "Fixed-Wing Aircraft",
+      "Navigation Systems",
+      "Rail Transit"
+    ],
+    "potansiyelTezKonulari": [
+      "MPC automatic landing",
+      "GNSS/INS fault detection",
+      "Robust autonomous navigation",
+      "Safety-critical control software",
+      "Fault-tolerant navigation systems"
+    ]
   },
   {
     "id": "ucakk",
     "ad": "Kemal Uçak",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Kemal Uçak'ın çalışmaları Machine Learning, nonlinear control, adaptive control ve system identification kesişimindedir. Güncel araştırmalarında data-driven Model Predictive Control, sparse identification ve machine learning tabanlı nonlinear control yöntemleri bulunmaktadır.",
     "alanlar": [
-      "Makine Öğrenmesi",
-      "Kontrol Teorisi ve Uygulamaları",
-      "Yapay Zeka"
+      "Nonlinear Control",
+      "Adaptive Control",
+      "Data-Driven Control",
+      "Model Predictive Control",
+      "System Identification"
     ],
     "kaynak": "https://akademi.itu.edu.tr/ucakk",
     "alanKaynagi": "https://akademi.itu.edu.tr/ucakk",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Machine Learning",
+      "Support Vector Machines",
+      "Sparse Identification",
+      "SINDy-Type Methods",
+      "Runge-Kutta Methods",
+      "Fuzzy Control",
+      "Inverse Optimal Control"
+    ],
+    "uygulamaAlanlari": [
+      "Nonlinear Dynamical Systems",
+      "Intelligent Controllers",
+      "Data-Driven Dynamical Models"
+    ],
+    "potansiyelTezKonulari": [
+      "Sparse Identification + MPC",
+      "Neural/SVM adaptive control",
+      "Data-driven nonlinear MPC",
+      "Physics-informed system identification",
+      "Learning-based adaptive control",
+      "Online system identification and control"
+    ]
   },
   {
     "id": "baradarannia",
     "ad": "Mahdi Baradarannia",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
-    "alanlar": [],
+    "aciklama": "Mahdi Baradarannia'nın araştırmaları nonlinear control, multi-agent systems, event-triggered control, sliding-mode control ve networked control üzerine yoğunlaşmaktadır.",
+    "alanlar": [
+      "Nonlinear Control",
+      "Sliding Mode Control",
+      "Multi-Agent Systems",
+      "Distributed Control",
+      "Robust Control"
+    ],
     "kaynak": "https://akademi.itu.edu.tr/baradarannia",
-    "alanKaynagi": null,
-    "dogrulamaTarihi": "2026-09-18"
+    "alanKaynagi": "https://akademi.itu.edu.tr/baradarannia",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Event-Triggered Control",
+      "Consensus",
+      "Networked Control Systems",
+      "Finite-Time Control",
+      "Adaptive Control"
+    ],
+    "uygulamaAlanlari": [
+      "Microgrids",
+      "Distributed Agents",
+      "Networked Cyber-Physical Systems"
+    ],
+    "potansiyelTezKonulari": [
+      "Multi-agent consensus",
+      "Event-triggered distributed control",
+      "DoS-resilient networked control",
+      "Model-free adaptive control",
+      "Distributed microgrid control",
+      "Fixed-time cooperative control"
+    ]
   },
   {
     "id": "soylemezm",
     "ad": "Mehmet Turan Söylemez",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Mehmet Turan Söylemez'in araştırmaları robust control, controller design, time-delay systems ve transportation control üzerine yoğunlaşmaktadır. Railway signalling, autonomous driving ve multi-agent transportation systems önemli uygulama alanlarıdır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları",
-      "Otonom Sistemler",
-      "Devreler ve Sistemler Teorisi"
+      "Robust Control",
+      "PID Control",
+      "Linear Control",
+      "Time-Delay Systems",
+      "Controller Design"
     ],
     "kaynak": "https://akademi.itu.edu.tr/soylemezm",
     "alanKaynagi": "https://akademi.itu.edu.tr/soylemezm",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Model Predictive Control",
+      "Disturbance Observers",
+      "Multi-Agent Systems",
+      "Optimization"
+    ],
+    "uygulamaAlanlari": [
+      "Rail Systems",
+      "ADAS",
+      "Autonomous Driving",
+      "Traffic Control",
+      "Electric Traction"
+    ],
+    "potansiyelTezKonulari": [
+      "Railway control and signalling",
+      "Robust vehicle lateral control",
+      "Reservation-based intersection management",
+      "Multi-agent traffic control",
+      "Robust controller design for uncertain systems",
+      "Disturbance-observer-based control"
+    ]
   },
   {
     "id": "mustafadogan",
     "ad": "Mustafa Doğan",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Mustafa Doğan'ın araştırmaları optimal control, robotics, sensor fusion ve aerospace systems alanlarında yoğunlaşmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları",
-      "Nanoteknoloji",
-      "Biyomedikal"
+      "Optimal Control",
+      "Robotics Control",
+      "UAV Control"
     ],
     "kaynak": "https://akademi.itu.edu.tr/mustafadogan",
     "alanKaynagi": "https://akademi.itu.edu.tr/mustafadogan",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Sensor Fusion",
+      "SLAM",
+      "Output Regulation",
+      "State Estimation"
+    ],
+    "uygulamaAlanlari": [
+      "Fixed-Wing UAV",
+      "Mobile Robots",
+      "Adaptive Optics"
+    ],
+    "potansiyelTezKonulari": [
+      "Vision-based UAV trajectory tracking",
+      "Optimal UAV control",
+      "Sensor-fusion SLAM",
+      "Visual servoing",
+      "State-estimation-based robotics"
+    ]
   },
   {
     "id": "guzelkaya",
     "ad": "Müjde Güzelkaya",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Müjde Güzelkaya'nın çalışmalarında Intelligent Control, nonlinear control, fractional-order control ve system identification öne çıkmaktadır. Güncel araştırmalarında Federated Learning based System Identification, uncertainty quantification ve Deep Reinforcement Learning tabanlı kontrol uygulamaları bulunmaktadır.",
     "alanlar": [
-      "Bulanık Mantık",
-      "Kontrol Teorisi ve Uygulamaları"
+      "Intelligent Control",
+      "Fractional-Order Control",
+      "System Identification",
+      "Nonlinear Control",
+      "Optimal Control"
     ],
     "kaynak": "https://akademi.itu.edu.tr/guzelkaya",
     "alanKaynagi": "https://akademi.itu.edu.tr/guzelkaya",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Federated Learning",
+      "Neural Networks",
+      "Reinforcement Learning",
+      "Extended Kalman Filter",
+      "Uncertainty Quantification",
+      "Data-Driven Modeling"
+    ],
+    "uygulamaAlanlari": [
+      "EV Thermal Systems",
+      "Structural Control",
+      "Magnetic Levitation",
+      "Nonlinear Processes"
+    ],
+    "potansiyelTezKonulari": [
+      "Federated Learning ile System Identification",
+      "Privacy-preserving distributed system identification",
+      "Deep RL for intelligent control",
+      "Neural nonlinear identification",
+      "EV thermal system modeling and control",
+      "Uncertainty-aware identification"
+    ]
   },
   {
     "id": "oakbati",
     "ad": "Onur Akbatı",
     "unvan": "Dr. Öğr. Üyesi",
     "bolum": "kontrol",
+    "aciklama": "Mevcut resmî akademik kaynaklarda araştırma alanlarını ayrıntılı ve güvenilir biçimde sınıflandırmak için yeterli bilgi bulunmamaktadır.",
     "alanlar": [
       "Otomasyon",
       "Otonom Sistemler",
@@ -217,81 +558,1439 @@
     "ad": "Osman Kaan Erol",
     "unvan": "Doç. Dr.",
     "bolum": "kontrol",
-    "alanlar": [],
+    "aciklama": "Osman Kaan Erol'un araştırmaları optimization, evolutionary algorithms, stochastic search ve industrial systems üzerine yoğunlaşmaktadır.",
+    "alanlar": [
+      "Optimization",
+      "Evolutionary Optimization",
+      "Metaheuristics"
+    ],
     "kaynak": "https://akademi.itu.edu.tr/okerol",
-    "alanKaynagi": null,
-    "dogrulamaTarihi": "2026-09-18"
+    "alanKaynagi": "https://akademi.itu.edu.tr/okerol",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Artificial Intelligence",
+      "Search Algorithms",
+      "Operations Research"
+    ],
+    "uygulamaAlanlari": [
+      "Industrial Automation",
+      "Industry 4.0",
+      "Industrial Service Systems"
+    ],
+    "potansiyelTezKonulari": [
+      "Metaheuristic control optimization",
+      "Predictive maintenance optimization",
+      "AI-supported industrial diagnostics",
+      "Digital industrial service systems",
+      "Multi-objective engineering optimization"
+    ]
   },
   {
     "id": "yesiloglu",
     "ad": "Sıddık Murat Yeşiloğlu",
     "unvan": "Dr. Öğr. Üyesi",
     "bolum": "kontrol",
+    "aciklama": "Sıddık Murat Yeşiloğlu'nun çalışmaları robot dynamics, multibody systems, legged robotics ve underactuated robotic systems üzerine yoğunlaşmaktadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları",
-      "Robotik"
+      "Robot Dynamics",
+      "Multibody Dynamics",
+      "Legged Robotics",
+      "Underactuated Systems"
     ],
     "kaynak": "https://akademi.itu.edu.tr/yesiloglu",
     "alanKaynagi": "https://akademi.itu.edu.tr/yesiloglu",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Reinforcement Learning",
+      "Robot Kinematics",
+      "Mathematical Modeling",
+      "Simulation"
+    ],
+    "uygulamaAlanlari": [
+      "Legged Robots",
+      "Mobile Manipulators",
+      "Space Manipulation"
+    ],
+    "potansiyelTezKonulari": [
+      "RL-based legged robot locomotion",
+      "Dynamics-aware reinforcement learning",
+      "Multibody robot simulator",
+      "Underactuated robot control",
+      "Quadruped dynamics"
+    ]
   },
   {
     "id": "nengin",
     "ad": "Şeref Naci Engin",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": null,
     "alanlar": [
       "Mekatronik Sistem Tasarımı",
       "Kontrol Teorisi ve Uygulamaları",
       "Robotik"
     ],
+    "kaynak": "https://akademi.itu.edu.tr/nengin",
     "alanKaynagi": "https://akademi.itu.edu.tr/nengin",
-    "dogrulamaTarihi": "2026-09-18",
-    "kaynak": "https://akademi.itu.edu.tr/nengin"
+    "dogrulamaTarihi": "2026-09-18"
   },
   {
     "id": "kumbasart",
     "ad": "Tufan Kumbasar",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Tufan Kumbasar'ın araştırmaları Intelligent Systems, Fuzzy Logic ve özellikle Type-2 Fuzzy Logic Systems üzerine yoğunlaşmaktadır. Güncel araştırmalarında Deep Learning, uncertainty quantification, conformal prediction, explainable system identification ve federated learning gibi yapay zekâ tabanlı yöntemler de öne çıkmaktadır.",
     "alanlar": [
-      "Bulanık Mantık",
-      "Yapay Zeka",
-      "Makine Öğrenmesi",
-      "Yapay Öğrenme",
-      "Yapay Zeka (Artificial Intelligence)",
-      "Kontrol Teorisi ve Uygulamaları",
-      "Optimizasyon"
+      "Type-2 Fuzzy Logic",
+      "Fuzzy Control",
+      "Intelligent Control",
+      "Computational Intelligence",
+      "Uncertainty Quantification",
+      "System Identification"
     ],
     "kaynak": "https://akademi.itu.edu.tr/kumbasart",
     "alanKaynagi": "https://akademi.itu.edu.tr/kumbasart",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Deep Learning",
+      "Federated Learning",
+      "Neural Networks",
+      "Conformal Prediction",
+      "Explainable AI",
+      "Machine Learning",
+      "Data-Driven Modeling"
+    ],
+    "uygulamaAlanlari": [
+      "Autonomous Vehicles",
+      "UAV Systems",
+      "Rescue Robots",
+      "Robot Control",
+      "Wireless Sensor Networks"
+    ],
+    "potansiyelTezKonulari": [
+      "Deep Learning tabanlı Type-2 Fuzzy Systems",
+      "Explainable fuzzy system identification",
+      "Uncertainty-aware neural controllers",
+      "Fuzzy + Reinforcement Learning hybrid control",
+      "Federated system identification",
+      "Conformal Prediction + fuzzy systems",
+      "Intelligent autonomous robot control"
+    ]
   },
   {
     "id": "sezerv",
     "ad": "Volkan Sezer",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Volkan Sezer'in araştırmaları Autonomous Driving, Mobile Robotics ve Intelligent Transportation Systems alanlarında yoğunlaşmaktadır. Çalışmalarında LiDAR, camera-LiDAR fusion, multi-robot task assignment, autonomous parking, object detection ve motion planning gibi konular bulunmaktadır.",
     "alanlar": [
-      "Yapay Zeka",
-      "Otonom Taşıtlar",
-      "Hibrit ve Elektrikli Araçlar",
-      "Robotik"
+      "Autonomous Vehicles",
+      "Autonomous Driving",
+      "Mobile Robotics",
+      "Intelligent Transportation Systems",
+      "Motion Planning"
     ],
     "kaynak": "https://akademi.itu.edu.tr/sezerv",
     "alanKaynagi": "https://akademi.itu.edu.tr/sezerv",
-    "dogrulamaTarihi": "2026-09-18"
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "LiDAR",
+      "Sensor Fusion",
+      "Computer Vision",
+      "Object Detection",
+      "Localization",
+      "Geometric Algorithms",
+      "Optimization",
+      "Machine Learning"
+    ],
+    "uygulamaAlanlari": [
+      "ADAS",
+      "Self-Driving Vehicles",
+      "Autonomous Mobile Robots",
+      "Multi-Robot Systems"
+    ],
+    "potansiyelTezKonulari": [
+      "Camera-LiDAR sensor fusion",
+      "Autonomous vehicle path planning",
+      "Autonomous parking algorithms",
+      "Multi-robot task allocation",
+      "Perception-aware navigation",
+      "Predictive local planning",
+      "Cost-effective autonomous driving stack"
+    ]
   },
   {
     "id": "yalciny",
     "ad": "Yaprak Yalçın",
     "unvan": "Prof. Dr.",
     "bolum": "kontrol",
+    "aciklama": "Yaprak Yalçın'ın güncel araştırmaları Model Predictive Control, autonomous vehicles ve vehicle dynamics alanlarında yoğunlaşmaktadır. Nonlinear MPC, robust MPC, trajectory tracking, vehicle state estimation ve autonomous marine systems çalışmalarında öne çıkan konular arasındadır.",
     "alanlar": [
-      "Kontrol Teorisi ve Uygulamaları"
+      "Model Predictive Control",
+      "Nonlinear MPC",
+      "Robust MPC",
+      "Vehicle Dynamics and Control",
+      "Autonomous Systems"
     ],
     "kaynak": "https://akademi.itu.edu.tr/yalciny",
     "alanKaynagi": "https://akademi.itu.edu.tr/yalciny",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "State Estimation",
+      "Extended Kalman Filter",
+      "Artificial Neural Networks",
+      "Adaptive Control",
+      "Consensus Control",
+      "Dynamic Modeling"
+    ],
+    "uygulamaAlanlari": [
+      "Autonomous Vehicles",
+      "Uncrewed Surface Vehicles",
+      "Automatic Transmissions",
+      "Automotive Systems"
+    ],
+    "teknolojiler": "MATLAB, Simulink",
+    "potansiyelTezKonulari": [
+      "Autonomous vehicle nonlinear MPC",
+      "Probabilistic MPC for obstacle avoidance",
+      "Robust trajectory tracking",
+      "Learning-enhanced MPC",
+      "EKF + neural network vehicle state estimation",
+      "Marine autonomous vehicle MPC"
+    ]
+  },
+  {
+    "id": "ersahin",
+    "ad": "Mustafa Evren Erşahin",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Atıksu arıtımı, membran biyoreaktör teknolojileri, dinamik membranlar, mikroalg tabanlı prosesler ve kaynak geri kazanımı konularında çalışmaktadır.",
+    "alanlar": [
+      "Wastewater Treatment",
+      "Membrane Bioreactors (MBR)",
+      "Dynamic Membranes",
+      "Microalgae",
+      "Resource Recovery",
+      "Environmental Biotechnology",
+      "Sustainable Treatment Technologies"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ersahin",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ersahin",
     "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "yuksekdaga",
+    "ad": "Ayşe Yüksekdağ",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Membran teknolojileri, seramik membranlar, ayırma prosesleri ve kaynak geri kazanımı üzerine çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Membrane Technologies",
+      "Ceramic Membranes",
+      "Separation Processes",
+      "Resource Recovery",
+      "Membrane Solvent Extraction",
+      "Water Treatment"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yuksekdaga",
+    "alanKaynagi": "https://akademi.itu.edu.tr/yuksekdaga",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "rkaya",
+    "ad": "Recep Kaya",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Bölüm yönetiminde görev alan öğretim üyesidir. Akademik çalışma alanları için bölüm ve İTÜ akademik profil sayfaları esas alınmalıdır.",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/rkaya",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "guvenhu",
+    "ad": "Hüseyin Güven",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Mikroalg sistemleri, besin maddesi geri kazanımı, kaynakta ayrılmış akımların değerlendirilmesi ve döngüsel ekonomi konularında çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Microalgae",
+      "Nutrient Recovery",
+      "Resource Recovery",
+      "Circular Economy",
+      "Sustainable Sanitation",
+      "Environmental Biotechnology"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/guvenhu",
+    "alanKaynagi": "https://akademi.itu.edu.tr/guvenhu",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "afaydin",
+    "ad": "Ali Fuat Aydın",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Çalışmaları su ve atıksu yönetimi, biyolojik arıtma, organik katı atıkların anaerobik arıtımı, su kalitesi ve çevresel modelleme gibi konularla ilişkilidir.",
+    "alanlar": [
+      "Water Quality",
+      "Wastewater Treatment",
+      "Anaerobic Treatment",
+      "Organic Solid Waste Treatment",
+      "Environmental Modeling",
+      "Water Resources Management",
+      "Receiving Water Quality"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/afaydin",
+    "alanKaynagi": "https://akademi.itu.edu.tr/afaydin",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "yanginci",
+    "ad": "Çiğdem Yangın Gömeç",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Çevre biyoteknolojisi, biyolojik atıksu arıtımı, anaerobik prosesler ve atıkların biyolojik yollarla değerlendirilmesi bölümde ilişkilendirildiği başlıca araştırma temaları arasındadır.",
+    "alanlar": [
+      "Environmental Biotechnology",
+      "Biological Wastewater Treatment",
+      "Anaerobic Processes",
+      "Waste Valorization",
+      "Resource Recovery",
+      "Sustainable Treatment Processes"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yanginci",
+    "alanKaynagi": "https://akademi.itu.edu.tr/yanginci",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "giskender",
+    "ad": "Fatma Gülen İskender",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Bölümün öğretim üyelerindendir. Çevre mühendisliği kapsamında atık yönetimi, çevresel süreçler ve sürdürülebilirlik eksenli çalışmalarda yer almaktadır.",
+    "alanlar": [
+      "Environmental Engineering",
+      "Waste Management",
+      "Environmental Processes",
+      "Sustainability"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/giskender",
+    "alanKaynagi": "https://akademi.itu.edu.tr/giskender",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "germirliba",
+    "ad": "Fatma Fatoş Babuna",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Endüstriyel atıksu yönetimi, kirletici karakterizasyonu, arıtılabilirlik ve sürdürülebilir çevre yönetimi alanlarıyla ilişkilendirilen çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Industrial Wastewater Treatment",
+      "Wastewater Characterization",
+      "Treatability Studies",
+      "Pollution Prevention",
+      "Environmental Management",
+      "Sustainable Production"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/germirliba",
+    "alanKaynagi": "https://akademi.itu.edu.tr/germirliba",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ozgunha",
+    "ad": "Hale Özgün Erşahin",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Membran biyoreaktörler, atıksu arıtımı, suyun yeniden kullanımı, kaynak geri kazanımı ve sürdürülebilir arıtma teknolojileri üzerinde çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Membrane Bioreactors",
+      "Wastewater Treatment",
+      "Water Reuse",
+      "Resource Recovery",
+      "Membrane Processes",
+      "Sustainable Wastewater Management"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ozgunha",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ozgunha",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "arslanid",
+    "ad": "İdil Arslan Alaton",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "İleri oksidasyon prosesleri, çevresel kirleticilerin giderimi, fotokimyasal prosesler, persülfat temelli oksidasyon ve mikrokirleticiler üzerine çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Advanced Oxidation Processes (AOP)",
+      "Photochemical Treatment",
+      "Persulfate Oxidation",
+      "Emerging Contaminants",
+      "Micropollutant Removal",
+      "Water Treatment",
+      "Environmental Chemistry",
+      "Ecotoxicology"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/arslanid",
+    "alanKaynagi": "https://akademi.itu.edu.tr/arslanid",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "altinbasm1",
+    "ad": "Mahmut Altınbaş",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Güncel projelerinde mikrobiyal fermentasyon, uçucu yağ asidi üretimi ve geri kazanımı, mikroalgler, katma değerli ürün üretimi ve döngüsel biyoekonomi temaları öne çıkmaktadır.",
+    "alanlar": [
+      "Microbial Fermentation",
+      "Volatile Fatty Acids",
+      "Resource Recovery",
+      "Microalgae",
+      "Waste Valorization",
+      "Circular Bioeconomy",
+      "Environmental Biotechnology",
+      "Anaerobic Processes"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/altinbasm1",
+    "alanKaynagi": "https://akademi.itu.edu.tr/altinbasm1",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "inceor",
+    "ad": "Orhan İnce",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Biyoremediasyon, çevresel biyoteknoloji, anaerobik biyolojik prosesler, organik atıkların değerlendirilmesi ve döngüsel biyoekonomi ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Bioremediation",
+      "Environmental Biotechnology",
+      "Anaerobic Processes",
+      "Microbial Ecology",
+      "Waste Valorization",
+      "Circular Bioeconomy",
+      "Soil Remediation"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/inceor",
+    "alanKaynagi": "https://akademi.itu.edu.tr/inceor",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "arikan",
+    "ad": "Osman Atilla Arıkan",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Bölümün öğretim üyelerindendir. Çevre mühendisliği, su ve atıksu sistemleri ile çevresel yönetim kapsamındaki akademik faaliyetlerde yer almaktadır.",
+    "alanlar": [
+      "Environmental Engineering",
+      "Water and Wastewater Systems",
+      "Environmental Management",
+      "Pollution Control"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/arikan",
+    "alanKaynagi": "https://akademi.itu.edu.tr/arikan",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ozlemkarahan",
+    "ad": "Özlem Karahan Özgün",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Biyolojik atıksu arıtımı, çevre biyoteknolojisi, mikrobiyal prosesler ve atıksu karakterizasyonu ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Biological Wastewater Treatment",
+      "Environmental Biotechnology",
+      "Microbial Processes",
+      "Wastewater Characterization",
+      "Nutrient Removal",
+      "Activated Sludge Systems"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ozlemkarahan",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ozlemkarahan",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "kuzul",
+    "ad": "Sadullah Levent Kuzu",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Güncel projelerinde atmosferik kirleticiler, PFAS, partikül madde, kuru ve yaş birikim, su ortamlarında kirletici taşınımı ve iklim değişikliği etkileri öne çıkmaktadır.",
+    "alanlar": [
+      "Air Pollution",
+      "Atmospheric Particulate Matter",
+      "PFAS",
+      "Atmospheric Deposition",
+      "Environmental Monitoring",
+      "Climate Change",
+      "Water Pollution",
+      "Environmental Exposure"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/kuzul",
+    "alanKaynagi": "https://akademi.itu.edu.tr/kuzul",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "pehlivano3",
+    "ad": "Elif Pehlivanoğlu",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Çevre mühendisliği kapsamında su ve atıksu arıtımı, kimyasal prosesler ve kirletici giderimiyle ilişkili akademik çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Water Treatment",
+      "Wastewater Treatment",
+      "Environmental Chemistry",
+      "Pollutant Removal",
+      "Treatment Processes"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/pehlivano3",
+    "alanKaynagi": "https://akademi.itu.edu.tr/pehlivano3",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "uyakv",
+    "ad": "Vedat Uyak",
+    "unvan": "Prof. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Su kalitesi, içme suyu arıtımı, dezenfeksiyon yan ürünleri ve çevresel kirleticilerin kontrolü ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Drinking Water Treatment",
+      "Water Quality",
+      "Disinfection By-Products",
+      "Environmental Chemistry",
+      "Water Treatment Processes",
+      "Pollutant Control"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/uyakv",
+    "alanKaynagi": "https://akademi.itu.edu.tr/uyakv",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ekdala",
+    "ad": "Alpaslan Ekdal",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Su kaynakları, havza yönetimi, çevresel modelleme ve su kalitesi konularıyla ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Water Resources Management",
+      "Watershed Management",
+      "Water Quality Modeling",
+      "Environmental Modeling",
+      "Surface Water Quality"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ekdala",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ekdala",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "bygul",
+    "ad": "Bahar Yavuztürk Gül",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Mikroalg biyoteknolojisi, kaynak geri kazanımı, biyolojik üretim sistemleri ve sürdürülebilir çevresel biyoteknoloji konularında çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Microalgae Biotechnology",
+      "Resource Recovery",
+      "Circular Economy",
+      "Environmental Biotechnology",
+      "Bioprocesses",
+      "Sustainable Production"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/bygul",
+    "alanKaynagi": "https://akademi.itu.edu.tr/bygul",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "kaynakbu",
+    "ad": "Burçak Kaynak Tezel",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Atmosfer kimyası, hava kirliliği, emisyonların çevresel etkileri, uydu verileri ve atmosferik kirletici taşınımı ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Air Pollution",
+      "Atmospheric Chemistry",
+      "Emission Modeling",
+      "Satellite Remote Sensing",
+      "Maritime Emissions",
+      "Particulate Matter",
+      "Environmental Exposure"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/kaynakbu",
+    "alanKaynagi": "https://akademi.itu.edu.tr/kaynakbu",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "dulekgurgen",
+    "ad": "Ebru Dülekgürgen",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Çevresel mikrobiyoloji, biyofilm oluşumu, biyolojik arıtma ve çevresel biyoteknoloji ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Environmental Microbiology",
+      "Biofilms",
+      "Biological Treatment",
+      "Environmental Biotechnology",
+      "Microbial Processes"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/dulekgurgen",
+    "alanKaynagi": "https://akademi.itu.edu.tr/dulekgurgen",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "zengingul",
+    "ad": "Gülsüm Emel Zengin Balcı",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Arıtma çamurları, anaerobik stabilizasyon, çamur dezentegrasyonu ve biyolojik atıksu arıtımı üzerine çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Sludge Treatment",
+      "Anaerobic Digestion",
+      "Sludge Disintegration",
+      "Biological Wastewater Treatment",
+      "Resource Recovery",
+      "Environmental Biotechnology"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/zengingul",
+    "alanKaynagi": "https://akademi.itu.edu.tr/zengingul",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "uzunh",
+    "ad": "Habibullah Uzun",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Bölümün öğretim üyelerindendir. Su ve atıksu arıtımı, çevresel prosesler ve sürdürülebilir arıtma teknolojileri kapsamında çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Water Treatment",
+      "Wastewater Treatment",
+      "Environmental Processes",
+      "Sustainable Treatment Technologies"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/uzunh",
+    "alanKaynagi": "https://akademi.itu.edu.tr/uzunh",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "kualtuntas",
+    "ad": "Kübra Altuntaş",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Güncel araştırma faaliyetlerinde PFAS giderimi, yenilikçi membranlar ve soğuk atmosferik plazma reaktörleri öne çıkmaktadır.",
+    "alanlar": [
+      "PFAS Treatment",
+      "Membrane Technologies",
+      "Cold Atmospheric Plasma",
+      "Advanced Treatment Technologies",
+      "Emerging Contaminants",
+      "Water Treatment"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/kualtuntas",
+    "alanKaynagi": "https://akademi.itu.edu.tr/kualtuntas",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "karpuzcu",
+    "ad": "Mahmut Ekrem Karpuzcu",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Su ve atıksu yönetimi, çevresel altyapı sistemleri ve çevre mühendisliği tasarımı ile ilişkili akademik faaliyetlerde yer almaktadır.",
+    "alanlar": [
+      "Water and Wastewater Management",
+      "Environmental Infrastructure",
+      "Environmental Engineering Design",
+      "Water Systems"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/karpuzcu",
+    "alanKaynagi": "https://akademi.itu.edu.tr/karpuzcu",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "dogruelse",
+    "ad": "Serdar Doğruel",
+    "unvan": "Doç. Dr.",
+    "bolum": "cevre",
+    "aciklama": "Endüstriyel atıksu karakterizasyonu, arıtılabilirlik, organik madde fraksiyonasyonu ve biyolojik arıtma süreçleri ile ilişkili çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Industrial Wastewater",
+      "Wastewater Characterization",
+      "Treatability",
+      "COD Fractionation",
+      "Biological Treatment",
+      "Pollution Control"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/dogruelse",
+    "alanKaynagi": "https://akademi.itu.edu.tr/dogruelse",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "gencelies",
+    "ad": "Naciye Esra Ateş Genceli",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Kristalizasyon, kaynak geri kazanımı, besin maddelerinin geri kazanımı ve çevresel proses mühendisliği konularında çalışmalar yürütmektedir.",
+    "alanlar": [
+      "Crystallization",
+      "Resource Recovery",
+      "Nutrient Recovery",
+      "Environmental Process Engineering",
+      "Wastewater Treatment"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/gencelies",
+    "alanKaynagi": "https://akademi.itu.edu.tr/gencelies",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "gulhan",
+    "ad": "Hazal Gülhan Eksin",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Güncel projelerinde aerobik dinamik membran biyoreaktörleri, yüksek yüklü membran biyoreaktörleri, uçucu yağ asidi üretimi ve alternatif kentsel atıksu arıtma konfigürasyonları öne çıkmaktadır.",
+    "alanlar": [
+      "Membrane Bioreactors",
+      "Dynamic Membranes",
+      "Municipal Wastewater Treatment",
+      "Volatile Fatty Acids",
+      "Resource Recovery",
+      "Process Modeling",
+      "Biological Treatment"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/gulhan",
+    "alanKaynagi": "https://akademi.itu.edu.tr/gulhan",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "mutluoyku",
+    "ad": "Öykü Mutlu Salmanlı",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Güncel araştırma faaliyetlerinde PFAS giderimi, membran distilasyonu ve ileri su arıtma teknolojileri yer almaktadır.",
+    "alanlar": [
+      "PFAS Removal",
+      "Membrane Distillation",
+      "Membrane Technologies",
+      "Emerging Contaminants",
+      "Advanced Water Treatment"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/mutluoyku",
+    "alanKaynagi": "https://akademi.itu.edu.tr/mutluoyku",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "mpasaoglu",
+    "ad": "Mehmet Emin Paşaoğlu",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Güncel araştırma faaliyetlerinde metal-organik çerçeveler kullanılarak ince film nanokompozit membranların üretimi, karakterizasyonu ve arıtma performansı üzerine çalışmalar yer almaktadır.",
+    "alanlar": [
+      "Membrane Materials",
+      "Metal-Organic Frameworks (MOFs)",
+      "Thin-Film Nanocomposite Membranes",
+      "Membrane Characterization",
+      "Water Treatment",
+      "Nanomaterials"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/mpasaoglu",
+    "alanKaynagi": "https://akademi.itu.edu.tr/mpasaoglu",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "akcameh",
+    "ad": "Mehmet Sadık Akca",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "cevre",
+    "aciklama": "Bölümün öğretim üyelerindendir. Akademik çalışma alanlarının ayrıntıları için İTÜ akademik profil sayfası esas alınmalıdır.",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/akcameh",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "aslanr",
+    "ad": "Alim Rüstem Aslan",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi profilinde çalışma alanları Uzay Bilimleri ve Teknolojileri, Hava-Uzay Ulaşım ve Hava ve Uzay Araçları Tasarımı olarak verilmektedir. Yayın, proje ve tez kayıtları özellikle küçük uydu sistemleri, CubeSat/PlanarSat sınıfı uzay araçları, uzay aracı sistem tasarımı, görev tasarımı, faydalı yükler, yönelim belirleme ve kontrol alt sistemleri ile uzay görevlerinin sistem mühendisliği boyutlarına uzanan uygulamalı bir araştırma profiline işaret etmektedir. Son dönem çalışmalarında küçük uydu optik sistemleri, uydu görev mimarileri ve farklı küçük uydu platformları öne çıkmaktadır.",
+    "alanlar": [
+      "Space Systems Engineering",
+      "Small Satellites",
+      "CubeSat Systems",
+      "Spacecraft Systems Design",
+      "Satellite Technologies",
+      "Space Mission Design",
+      "Spacecraft Subsystems"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/aslanr",
+    "alanKaynagi": "https://akademi.itu.edu.tr/aslanr",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Attitude Determination and Control Systems (ADCS)",
+      "Mission Management and Control",
+      "Spacecraft Payloads",
+      "Optical Payloads",
+      "Systems Integration",
+      "Verification and Testing",
+      "Model-Based Systems Engineering (MBSE) ile ilişkili sistem yaklaşımı"
+    ],
+    "uygulamaAlanlari": [
+      "Nano/Micro Satellites",
+      "CubeSat Missions",
+      "PlanarSat Platforms",
+      "Earth Observation / Remote Imaging Payloads",
+      "Space Systems Design and Test",
+      "Small-Satellite Propulsion Integration"
+    ],
+    "teknolojiler": "Kaynaklarda belirli bir yazılım paketinin sürekli kullanıldığı yönünde yeterli veri bulunmamaktadır. Araştırma konuları; uydu alt sistemleri, görev tasarımı, ADCS, optik faydalı yükler, sistem entegrasyonu ve uzay sistemi test altyapılarıyla doğrudan ilişkilidir.",
+    "sonDonemYonleri": [
+      "Küçük uydu ve PlanarSat mimarileri",
+      "6U/16U sınıfı CubeSat sistemleri",
+      "Küçük uydular için optik sistem ve ayna tasarımı",
+      "Uydu görev yönetimi ve kontrolü",
+      "Yönelim belirleme ve kontrol alt sistemleri",
+      "CubeSat ölçeğinde elektrikli itki ve alt sistem entegrasyonu"
+    ],
+    "potansiyelTezKonulari": [
+      "CubeSat için bütünleşik görev ve alt sistem mimarisi geliştirilmesi",
+      "Küçük uydularda ADCS performans analizi ve doğrulama yaklaşımı",
+      "Küçük uydu optik faydalı yüklerinin mekanik-optik optimizasyonu",
+      "PlanarSat benzeri yeni uydu mimarilerinin görev ve sistem analizi",
+      "Küçük uydu görevlerinde model tabanlı sistem mühendisliği yaklaşımı",
+      "CubeSat platformlarında görev yönetimi ve uçuş yazılımı mimarilerinin sistem seviyesinde incelenmesi"
+    ]
+  },
+  {
+    "id": "celikbay",
+    "ad": "Bayram Çelik",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi profilinde Uzay Bilimleri ve Teknolojileri, Aerodinamik ve Hava ve Uzay Araçları Tasarımı alanları yer almaktadır. Güncel yayın ve tez başlıkları, özellikle yüksek hızlı akışlar, sıkıştırılabilir aerodinamik, süpersonik/hipersonik akışlar, yüksek entalpili ve seyrek gaz akışları, şok dalgası etkileşimleri ve sayısal akışkanlar dinamiği üzerinde yoğunlaşan bir profil göstermektedir. Çalışmalar teorik aerodinamiği güçlü sayısal modelleme ve CFD uygulamalarıyla birleştirmektedir.",
+    "alanlar": [
+      "Compressible Aerodynamics",
+      "Supersonic Flows",
+      "Hypersonic Flows",
+      "High-Enthalpy Flows",
+      "Rarefied Gas Dynamics",
+      "Computational Fluid Dynamics (CFD)",
+      "Shock-Wave/Boundary-Layer Interaction"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/celikbay",
+    "alanKaynagi": "https://akademi.itu.edu.tr/celikbay",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Direct Simulation Monte Carlo (DSMC)",
+      "Shock-Shock Interaction",
+      "Aerothermal Heating",
+      "Conjugate Heat Transfer",
+      "Adaptive/Overset Mesh Methods",
+      "Numerical Methods for Compressible Flow",
+      "Reacting/High-Temperature Gas Modeling"
+    ],
+    "uygulamaAlanlari": [
+      "Hypersonic Vehicles",
+      "Supersonic Inlets",
+      "Rocket/Propulsion Internal Flows",
+      "High-Speed Aerospace Vehicles",
+      "Re-entry / High-Temperature Aerothermodynamics"
+    ],
+    "teknolojiler": "Kaynaklarda OpenFOAM tabanlı çalışmalar ve açık kaynak CFD çözücüleriyle ilgili projeler bulunmaktadır. DSMC ve yüksek hızlı akış çözümleri de araştırma yöntemleri arasında görünmektedir.",
+    "sonDonemYonleri": [
+      "Yüksek entalpili seyrek gaz akışlarının modellenmesi",
+      "Hipersonik şok dalgası–sınır tabaka etkileşimleri",
+      "Şok-şok etkileşimleri ve aerotermal yükler",
+      "Süpersonik giriş sistemleri",
+      "Süpersonik çapraz akış içine jet enjeksiyonu",
+      "Sıkıştırılabilir akışlar için paralel ve adaptif CFD yöntemleri"
+    ],
+    "potansiyelTezKonulari": [
+      "Hipersonik araçlarda shock-wave/boundary-layer interaction analizi",
+      "DSMC ile seyrek gaz akışlarının sayısal modellenmesi",
+      "Süpersonik inlet geometrilerinin CFD tabanlı performans optimizasyonu",
+      "Yüksek entalpili akışlarda aerotermal ısı yüklerinin modellenmesi",
+      "Supersonic cross-flow içine jet enjeksiyonunun karışma performansının incelenmesi",
+      "Açık kaynak CFD çözücüleriyle hipersonik akış doğrulama çalışmaları"
+    ]
+  },
+  {
+    "id": "cetiner",
+    "ad": "Nuriye Leman Okşan Çetiner Yıldırım",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de çalışma alanları Aerodinamik ve Akışkanlar Mekaniği olarak verilmektedir. Güncel proje ve tez başlıkları özellikle zamana bağlı aerodinamik, gust/türbülans etkileri, deneysel aerodinamik, akış kontrolü, rüzgâr tüneli ölçümleri ve hava araçlarının bozucu akışlara tepkisi üzerinde yoğunlaşmaktadır. Çalışma profili deneysel yöntemler ile sayısal/analitik aerodinamik incelemeleri bir arada kullanmaktadır.",
+    "alanlar": [
+      "Experimental Aerodynamics",
+      "Unsteady Aerodynamics",
+      "Fluid Mechanics",
+      "Gust Aerodynamics",
+      "Flow Control",
+      "Wind-Tunnel Testing"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/cetiner",
+    "alanKaynagi": "https://akademi.itu.edu.tr/cetiner",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Gust Generation and Characterization",
+      "Spectral Analysis of Gusts",
+      "Active Gust Mitigation",
+      "Effective Angle-of-Attack Measurement",
+      "Vortex Flows",
+      "Plasma Actuators",
+      "Flow Diagnostics"
+    ],
+    "uygulamaAlanlari": [
+      "Fixed-Wing Aircraft",
+      "Flapping-Wing Vehicles",
+      "Rotor/Airfoil Aerodynamics",
+      "Wing–Body Junction Flows",
+      "Supersonic Inlets"
+    ],
+    "teknolojiler": "Araştırma profili rüzgâr tüneli, akış ölçüm sistemleri ve deneysel aerodinamik altyapılarıyla ilişkilidir. Kaynaklarda tüm çalışmalar için ortak tek bir yazılım paketi belirtilmemektedir.",
+    "sonDonemYonleri": [
+      "Periyodik gust üretimi ve karakterizasyonu",
+      "Aktif gust azaltma/mitigasyon yöntemleri",
+      "Vortex gust etkileri",
+      "Flapping-wing sistemlerin bozucu akışlara cevabı",
+      "Plasma actuator tabanlı akış kontrolü",
+      "Swirl injector ve sprey etkileri"
+    ],
+    "potansiyelTezKonulari": [
+      "Kanat profillerinde aktif gust rejection yöntemlerinin deneysel incelenmesi",
+      "Vortex gust altında hava aracı aerodinamik yüklerinin karakterizasyonu",
+      "Plasma actuator ile sınır tabaka/ayrılma kontrolü",
+      "Flapping-wing hava araçlarında unsteady aerodynamic response analizi",
+      "Rüzgâr tünelinde yapay gust üretim sisteminin tasarım ve doğrulaması",
+      "Gust verilerinin spektral ve zaman-frekans analizi"
+    ]
+  },
+  {
+    "id": "edis",
+    "ad": "Fırat Oğuz Edis",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi profilinde Aerodinamik, Uydu Teknolojileri ve Hava-Uzay Araçları Tasarımı ve Malzemesi alanları belirtilmektedir. Yayın ve tez kayıtları daha spesifik olarak CFD, yüksek mertebeli sayısal yöntemler, GPU hızlandırmalı hesaplama, immersed-boundary yöntemleri, türbülans ve itki sistemi akışları üzerinde yoğunlaşmaktadır. Güncel tezler scramjet karışması, sıvı yakıtlı roket motoru modelleme, kavitasyonlu pompalar ve açık kaynak akış çözücülerine kadar uzanmaktadır.",
+    "alanlar": [
+      "Computational Fluid Dynamics (CFD)",
+      "Numerical Methods",
+      "Aerodynamics",
+      "High-Performance Computing",
+      "Propulsion Flow Modeling"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/edis",
+    "alanKaynagi": "https://akademi.itu.edu.tr/edis",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Immersed Boundary Method",
+      "High-Order Compact Finite Difference",
+      "Finite Volume Methods",
+      "Direct Numerical Simulation (DNS)",
+      "GPU Computing",
+      "Turbomachinery Flows",
+      "Cavitation"
+    ],
+    "uygulamaAlanlari": [
+      "Rocket Engines",
+      "Scramjet Combustors",
+      "Turbomachinery",
+      "Launch Vehicles",
+      "Aerospace Flow Simulations",
+      "Satellite/Aerospace Systems"
+    ],
+    "teknolojiler": "Kaynaklarda GPU/CUDA tabanlı hesaplama, açık kaynak CFD yazılımları ve `picFoam` gibi çözücülerle ilişkili tezler görülmektedir.",
+    "sonDonemYonleri": [
+      "Açık çevrim sıvı yakıtlı roket motoru statik modelleme",
+      "Scramjet yanma odasında hava–hidrojen karışım optimizasyonu",
+      "Motor soğutma pompalarında kavitasyon performansı",
+      "Fırlatma araçlarında irtifa rüzgâr etkilerinin açık kaynak yazılımla analizi",
+      "Turbomakine akışlarının açık kaynak çözücülerle incelenmesi"
+    ],
+    "potansiyelTezKonulari": [
+      "GPU hızlandırmalı yüksek mertebeli CFD çözücü geliştirilmesi",
+      "Scramjet karışma verimliliğinin sayısal optimizasyonu",
+      "Roket motoru alt sistemleri için 0D/1D/3D çok-seviyeli modelleme",
+      "Turbomakine akışlarında açık kaynak CFD doğrulama çalışması",
+      "Launch vehicle aerodynamics için rüzgâr/gust yükleri simülasyonu",
+      "Immersed-boundary yöntemlerinin karmaşık geometrilerde performans analizi"
+    ]
+  },
+  {
+    "id": "gungoray",
+    "ad": "Ayşe Gül Güngör",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi çalışma alanları Akışkanlar Mekaniği, Aerodinamik, Termodinamik, Isı Transferi ve Yanma, Hesaplamalı Akışkanlar Dinamiği ve Yakıtlar/Yanma başlıklarını kapsamaktadır. Son dönem yayın ve projelerde Lattice Boltzmann Method (LBM), Large Eddy Simulation (LES), Direct Numerical Simulation (DNS), turbulent/reacting flows ve yanma odası akışları belirgin biçimde öne çıkmaktadır. Araştırma profili yüksek doğruluklu sayısal çözücü geliştirme ile temel türbülans/yanma fiziğini birleştirmektedir.",
+    "alanlar": [
+      "Computational Fluid Dynamics",
+      "Turbulence",
+      "Combustion",
+      "Reactive Flows",
+      "Heat Transfer",
+      "Fluid Mechanics",
+      "Lattice Boltzmann Method"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/gungoray",
+    "alanKaynagi": "https://akademi.itu.edu.tr/gungoray",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Large Eddy Simulation (LES)",
+      "Direct Numerical Simulation (DNS)",
+      "Reynolds-Averaged Navier–Stokes (RANS)",
+      "Immersed Boundary Method",
+      "High-Fidelity Flow Simulation",
+      "Multiphase/Droplet Flows",
+      "Numerical Solver Development"
+    ],
+    "uygulamaAlanlari": [
+      "Swirl-Stabilized Combustors",
+      "Gas-Turbine/Propulsion Flows",
+      "Turbulent Boundary Layers",
+      "Droplet Breakup",
+      "Reactive Aerospace Flows"
+    ],
+    "teknolojiler": "Son dönem çalışmalarda in-house CFD solver, Lattice Boltzmann tabanlı çözümler, LES/DNS/RANS yöntemleri ve immersed-boundary yaklaşımı açıkça görülmektedir.",
+    "sonDonemYonleri": [
+      "Swirl-stabilized combustor içinde LBM tabanlı LES",
+      "Kimyasal reaksiyonlu sıkıştırılabilir türbülanslı akışlar için hibrit çözücüler",
+      "Türbülanslı sınır tabaka DNS çalışmaları",
+      "Kısmi ön-karışımlı yanma ve RANS modellemeleri",
+      "Türbülanslı akışlarda damlacık parçalanması"
+    ],
+    "potansiyelTezKonulari": [
+      "LBM tabanlı LES çözücüsünün karmaşık yanma geometrilerine uygulanması",
+      "Reactive-flow solver doğrulaması ve benchmark çalışmaları",
+      "Türbülans modellerinin swirl combustor akışlarında karşılaştırılması",
+      "DNS verilerinden türbülans istatistiklerinin çıkarılması",
+      "Damlacık parçalanmasında çok-fazlı CFD model karşılaştırması",
+      "Yüksek doğruluklu akış çözücülerinde hesaplama maliyeti/performans optimizasyonu"
+    ]
+  },
+  {
+    "id": "mecit",
+    "ad": "Zahit Mecitoğlu",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de çalışma alanları Hava-Uzay Araçlarında Titreşim ve Gürültü, Hava ve Uzay Araçları Yapıları ve Malzemeleri, Plaklar ve Kabuklar, Çarpma, Blast Yükleri, Termoelastisite, Kırılma ve Yorulma, Çok Fonksiyonlu Mimarilendirilmiş Hücreli Yapılar ve Deneysel Mekanik olarak verilmektedir. Güncel projeler kompozit hasar, yüksek performanslı alaşımlar, eklemeli imalat, kafes/metamalzeme yapılar ve darbe/yorulma davranışı gibi yapısal ve malzeme temelli problemlere uzanmaktadır.",
+    "alanlar": [
+      "Aerospace Structures",
+      "Structural Dynamics",
+      "Vibration and Noise",
+      "Composite Structures",
+      "Fracture and Fatigue",
+      "Impact Dynamics",
+      "Blast-Loaded Structures",
+      "Plates and Shells"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/mecit",
+    "alanKaynagi": "https://akademi.itu.edu.tr/mecit",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Thermoelasticity",
+      "Experimental Mechanics",
+      "Finite Element Analysis",
+      "Architected Cellular Structures",
+      "Auxetic/Metamaterial Structures",
+      "Damage and Delamination",
+      "Structural Optimization"
+    ],
+    "uygulamaAlanlari": [
+      "Aircraft Structures",
+      "Spacecraft Structures",
+      "Composite Aerospace Components",
+      "Additive-Manufactured Structures",
+      "Impact/Blast Protection"
+    ],
+    "teknolojiler": "Çalışma alanları sonlu eleman analizi, deneysel mekanik ve yapısal test yöntemleriyle doğrudan ilişkilidir. Kaynaklarda tüm projeler için tek bir yazılım paketi ortak olarak belirtilmemektedir.",
+    "sonDonemYonleri": [
+      "Kompozit yapılarda delaminasyon ve yorulma",
+      "Auxetic ve mimarilendirilmiş kafes yapılar",
+      "Eklemeli imalatla üretilen metalik yapılar",
+      "Yüksek entropili/refrakter alaşımlar",
+      "Darbe ve yüksek deformasyon altındaki hücresel yapılar",
+      "Uydu yapısal sistemlerinin tasarım/imalat/test süreçleri"
+    ],
+    "potansiyelTezKonulari": [
+      "Uzay yapılarında lightweight lattice/metamaterial optimizasyonu",
+      "Kompozit panellerde delaminasyon ilerlemesinin sayısal ve deneysel incelenmesi",
+      "Additive manufacturing ile üretilen auxetic yapıların darbe performansı",
+      "Uzay aracı yapılarında termoelastik deformasyon analizi",
+      "Yorulma ve kırılma için çok-ölçekli hasar modelleme",
+      "Uydu yapısal elemanlarında titreşim ve dinamik test korelasyonu"
+    ]
+  },
+  {
+    "id": "misirli",
+    "ad": "Aydın Mısırlıoğlu",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de İtki Sistemleri, Aerodinamik ve Akışkanlar Mekaniği alanları belirtilmektedir. Yayın ve proje kayıtları itki sistemleri aerotermodinamiği, turbomakinalar, nozzle/aerospike akışları, ısı boruları ve hesaplamalı akışkanlar dinamiğine uzanan bir çalışma çizgisi göstermektedir. Profil, propulsion ve thermal-fluid sistemlerin sayısal/deneysel analizlerini bir arada ele almaktadır.",
+    "alanlar": [
+      "Propulsion Systems",
+      "Aerodynamics",
+      "Fluid Mechanics",
+      "Computational Fluid Dynamics",
+      "Turbomachinery",
+      "Thermal-Fluid Systems"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/misirli",
+    "alanKaynagi": "https://akademi.itu.edu.tr/misirli",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Aerospike Nozzles",
+      "Axial Compressors",
+      "Heat Pipes",
+      "Convective Heat Transfer",
+      "Porous-Media Flows",
+      "Numerical Flow Analysis",
+      "High-Performance CFD"
+    ],
+    "uygulamaAlanlari": [
+      "Rocket Propulsion",
+      "Aerospace Propulsion",
+      "Compressor/Turbine Components",
+      "Spacecraft Thermal Systems",
+      "Nozzle Systems"
+    ],
+    "teknolojiler": "Geçmiş proje kayıtlarında GPU tabanlı CFD yazılım geliştirme çalışmaları bulunmaktadır. Güncel araştırma başlıkları CFD ve thermal-fluid analizlerle ilişkilidir.",
+    "sonDonemYonleri": [
+      "Aerospike nozzle performansı",
+      "Transonik eksenel kompresör rotorları",
+      "Isı borularında termal performans",
+      "İtki sistemleri akış analizi",
+      "Porous media ve konvektif ısı transferi"
+    ],
+    "potansiyelTezKonulari": [
+      "Aerospike nozzle geometrilerinin performans optimizasyonu",
+      "Transonik kompresör rotorlarında kayıp mekanizmalarının CFD analizi",
+      "Uzay aracı ısı borularının termal tasarımı",
+      "Roket nozüllerinde akış ayrılması ve performans analizi",
+      "Propulsion sistemlerinde GPU hızlandırmalı CFD uygulamaları",
+      "Porous-media tabanlı termal yönetim çözümlerinin incelenmesi"
+    ]
+  },
+  {
+    "id": "nikbay",
+    "ad": "Melike Nikbay",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de Uçak Mühendisliği, Uydu Teknolojileri ve Hava-Uzay Araçları Tasarımı ve Malzemesi alanları yer almaktadır. Yayın, proje ve tez kayıtları bu geniş başlıkları daha spesifik olarak aeroelasticity, multidisciplinary design optimization (MDO), flutter, aeroacoustics, surrogate/multi-fidelity modeling, Bayesian optimization ve machine learning ekseninde somutlaştırmaktadır. Profil; yapısal dinamik, CFD, optimizasyon ve veri güdümlü yöntemlerin hava aracı tasarımında bütünleştirildiği hesaplama yoğun bir araştırma çizgisi göstermektedir.",
+    "alanlar": [
+      "Aeroelasticity",
+      "Multidisciplinary Design Optimization (MDO)",
+      "Flutter Analysis",
+      "Aerodynamic Optimization",
+      "Aeroacoustics",
+      "Aerospace Vehicle Design"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/nikbay",
+    "alanKaynagi": "https://akademi.itu.edu.tr/nikbay",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Bayesian Optimization",
+      "Multi-Fidelity Modeling",
+      "Surrogate Modeling",
+      "Machine Learning",
+      "Deep Learning",
+      "Uncertainty Quantification",
+      "Reduced-Order Modeling",
+      "Fluid–Structure Interaction"
+    ],
+    "uygulamaAlanlari": [
+      "Fixed-Wing Aircraft",
+      "Unmanned Combat Aerial Vehicles",
+      "Transonic/Supersonic Configurations",
+      "Wing/Airfoil Design",
+      "Cavity-Flow Aeroacoustics"
+    ],
+    "teknolojiler": "Kaynaklarda çeşitli çalışmalarda ANSYS Fluent, Abaqus, CATIA, MpCCI, modeFRONTIER, yapısal çözümleyiciler ve CFD/optimizasyon iş akışları yer almaktadır. Güncel çalışmalarda Python tabanlı FSI/CFD entegrasyonu ve SU2–MSC NASTRAN bağlantılı yaklaşımlar da bölüm araştırmalarında görünmektedir.",
+    "sonDonemYonleri": [
+      "Multi-fidelity Bayesian optimization",
+      "Unsteady transonic cavity-flow aeroacoustics",
+      "CFD tabanlı generalized aerodynamic forces ve flutter prediction",
+      "Airfoil aerodynamic efficiency/noise multi-objective optimization",
+      "Aeroelastic jig-shape optimization",
+      "Flying-wing/UCAV multidisciplinary design optimization"
+    ],
+    "potansiyelTezKonulari": [
+      "Multi-fidelity surrogate model ile transonik aeroelastik optimizasyon",
+      "Bayesian optimization ile aeroacoustic noise minimization",
+      "CFD + structural solver eşleştirmesiyle flutter boundary tahmini",
+      "Machine-learning tabanlı unsteady aerodynamic reduced-order model",
+      "Çok amaçlı kanat profili aerodinamik/gürültü optimizasyonu",
+      "Belirsizlik altında reliability-based aeroelastic design optimization"
+    ]
+  },
+  {
+    "id": "msahin",
+    "ad": "Mehmet Şahin",
+    "unvan": "Prof. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de Akışkanlar Mekaniği, İtki Sistemleri, Aerodinamik, Algoritmalar ve Hesaplama Kuramı, Sonlu Elemanlar Analizi ve Hesaplamalı Akışkanlar Dinamiği başlıkları yer almaktadır. Güncel çalışmalar; CFD algoritma geliştirme, compressible/incompressible flow, Arbitrary Lagrangian–Eulerian (ALE) yöntemleri, çok fazlı/viskoelastik akışlar, paralel çözücüler ve mühendislik analiz yazılımı geliştirmeye uzanmaktadır. Bu nedenle profil, temel akış fiziğinin yanı sıra doğrudan sayısal algoritma ve bilimsel yazılım geliştirme ağırlığı taşımaktadır.",
+    "alanlar": [
+      "Computational Fluid Dynamics",
+      "Numerical Algorithms",
+      "Scientific Computing",
+      "Fluid Mechanics",
+      "Compressible Flow",
+      "Multiphase Flow",
+      "Finite-Volume / Finite-Element Methods"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/msahin",
+    "alanKaynagi": "https://akademi.itu.edu.tr/msahin",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Arbitrary Lagrangian–Eulerian (ALE)",
+      "Fluid–Structure Interaction",
+      "Viscoelastic Flow",
+      "Nonlinear Newton Solvers",
+      "Parallel Computing",
+      "Adaptive Mesh / Moving Mesh Methods",
+      "High-Performance Computing"
+    ],
+    "uygulamaAlanlari": [
+      "Aerospace Aerodynamics",
+      "Propulsion Flows",
+      "Multiphase Engineering Flows",
+      "Engineering Analysis Software",
+      "Vortex-Dominated Flows"
+    ],
+    "teknolojiler": "Kaynaklarda OpenFOAM geliştirme, HEMLAB, ayrıca paralel sayısal altyapılarda PETSc/HYPRE gibi bilimsel hesaplama araçlarıyla ilişkili çalışmalar yer almaktadır.",
+    "sonDonemYonleri": [
+      "Tam kütle korunumlu ALE yöntemleri",
+      "Compressible RANS için monolitik nonlinear Newton çözücüleri",
+      "Çok fazlı ve viskoelastik akışlar",
+      "Mühendislik analiz yazılımı geliştirme",
+      "OpenFOAM tabanlı geliştirme/doğrulama",
+      "Adaptif ağlarla vortex-dominated akışlar"
+    ],
+    "potansiyelTezKonulari": [
+      "Paralel CFD çözücülerinde ölçeklenebilir nonlinear solution strategy geliştirilmesi",
+      "ALE tabanlı moving-boundary CFD algoritması",
+      "OpenFOAM için yeni discretization/solver modüllerinin geliştirilmesi",
+      "Multiphase viscoelastic flow benchmark ve doğrulama çalışması",
+      "Adaptive mesh refinement ile vortex-dominated akış çözümü",
+      "Bilimsel hesaplama kütüphaneleri kullanılarak yüksek performanslı mühendislik analiz çerçevesi"
+    ]
+  },
+  {
+    "id": "kececidem",
+    "ad": "Demet Balkan",
+    "unvan": "Doç. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de çalışma alanları Hava ve Uzay Araçları Yapıları ve Malzemeleri, Impact Dynamics, Viscoelastic Materials ve Composite Materials olarak verilmektedir. Güncel çalışmalar kompozit hasar/delaminasyon, auxetic ve metamaterial yapılar, eklemeli imalat, impact/blast davranışı, yapısal optimizasyon ve bazı çalışmalarda yapay sinir ağları ile görüntü işleme tabanlı hasar değerlendirmesini kapsamaktadır.",
+    "alanlar": [
+      "Composite Materials",
+      "Impact Dynamics",
+      "Viscoelastic Materials",
+      "Aerospace Structures and Materials",
+      "Structural Damage",
+      "Additive Manufacturing"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/kececidem",
+    "alanKaynagi": "https://akademi.itu.edu.tr/kececidem",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Delamination",
+      "Auxetic Structures",
+      "Mechanical Metamaterials",
+      "Structural Optimization",
+      "Multi-Objective Optimization",
+      "Artificial Neural Networks",
+      "Image Processing for Damage Assessment"
+    ],
+    "uygulamaAlanlari": [
+      "Aerospace Composite Structures",
+      "Space-Environment Structural Components",
+      "Impact/Blast Resistant Structures",
+      "Additively Manufactured Structures"
+    ],
+    "teknolojiler": "Kaynaklarda ANN tabanlı tahmin, görüntü işleme ve genetic-algorithm/multi-objective optimization yaklaşımlarıyla ilişkili çalışmalar bulunmaktadır. Yapısal analiz ve deneysel malzeme karakterizasyonu temel yöntemler arasındadır.",
+    "sonDonemYonleri": [
+      "ANN ile composite delamination prediction",
+      "Uzay ortamındaki yapısal elemanlar için AI-assisted image processing",
+      "Bouligand composite structures",
+      "Additively manufactured sandwich/metamaterial structures",
+      "Impact/blast dayanımı ve optimizasyon"
+    ],
+    "potansiyelTezKonulari": [
+      "Kompozit hasar görüntülerinden derin öğrenme ile delaminasyon sınıflandırması",
+      "Auxetic yapıların çok amaçlı mekanik optimizasyonu",
+      "Additive-manufactured metamaterial yapıların impact response analizi",
+      "Viscoelastic composite yapılarda zaman bağımlı hasar modelleme",
+      "Uzay ortamı sonrası yapı yüzeylerinde otomatik hasar tespiti",
+      "Genetic algorithm ile composite layup/impact performance optimizasyonu"
+    ]
+  },
+  {
+    "id": "metebudakli",
+    "ad": "Mete Budaklı",
+    "unvan": "Doç. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de Isı Transferi, Akışkanlar Mekaniği ve Termodinamik alanları verilmektedir. Güncel yayın ve projeler boiling/condensation, microstructured surfaces, droplet spreading/wettability, minichannel/pin-fin ısı transferi ve özellikle uzay araçları için heat-pipe tabanlı termal yönetim uygulamalarına uzanmaktadır. Profil deneysel thermal-fluid araştırma ile modelleme çalışmalarını bir araya getirmektedir.",
+    "alanlar": [
+      "Heat Transfer",
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Boiling Heat Transfer",
+      "Condensation",
+      "Thermal Management"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/metebudakli",
+    "alanKaynagi": "https://akademi.itu.edu.tr/metebudakli",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Nucleate Boiling",
+      "Microstructured Surfaces",
+      "Droplet Dynamics",
+      "Wettability",
+      "Heat Pipes",
+      "Mini/Micro-Scale Heat Transfer",
+      "Surface Engineering for Heat Transfer"
+    ],
+    "uygulamaAlanlari": [
+      "Spacecraft Thermal Control",
+      "Electronics Cooling",
+      "Aerospace Thermal Management",
+      "Heat-Pipe Systems"
+    ],
+    "teknolojiler": "Araştırmalar deneysel ısı transferi, yüzey karakterizasyonu ve thermal-fluid modelleme altyapılarıyla ilişkilidir. Tek bir ortak yazılım aracı kaynaklarda belirtilmemektedir.",
+    "sonDonemYonleri": [
+      "Micro-cavity yüzeylerde nucleate boiling heat-flux modelleme",
+      "Surface roughness etkisi altında droplet spreading",
+      "Mini pin-fin ısı transferi",
+      "Hybrid-material heat pipes for spacecraft",
+      "Yoğuşma ve lazerle üretilmiş fonksiyonel yüzeyler"
+    ],
+    "potansiyelTezKonulari": [
+      "CubeSat/uydu termal kontrolü için heat-pipe optimizasyonu",
+      "Microstructured surface geometrisinin boiling heat transfer üzerindeki etkisi",
+      "Damlacık–yüzey etkileşimlerinin deneysel/sayısal modellenmesi",
+      "Uzay aracı radyatör alanı ve thermal budget optimizasyonu",
+      "Elektronik soğutmada mini-channel/pin-fin topolojilerinin karşılaştırılması",
+      "Faz değişimli termal yönetim sistemlerinin performans modellemesi"
+    ]
+  },
+  {
+    "id": "durmazseh",
+    "ad": "Seher Eken",
+    "unvan": "Doç. Dr.",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de Uçak Mühendisliği ve Hava-Uzay Araçları Tasarımı ve Malzemesi alanları belirtilmektedir. Güncel proje ve tezler aeroelasticity, flutter, fluid–structure interaction, composite structures, structural dynamics, impact/ballistics, launch-vehicle dynamics ve yapısal optimizasyon konularında yoğunlaşmaktadır. Hem sonlu eleman/CFD tabanlı hesaplama hem de deneysel/doğrulama boyutu bulunan disiplinler arası bir profil söz konusudur.",
+    "alanlar": [
+      "Aeroelasticity",
+      "Structural Dynamics",
+      "Fluid–Structure Interaction",
+      "Composite Structures",
+      "Flutter",
+      "Aerospace Structures"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/durmazseh",
+    "alanKaynagi": "https://akademi.itu.edu.tr/durmazseh",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Aeroelastic Tailoring",
+      "Transonic Flutter",
+      "Whirl Flutter",
+      "Structural Optimization",
+      "Impact/Ballistic Analysis",
+      "Hypervelocity Impact",
+      "Launch-Vehicle Dynamic Stability",
+      "Landing-Gear Shimmy"
+    ],
+    "uygulamaAlanlari": [
+      "UAV Structures",
+      "Unmanned Combat Aircraft",
+      "Launch Vehicles",
+      "Propeller–Wing Systems",
+      "Space-Debris Impact Protection",
+      "Landing Gear Systems"
+    ],
+    "teknolojiler": "Kaynaklardaki proje kayıtlarında MATLAB, MSC NASTRAN ve ANSYS gibi araçlar açıkça yer almaktadır; ayrıca CFD–FEA/FSI iş akışları ve deneysel ölçüm yöntemleri kullanılmaktadır.",
+    "sonDonemYonleri": [
+      "UAV aeroelastic analysis and simulation",
+      "Aeroelastic tailoring ve transonic flutter",
+      "Propeller whirl flutter",
+      "Ballistic textile optimization",
+      "Hypervelocity space-debris impact/shield design",
+      "Composite wing dynamic optimization"
+    ],
+    "potansiyelTezKonulari": [
+      "Kompozit kanatlarda aeroelastic tailoring optimizasyonu",
+      "Transonik rejimde CFD–FEA coupled flutter analizi",
+      "Propellerli hava araçlarında whirl flutter stability map oluşturulması",
+      "Space-debris shield geometrilerinin hypervelocity impact optimizasyonu",
+      "Launch vehicle dynamic-instability modelleme ve parametre analizi",
+      "Landing gear shimmy modelleme ve kontrol yaklaşımı"
+    ]
+  },
+  {
+    "id": "cilden",
+    "ad": "Demet Çilden Güler",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "uzay",
+    "aciklama": "İTÜ Akademi’de çalışma alanları Uzay Bilimleri ve Teknolojileri, Güdüm, Seyrüsefer ve Kontrol, Hava-Uzay Araçları Dinamiği, Kontrolü ve Otonom Sistemler olarak verilmektedir. Yayın ve projeler özellikle uydu yönelim belirleme, durum kestirimi, magnetometer/sensor calibration, Kalman-filter türevleri, hatalı ölçümler altında robust estimation ve formation-flying relative navigation konularında yoğunlaşmaktadır.",
+    "alanlar": [
+      "Guidance, Navigation and Control (GNC)",
+      "Spacecraft Dynamics and Control",
+      "Attitude Determination",
+      "State Estimation",
+      "Autonomous Aerospace Systems",
+      "Spacecraft Navigation"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/cilden",
+    "alanKaynagi": "https://akademi.itu.edu.tr/cilden",
+    "dogrulamaTarihi": "2026-09-18",
+    "ikincilAlanlar": [
+      "Kalman Filtering",
+      "Extended Kalman Filter (EKF)",
+      "Unscented Kalman Filter (UKF)",
+      "Adaptive Filtering",
+      "Sensor Fusion",
+      "Magnetometer Calibration",
+      "Fault-Tolerant Estimation",
+      "Relative Navigation",
+      "Formation Flying"
+    ],
+    "uygulamaAlanlari": [
+      "Satellites",
+      "Small Spacecraft",
+      "Formation-Flying Spacecraft",
+      "Spacecraft ADCS",
+      "Autonomous Space Systems"
+    ],
+    "teknolojiler": "Araştırmalar sayısal simülasyon, durum kestirimi algoritmaları, sensör verisi işleme ve uzay aracı dinamik modelleriyle doğrudan ilişkilidir. Kaynaklarda tüm çalışmalar için tek bir programlama dili veya yazılım paketi ortak olarak belirtilmemektedir.",
+    "sonDonemYonleri": [
+      "Magnetic-storm/noise etkileri altında spacecraft attitude estimation",
+      "Hatalı ölçümler altında robust/adaptive estimation",
+      "SVD-aided UKF yaklaşımları",
+      "Formation-flying relative navigation",
+      "Attitude-independent magnetometer calibration"
+    ],
+    "potansiyelTezKonulari": [
+      "Adaptive UKF ile uydu attitude estimation",
+      "Sensor fault altında fault-tolerant spacecraft navigation",
+      "Magnetometer calibration algoritmalarının karşılaştırmalı analizi",
+      "Multi-satellite formation için relative navigation estimator tasarımı",
+      "Space-weather kaynaklı ölçüm bozulmalarına dayanıklı attitude estimation",
+      "Sensor-fusion tabanlı küçük uydu ADCS estimator framework geliştirilmesi"
+    ]
+  },
+  {
+    "id": "yarim",
+    "ad": "Cuma Yarım",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "uzay",
+    "aciklama": "Güncel İTÜ Akademi profilinde belirli bir “Çalışma Alanları” listesi yayımlanmamıştır. Erişilebilir geçmiş yayınlar ve kişisel akademik özgeçmiş; plasma physics / fusion araştırmaları, tokamak plazmalarında manyetik perturbasyonlar, spacecraft orbital dynamics, relativistic effects ve öğrenci pico-satellite çalışmalarına katılım gibi başlıklara işaret etmektedir. Bu profil için güncel araştırma yönü konusunda erişilebilir kaynaklar diğer öğretim üyelerine kıyasla daha sınırlıdır.",
+    "alanlar": [
+      "Plasma Physics",
+      "Tokamak Plasmas",
+      "Resonant Magnetic Perturbations",
+      "Spacecraft Orbital Dynamics",
+      "Orbital Stability",
+      "Pico-Satellite Systems"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yarim",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18",
+    "uygulamaAlanlari": [
+      "Fusion Plasma Research",
+      "Orbital Mechanics",
+      "Launch-Vehicle / Spacecraft Modeling",
+      "Student Satellite Projects"
+    ],
+    "teknolojiler": "Kaynaklarda güncel ve düzenli kullanılan belirli bir yazılım/teknoloji seti açıklanmamıştır."
   }
 ]

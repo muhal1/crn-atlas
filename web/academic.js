@@ -72,6 +72,16 @@ window.DSPAcademic = (() => {
     ? durum.bolumler : [{ id: "kontrol", ad: "Kontrol ve Otomasyon Mühendisliği" }]);
   const bolumAdi = (id) => bolumListesi().find((b) => b.id === id)?.ad || "—";
 
+  function detayBolumu(baslik, ogeler) {
+    if (!ogeler || !ogeler.length) return null;
+    const blok = el("div", "hoca-detay-blok");
+    blok.append(el("p", "soluk hoca-detay-blok-baslik", baslik));
+    const liste = el("ul", "hoca-detay-liste");
+    ogeler.forEach((oge) => liste.append(el("li", null, oge)));
+    blok.append(liste);
+    return blok;
+  }
+
   function detayiKapat() {
     const alan = $("#hocaDetay");
     if (alan.open) alan.close();
@@ -114,8 +124,16 @@ window.DSPAcademic = (() => {
       kapat.type = "button"; kapat.setAttribute("aria-label", "Kapat");
       kapat.addEventListener("click", () => alan.close());
       kutu.append(kapat, el("h2", null, detay.ad), el("p", "soluk", `${detay.unvan} · ${bolumAdi(detay.bolum)}`), etiketler(detay));
+      if (detay.aciklama) kutu.append(el("p", null, detay.aciklama));
       const ortak = ortakAlanlar(detay);
       kutu.append(el("p", null, ortak.length ? `Seçtiğin ${profil.alanlar.length} ilgi alanından ${ortak.length} tanesi örtüşüyor: ${ortak.join(", ")}.` : "İlgi alanlarınla doğrulanmış bir ortak alan henüz bulunmadı."));
+      [
+        detayBolumu("İkincil çalışma alanları", detay.ikincilAlanlar),
+        detayBolumu("Uygulama alanları", detay.uygulamaAlanlari),
+        detayBolumu("Son dönem araştırma yönleri", detay.sonDonemYonleri),
+        detayBolumu("Potansiyel tez yönleri", detay.potansiyelTezKonulari),
+      ].forEach((blok) => { if (blok) kutu.append(blok); });
+      if (detay.teknolojiler) kutu.append(el("p", "soluk", `İlişkili teknolojiler: ${detay.teknolojiler}`));
       const baglar = el("div", "hoca-detay-kaynak");
       const kaynak = el("a", null, "İTÜ personel kaynağı ↗"); kaynak.href = detay.kaynak; kaynak.target = "_blank"; kaynak.rel = "noopener noreferrer";
       baglar.append(kaynak);
@@ -260,7 +278,11 @@ window.DSPAcademic = (() => {
       try {
         const veri = await window.DSPAuth.akademisyenleriYukle();
         if (veri?.length) hocalar = veri.map((h) => ({
-          id: h.id, ad: h.name, unvan: h.title, bolum: h.department, alanlar: h.topics,
+          id: h.id, ad: h.name, unvan: h.title, bolum: h.department,
+          aciklama: h.description, alanlar: h.topics,
+          ikincilAlanlar: h.secondary_topics, uygulamaAlanlari: h.application_areas,
+          teknolojiler: h.technologies, sonDonemYonleri: h.recent_directions,
+          potansiyelTezKonulari: h.thesis_directions,
           kaynak: h.source_url, alanKaynagi: h.topic_source_url, dogrulamaTarihi: h.verified_on,
         }));
         else katalogUyarisi = "Veritabanı kataloğu henüz yüklenmedi; site kataloğu gösteriliyor.";

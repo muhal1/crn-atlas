@@ -173,8 +173,8 @@ const DSPAuth = (() => {
   async function akademisyenleriYukle() {
     if (!istemci || !kullanici || kullanici.id === "yerel") return null;
     const { data, error } = await istemci.from("academics")
-      .select("id,name,title,department,topics,source_url,topic_source_url,verified_on")
-      .eq("department", "kontrol").order("name");
+      .select("id,name,title,department,description,topics,secondary_topics,application_areas,technologies,recent_directions,thesis_directions,source_url,topic_source_url,verified_on")
+      .order("name");
     if (error) throw error;
     return data;
   }

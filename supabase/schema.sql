@@ -49,6 +49,16 @@ create table if not exists public.academics (
   verified_on date not null
 );
 
+-- Bu eklemeler mevcut kayıtları değiştirmez; Hoca-Bilgileri md dosyalarındaki
+-- genel profil, ikincil/uygulama alanları, teknolojiler ve tez yönü bilgisi içindir.
+alter table public.academics
+  add column if not exists description text,
+  add column if not exists secondary_topics text[] not null default '{}'::text[],
+  add column if not exists application_areas text[] not null default '{}'::text[],
+  add column if not exists technologies text,
+  add column if not exists recent_directions text[] not null default '{}'::text[],
+  add column if not exists thesis_directions text[] not null default '{}'::text[];
+
 alter table public.academics enable row level security;
 revoke all on table public.academics from anon, authenticated;
 grant select on table public.academics to authenticated;

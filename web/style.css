@@ -1281,6 +1281,10 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .hoca-detay h2 { font-size: 24px; padding-right: 36px; }
 .hoca-detay p { margin: 10px 0; }
 .hoca-detay-kaynak { display: flex; flex-wrap: wrap; gap: 14px; }
+.hoca-detay-blok { margin: 14px 0; }
+.hoca-detay-blok-baslik { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.hoca-detay-liste { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.hoca-detay-liste li { line-height: 1.45; }
 .hoca-detay-kapat {
   position: absolute; top: 14px; right: 14px;
   display: grid; place-items: center; width: 30px; height: 30px;
