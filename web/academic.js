@@ -6,6 +6,8 @@ window.DSPAcademic = (() => {
   const kaynakYolu = "veri/akademisyenler.json";
   const profilAnahtari = () => `dsp_akademik_profil:${window.DSPAuth.kullaniciId() || "yerel"}`;
   let hocalar = [];
+  let secilenAlanlar = [];
+  let kayitZamanlayici = 0;
   let profil = { ad: "", bolum: "kontrol", duzey: "", hedef: "", alanlar: [], kaydedilenler: [] };
   let katalogUyarisi = "";
 
@@ -33,6 +35,7 @@ window.DSPAcademic = (() => {
     $("#hocalarSayfasi").classList.toggle("gizli", bolum !== "hocalar");
     $("#takvimSayfasi").classList.toggle("gizli", bolum !== "takvim");
     $("#profilSayfasi").classList.toggle("gizli", bolum !== "profilim");
+    if (bolum !== "hocalar") detayiKapat();
     $("#atlasMenu").querySelectorAll("[data-sayfa]").forEach((bag) => {
       if (bag.dataset.sayfa === bolum) bag.setAttribute("aria-current", "page");
       else bag.removeAttribute("aria-current");
@@ -65,15 +68,52 @@ window.DSPAcademic = (() => {
     $("#hocaDurum").textContent = katalogUyarisi ? `${metin}. ${katalogUyarisi}` : metin;
   }
 
+  const bolumListesi = () => (typeof durum !== "undefined" && durum.bolumler?.length
+    ? durum.bolumler : [{ id: "kontrol", ad: "Kontrol ve Otomasyon Mühendisliği" }]);
+  const bolumAdi = (id) => bolumListesi().find((b) => b.id === id)?.ad || "—";
+
+  function detayiKapat() {
+    const alan = $("#hocaDetay");
+    if (alan.open) alan.close();
+    else alan.replaceChildren();
+  }
+
+  // Eslestirmeyi besleyen ilgi alanlari burada gorunur, duzenleme profile gider.
+  function ilgiBandiniCiz() {
+    const cipler = $("#hocaIlgiCipleri"); cipler.replaceChildren();
+    $("#hocaIlgiBolum").textContent = bolumAdi(profil.bolum);
+    const varMi = profil.alanlar.length > 0;
+    $("#hocaIlgiBaslik").textContent = varMi ? "İlgi alanların" : "Henüz ilgi alanı seçmedin";
+    $("#hocaIlgiDuzenle").textContent = varMi ? "Profilimi düzenle →" : "İlgi alanı ekle →";
+    if (varMi) for (const alan of profil.alanlar) cipler.append(el("span", "hoca-etiket eslesme", alan));
+    else cipler.append(el("span", "soluk", "Profiline alan ekleyince eşleşen hocalar listede öne çıkar."));
+
+    const kapsamDisi = hocalar.length && !hocalar.some((h) => h.bolum === profil.bolum);
+    $("#hocaIlgiKapsam").textContent = kapsamDisi
+      ? `Katalogda şu an yalnızca ${bolumAdi(hocalar[0].bolum)} öğretim üyeleri var.`
+      : "";
+    $("#hocaIlgiKapsam").classList.toggle("gizli", !kapsamDisi);
+
+    // Alan yokken "ilgi alanlarima uyanlar" suzgeci hicbir sey dondurmez.
+    const kutu = $("#hocaEslesen");
+    if (!varMi && kutu.checked) kutu.checked = false;
+    kutu.disabled = !varMi;
+    kutu.closest("label").classList.toggle("pasif", !varMi);
+    kutu.closest("label").title = varMi ? "" : "Önce profilinden ilgi alanı ekle.";
+  }
+
   function hocalariCiz(detayId) {
+    ilgiBandiniCiz();
     const detay = hocalar.find((h) => h.id === detayId);
     const alan = $("#hocaDetay");
-    alan.replaceChildren();
-    alan.classList.toggle("gizli", !detay);
-    if (detay) {
+    if (!detay) detayiKapat();
+    else {
+      alan.replaceChildren();
       const kutu = el("article", "hoca-detay");
-      const geri = el("a", null, "← Hoca listesine dön"); geri.href = "#hocalar";
-      kutu.append(geri, el("h2", null, detay.ad), el("p", "soluk", `${detay.unvan} · Kontrol ve Otomasyon Mühendisliği`), etiketler(detay));
+      const kapat = el("button", "hoca-detay-kapat", "✕");
+      kapat.type = "button"; kapat.setAttribute("aria-label", "Kapat");
+      kapat.addEventListener("click", () => alan.close());
+      kutu.append(kapat, el("h2", null, detay.ad), el("p", "soluk", `${detay.unvan} · ${bolumAdi(detay.bolum)}`), etiketler(detay));
       const ortak = ortakAlanlar(detay);
       kutu.append(el("p", null, ortak.length ? `Seçtiğin ${profil.alanlar.length} ilgi alanından ${ortak.length} tanesi örtüşüyor: ${ortak.join(", ")}.` : "İlgi alanlarınla doğrulanmış bir ortak alan henüz bulunmadı."));
       const baglar = el("div", "hoca-detay-kaynak");
@@ -85,6 +125,7 @@ window.DSPAcademic = (() => {
       }
       kutu.append(el("p", "soluk", `Kaynak kontrolü: ${detay.dogrulamaTarihi}. Çalışma alanı uyumu, tez öğrencisi kabul ettiği anlamına gelmez.`), baglar);
       alan.append(kutu);
+      if (!alan.open) alan.showModal();
     }
     const sorgu = $("#hocaArama").value.toLocaleLowerCase("tr").trim();
     const seciliAlan = $("#hocaAlan").value;
@@ -127,13 +168,82 @@ window.DSPAcademic = (() => {
     for (const ad of ["ad", "bolum", "duzey", "hedef"]) {
       form.elements[ad].value = profil[ad] || (ad === "ad" ? window.DSPAuth.varsayilanAd() : ad === "bolum" ? "kontrol" : "");
     }
-    const alanlar = $("#profilAlanSecenekleri"); alanlar.replaceChildren();
-    for (const alan of alanListesi()) {
-      const label = el("label"); const input = el("input");
-      input.type = "checkbox"; input.name = "alanlar"; input.value = alan; input.checked = profil.alanlar.includes(alan);
-      label.append(input, document.createTextNode(alan)); alanlar.append(label);
+    secilenAlanlar = alanListesi().filter((a) => profil.alanlar.includes(a));
+    alanlariCiz();
+    ozetiCiz();
+    kaydetDurumu();
+  }
+
+  // Secilenler her zaman gorunur; secilmemisler "Alan ekle" altinda durur ve
+  // kaydettikten sonra o bolum kapanir.
+  function alanlariCiz() {
+    const secili = $("#profilSecilenAlanlar"); secili.replaceChildren();
+    if (!secilenAlanlar.length) {
+      secili.append(el("p", "soluk", "Henüz alan seçmedin — aşağıdan ekleyebilirsin."));
+    } else {
+      for (const alan of secilenAlanlar) {
+        const dugme = el("button", "hoca-etiket eslesme profil-alan-cip");
+        dugme.type = "button";
+        dugme.setAttribute("aria-label", `${alan} alanını kaldır`);
+        dugme.append(document.createTextNode(alan), el("span", "profil-alan-cip-ikon", "✕"));
+        dugme.addEventListener("click", () => {
+          secilenAlanlar = secilenAlanlar.filter((a) => a !== alan);
+          alanlariCiz(); ozetiCiz(); kaydetDurumu();
+        });
+        secili.append(dugme);
+      }
     }
-    if (!alanListesi().length) alanlar.append(el("p", "soluk", "Henüz doğrulanmış çalışma alanı bulunamadı."));
+
+    const sorgu = $("#alanArama").value.toLocaleLowerCase("tr").trim();
+    const kalan = alanListesi().filter((a) => !secilenAlanlar.includes(a));
+    const gosterilen = sorgu ? kalan.filter((a) => a.toLocaleLowerCase("tr").includes(sorgu)) : kalan;
+    const kutu = $("#profilAlanSecenekleri"); kutu.replaceChildren();
+    if (!alanListesi().length) kutu.append(el("p", "soluk", "Henüz doğrulanmış çalışma alanı bulunamadı."));
+    else if (!gosterilen.length) kutu.append(el("p", "soluk", kalan.length ? "Bu aramayla alan bulunamadı." : "Tüm alanları seçtin."));
+    else for (const alan of gosterilen) {
+      const dugme = el("button", "hoca-etiket profil-alan-cip");
+      dugme.type = "button";
+      dugme.setAttribute("aria-label", `${alan} alanını ekle`);
+      dugme.append(el("span", "profil-alan-cip-ikon", "+"), document.createTextNode(alan));
+      dugme.addEventListener("click", () => {
+        secilenAlanlar = [...secilenAlanlar, alan].sort((a, b) => a.localeCompare(b, "tr"));
+        alanlariCiz(); ozetiCiz(); kaydetDurumu();
+      });
+      kutu.append(dugme);
+    }
+  }
+
+  function ozetiCiz() {
+    const ad = ($("#akademikProfilFormu").elements.ad.value || "").trim() || window.DSPAuth.varsayilanAd();
+    $("#profilOzetAd").textContent = ad;
+    $("#profilOzetHarf").textContent = ad.charAt(0).toLocaleUpperCase("tr") || "P";
+    $("#profilOzetEposta").textContent = window.DSPAuth.eposta() || "Bu bilgisayardaki yerel profil";
+    $("#profilSayiAlan").textContent = secilenAlanlar.length;
+    $("#profilSayiEslesen").textContent = hocalar.filter((h) => h.alanlar.some((a) => secilenAlanlar.includes(a))).length;
+    $("#profilSayiKayitli").textContent = profil.kaydedilenler.length;
+  }
+
+  function formVerisi() {
+    const g = new FormData($("#akademikProfilFormu"));
+    return {
+      ad: String(g.get("ad") || "").trim().slice(0, 100), bolum: g.get("bolum"),
+      duzey: g.get("duzey"), hedef: g.get("hedef"),
+      alanlar: [...secilenAlanlar], kaydedilenler: profil.kaydedilenler,
+    };
+  }
+
+  function degisiklikVar() {
+    const y = formVerisi();
+    return ["ad", "bolum", "duzey", "hedef"].some((k) => (y[k] || "") !== (profil[k] || "")) ||
+      y.alanlar.length !== profil.alanlar.length ||
+      y.alanlar.some((a) => !profil.alanlar.includes(a));
+  }
+
+  function kaydetDurumu() {
+    const dugme = $("#profilKaydet");
+    const kirli = degisiklikVar();
+    dugme.disabled = !kirli;
+    dugme.textContent = kirli ? "Profili kaydet" : "Kaydedildi";
   }
 
   async function profiliSakla(yeni) {
@@ -188,6 +298,13 @@ window.DSPAcademic = (() => {
       $("#menuDaralt").focus();
     });
     $("#mobilMenuPerdesi").addEventListener("click", mobilKapat);
+    const hocaDetay = $("#hocaDetay");
+    // Pencere kapaninca (Esc, x veya arka plan) adres listeye geri doner.
+    hocaDetay.addEventListener("close", () => {
+      hocaDetay.replaceChildren();
+      if (window.location.hash.startsWith("#hocalar/")) window.location.hash = "#hocalar";
+    });
+    hocaDetay.addEventListener("click", (olay) => { if (olay.target === hocaDetay) hocaDetay.close(); });
     window.addEventListener("resize", menuErisimi);
     document.addEventListener("keydown", (olay) => {
       if (olay.key === "Escape" && $("#atlasKabuk").classList.contains("menu-mobil-acik")) { mobilKapat(); $("#mobilMenuAc").focus(); }
@@ -196,26 +313,39 @@ window.DSPAcademic = (() => {
     for (const s of ["#hocaArama", "#hocaAlan", "#hocaEslesen", "#hocaKayitli"]) {
       $(s).addEventListener(s === "#hocaArama" ? "input" : "change", () => hocalariCiz(sayfa()[1]));
     }
-    $("#akademikProfilFormu").addEventListener("submit", async (olay) => {
+    const profilFormu = $("#akademikProfilFormu");
+    profilFormu.addEventListener("input", (olay) => {
+      if (olay.target.id === "alanArama") { alanlariCiz(); return; }
+      ozetiCiz(); kaydetDurumu();
+    });
+    profilFormu.addEventListener("change", () => { ozetiCiz(); kaydetDurumu(); });
+    profilFormu.addEventListener("submit", async (olay) => {
       olay.preventDefault();
-      const form = olay.currentTarget;
-      const g = new FormData(form);
-      const yeni = {
-        ad: String(g.get("ad") || "").trim().slice(0, 100), bolum: g.get("bolum"),
-        duzey: g.get("duzey"), hedef: g.get("hedef"),
-        alanlar: g.getAll("alanlar").filter((a) => alanListesi().includes(a)),
-        kaydedilenler: profil.kaydedilenler,
-      };
+      const yeni = formVerisi();
       const mesaj = $("#profilKayitDurum");
+      const dugme = $("#profilKaydet");
+      clearTimeout(kayitZamanlayici);
+      mesaj.className = "profil-kayit-durum";
       mesaj.textContent = "Kaydediliyor…";
-      form.querySelector('button[type="submit"]').disabled = true;
+      dugme.disabled = true;
       try {
+        if (typeof bolumDegistir === "function" && yeni.bolum !== durum.aktifBolum) {
+          await bolumDegistir(yeni.bolum);
+        }
         await profiliSakla(yeni);
         profil = yeni; window.DSPAuth.gorunenAdiAyarla(yeni.ad);
-        mesaj.textContent = "Profil kaydedildi.";
+        mesaj.className = "profil-kayit-durum tamam";
+        mesaj.textContent = "✓ Kaydedildi";
+        $("#alanEkle").open = false;
+        $("#alanArama").value = "";
+        alanlariCiz(); ozetiCiz();
         hocalariCiz(sayfa()[1]);
-      } catch (hata) { mesaj.textContent = `Kaydedilemedi: ${hata.message}`; }
-      finally { form.querySelector('button[type="submit"]').disabled = false; }
+        kayitZamanlayici = setTimeout(() => { mesaj.textContent = ""; mesaj.className = "profil-kayit-durum"; }, 4000);
+      } catch (hata) {
+        mesaj.className = "profil-kayit-durum hata";
+        mesaj.textContent = `Kaydedilemedi: ${hata.message}`;
+      }
+      finally { kaydetDurumu(); }
     });
     menuErisimi();
     gez();
@@ -223,9 +353,7 @@ window.DSPAcademic = (() => {
 
   async function init() {
     bagla();
-    const bolumSecici = $("#akademikBolum");
-    bolumSecici.replaceChildren(...(typeof durum !== "undefined" && durum.bolumler?.length
-      ? durum.bolumler : [{ id: "kontrol", ad: "Kontrol ve Otomasyon Mühendisliği" }]).map((b) => new Option(b.ad, b.id)));
+    $("#akademikBolum").replaceChildren(...bolumListesi().map((b) => new Option(b.ad, b.id)));
     try {
       await katalogYukle();
     } catch (hata) {
@@ -244,6 +372,8 @@ window.DSPAcademic = (() => {
         delete profil.aciklama; // Eski profil yedeklerindeki kaldırılmış alanı taşımayalım.
         if (profil.ad) window.DSPAuth.gorunenAdiAyarla(profil.ad);
       }
+      // Ders verisi hangi bölüme göre yüklendiyse profil de onu gösterir.
+      if (typeof durum !== "undefined" && durum.aktifBolum) profil.bolum = durum.aktifBolum;
     } catch (hata) {
       $("#profilKayitDurum").textContent = `Profil yüklenemedi: ${hata.message}`;
     }

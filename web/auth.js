@@ -28,7 +28,25 @@ const DSPAuth = (() => {
     });
   }
 
+  // Kayit ekrani oturumdan once cizildigi icin bolum listesini kendisi ceker.
+  async function kayitBolumleriniDoldur() {
+    const secici = $("#kayitBolum");
+    if (!secici || secici.options.length) return;
+    let liste = [{ id: "kontrol", ad: "Kontrol ve Otomasyon Mühendisliği Yüksek Lisans" }];
+    try {
+      const yanit = await fetch("veri/programlar.json");
+      if (yanit.ok) {
+        const gelen = await yanit.json();
+        if (Array.isArray(gelen) && gelen.length) liste = gelen;
+      }
+    } catch {
+      // Liste alinamazsa varsayilan tek secenekle devam et.
+    }
+    secici.replaceChildren(...liste.map((b) => new Option(b.ad, b.id)));
+  }
+
   function sekmeGoster(kayit) {
+    if (kayit) kayitBolumleriniDoldur();
     $("#girisFormu").classList.toggle("gizli", kayit);
     $("#kayitFormu").classList.toggle("gizli", !kayit);
     $("#girisSekmesi").classList.toggle("aktif", !kayit);
@@ -217,7 +235,10 @@ const DSPAuth = (() => {
         email: String(form.get("email") || "").trim(),
         password,
         options: {
-          data: { display_name: String(form.get("displayName") || "").trim() },
+          data: {
+            display_name: String(form.get("displayName") || "").trim(),
+            bolum: String(form.get("bolum") || "kontrol"),
+          },
           emailRedirectTo: window.location.origin + window.location.pathname,
         },
       });
@@ -263,6 +284,8 @@ const DSPAuth = (() => {
     akademisyenleriYukle,
     gorunenAdiAyarla: (ad) => { akademikAd = ad; profilAdiniGuncelle(); },
     varsayilanAd: () => kullanici?.user_metadata?.display_name || kullanici?.email?.split("@")[0] || "Yerel kullanıcı",
+    eposta: () => kullanici?.email || null,
+    kayitBolumu: () => kullanici?.user_metadata?.bolum || null,
     kullaniciId: () => kullanici?.id || null,
     uzakProfil: () => Boolean(istemci && kullanici?.id && kullanici.id !== "yerel"),
   };

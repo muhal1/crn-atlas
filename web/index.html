@@ -57,6 +57,8 @@
         <label>Adın<input name="displayName" type="text" required autocomplete="name"></label>
         <label>E-posta<input name="email" type="email" required autocomplete="email"></label>
         <label>Şifre<input name="password" type="password" minlength="8" required autocomplete="new-password"></label>
+        <label>Bölüm<select id="kayitBolum" name="bolum" required></select></label>
+        <p class="giris-ipucu soluk">Bölümünü sonradan Profilim sekmesinden değiştirebilirsin.</p>
         <button class="dugme birincil" type="submit">Hesap oluştur</button>
       </form>
       <form id="sifreYenileFormu" class="giris-form gizli">
@@ -128,8 +130,6 @@
     </div>
     <h1 id="bolumAdi">Ders Seçim Paneli</h1>
     <div class="ust-bilgi">
-      <label class="bolum-secici-etiket" for="bolumSecici">Bölüm</label>
-      <select id="bolumSecici" aria-label="Bölüm seç"></select>
       <span id="donemEtiketi" class="rozet">—</span>
       <span id="veriTarihi" class="soluk"></span>
     </div>
@@ -234,6 +234,15 @@
 
 <main id="hocalarSayfasi" class="atlas-sayfa gizli" tabindex="-1">
   <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">AKADEMİK REHBER</p><h1>Hocalar</h1><p>Kontrol ve Otomasyon Mühendisliği öğretim üyelerini ve doğrulanmış çalışma alanlarını keşfet.</p></div></div>
+  <div id="hocaIlgiBandi" class="hoca-ilgi-bandi">
+    <div class="hoca-ilgi-metin">
+      <p class="hoca-ilgi-bolum"><span class="soluk">Bölüm</span> <strong id="hocaIlgiBolum">—</strong></p>
+      <p id="hocaIlgiKapsam" class="hoca-ilgi-kapsam soluk gizli"></p>
+      <strong id="hocaIlgiBaslik">İlgi alanların</strong>
+      <div id="hocaIlgiCipleri" class="hoca-ilgi-cipleri"></div>
+    </div>
+    <a id="hocaIlgiDuzenle" class="dugme kucuk" href="#profilim">İlgi alanlarını düzenle →</a>
+  </div>
   <div class="atlas-araclar kutu">
     <input id="hocaArama" type="search" aria-label="İsme veya çalışma alanına göre ara" placeholder="İsim veya çalışma alanı ara…">
     <select id="hocaAlan" aria-label="Çalışma alanı"><option value="">Tüm çalışma alanları</option></select>
@@ -241,9 +250,10 @@
     <label class="onay"><input id="hocaKayitli" type="checkbox"> Kaydettiklerim</label>
   </div>
   <p id="hocaDurum" class="atlas-durum" role="status"></p>
-  <div id="hocaDetay" class="gizli"></div>
   <div id="hocaKartlari" class="hoca-kartlari"></div>
 </main>
+
+<dialog id="hocaDetay" class="hoca-detay-pencere" aria-label="Öğretim üyesi ayrıntısı"></dialog>
 
 <main id="takvimSayfasi" class="atlas-sayfa gizli" tabindex="-1">
   <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">LİSANSÜSTÜ</p><h1>Akademik Takvim</h1><p>İTÜ lisansüstü programlarının güz ve bahar dönemi tarihleri.</p></div></div>
@@ -261,13 +271,45 @@
 
 <main id="profilSayfasi" class="atlas-sayfa gizli" tabindex="-1">
   <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">KİŞİSEL ALANIN</p><h1>Profilim</h1><p>Buradaki bilgiler yalnızca hesabında görünür; hoca önerilerini ilgi alanların belirler.</p></div></div>
-  <form id="akademikProfilFormu" class="kutu akademik-profil-formu">
-    <label>Ad soyad <input name="ad" type="text" maxlength="100" autocomplete="name" required></label>
-    <label>Bölüm <select name="bolum" id="akademikBolum"></select></label>
-    <label>Eğitim düzeyi <select name="duzey"><option value="">Belirtmek istemiyorum</option><option>Lisans</option><option>Yüksek lisans</option><option>Doktora</option></select></label>
-    <label>Hedef <select name="hedef"><option value="">Henüz karar vermedim</option><option>Bitirme projesi</option><option>Yüksek lisans tezi</option><option>Doktora araştırması</option><option>Konuları keşfetmek</option></select></label>
-    <fieldset class="profil-alanlar"><legend>İlgi alanlarım</legend><p class="soluk">Birden fazla seçebilirsin. Eşleştirme yalnızca doğrulanmış hoca alanlarıyla yapılır.</p><div id="profilAlanSecenekleri"></div></fieldset>
-    <div class="profil-form-alt"><button type="submit" class="dugme birincil">Profili kaydet</button><span id="profilKayitDurum" role="status"></span></div>
+  <div class="profil-ozet kutu">
+    <span id="profilOzetHarf" class="profil-harf profil-harf-buyuk" aria-hidden="true">P</span>
+    <div class="profil-ozet-kimlik">
+      <strong id="profilOzetAd">—</strong>
+      <span id="profilOzetEposta" class="soluk"></span>
+    </div>
+    <dl class="profil-ozet-sayilar">
+      <div><dt>İlgi alanı</dt><dd id="profilSayiAlan">0</dd></div>
+      <div><dt>Eşleşen hoca</dt><dd id="profilSayiEslesen">0</dd></div>
+      <div><dt>Kaydettiğin</dt><dd id="profilSayiKayitli">0</dd></div>
+    </dl>
+  </div>
+
+  <form id="akademikProfilFormu" class="akademik-profil-formu">
+    <section class="profil-bolum kutu">
+      <h2>Bilgiler</h2>
+      <div class="profil-izgara">
+        <label>Ad soyad <input name="ad" type="text" maxlength="100" autocomplete="name" required></label>
+        <label>Bölüm <select name="bolum" id="akademikBolum"></select></label>
+        <label>Eğitim düzeyi <select name="duzey"><option value="">Belirtmek istemiyorum</option><option>Lisans</option><option>Yüksek lisans</option><option>Doktora</option></select></label>
+        <label>Hedef <select name="hedef"><option value="">Henüz karar vermedim</option><option>Bitirme projesi</option><option>Yüksek lisans tezi</option><option>Doktora araştırması</option><option>Konuları keşfetmek</option></select></label>
+      </div>
+    </section>
+
+    <section class="profil-bolum kutu">
+      <h2>İlgi alanlarım</h2>
+      <p class="soluk">Hoca eşleştirmesi yalnızca doğrulanmış çalışma alanlarıyla yapılır.</p>
+      <div id="profilSecilenAlanlar" class="profil-secili-alanlar"></div>
+      <details id="alanEkle" class="profil-alan-ekle">
+        <summary>Alan ekle</summary>
+        <input id="alanArama" type="search" placeholder="Alan ara…" aria-label="Çalışma alanı ara" autocomplete="off">
+        <div id="profilAlanSecenekleri"></div>
+      </details>
+    </section>
+
+    <div class="profil-form-alt">
+      <button id="profilKaydet" type="submit" class="dugme birincil">Profili kaydet</button>
+      <span id="profilKayitDurum" role="status"></span>
+    </div>
   </form>
 </main>
 

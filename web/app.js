@@ -433,6 +433,11 @@ function storageJsonKaydet(anahtar, deger) {
   }
 }
 
+// Kayit sirasinda secilen bolum, ilk acilista aktif bolum olur.
+function varsayilanBolum() {
+  return window.DSPAuth?.kayitBolumu?.() || "kontrol";
+}
+
 async function veriYukle() {
   depolamaGocEt();
   const bolumYaniti = await fetch("veri/programlar.json").catch(() => null);
@@ -460,7 +465,7 @@ async function veriYukle() {
     if (!yerelProfil) uzakProfil = await window.DSPAuth.profilYukle();
     const yerelBolumler = yerelProfil ? storageJsonYukle(STORAGE_BOLUMLER_KEY, null) : null;
     const kayitliBolumler = uzakProfil?.secim?.bolumler || yerelBolumler?.bolumler;
-    const aktifBolum = uzakProfil?.secim?.aktifBolum || yerelBolumler?.aktifBolum || "kontrol";
+    const aktifBolum = uzakProfil?.secim?.aktifBolum || yerelBolumler?.aktifBolum || varsayilanBolum();
     durum.aktifBolum = durum.bolumler.some((bolum) => bolum.id === aktifBolum) ? aktifBolum : "kontrol";
     durum.bolumVerileri = kayitliBolumler || {
       kontrol: {
@@ -489,7 +494,8 @@ async function veriYukle() {
   Object.assign(durum, veri);
   if (!durum.statikMod) {
     const yerelBolumler = storageJsonYukle(STORAGE_BOLUMLER_KEY, null);
-    durum.aktifBolum = yerelBolumler?.aktifBolum || "kontrol";
+    const istenen = yerelBolumler?.aktifBolum || varsayilanBolum();
+    durum.aktifBolum = durum.bolumler.some((bolum) => bolum.id === istenen) ? istenen : "kontrol";
     durum.bolumVerileri = yerelBolumler?.bolumler || {};
     if (durum.aktifBolum !== "kontrol") {
       Object.assign(durum, await bolumDersleriniYukle(durum.aktifBolum));
@@ -567,13 +573,6 @@ const gizlenenKaydet = () => kaydet("/api/gizlenen", { kodlar: durum.gizlenen },
 /* ------------------------------------------------------------- çizim: üst */
 
 function cizUst() {
-  const bolumSecici = $("#bolumSecici");
-  bolumSecici.replaceChildren(...durum.bolumler.map((bolum) => {
-    const secenek = el("option", null, bolum.ad);
-    secenek.value = bolum.id;
-    return secenek;
-  }));
-  bolumSecici.value = durum.aktifBolum;
   const eksikSayisi = durum.plan?.gereksinimler?.filter((g) => g.eksikKaynak).length || 0;
   const kaynakUyarisi = $("#kaynakUyarisi");
   if (eksikSayisi) {
@@ -1597,18 +1596,6 @@ async function verileriYenile() {
 /* ------------------------------------------------------------- olay bağları */
 
 function olaylariBagla() {
-  $("#bolumSecici").addEventListener("change", async (olay) => {
-    const secici = olay.target;
-    secici.disabled = true;
-    try {
-      await bolumDegistir(secici.value);
-    } catch (hata) {
-      secici.value = durum.aktifBolum;
-      bilgiGoster(`Bölüm değiştirilemedi: ${hata.message}`, "hata");
-    } finally {
-      secici.disabled = false;
-    }
-  });
   $("#veriDisariAktar").addEventListener("click", kisiselVeriDisariAktar);
   $("#veriIceriAktar").addEventListener("click", () => $("#veriDosyalari").click());
   $("#veriDosyalari").addEventListener("change", async (olay) => {
