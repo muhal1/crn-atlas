@@ -47,7 +47,14 @@ window.DSPAcademic = (() => {
     document.title = `${{ dersler: "Ders Seçimi", hocalar: "Hocalar", takvim: "Akademik Takvim", profilim: "Profilim" }[bolum]} | CRN Atlas`;
   }
 
-  const alanListesi = () => [...new Set(hocalar.flatMap((h) => h.alanlar))].sort((a, b) => a.localeCompare(b, "tr"));
+  const bolumHocalari = (bolum = profil.bolum) => hocalar.filter((h) => h.bolum === bolum);
+  const alanListesi = (bolum = profil.bolum) => [...new Set(bolumHocalari(bolum).flatMap((h) => h.alanlar))].sort((a, b) => a.localeCompare(b, "tr"));
+  function alanSeciciyiDoldur() {
+    const secici = $("#hocaAlan");
+    const onceki = secici.value;
+    secici.replaceChildren(new Option("Tüm çalışma alanları", ""), ...alanListesi().map((a) => new Option(a, a)));
+    if (alanListesi().includes(onceki)) secici.value = onceki;
+  }
   const ortakAlanlar = (h) => h.alanlar.filter((alan) => profil.alanlar.includes(alan));
   const el = (tag, cls, metin) => {
     const d = document.createElement(tag);
@@ -64,7 +71,7 @@ window.DSPAcademic = (() => {
   }
 
   function durumMetni(ogeler) {
-    const metin = `${ogeler.length} öğretim üyesi gösteriliyor · ${hocalar.length} katalog kaydı`;
+    const metin = `${ogeler.length} öğretim üyesi gösteriliyor · ${bolumHocalari().length} katalog kaydı`;
     $("#hocaDurum").textContent = katalogUyarisi ? `${metin}. ${katalogUyarisi}` : metin;
   }
 
@@ -92,17 +99,14 @@ window.DSPAcademic = (() => {
   function ilgiBandiniCiz() {
     const cipler = $("#hocaIlgiCipleri"); cipler.replaceChildren();
     $("#hocaIlgiBolum").textContent = bolumAdi(profil.bolum);
+    $("#hocaAltBaslik").textContent = `${bolumAdi(profil.bolum)} öğretim üyelerini ve doğrulanmış çalışma alanlarını keşfet.`;
     const varMi = profil.alanlar.length > 0;
     $("#hocaIlgiBaslik").textContent = varMi ? "İlgi alanların" : "Henüz ilgi alanı seçmedin";
     $("#hocaIlgiDuzenle").textContent = varMi ? "Profilimi düzenle →" : "İlgi alanı ekle →";
     if (varMi) for (const alan of profil.alanlar) cipler.append(el("span", "hoca-etiket eslesme", alan));
     else cipler.append(el("span", "soluk", "Profiline alan ekleyince eşleşen hocalar listede öne çıkar."));
 
-    const kapsamDisi = hocalar.length && !hocalar.some((h) => h.bolum === profil.bolum);
-    $("#hocaIlgiKapsam").textContent = kapsamDisi
-      ? `Katalogda şu an yalnızca ${bolumAdi(hocalar[0].bolum)} öğretim üyeleri var.`
-      : "";
-    $("#hocaIlgiKapsam").classList.toggle("gizli", !kapsamDisi);
+    $("#hocaIlgiKapsam").classList.add("gizli");
 
     // Alan yokken "ilgi alanlarima uyanlar" suzgeci hicbir sey dondurmez.
     const kutu = $("#hocaEslesen");
@@ -149,7 +153,7 @@ window.DSPAcademic = (() => {
     const seciliAlan = $("#hocaAlan").value;
     const eslesen = $("#hocaEslesen").checked;
     const kayitli = $("#hocaKayitli").checked;
-    const sonuc = hocalar.filter((h) =>
+    const sonuc = bolumHocalari().filter((h) =>
       (!sorgu || `${h.ad} ${h.alanlar.join(" ")}`.toLocaleLowerCase("tr").includes(sorgu)) &&
       (!seciliAlan || h.alanlar.includes(seciliAlan)) &&
       (!eslesen || ortakAlanlar(h).length) &&
@@ -237,7 +241,7 @@ window.DSPAcademic = (() => {
     $("#profilOzetHarf").textContent = ad.charAt(0).toLocaleUpperCase("tr") || "P";
     $("#profilOzetEposta").textContent = window.DSPAuth.eposta() || "Bu bilgisayardaki yerel profil";
     $("#profilSayiAlan").textContent = secilenAlanlar.length;
-    $("#profilSayiEslesen").textContent = hocalar.filter((h) => h.alanlar.some((a) => secilenAlanlar.includes(a))).length;
+    $("#profilSayiEslesen").textContent = bolumHocalari().filter((h) => h.alanlar.some((a) => secilenAlanlar.includes(a))).length;
     $("#profilSayiKayitli").textContent = profil.kaydedilenler.length;
   }
 
@@ -290,8 +294,7 @@ window.DSPAcademic = (() => {
         katalogUyarisi = "Veritabanı kataloğu okunamadı; site kataloğu gösteriliyor.";
       }
     }
-    const secici = $("#hocaAlan");
-    secici.replaceChildren(new Option("Tüm çalışma alanları", ""), ...alanListesi().map((a) => new Option(a, a)));
+    alanSeciciyiDoldur();
   }
 
   function bagla() {
@@ -344,6 +347,8 @@ window.DSPAcademic = (() => {
     profilFormu.addEventListener("submit", async (olay) => {
       olay.preventDefault();
       const yeni = formVerisi();
+      yeni.alanlar = yeni.alanlar.filter((a) => alanListesi(yeni.bolum).includes(a));
+      secilenAlanlar = [...yeni.alanlar];
       const mesaj = $("#profilKayitDurum");
       const dugme = $("#profilKaydet");
       clearTimeout(kayitZamanlayici);
@@ -356,6 +361,7 @@ window.DSPAcademic = (() => {
         }
         await profiliSakla(yeni);
         profil = yeni; window.DSPAuth.gorunenAdiAyarla(yeni.ad);
+        alanSeciciyiDoldur();
         mesaj.className = "profil-kayit-durum tamam";
         mesaj.textContent = "✓ Kaydedildi";
         $("#alanEkle").open = false;
