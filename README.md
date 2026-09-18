@@ -5,10 +5,10 @@ CRN Atlas, ÖBS'de **gerçekten açılan** dersleri programının gereksinimleri
 eşleştirir; dersleri karşılaştırmanı, çakışmaları görmeni ve kayıt için CRN
 listeni hazırlamanı sağlar.
 
-**Kurulum yok.** Canlı sürüm tarayıcıda çalışır. Şu an Kontrol ve Otomasyon,
-Uzay ve Çevre Bilimleri Mühendisliği ve Yönetimi yüksek lisans programları
-desteklenir. Seçimlerin, aldığın dersler ve gizlediklerin hesabına kaydedilir;
-başka bir cihazdan girdiğinde de yerinde durur.
+**Kurulum yok.** Canlı sürüm tarayıcıda çalışır. Şu an desteklenen yüksek lisans
+programları: **Kontrol ve Otomasyon Mühendisliği**, **Uzay Mühendisliği**,
+**Çevre Bilimleri Mühendisliği ve Yönetimi**. Seçimlerin, aldığın dersler ve
+gizlediklerin hesabına kaydedilir; başka bir cihazdan girdiğinde de yerinde durur.
 
 👉 **[muhal1.github.io/crn-atlas](https://muhal1.github.io/crn-atlas/)**
 
@@ -318,7 +318,7 @@ Katkıya açık — hata bildirimi, özellik önerisi ve pull request hepsi olur
 Projenin birkaç bilinçli tercihi var: bağımlılığa gerek olmadıkça eklenmez,
 adlandırma Türkçedir, kaydı panel yapmaz.
 
-* 🐛 Bir şey bozulduysa [issue aç](../../issues/new/choose)
+* 🐛 Bir şey bozulduysa [issue aç](../../issues/new)
 * 🔒 Güvenlik sorununu herkese açık issue yerine
   [özel bildirimle](../../security/advisories/new) gönder
 

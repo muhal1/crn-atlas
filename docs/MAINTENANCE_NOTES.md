@@ -268,6 +268,25 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
   kapatıp tek temiz süreç başlat. Birden fazla eski panel süreci kalırsa API
   beklenen yeni alanları döndürmeyebilir.
 
+## README ekran görüntüleri
+
+- `docs/0*.png` dosyaları **gerçek PNG olmalı**. Bir dönem bunlar JPEG olarak
+  kaydedilip `.png` uzantısı verilmişti; arayüz metni ve keskin kenarlar JPEG
+  sıkıştırmasında dağıldığı için görüntüler bulanık görünüyordu. Yeniden
+  üretirken uzantıya değil dosyanın gerçek biçimine bak.
+- Görüntüler 1280×800 görünüm alanından `deviceScaleFactor: 2` ile alınır
+  (2560×1600). Retina ekranlarda ve GitHub'ın ölçeklemesinde net kalması için
+  1x çekim yeterli değil.
+- **Kişisel veriyle çekilmez.** `veri/alinan.json`, `veri/secim.json` ve
+  `veri/gizlenen.json` depo sahibinin gerçek notlarını, seçimlerini ve profil
+  adlarını tutar. Çekim için deponun bir kopyası geçici bir klasöre alınır, bu
+  üç dosya örnek veriyle doldurulur ve sunucu orada çalıştırılır; gerçek
+  `veri/` klasörüne dokunulmaz.
+- Panel yerel modda açıldığında profil adı "Yerel kullanıcı" olarak görünür,
+  yani giriş yapılmış bir hesabın kimliği görüntülere girmez.
+- Koyu tema, sayfa açılmadan `localStorage.dsp_tema = "koyu"` yazılarak seçilir;
+  dört görüntü de koyu temadır, biri açık teması gösterirse tutarsız durur.
+
 ## GitHub Pages ve Dağıtım
 
 - Ürünün adı CRN Atlas'tır. İTÜ logosu kullanılmaz; resmî uygulama olmadığı
