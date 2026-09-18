@@ -83,11 +83,13 @@
       <img class="marka-acik" alt="CRN Atlas" src="marka/crn-atlas-light-transparent-256w.png" width="256" height="67">
       <img class="marka-koyu" alt="CRN Atlas" src="marka/crn-atlas-dark-transparent-256w.png" width="256" height="67">
     </div>
-    <button id="menuDaralt" class="atlas-menu-dugmesi" type="button" aria-controls="atlasMenu" aria-expanded="true" aria-label="Menüyü daralt" title="Menüyü daralt">☰</button>
   </div>
+  <button id="menuDaralt" class="atlas-menu-dugmesi" type="button" aria-controls="atlasMenu" aria-expanded="true" aria-label="Menüyü daralt" title="Menüyü daralt">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
   <nav class="atlas-nav" aria-label="Bölümler">
     <a href="#dersler" data-sayfa="dersler" title="Ders Seçimi"><span class="atlas-nav-ikon" aria-hidden="true">▦</span><span class="atlas-nav-metin">Ders Seçimi</span></a>
-    <a href="#hocalar" data-sayfa="hocalar" title="Hocalar"><span class="atlas-nav-ikon" aria-hidden="true">♧</span><span class="atlas-nav-metin">Hocalar</span></a>
+    <a href="#hocalar" data-sayfa="hocalar" title="Hocalar"><span class="atlas-nav-ikon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M16.5 5.6a3.2 3.2 0 0 1 0 6.1M18 14.4a5.5 5.5 0 0 1 2.5 4.6"/></svg></span><span class="atlas-nav-metin">Hocalar</span></a>
     <a href="#takvim" data-sayfa="takvim" title="Akademik Takvim"><span class="atlas-nav-ikon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M14 14h3"/></svg></span><span class="atlas-nav-metin">Akademik Takvim</span></a>
   </nav>
   <div class="profil-alani">
@@ -99,6 +101,7 @@
     <div id="profilMenu" class="profil-menu gizli">
       <strong id="profilMenuAdi"></strong>
       <span id="profilEposta" class="soluk"></span>
+      <button id="profilSayfasinaGit" class="dugme sessiz" type="button">Profilim</button>
       <button id="veriDisariAktar" class="dugme sessiz" type="button">Verilerimi dışa aktar</button>
       <button id="veriIceriAktar" class="dugme sessiz" type="button">Verilerimi içe aktar</button>
       <input id="veriDosyalari" type="file" accept=".json,application/json" multiple class="gizli">

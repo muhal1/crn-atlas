@@ -164,14 +164,23 @@ const DSPAuth = (() => {
   function olaylariBagla() {
     $("#girisSekmesi").addEventListener("click", () => sekmeGoster(false));
     $("#kayitSekmesi").addEventListener("click", () => sekmeGoster(true));
-    $("#profilDugmesi").addEventListener("click", () => {
-      if (window.location.hash === "#profilim") window.dispatchEvent(new Event("hashchange"));
-      else window.location.hash = "#profilim";
-    });
-    $("#hesapMenuDugmesi").addEventListener("click", () => {
+    function hesapMenusunuAcKapa() {
       const kapali = $("#profilMenu").classList.toggle("gizli");
       $("#hesapMenuDugmesi").setAttribute("aria-expanded", String(!kapali));
+    }
+    function profilSayfasinaGit() {
+      if (window.location.hash === "#profilim") window.dispatchEvent(new Event("hashchange"));
+      else window.location.hash = "#profilim";
+    }
+    $("#profilDugmesi").addEventListener("click", () => {
+      // Dar menude "..." dugmesi gizli; avatar onun yerine hesap menusunu acar.
+      const dar = $("#atlasKabuk").classList.contains("menu-dar") &&
+        !matchMedia("(max-width: 800px)").matches;
+      if (dar) hesapMenusunuAcKapa();
+      else profilSayfasinaGit();
     });
+    $("#profilSayfasinaGit").addEventListener("click", profilSayfasinaGit);
+    $("#hesapMenuDugmesi").addEventListener("click", hesapMenusunuAcKapa);
     document.addEventListener("click", (olay) => {
       if (!olay.target.closest(".profil-alani")) {
         $("#profilMenu").classList.add("gizli");

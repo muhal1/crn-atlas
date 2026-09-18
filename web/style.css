@@ -231,7 +231,7 @@ body {
 .profil-alani { position: relative; }
 .profil-dugmesi { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 3px 6px 3px 12px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--yazi); font: inherit; cursor: pointer; }
 .profil-dugmesi:hover { background: var(--dugme-yuzey); }
-.profil-harf { display: grid; place-items: center; width: 30px; aspect-ratio: 1; border-radius: 50%; background: var(--vurgu); color: var(--vurgu-yazi); font-weight: 700; }
+.profil-harf { display: grid; place-items: center; flex: none; width: 30px; aspect-ratio: 1; border-radius: 50%; background: var(--vurgu); color: var(--vurgu-yazi); font-weight: 700; }
 .profil-ok { color: var(--soluk); }
 .profil-menu {
   position: absolute;
@@ -1180,8 +1180,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .blok:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 1px; }
 
 /* CRN Atlas bölümleri: mevcut tema değişkenleri her ekranda aynen kullanılır. */
-.atlas-kabuk { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; }
-.atlas-kabuk.menu-dar { grid-template-columns: 68px minmax(0, 1fr); }
+.atlas-kabuk { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; transition: grid-template-columns .22s ease; }
+/* 70px = 24px bosluk + 22px ikon + 24px bosluk; ikonlar iki durumda da 24px'te. */
+.atlas-kabuk.menu-dar { grid-template-columns: 70px minmax(0, 1fr); }
 .atlas-icerik { min-width: 0; }
 .atlas-menu {
   display: flex; flex-direction: column; gap: 24px; position: sticky; top: 0;
@@ -1193,28 +1194,41 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 /* Menu daralip genislerken logo yerinden oynamasin: her iki durumda da ayni
    gorsel ayni olcekte ve ayni noktada durur; dar modda yalnizca sarmalayici
    logotipin ikon kismina kadar kirpilir. */
-.atlas-menu-ust { display: flex; align-items: flex-start; justify-content: space-between; min-height: 42px; gap: 6px; }
-.atlas-menu-marka { flex: none; width: 130px; height: 34px; margin-top: 3px; overflow: hidden; }
+.atlas-menu-ust { display: flex; align-items: flex-start; min-height: 42px; }
+.atlas-menu-marka { flex: none; width: 130px; height: 34px; margin-top: 3px; overflow: hidden; transition: width .22s ease; }
 .atlas-menu-marka img { width: 130px; max-width: none; height: auto; }
-.atlas-menu-dugmesi { border: 0; border-radius: 8px; width: 40px; min-width: 40px; height: 40px; color: var(--yazi); background: var(--dugme-yuzey); font: inherit; cursor: pointer; }
-.atlas-menu-dugmesi:hover, .atlas-nav a:hover { background: var(--dugme-yuzey-2); }
+/* Daralt dugmesi akistan cikarildi: logo hizasinda, kenar cizgisinin uzerinde
+   durur; boylece menu daralinca satirlarin hicbiri yer degistirmez. */
+.atlas-menu-dugmesi {
+  position: absolute; top: 25px; right: -13px; z-index: 36;
+  display: grid; place-items: center;
+  width: 26px; min-width: 26px; height: 26px;
+  border: 1px solid var(--cam-kenar); border-radius: 50%;
+  color: var(--soluk); background: var(--kart); font: inherit; cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+}
+.atlas-menu-dugmesi:hover { color: var(--yazi); background: var(--dugme-yuzey-2); }
+.atlas-menu-dugmesi svg { transition: transform .22s ease; }
+.menu-dar .atlas-menu-dugmesi svg { transform: rotate(180deg); }
+.atlas-nav a:hover { background: var(--dugme-yuzey-2); }
 .atlas-nav { display: grid; gap: 5px; }
-.atlas-nav a { display: flex; align-items: center; gap: 12px; min-height: 46px; padding: 0 12px; border-radius: 10px; color: var(--yazi); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.atlas-nav a { display: flex; align-items: center; gap: 12px; min-height: 46px; padding: 0 12px; border-radius: 10px; color: var(--yazi); text-decoration: none; font-weight: 600; white-space: nowrap; overflow: hidden; }
+.atlas-nav-metin, #profilAdi { transition: opacity .14s ease; }
 .atlas-nav a[aria-current="page"] { background: color-mix(in srgb, var(--vurgu) 17%, var(--kart)); color: var(--vurgu); }
 .atlas-nav-ikon { display: grid; place-items: center; width: 22px; min-width: 22px; font-size: 21px; font-weight: 400; }
 .atlas-menu > .profil-alani { display: flex; align-items: center; gap: 4px; margin-top: auto; border-top: 1px solid var(--cizgi); padding-top: 12px; }
-.atlas-menu .profil-dugmesi { min-height: 46px; flex: 1; min-width: 0; justify-content: flex-start; text-align: left; }
+.atlas-menu .profil-dugmesi { min-height: 46px; flex: 1; min-width: 0; justify-content: flex-start; text-align: left; overflow: hidden; }
 .atlas-menu #profilAdi { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hesap-menu-dugmesi { flex: none; width: 36px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: var(--yazi); font: inherit; font-size: 24px; line-height: 1; cursor: pointer; }
 .hesap-menu-dugmesi:hover { background: var(--dugme-yuzey); }
 .atlas-menu .profil-menu { top: auto; bottom: calc(100% + 10px); right: auto; left: 0; max-width: min(270px, 85vw); }
 .atlas-menu .profil-menu .dugme { text-decoration: none; color: var(--yazi); }
-.menu-dar .atlas-nav-metin, .menu-dar #profilAdi { display: none; }
-.menu-dar .atlas-menu-marka { width: 38px; align-self: flex-start; }
-.menu-dar .atlas-menu-ust { flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; }
-.menu-dar .atlas-nav a { justify-content: center; padding: 0; }
-.menu-dar .atlas-menu > .profil-alani { flex-direction: column-reverse; }
-.menu-dar .atlas-menu .profil-dugmesi { flex: none; justify-content: center; width: 42px; padding: 3px; }
+/* Dar modda hicbir ogenin konumu degismez: yalnizca yazilar solup kirpilir,
+   hesap "..." dugmesi gizlenir (yerine avatar acilir menuyu acar). */
+.menu-dar .atlas-nav-metin, .menu-dar #profilAdi { opacity: 0; }
+.menu-dar .atlas-menu-marka { width: 38px; }
+.menu-dar .hesap-menu-dugmesi { display: none; }
+.menu-dar .atlas-menu .profil-dugmesi { padding-right: 0; }
 .menu-dar .atlas-menu .profil-menu { left: calc(100% + 10px); bottom: 0; }
 .atlas-mobil-ac { display: none; }
 .atlas-icerik .ust-marka { display: none; }
@@ -1300,12 +1314,11 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   .atlas-kabuk, .atlas-kabuk.menu-dar { display: block; }
   .atlas-menu { position: fixed; left: 0; width: min(280px, 85vw); transform: translateX(-110%); transition: transform .18s ease; box-shadow: 8px 0 30px var(--cam-golge); }
   .atlas-kabuk.menu-mobil-acik .atlas-menu { transform: translateX(0); }
-  .atlas-kabuk .atlas-nav-metin, .atlas-kabuk #profilAdi { display: initial; }
-  .atlas-kabuk .atlas-menu-marka { width: 130px; align-self: auto; }
-  .atlas-kabuk .atlas-menu-ust { flex-direction: row; align-items: flex-start; justify-content: space-between; }
-  .atlas-kabuk .atlas-menu > .profil-alani { flex-direction: row; }
-  .atlas-kabuk .atlas-nav a { justify-content: flex-start; padding: 0 12px; }
-  .atlas-kabuk .atlas-menu .profil-dugmesi { flex: 1; width: auto; padding: 3px 6px 3px 12px; justify-content: flex-start; }
+  .atlas-kabuk .atlas-nav-metin, .atlas-kabuk #profilAdi { opacity: 1; }
+  .atlas-kabuk .atlas-menu-marka { width: 130px; }
+  .atlas-kabuk .hesap-menu-dugmesi { display: block; }
+  .atlas-kabuk .atlas-menu .profil-dugmesi { flex: 1; width: auto; padding: 3px 6px 3px 12px; }
+  .atlas-kabuk .atlas-menu-dugmesi svg { transform: rotate(0deg); }
   .atlas-kabuk .atlas-menu .profil-menu { left: 0; bottom: calc(100% + 10px); }
   .atlas-mobil-ac { display: inline-flex; margin: 12px 16px 0; gap: 8px; }
   .mobil-menu-perdesi:not(.gizli) { position: fixed; inset: 0; z-index: 34; background: rgba(0,0,0,.42); }
@@ -1317,4 +1330,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   .takvim-gecmis-ust { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 16px; }
   .takvim-gecmis-bosluk { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .atlas-menu, .takvim-gecmis-panel, .takvim-gecmis-ok, .takvim-gecmis-dugmesi { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .atlas-kabuk, .atlas-menu, .atlas-menu-marka, .atlas-menu-dugmesi svg, .atlas-nav-metin, #profilAdi,
+  .takvim-gecmis-panel, .takvim-gecmis-ok, .takvim-gecmis-dugmesi { transition: none; }
+}
