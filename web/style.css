@@ -189,7 +189,7 @@ body {
   padding: 32px 20px;
 }
 
-.giris-marka { display: flex; flex-direction: column; gap: 10px; width: min(100%, 440px); }
+.giris-marka { display: flex; flex-direction: column; align-items: center; gap: 10px; width: min(100%, 440px); text-align: center; }
 .giris-marka p { margin: 0; color: var(--soluk); font-size: 13px; }
 
 .giris-kutu {
@@ -223,6 +223,10 @@ body {
 .giris-mesaji { margin-top: 16px; padding: 10px 12px; border: 1px solid color-mix(in srgb, var(--yesil) 45%, transparent); color: var(--yesil); }
 .giris-mesaji.hata { border-color: color-mix(in srgb, var(--kirmizi) 45%, transparent); color: var(--kirmizi); }
 .giris-notu { margin: 22px 0 0; color: var(--soluk); font-size: 12px; }
+.giris-gizlilik { margin-top: 10px; color: var(--soluk); font-size: 12px; }
+.giris-gizlilik summary { cursor: pointer; color: var(--vurgu); }
+.giris-gizlilik p { margin: 8px 0 0; }
+.giris-gizlilik a { color: var(--vurgu); }
 
 .profil-alani { position: relative; }
 .profil-dugmesi { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 3px 6px 3px 12px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--yazi); font: inherit; cursor: pointer; }
@@ -249,7 +253,6 @@ body {
 
 @media (max-width: 760px) {
   .giris-ekrani { gap: 26px; padding: 24px; }
-  .giris-marka { align-items: flex-start; }
   .giris-marka p { font-size: 14px; }
   .marka-logo-buyuk img { height: 46px; }
   .giris-kutu { padding: 22px; }
