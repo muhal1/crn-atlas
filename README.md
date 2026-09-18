@@ -257,28 +257,6 @@ veriyi yeniden çekmeden inceleyebilirsin.
 
 ---
 
-## Başkasına verirken
-
-Desteklenen üç yüksek lisans programından birindeyse canlı sürümün adresini
-paylaş: kurulum gerekmez, hesabını açıp bölümünü seçer.
-
-Yerelde çalıştırmak isteyen biri için: `AGENTS.md`'yi kendi asistanına verir,
-kurulum kendiliğinden ilerler. Depoda ortak plan ve dönem verileri bulunur;
-`veri/alinan.json`, `veri/secim.json` ve `veri/gizlenen.json` gibi kişisel
-dosyalar `.gitignore` ile dışarıda tutulur.
-
-Git kullanmayan birine göndereceksen zip üret:
-
-```bash
-python panel.py paketle
-```
-
-Üst klasörde `crn-atlas-paylasim.zip` oluşur. İçinde kodun tamamı ve
-`AGENTS.md` vardır; **senin plan, alınan ders ve seçim verilerin yoktur** —
-karşı taraf `veri/` klasörünü boş şablondan başlatır.
-
----
-
 ## Veri kaynağı
 
 Tümü `obs.itu.edu.tr` üzerindeki herkese açık sayfalar; giriş gerektirmez.
