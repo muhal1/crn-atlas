@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CRN Atlas | Ders Seçim Paneli</title>
 <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="marka/crn-atlas-icon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="marka/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0e13" media="(prefers-color-scheme: dark)">
 <script>
   // Sayfa boyanmadan önce çalışır; aksi hâlde koyu temada beyaz bir çakma olur.
   try {
@@ -19,11 +24,22 @@
 <section id="girisEkrani" class="giris-ekrani">
   <button class="dugme tema-dugmesi" type="button" data-tema-dugmesi aria-label="Tema değiştir"></button>
   <div class="giris-marka">
-    <span class="marka-isareti" aria-hidden="true">CA</span>
-    <div>
-      <h1>CRN Atlas</h1>
-      <p>İTÜ Yüksek Lisans Ders Programları</p>
-    </div>
+    <h1 class="marka-logo marka-logo-buyuk">
+      <!-- İki dosya: biri açık, biri koyu tema için; görünürlüğü CSS seçiyor. -->
+      <img class="marka-acik" alt="CRN Atlas" width="2172" height="724"
+           src="marka/crn-atlas-light-transparent-512w.png"
+           srcset="marka/crn-atlas-light-transparent-256w.png 256w,
+                   marka/crn-atlas-light-transparent-512w.png 512w,
+                   marka/crn-atlas-light-transparent-768w.png 768w"
+           sizes="240px">
+      <img class="marka-koyu" alt="CRN Atlas" width="2172" height="724"
+           src="marka/crn-atlas-dark-transparent-512w.png"
+           srcset="marka/crn-atlas-dark-transparent-256w.png 256w,
+                   marka/crn-atlas-dark-transparent-512w.png 512w,
+                   marka/crn-atlas-dark-transparent-768w.png 768w"
+           sizes="240px">
+    </h1>
+    <p>İTÜ Yüksek Lisans Ders Programları</p>
   </div>
   <div class="giris-kutu">
     <div class="giris-baslik">
@@ -61,7 +77,18 @@
 
 <header class="ust">
   <div class="ust-sol">
-    <div class="ust-marka">CRN Atlas</div>
+    <div class="ust-marka marka-logo">
+      <img class="marka-acik" alt="CRN Atlas" width="2172" height="724"
+           src="marka/crn-atlas-light-transparent-256w.png"
+           srcset="marka/crn-atlas-light-transparent-256w.png 256w,
+                   marka/crn-atlas-light-transparent-512w.png 512w"
+           sizes="96px">
+      <img class="marka-koyu" alt="CRN Atlas" width="2172" height="724"
+           src="marka/crn-atlas-dark-transparent-256w.png"
+           srcset="marka/crn-atlas-dark-transparent-256w.png 256w,
+                   marka/crn-atlas-dark-transparent-512w.png 512w"
+           sizes="96px">
+    </div>
     <h1 id="bolumAdi">Ders Seçim Paneli</h1>
     <div class="ust-bilgi">
       <label class="bolum-secici-etiket" for="bolumSecici">Bölüm</label>

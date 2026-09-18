@@ -1,0 +1,15 @@
+{
+  "name": "CRN Atlas",
+  "short_name": "CRN Atlas",
+  "description": "İTÜ yüksek lisans ders programı ve CRN seçim paneli",
+  "lang": "tr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "theme_color": "#0b0e13",
+  "background_color": "#0b0e13",
+  "icons": [
+    { "src": "marka/crn-atlas-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "marka/crn-atlas-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

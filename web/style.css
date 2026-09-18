@@ -158,6 +158,25 @@ body {
 }
 .danisman-onayi { color: var(--soluk); font-size: 11px; white-space: nowrap; }
 
+/* ------------------------------------------------------------------ marka */
+/* Logonun açık ve koyu zemin için iki hazır rasterı var (vektör yok). Hangisinin
+   görüneceğini JS değil CSS seçer: tema düğmesi anında çalışır ve sayfa ilk
+   boyanırken yanlış varyant bir kare bile görünmez. */
+
+.marka-logo { margin: 0; line-height: 0; }
+.marka-logo img { display: block; width: auto; height: 26px; }
+.marka-logo .marka-koyu { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="acik"]) .marka-logo .marka-acik { display: none; }
+  :root:not([data-tema="acik"]) .marka-logo .marka-koyu { display: block; }
+}
+
+:root[data-tema="koyu"] .marka-logo .marka-acik { display: none; }
+:root[data-tema="koyu"] .marka-logo .marka-koyu { display: block; }
+
+.marka-logo-buyuk img { height: 54px; }
+
 /* --------------------------------------------------------- giriş ve profil */
 
 .giris-ekrani {
@@ -170,21 +189,8 @@ body {
   padding: 32px 20px;
 }
 
-.giris-marka { display: flex; align-items: center; gap: 16px; width: min(100%, 440px); }
-.marka-isareti {
-  display: grid;
-  place-items: center;
-  width: 58px;
-  aspect-ratio: 1;
-  flex: 0 0 auto;
-  border-radius: var(--r);
-  background: var(--vurgu);
-  color: var(--vurgu-yazi);
-  font-size: 17px;
-  font-weight: 700;
-}
-.giris-marka h1 { font-size: 22px; line-height: 1.2; }
-.giris-marka p { margin: 4px 0 0; color: var(--soluk); font-size: 13px; }
+.giris-marka { display: flex; flex-direction: column; gap: 10px; width: min(100%, 440px); }
+.giris-marka p { margin: 0; color: var(--soluk); font-size: 13px; }
 
 .giris-kutu {
   width: min(100%, 440px);
@@ -244,9 +250,8 @@ body {
 @media (max-width: 760px) {
   .giris-ekrani { gap: 26px; padding: 24px; }
   .giris-marka { align-items: flex-start; }
-  .marka-isareti { width: 48px; font-size: 15px; }
-  .giris-marka h1 { font-size: 21px; }
   .giris-marka p { font-size: 14px; }
+  .marka-logo-buyuk img { height: 46px; }
   .giris-kutu { padding: 22px; }
   #profilAdi, .profil-ok { display: none; }
 }
@@ -278,7 +283,7 @@ h2 { font-size: 15px; }
 }
 
 .ust-sol { min-width: 0; }
-.ust-marka { margin-bottom: 3px; color: var(--vurgu); font-size: 11px; font-weight: 700; }
+.ust-marka { margin-bottom: 6px; }
 .ust-sol h1 { line-height: 1.25; }
 .ust-bilgi { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
 

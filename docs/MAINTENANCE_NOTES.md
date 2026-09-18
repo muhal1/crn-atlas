@@ -270,9 +270,24 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
 
 ## GitHub Pages ve Dağıtım
 
-- Ürünün adı CRN Atlas'tır. Logo teslim edilene kadar girişte CA harflerinden
-  oluşan geçici işaret ve favicon kullanılır. İTÜ logosu kullanılmaz; resmî
-  uygulama olmadığı açıkça belirtilir.
+- Ürünün adı CRN Atlas'tır. İTÜ logosu kullanılmaz; resmî uygulama olmadığı
+  açıkça belirtilir.
+- Marka varlıkları `web/marka/` altındadır ve onaylı logo paketinden gelen
+  raster dışa aktarımlardır; gerçek bir vektör (SVG) yok, dolayısıyla ölçek
+  gereken her yer için paketten uygun genişlik alınmalıdır. Geçici "CA" işareti
+  ve `favicon.svg` kaldırıldı.
+- Logonun açık ve koyu zemin için iki ayrı dosyası var. Hangisinin görüneceğini
+  JS değil CSS seçer (`.marka-logo .marka-acik` / `.marka-koyu`): tema düğmesi
+  anında çalışır ve sayfa ilk boyanırken yanlış varyant görünmez. Yeni bir yere
+  logo koyarken iki `<img>`'i birlikte kopyala, birini silme.
+- Koyu temada logodaki ikon lacivert olduğu için koyu zeminle kontrastı düşük;
+  bu yüzden üst şeritte 26px'in altına inilmedi. Daha küçük kullanılacaksa
+  paketin ikon PNG'leri tercih edilmeli.
+- `server.py` içindeki `MIME` sözlüğü elle tutuluyor. `web/` altına yeni bir
+  dosya türü eklenirse (png, ico, webmanifest gibi) oraya da girmesi gerekir,
+  yoksa yerel sunucu `application/octet-stream` döndürür ve tarayıcı dosyayı
+  reddeder. Canlı Pages dağıtımında bu sorun görünmez — hata yalnızca yerelde
+  çıkar.
 - Pages proje yolu depo adından gelir: hedef adres
   https://muhal1.github.io/crn-atlas/ . Depo yeniden adlandırıldığında
   eski Pages yolu otomatik yönlenmez. Supabase Auth URL Configuration'da
