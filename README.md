@@ -1,13 +1,13 @@
 # CRN Atlas
 
-İTÜ ders kayıt dönemi için bir ders seçim paneli. Bölümünün ders planını ve o
-dönem **gerçekten açılan** dersleri `obs.itu.edu.tr` üzerinden çeker, sadece
-**seni ilgilendiren** dersleri gösterir; haftalık programını kurmanı,
-çakışmaları görmeni ve ders kayıt ekranına yapıştıracağın CRN listesini
-üretmeni sağlar.
+İTÜ öğrencileri için ders planı, haftalık program ve CRN listesi tek yerde.
+CRN Atlas, ÖBS'de **gerçekten açılan** dersleri programının gereksinimleriyle
+eşleştirir; dersleri karşılaştırmanı, çakışmaları görmeni ve kayıt için CRN
+listeni hazırlamanı sağlar.
 
-**Kurulum yok.** Canlı sürüm tarayıcıda çalışır, e-posta ile saniyeler içinde
-hesap açılır. Seçimlerin, aldığın dersler ve gizlediklerin hesabına kaydedilir;
+**Kurulum yok.** Canlı sürüm tarayıcıda çalışır. Şu an Kontrol ve Otomasyon,
+Uzay ve Çevre Bilimleri Mühendisliği ve Yönetimi yüksek lisans programları
+desteklenir. Seçimlerin, aldığın dersler ve gizlediklerin hesabına kaydedilir;
 başka bir cihazdan girdiğinde de yerinde durur.
 
 👉 **[muhal1.github.io/crn-atlas](https://muhal1.github.io/crn-atlas/)**
@@ -18,7 +18,9 @@ başka bir cihazdan girdiğinde de yerinde durur.
 > gereksinimlerinde **resmî kaynak her zaman ÖBS'dir**; ders kaydını da ÖBS
 > üzerinden sen yaparsın.
 
-![CRN Atlas genel görünüm](docs/01-genel.png)
+![CRN Atlas genel paneli: mezuniyet gereksinimleri ve haftalık program](docs/01-genel.png)
+
+Görseller, kişisel hesap yerine örnek ders verileriyle çekilmiştir.
 
 ---
 
@@ -26,7 +28,7 @@ başka bir cihazdan girdiğinde de yerinde durur.
 
 1. **[muhal1.github.io/crn-atlas](https://muhal1.github.io/crn-atlas/)** adresine git.
 2. E-posta ile hesap aç — ücretsiz, saniyeler sürer, doğrulama e-postası dışında bir şey istemez.
-3. Bölümünü ve seviyeni seç (lisans, yüksek lisans/doktora, ön lisans…).
+3. Desteklenen yüksek lisans programlarından bölümünü seç.
 4. Panel senin planına sayan dersleri kendisi bulur. Ders seçtikçe haftalık
    programın kurulur, çakışmalar kırmızı görünür.
 5. Altta hazır duran CRN listesini kopyala, ÖBS ders kayıt ekranına yapıştır.
@@ -129,14 +131,14 @@ adını taşır ("⇱ CRN doldur · Program 1"), böylece her alternatif program
 ayrı bir yer imi tutabilirsin. Sürükleyemiyorsan bağlantıya tıkla: kodu panoya
 kopyalar, yer imini elle oluşturup adres alanına yapıştırabilirsin.
 
-<img src="docs/02-program.png" alt="Haftalık program, seçilen dersler ve CRN listesi" width="420">
+<img src="docs/02-program.png" alt="Seçilen dersler ve kayıt için hazır CRN listesi" width="900">
 
 **Alınan Dersler (yan panel)** — Sağ üstteki düğmeyle açılır. Şimdiye kadar
 tamamladığın dersleri buraya eklersin; hem gereksinim takibinde hem de ders
 listesinde "bu dersi aldın" işaretinde kullanılır. Ders kodunu yazınca adı
 plandan otomatik dolar.
 
-<img src="docs/04-alinan.png" alt="Alınan dersler yan paneli" width="320">
+<img src="docs/04-alinan.png" alt="Alınan dersleri ekleme ve görüntüleme paneli" width="900">
 
 ---
 
@@ -212,7 +214,7 @@ server.py           yerel web sunucusu (statik dosyalar + /api)
 
 web/                arayüz — index.html, style.css, app.js
 
-veri/               KİŞİSEL VERİN (paylaşırken bu klasör dışarıda kalır)
+veri/               ortak ders verileri ve yerel kullanıcı dosyaları
   ayarlar.json        bölüm, planId, seviye, ek branş kodları
   plan.json           çekilmiş ders planı
   dersler.json        bu dönem açılan dersler (CRN'li)
@@ -257,13 +259,13 @@ veriyi yeniden çekmeden inceleyebilirsin.
 
 ## Başkasına verirken
 
-En kolayı, canlı sürümün adresini paylaşmak: kimse bir şey kurmaz, sadece
-hesap açar. Bölümü kendi seçer, dersleri kendi görür — kurulum tamamen
-gereksiz hâle geldi.
+Desteklenen üç yüksek lisans programından birindeyse canlı sürümün adresini
+paylaş: kurulum gerekmez, hesabını açıp bölümünü seçer.
 
 Yerelde çalıştırmak isteyen biri için: `AGENTS.md`'yi kendi asistanına verir,
-kurulum kendiliğinden ilerler. Depoda kişisel veri yoktur; `veri/` klasörü
-`.gitignore`'dadır ve herkes kendi verisini `sablon/`'dan oluşturur.
+kurulum kendiliğinden ilerler. Depoda ortak plan ve dönem verileri bulunur;
+`veri/alinan.json`, `veri/secim.json` ve `veri/gizlenen.json` gibi kişisel
+dosyalar `.gitignore` ile dışarıda tutulur.
 
 Git kullanmayan birine göndereceksen zip üret:
 
