@@ -203,6 +203,7 @@ function kisiselVeriDisariAktar() {
     secim: { ...durum.secim, aktifBolum: durum.aktifBolum, bolumler: tumBolumVerileri() },
     gizlenen: durum.gizlenen,
     kapaliBranslar: [...secimeBagliKapaliBranslar],
+    akademikProfil: window.DSPAcademic?.aktarimVerisi() || null,
   }, null, 2);
   const adres = URL.createObjectURL(new Blob([icerik], { type: "application/json" }));
   const baglanti = document.createElement("a");
@@ -270,6 +271,7 @@ async function kisiselVeriIceriAktar(dosyalar) {
   }
   cizSecenekler();
   ciz();
+  if (okunan.akademikProfil) await window.DSPAcademic?.aktarimYukle(okunan.akademikProfil);
   bilgiGoster("Profil verileri içe aktarıldı.", "basari");
 }
 
@@ -1844,4 +1846,6 @@ function temaBaslat() {
   }
   cizSecenekler();
   ciz();
+  await window.DSPAcademic?.init();
+  await window.DSPCalendar?.init();
 })();

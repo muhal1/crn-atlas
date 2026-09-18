@@ -32,3 +32,26 @@ drop policy if exists "Kullanıcı kendi profilini silebilir" on public.user_pro
 create policy "Kullanıcı kendi profilini silebilir"
 on public.user_profiles for delete to authenticated
 using ((select auth.uid()) = user_id);
+
+-- Bu ekleme mevcut hesapların ders seçimlerini değiştirmez.
+alter table public.user_profiles
+  add column if not exists academic_profile jsonb not null default '{}'::jsonb;
+
+-- Katalog yalnızca yönetici SQL işlemleriyle güncellenir. Tarayıcı salt okunur.
+create table if not exists public.academics (
+  id text primary key,
+  name text not null,
+  title text not null,
+  department text not null,
+  topics text[] not null default '{}'::text[],
+  source_url text not null,
+  topic_source_url text,
+  verified_on date not null
+);
+
+alter table public.academics enable row level security;
+revoke all on table public.academics from anon, authenticated;
+grant select on table public.academics to authenticated;
+drop policy if exists "Giriş yapanlar akademik kataloğu okuyabilir" on public.academics;
+create policy "Giriş yapanlar akademik kataloğu okuyabilir"
+on public.academics for select to authenticated using (true);

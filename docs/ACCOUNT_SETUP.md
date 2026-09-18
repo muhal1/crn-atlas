@@ -18,6 +18,14 @@ ilgili kullanıcının Supabase satırında tutulur.
 Tablodaki Row Level Security kuralları her kullanıcının yalnızca kendi satırını
 okumasına ve değiştirmesine izin verir.
 
+Akademik rehber için mevcut kurulumda `supabase/schema.sql` dosyasını yeniden
+çalıştır; yeni `academic_profile` sütununu ve salt okunur `academics` kataloğunu
+oluşturur. Ardından `supabase/academic_seed.sql` dosyasını SQL Editor'da çalıştır.
+İki dosya tekrar çalıştırılabilir. Canlı veritabanına bunlar uygulanana kadar
+Hocalar ekranı statik katalogdan açılır, ancak canlı hesaptaki akademik profil
+kaydedilemez. Katalog sorgusunun `authenticated` rolüne açık olup olmadığını
+ve RLS politikasını kontrol et; erişim ayrıca Data API ayarlarına bağlıdır.
+
 ## 2. GitHub değişkenleri
 
 Supabase **Project Settings > API Keys** ekranındaki Project URL ve publishable

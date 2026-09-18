@@ -289,6 +289,56 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8730/api/veri'
 
 ## GitHub Pages ve Dağıtım
 
+### Akademik rehber (2026-09-18)
+
+- Üst düzey ekranlar `#dersler`, `#hocalar[/id]`, `#takvim`, `#profilim` ile ayrılır. Sol
+  gezinme `web/academic.js` içindedir; ders verisi ve ders seçimi durumu
+  `web/app.js` içinde kalır. `#dersler` yeniden oluşturulmaz, yalnız gizlenir.
+  Menü açık/kapalı tercihi `dsp_menu_dar` anahtarındadır; mobil menü kapalıyken
+  `inert` olmalı. Girişteki tema ve `--vurgu` dahil mevcut CSS değişkenleri
+  yeni ekranlarda aynen kullanılır.
+- Profilim ana menüde bağlantı değildir; sol alttaki avatar/isim düğmesi
+  doğrudan `#profilim` sayfasını açar. Yanındaki üç nokta veri içe/dışa aktarma
+  ve çıkış menüsünü açar. Menü daralınca üstte paket içindeki ikon PNG görünür;
+  genişletilince temaya uygun tam logo görünür. Serbest açıklama alanı
+  kaldırılmıştır; eski yedekteki `aciklama` okunabilir ama yeni kayda taşınmaz.
+- Lisansüstü akademik takvim 2026-2027 için İTÜ Öğrenci İşleri sayfasındaki
+  `akademikyil=854&takvimadi=19` tablosundan `akademik_takvim.py` ile alınır.
+  Çıktı `veri/akademik_takvim.json` içinde güz/bahar toplam 70 etkinliktir;
+  sitedeki "Kalan Gün" sütunu günlük eskidiğinden saklanmaz. Yerelde
+  `python akademik_takvim.py`, Pages için zamanlanmış/elle dağıtım yeniler.
+  Kaynak değişirse eski JSON korunur; sayfa veri güncelleme zamanını ve resmî
+  kaynak bağlantısını gösterir. Yeni akademik yıla geçerken kaynak URL'sindeki
+  `akademikyil` kimliğini resmî sayfadan doğrulayarak güncelle.
+  Gün sayıları `web/calendar.js` içinde, İTÜ saatine göre ziyaret anında
+  hesaplanır: başlangıçtan önce "gün var", aralık sürerken "gün kaldı",
+  bittikten sonra "gün geçti". Saat yazmayan bitişler gün sonunda sayılır.
+  Geçmiş olaylar dönem filtresine ve aramaya uyan tek bir açılır yığında
+  toplanır; yığın kapalıyken `inert` ve `aria-hidden` kullanılır. Hareket
+  azaltma tercihi açılma animasyonunu kapatır.
+- Kontrol bölümünün 22 öğretim üyesi 2026-09-18 tarihinde
+  `https://kontrol.itu.edu.tr/en/staff/academic-staff` üzerindeki dinamik
+  listeden doğrulandı. Ortak katalog kaynağı `veri/akademisyenler.json`;
+  `supabase/academic_seed.sql` bu dosyanın SQL karşılığıdır. Kadro yeniden
+  kontrol edildiğinde ikisini birlikte güncelle. Kişi bağlantısı resmî İTÜ
+  Akademi profiline gider; konu etiketleri aynı profildeki "Çalışma Alanları"
+  satırından gelir. Satır boşsa konu uydurma; istisna olarak Hakan Temeltaş'ın
+  etiketleri araştırma portalındaki proje ve yayınlarından gelir. Konu uyumu
+  tez öğrencisi kabulü ya da tez danışmanlığı yeterliliği garantisi değildir.
+- Veritabanında `schema.sql` mevcut `user_profiles` tablosuna
+  `academic_profile` JSONB sütunu ekler ve `academics` salt okunur RLS
+  tablosunu açar. Ardından `academic_seed.sql` çalıştırılır. Bu iki SQL
+  işlemi canlı veritabanında ayrıca uygulanmadan statik katalog görünür,
+  fakat canlı hesabın akademik profilini kaydetme işlemi çalışmaz. Katalog
+  okunamazsa statik JSON yedeği kullanılır; kullanıcıya bilgi gösterilir.
+  Yerel mod akademik profili kullanıcı adına bağlı localStorage anahtarına
+  yazar, mevcut `veri/alinan.json` veya `veri/secim.json` dosyalarını değiştirmez.
+- Profil alanları kayıt sırasında ayrı `UPDATE academic_profile` çağrısıyla
+  yazılır; ders seçiminin tüm satırı `upsert` etmesi akademik alanı ezmez.
+  Yeni kişisel alanlar dışa/içe aktarım yedeğine de eklenmiştir. Kontrol:
+  masaüstü ve 390px mobil, iki tema, menü daraltma, hash geri/ileri, 22
+  hoca, alan filtresi, profil kaydı ve ders seçiminin korunması.
+
 - Ürünün adı CRN Atlas'tır. İTÜ logosu kullanılmaz; resmî uygulama olmadığı
   açıkça belirtilir.
 - Marka varlıkları `web/marka/` altındadır ve onaylı logo paketinden gelen

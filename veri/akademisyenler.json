@@ -1,0 +1,297 @@
+[
+  {
+    "id": "yilmazabdurrah",
+    "ad": "Abdurrahman Yılmaz",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Robotik",
+      "Otonom Sistem Tasarımı",
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yilmazabdurrah",
+    "alanKaynagi": "https://akademi.itu.edu.tr/yilmazabdurrah",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ahmetonat",
+    "ad": "Ahmet Onat",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/ahmetonat",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ergenca",
+    "ad": "Ali Fuat Ergenç",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Mekatronik",
+      "Kontrol Teorisi ve Uygulamaları",
+      "Ölçme Tekniği",
+      "Sensörler",
+      "Otomasyon",
+      "Biyomedikal",
+      "Nesnelerin Interneti"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ergenca",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ergenca",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "fhashemzadeh",
+    "ad": "Farzad Hashemzadeh",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "alanKaynagi": "https://akademi.itu.edu.tr/fhashemzadeh",
+    "dogrulamaTarihi": "2026-09-18",
+    "kaynak": "https://akademi.itu.edu.tr/fhashemzadeh"
+  },
+  {
+    "id": "caliskanf",
+    "ad": "Fikret Çalışkan",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları",
+      "Devreler ve Sistemler Teorisi",
+      "Mekatronik",
+      "Arıza Toleranslı Kontrol",
+      "Uçuş Kontrol",
+      "Estimasyon"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/caliskanf",
+    "alanKaynagi": "https://akademi.itu.edu.tr/caliskanf",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "gulayoke",
+    "ad": "Gülay Öke Günel",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/gulayoke",
+    "alanKaynagi": "https://akademi.itu.edu.tr/gulayoke",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "temeltash",
+    "ad": "Hakan Temeltaş",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Robotik",
+      "Pekiştirmeli öğrenme",
+      "Robot kontrolü"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/temeltash",
+    "alanKaynagi": "https://research.itu.edu.tr/en/persons/hakan-temelta%C5%9F/",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "sirmatel",
+    "ad": "Işık İlber Sırmatel",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "alanKaynagi": "https://akademi.itu.edu.tr/sirmatel",
+    "dogrulamaTarihi": "2026-09-18",
+    "kaynak": "https://akademi.itu.edu.tr/sirmatel"
+  },
+  {
+    "id": "kocaarslani",
+    "ad": "İlhan Kocaarslan",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/kocaarslani",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ustoglui",
+    "ad": "İlker Üstoğlu",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları",
+      "Mekatronik",
+      "Otonom Sistemler"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ustoglui",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ustoglui",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "ucakk",
+    "ad": "Kemal Uçak",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Makine Öğrenmesi",
+      "Kontrol Teorisi ve Uygulamaları",
+      "Yapay Zeka"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/ucakk",
+    "alanKaynagi": "https://akademi.itu.edu.tr/ucakk",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "baradarannia",
+    "ad": "Mahdi Baradarannia",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/baradarannia",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "soylemezm",
+    "ad": "Mehmet Turan Söylemez",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları",
+      "Otonom Sistemler",
+      "Devreler ve Sistemler Teorisi"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/soylemezm",
+    "alanKaynagi": "https://akademi.itu.edu.tr/soylemezm",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "mustafadogan",
+    "ad": "Mustafa Doğan",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları",
+      "Nanoteknoloji",
+      "Biyomedikal"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/mustafadogan",
+    "alanKaynagi": "https://akademi.itu.edu.tr/mustafadogan",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "guzelkaya",
+    "ad": "Müjde Güzelkaya",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Bulanık Mantık",
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/guzelkaya",
+    "alanKaynagi": "https://akademi.itu.edu.tr/guzelkaya",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "oakbati",
+    "ad": "Onur Akbatı",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Otomasyon",
+      "Otonom Sistemler",
+      "Kontrol Teorisi ve Uygulamaları",
+      "Robotik"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/oakbati",
+    "alanKaynagi": "https://akademi.itu.edu.tr/oakbati",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "okerol",
+    "ad": "Osman Kaan Erol",
+    "unvan": "Doç. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [],
+    "kaynak": "https://akademi.itu.edu.tr/okerol",
+    "alanKaynagi": null,
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "yesiloglu",
+    "ad": "Sıddık Murat Yeşiloğlu",
+    "unvan": "Dr. Öğr. Üyesi",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları",
+      "Robotik"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yesiloglu",
+    "alanKaynagi": "https://akademi.itu.edu.tr/yesiloglu",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "nengin",
+    "ad": "Şeref Naci Engin",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Mekatronik Sistem Tasarımı",
+      "Kontrol Teorisi ve Uygulamaları",
+      "Robotik"
+    ],
+    "alanKaynagi": "https://akademi.itu.edu.tr/nengin",
+    "dogrulamaTarihi": "2026-09-18",
+    "kaynak": "https://akademi.itu.edu.tr/nengin"
+  },
+  {
+    "id": "kumbasart",
+    "ad": "Tufan Kumbasar",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Bulanık Mantık",
+      "Yapay Zeka",
+      "Makine Öğrenmesi",
+      "Yapay Öğrenme",
+      "Yapay Zeka (Artificial Intelligence)",
+      "Kontrol Teorisi ve Uygulamaları",
+      "Optimizasyon"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/kumbasart",
+    "alanKaynagi": "https://akademi.itu.edu.tr/kumbasart",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "sezerv",
+    "ad": "Volkan Sezer",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Yapay Zeka",
+      "Otonom Taşıtlar",
+      "Hibrit ve Elektrikli Araçlar",
+      "Robotik"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/sezerv",
+    "alanKaynagi": "https://akademi.itu.edu.tr/sezerv",
+    "dogrulamaTarihi": "2026-09-18"
+  },
+  {
+    "id": "yalciny",
+    "ad": "Yaprak Yalçın",
+    "unvan": "Prof. Dr.",
+    "bolum": "kontrol",
+    "alanlar": [
+      "Kontrol Teorisi ve Uygulamaları"
+    ],
+    "kaynak": "https://akademi.itu.edu.tr/yalciny",
+    "alanKaynagi": "https://akademi.itu.edu.tr/yalciny",
+    "dogrulamaTarihi": "2026-09-18"
+  }
+]

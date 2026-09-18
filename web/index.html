@@ -75,6 +75,41 @@
 
 <div id="uygulama" class="gizli">
 
+<div class="atlas-kabuk" id="atlasKabuk">
+<div id="mobilMenuPerdesi" class="mobil-menu-perdesi gizli"></div>
+<aside id="atlasMenu" class="atlas-menu" aria-label="Ana gezinme">
+  <div class="atlas-menu-ust">
+    <div class="atlas-menu-marka marka-logo">
+      <img class="marka-acik" alt="CRN Atlas" src="marka/crn-atlas-light-transparent-256w.png" width="2172" height="724">
+      <img class="marka-koyu" alt="CRN Atlas" src="marka/crn-atlas-dark-transparent-256w.png" width="2172" height="724">
+    </div>
+    <img class="atlas-menu-isaret" alt="CRN Atlas" src="marka/crn-atlas-icon-192.png" width="192" height="192">
+    <button id="menuDaralt" class="atlas-menu-dugmesi" type="button" aria-controls="atlasMenu" aria-expanded="true" aria-label="Menüyü daralt" title="Menüyü daralt">☰</button>
+  </div>
+  <nav class="atlas-nav" aria-label="Bölümler">
+    <a href="#dersler" data-sayfa="dersler" title="Ders Seçimi"><span class="atlas-nav-ikon" aria-hidden="true">▦</span><span class="atlas-nav-metin">Ders Seçimi</span></a>
+    <a href="#hocalar" data-sayfa="hocalar" title="Hocalar"><span class="atlas-nav-ikon" aria-hidden="true">♧</span><span class="atlas-nav-metin">Hocalar</span></a>
+    <a href="#takvim" data-sayfa="takvim" title="Akademik Takvim"><span class="atlas-nav-ikon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M14 14h3"/></svg></span><span class="atlas-nav-metin">Akademik Takvim</span></a>
+  </nav>
+  <div class="profil-alani">
+    <button id="profilDugmesi" class="profil-dugmesi" type="button" aria-label="Profilim" title="Profilim">
+      <span id="profilHarf" class="profil-harf">P</span>
+      <span id="profilAdi">Profilim</span>
+    </button>
+    <button id="hesapMenuDugmesi" class="hesap-menu-dugmesi" type="button" aria-label="Hesap seçenekleri" aria-expanded="false" aria-controls="profilMenu" title="Hesap seçenekleri">⋯</button>
+    <div id="profilMenu" class="profil-menu gizli">
+      <strong id="profilMenuAdi"></strong>
+      <span id="profilEposta" class="soluk"></span>
+      <button id="veriDisariAktar" class="dugme sessiz" type="button">Verilerimi dışa aktar</button>
+      <button id="veriIceriAktar" class="dugme sessiz" type="button">Verilerimi içe aktar</button>
+      <input id="veriDosyalari" type="file" accept=".json,application/json" multiple class="gizli">
+      <button id="cikisDugmesi" class="dugme sessiz" type="button">Çıkış yap</button>
+    </div>
+  </div>
+</aside>
+<div class="atlas-icerik">
+<button id="mobilMenuAc" class="atlas-mobil-ac dugme" type="button" aria-label="Menüyü aç" aria-controls="atlasMenu" aria-expanded="false">☰ <span>Menü</span></button>
+
 <header class="ust">
   <div class="ust-sol">
     <div class="ust-marka marka-logo">
@@ -104,28 +139,13 @@
       ⟳ Kontenjan yenile
     </button>
     <button id="alinanAc" class="dugme">Alınan Dersler <span id="alinanSayi" class="sayac">0</span></button>
-    <div class="profil-alani">
-      <button id="profilDugmesi" class="profil-dugmesi" type="button" aria-label="Profil menüsü">
-        <span id="profilHarf" class="profil-harf">P</span>
-        <span id="profilAdi">Profilim</span>
-        <span class="profil-ok">⌄</span>
-      </button>
-      <div id="profilMenu" class="profil-menu gizli">
-        <strong id="profilMenuAdi"></strong>
-        <span id="profilEposta" class="soluk"></span>
-        <button id="veriDisariAktar" class="dugme sessiz" type="button">Verilerimi dışa aktar</button>
-        <button id="veriIceriAktar" class="dugme sessiz" type="button">Verilerimi içe aktar</button>
-        <input id="veriDosyalari" type="file" accept=".json,application/json" multiple class="gizli">
-        <button id="cikisDugmesi" class="dugme sessiz" type="button">Çıkış yap</button>
-      </div>
-    </div>
   </div>
 </header>
 
 <div id="uyari" class="uyari gizli"></div>
 <div id="kaynakUyarisi" class="uyari hata gizli"></div>
 
-<main class="duzen">
+<main id="dersSayfasi" class="duzen">
 
   <!-- ================= SOL: plan + ders listesi ================= -->
   <section class="sutun sol">
@@ -210,6 +230,45 @@
   </section>
 </main>
 
+<main id="hocalarSayfasi" class="atlas-sayfa gizli" tabindex="-1">
+  <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">AKADEMİK REHBER</p><h1>Hocalar</h1><p>Kontrol ve Otomasyon Mühendisliği öğretim üyelerini ve doğrulanmış çalışma alanlarını keşfet.</p></div></div>
+  <div class="atlas-araclar kutu">
+    <input id="hocaArama" type="search" aria-label="İsme veya çalışma alanına göre ara" placeholder="İsim veya çalışma alanı ara…">
+    <select id="hocaAlan" aria-label="Çalışma alanı"><option value="">Tüm çalışma alanları</option></select>
+    <label class="onay"><input id="hocaEslesen" type="checkbox"> İlgi alanlarıma uyanlar</label>
+    <label class="onay"><input id="hocaKayitli" type="checkbox"> Kaydettiklerim</label>
+  </div>
+  <p id="hocaDurum" class="atlas-durum" role="status"></p>
+  <div id="hocaDetay" class="gizli"></div>
+  <div id="hocaKartlari" class="hoca-kartlari"></div>
+</main>
+
+<main id="takvimSayfasi" class="atlas-sayfa gizli" tabindex="-1">
+  <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">LİSANSÜSTÜ</p><h1>Akademik Takvim</h1><p>İTÜ lisansüstü programlarının güz ve bahar dönemi tarihleri.</p></div></div>
+  <div class="takvim-kaynak kutu">
+    <div><strong id="takvimYil">2026–2027 Eğitim – Öğretim Yılı</strong><p id="takvimGuncelleme" class="soluk">Takvim yükleniyor…</p></div>
+    <a id="takvimKaynak" href="https://www.takvim.sis.itu.edu.tr/AkademikTakvim/TR/akademik-takvim/AkademikTakvimTablo.php?akademikyil=854&amp;takvimadi=19&amp;katagori=&amp;baslangic=&amp;bitis=" target="_blank" rel="noopener noreferrer">Resmî takvimi aç ↗</a>
+  </div>
+  <div class="takvim-araclar kutu">
+    <input id="takvimArama" type="search" aria-label="Takvimde ara" placeholder="Etkinlik veya tarih ara…">
+    <select id="takvimDonem" aria-label="Takvim dönemi"><option value="">Tüm dönemler</option></select>
+  </div>
+  <p id="takvimDurum" class="atlas-durum" role="status"></p>
+  <div id="takvimIcerik" class="takvim-icerik"></div>
+</main>
+
+<main id="profilSayfasi" class="atlas-sayfa gizli" tabindex="-1">
+  <div class="atlas-sayfa-baslik"><div><p class="atlas-eyebrow">KİŞİSEL ALANIN</p><h1>Profilim</h1><p>Buradaki bilgiler yalnızca hesabında görünür; hoca önerilerini ilgi alanların belirler.</p></div></div>
+  <form id="akademikProfilFormu" class="kutu akademik-profil-formu">
+    <label>Ad soyad <input name="ad" type="text" maxlength="100" autocomplete="name" required></label>
+    <label>Bölüm <select name="bolum" id="akademikBolum"></select></label>
+    <label>Eğitim düzeyi <select name="duzey"><option value="">Belirtmek istemiyorum</option><option>Lisans</option><option>Yüksek lisans</option><option>Doktora</option></select></label>
+    <label>Hedef <select name="hedef"><option value="">Henüz karar vermedim</option><option>Bitirme projesi</option><option>Yüksek lisans tezi</option><option>Doktora araştırması</option><option>Konuları keşfetmek</option></select></label>
+    <fieldset class="profil-alanlar"><legend>İlgi alanlarım</legend><p class="soluk">Birden fazla seçebilirsin. Eşleştirme yalnızca doğrulanmış hoca alanlarıyla yapılır.</p><div id="profilAlanSecenekleri"></div></fieldset>
+    <div class="profil-form-alt"><button type="submit" class="dugme birincil">Profili kaydet</button><span id="profilKayitDurum" role="status"></span></div>
+  </form>
+</main>
+
 <!-- ================= YAN PANEL: alınan dersler ================= -->
 <div id="perde" class="perde gizli"></div>
 <aside id="yanPanel" class="yan-panel">
@@ -251,10 +310,14 @@
   </div>
 </aside>
 </div>
+</div>
+</div>
 
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="auth.js"></script>
 <script src="app.js"></script>
+<script src="academic.js"></script>
+<script src="calendar.js"></script>
 </body>
 </html>

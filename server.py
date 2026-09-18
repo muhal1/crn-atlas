@@ -173,6 +173,12 @@ class Istek(SimpleHTTPRequestHandler):
             self.send_error(404, "Unknown endpoint")
             return
 
+        if yol == "/veri/akademisyenler.json":
+            self._dosya_gonder(VERI / "akademisyenler.json")
+            return
+        if yol == "/veri/akademik_takvim.json":
+            self._dosya_gonder(VERI / "akademik_takvim.json")
+            return
         if yol == "/veri/programlar.json":
             self._dosya_gonder(VERI / "programlar.json")
             return

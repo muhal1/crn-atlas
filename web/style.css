@@ -1175,3 +1175,140 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   color: var(--soluk);
 }
 .blok:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 1px; }
+
+/* CRN Atlas bölümleri: mevcut tema değişkenleri her ekranda aynen kullanılır. */
+.atlas-kabuk { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; }
+.atlas-kabuk.menu-dar { grid-template-columns: 68px minmax(0, 1fr); }
+.atlas-icerik { min-width: 0; }
+.atlas-menu {
+  display: flex; flex-direction: column; gap: 24px; position: sticky; top: 0;
+  height: 100dvh; min-height: 420px; padding: 18px 12px;
+  background: var(--cam-yuzey); border-right: 1px solid var(--cam-kenar);
+  -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%);
+  z-index: 35;
+}
+.atlas-menu-ust { display: flex; align-items: center; justify-content: space-between; min-height: 42px; gap: 6px; }
+.atlas-menu-marka img { width: 130px; height: auto; }
+.atlas-menu-isaret { display: none; width: 36px; height: 36px; object-fit: contain; }
+.atlas-menu-dugmesi { border: 0; border-radius: 8px; width: 40px; min-width: 40px; height: 40px; color: var(--yazi); background: var(--dugme-yuzey); font: inherit; cursor: pointer; }
+.atlas-menu-dugmesi:hover, .atlas-nav a:hover { background: var(--dugme-yuzey-2); }
+.atlas-nav { display: grid; gap: 5px; }
+.atlas-nav a { display: flex; align-items: center; gap: 12px; min-height: 46px; padding: 0 12px; border-radius: 10px; color: var(--yazi); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.atlas-nav a[aria-current="page"] { background: color-mix(in srgb, var(--vurgu) 17%, var(--kart)); color: var(--vurgu); }
+.atlas-nav-ikon { display: grid; place-items: center; width: 22px; min-width: 22px; font-size: 21px; font-weight: 400; }
+.atlas-menu > .profil-alani { display: flex; align-items: center; gap: 4px; margin-top: auto; border-top: 1px solid var(--cizgi); padding-top: 12px; }
+.atlas-menu .profil-dugmesi { min-height: 46px; flex: 1; min-width: 0; justify-content: flex-start; text-align: left; }
+.atlas-menu #profilAdi { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hesap-menu-dugmesi { flex: none; width: 36px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: var(--yazi); font: inherit; font-size: 24px; line-height: 1; cursor: pointer; }
+.hesap-menu-dugmesi:hover { background: var(--dugme-yuzey); }
+.atlas-menu .profil-menu { top: auto; bottom: calc(100% + 10px); right: auto; left: 0; max-width: min(270px, 85vw); }
+.atlas-menu .profil-menu .dugme { text-decoration: none; color: var(--yazi); }
+.menu-dar .atlas-menu-marka, .menu-dar .atlas-nav-metin, .menu-dar #profilAdi { display: none; }
+.menu-dar .atlas-menu-isaret { display: block; }
+.menu-dar .atlas-menu-ust { flex-direction: column; justify-content: flex-start; gap: 8px; }
+.menu-dar .atlas-nav a { justify-content: center; padding: 0; }
+.menu-dar .atlas-menu > .profil-alani { flex-direction: column-reverse; }
+.menu-dar .atlas-menu .profil-dugmesi { flex: none; justify-content: center; width: 42px; padding: 3px; }
+.menu-dar .atlas-menu .profil-menu { left: calc(100% + 10px); bottom: 0; }
+.atlas-mobil-ac { display: none; }
+.atlas-icerik .ust-marka { display: none; }
+.atlas-menu a:focus-visible, .atlas-menu button:focus-visible, .atlas-sayfa button:focus-visible,
+.atlas-sayfa a:focus-visible, .atlas-sayfa input:focus-visible, .atlas-sayfa select:focus-visible,
+.atlas-sayfa textarea:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 2px; }
+
+.atlas-sayfa { padding: clamp(20px, 3vw, 42px); max-width: 1300px; margin: auto; }
+.atlas-sayfa-baslik { margin-bottom: 24px; }
+.atlas-sayfa-baslik h1 { font-size: clamp(25px, 3vw, 34px); }
+.atlas-sayfa-baslik p:last-child { color: var(--soluk); margin: 6px 0 0; }
+.atlas-eyebrow { margin: 0 0 6px; color: var(--vurgu); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.atlas-araclar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 18px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 12px; }
+.atlas-araclar input[type="search"] { flex: 1 1 250px; min-width: 180px; }
+.atlas-araclar select { max-width: 240px; }
+.atlas-durum { color: var(--soluk); margin: 18px 0; }
+.hoca-kartlari { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 14px; }
+.hoca-karti, .hoca-detay, .akademik-profil-formu { padding: 22px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; }
+.hoca-karti { display: flex; flex-direction: column; gap: 12px; min-height: 190px; }
+.hoca-karti h2 { font-size: 18px; line-height: 1.3; }
+.hoca-karti p { margin: 2px 0; }
+.hoca-karti-alt { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; }
+.hoca-karti-alt a, .hoca-detay a { color: var(--vurgu); }
+.hoca-etiketler { display: flex; flex-wrap: wrap; gap: 6px; }
+.hoca-etiket { padding: 3px 9px; border-radius: 999px; color: var(--yazi); background: var(--kart-2); font-size: 12px; }
+.hoca-etiket.eslesme { color: var(--vurgu); background: color-mix(in srgb, var(--vurgu) 16%, var(--kart)); }
+.hoca-detay { margin: 18px 0 24px; max-width: 780px; }
+.hoca-detay h2 { font-size: 24px; }
+.hoca-detay p { margin: 10px 0; }
+.hoca-detay-kaynak { display: flex; flex-wrap: wrap; gap: 14px; }
+.takvim-kaynak { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border: 1px solid var(--cizgi); border-radius: 14px; background: var(--kart); }
+.takvim-kaynak strong { font-size: 17px; }
+.takvim-kaynak p { margin: 5px 0 0; }
+.takvim-kaynak a { color: var(--vurgu); font-weight: 600; white-space: nowrap; }
+.takvim-araclar { display: flex; gap: 12px; margin-top: 16px; padding: 16px; border: 1px solid var(--cizgi); border-radius: 14px; background: var(--kart); }
+.takvim-araclar input { flex: 1; min-width: 0; }
+.takvim-araclar select { min-width: 180px; }
+.takvim-icerik { display: grid; gap: 28px; }
+.takvim-donem { overflow: hidden; border: 1px solid var(--cizgi); border-radius: 14px; background: var(--kart); }
+.takvim-donem-baslik { display: flex; align-items: center; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--cizgi); }
+.takvim-donem-baslik h2 { font-size: 18px; }
+.takvim-sayi { color: var(--soluk); font-size: 12px; }
+.takvim-liste { margin: 0; padding: 0; list-style: none; }
+.takvim-satir { display: grid; grid-template-columns: minmax(180px, 250px) minmax(0, 1fr) minmax(106px, auto); align-items: center; gap: 22px; padding: 15px 22px; border-bottom: 1px solid var(--cizgi); line-height: 1.5; }
+.takvim-satir:last-child { border-bottom: 0; }
+.takvim-satir:hover { background: var(--kart-2); }
+.takvim-tarih { color: var(--vurgu); font-weight: 650; }
+.takvim-olay { overflow-wrap: anywhere; }
+.takvim-sayac { justify-self: end; color: var(--yazi); font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.takvim-durum-aktif { background: color-mix(in srgb, var(--yesil) 9%, var(--kart)); box-shadow: inset 3px 0 var(--yesil); }
+.takvim-durum-aktif .takvim-tarih, .takvim-durum-aktif .takvim-sayac { color: var(--yesil); }
+.takvim-gecmis .takvim-satir { color: var(--soluk); background: color-mix(in srgb, var(--soluk) 5%, var(--kart)); }
+.takvim-gecmis .takvim-tarih, .takvim-gecmis .takvim-sayac { color: var(--soluk); }
+.takvim-donem-etiketi { display: block; margin-top: 3px; color: var(--soluk); font-size: 11px; }
+.takvim-gecmis { position: relative; isolation: isolate; margin-top: 12px; border: 1px solid var(--cizgi); border-radius: 14px; background: var(--kart); }
+.takvim-gecmis::before, .takvim-gecmis::after { content: ""; position: absolute; height: 20px; left: 12px; right: 12px; top: -7px; z-index: -1; border: 1px solid var(--cizgi); border-radius: 12px; background: var(--kart-2); }
+.takvim-gecmis::before { left: 24px; right: 24px; top: -13px; opacity: .65; }
+.takvim-gecmis-ust { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; min-height: 76px; padding: 12px 22px; border-radius: 14px; background: var(--kart-2); }
+.takvim-gecmis-ozet { display: grid; gap: 3px; }
+.takvim-gecmis-ozet span { color: var(--soluk); font-size: 12px; }
+.takvim-gecmis-dugmesi { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 170px; min-height: 40px; padding: 8px 14px; border: 1px solid var(--cizgi); border-radius: 999px; background: var(--kart); color: var(--yazi); font: inherit; font-weight: 600; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.takvim-gecmis-dugmesi:hover { background: var(--dugme-yuzey-2); transform: translateY(-1px); }
+.takvim-gecmis-ok { display: inline-block; font-size: 21px; line-height: 1; transition: transform .38s cubic-bezier(.2,.7,.2,1); }
+.takvim-gecmis.acik .takvim-gecmis-ok { transform: rotate(180deg); }
+.takvim-gecmis-panel { display: grid; grid-template-rows: 0fr; opacity: 0; transform: translateY(-6px); transition: grid-template-rows .42s cubic-bezier(.2,.7,.2,1), opacity .3s ease, transform .42s ease; }
+.takvim-gecmis.acik .takvim-gecmis-panel { grid-template-rows: 1fr; opacity: 1; transform: translateY(0); }
+.takvim-gecmis-panel > .takvim-liste { min-height: 0; overflow: hidden; }
+.takvim-gecmis.acik .takvim-gecmis-ust { border-bottom: 1px solid var(--cizgi); border-radius: 14px 14px 0 0; }
+.akademik-profil-formu { max-width: 720px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+.akademik-profil-formu > label { display: grid; gap: 6px; font-weight: 600; }
+.akademik-profil-formu input, .akademik-profil-formu select { width: 100%; font: inherit; }
+.akademik-profil-formu .profil-alanlar, .profil-form-alt { grid-column: 1 / -1; }
+.profil-alanlar { border: 1px solid var(--cizgi); border-radius: 10px; padding: 14px; }
+.profil-alanlar legend { font-weight: 600; }
+.profil-alanlar p { margin: 0 0 10px; }
+#profilAlanSecenekleri { display: flex; flex-wrap: wrap; gap: 8px; }
+#profilAlanSecenekleri label { display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 999px; background: var(--kart-2); cursor: pointer; }
+#profilAlanSecenekleri input { width: auto; }
+.profil-form-alt { display: flex; align-items: center; gap: 12px; }
+#profilKayitDurum { color: var(--soluk); }
+
+@media (max-width: 800px) {
+  .atlas-kabuk, .atlas-kabuk.menu-dar { display: block; }
+  .atlas-menu { position: fixed; left: 0; width: min(280px, 85vw); transform: translateX(-110%); transition: transform .18s ease; box-shadow: 8px 0 30px var(--cam-golge); }
+  .atlas-kabuk.menu-mobil-acik .atlas-menu { transform: translateX(0); }
+  .atlas-kabuk .atlas-menu-marka, .atlas-kabuk .atlas-nav-metin, .atlas-kabuk #profilAdi { display: initial; }
+  .atlas-kabuk .atlas-menu-isaret { display: none; }
+  .atlas-kabuk .atlas-menu-ust { flex-direction: row; justify-content: space-between; }
+  .atlas-kabuk .atlas-menu > .profil-alani { flex-direction: row; }
+  .atlas-kabuk .atlas-nav a { justify-content: flex-start; padding: 0 12px; }
+  .atlas-kabuk .atlas-menu .profil-dugmesi { flex: 1; width: auto; padding: 3px 6px 3px 12px; justify-content: flex-start; }
+  .atlas-kabuk .atlas-menu .profil-menu { left: 0; bottom: calc(100% + 10px); }
+  .atlas-mobil-ac { display: inline-flex; margin: 12px 16px 0; gap: 8px; }
+  .mobil-menu-perdesi:not(.gizli) { position: fixed; inset: 0; z-index: 34; background: rgba(0,0,0,.42); }
+  .akademik-profil-formu { grid-template-columns: 1fr; }
+  .takvim-kaynak, .takvim-araclar { flex-direction: column; align-items: stretch; }
+  .takvim-araclar select { min-width: 0; }
+  .takvim-satir { grid-template-columns: 1fr; gap: 5px; padding: 15px 18px; }
+  .takvim-sayac { margin-top: 3px; }
+  .takvim-gecmis-ust { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 16px; }
+  .takvim-gecmis-bosluk { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .atlas-menu, .takvim-gecmis-panel, .takvim-gecmis-ok, .takvim-gecmis-dugmesi { transition: none; } }

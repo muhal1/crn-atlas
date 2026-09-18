@@ -8,6 +8,7 @@ const DSPAuth = (() => {
     ? window.supabase.createClient(ayar.supabaseUrl, ayar.supabasePublishableKey)
     : null;
   let kayitZinciri = Promise.resolve();
+  let akademikAd = null;
   let kullanici = yerel && !istemci
     ? { id: "yerel", email: "Yerel kullanım", user_metadata: { display_name: "Yerel kullanıcı" } }
     : null;
@@ -36,7 +37,7 @@ const DSPAuth = (() => {
   }
 
   function profilAdiniGuncelle() {
-    const ad = kullanici?.user_metadata?.display_name || kullanici?.email?.split("@")[0] || "Profilim";
+    const ad = akademikAd || kullanici?.user_metadata?.display_name || kullanici?.email?.split("@")[0] || "Profilim";
     $("#profilAdi").textContent = ad;
     $("#profilMenuAdi").textContent = ad;
     $("#profilEposta").textContent = kullanici?.email || "Bu bilgisayardaki yerel profil";
@@ -111,27 +112,71 @@ const DSPAuth = (() => {
     const userId = kullanici.id;
     const displayName = kullanici.user_metadata?.display_name || kullanici.email?.split("@")[0] || "Kullanıcı";
     const islem = kayitZinciri.catch(() => {}).then(async () => {
-      const { error } = await istemci.from("user_profiles").upsert({
-        user_id: userId,
+      const dersAlanlari = {
         display_name: displayName,
         alinan: veriKopyasi.alinan,
         secim: veriKopyasi.secim,
         gizlenen: veriKopyasi.gizlenen,
         kapali_branslar: veriKopyasi.kapaliBranslar,
         updated_at: new Date().toISOString(),
-      }, { onConflict: "user_id" });
+      };
+      // Yalnız ders alanlarını güncelle: akademik profilin varsayılan değere
+      // dönmesi ya da eşzamanlı kayıt sırasında ezilmesi engellenir.
+      const { data, error } = await istemci.from("user_profiles")
+        .update(dersAlanlari).eq("user_id", userId).select("user_id").maybeSingle();
       if (error) throw error;
+      if (!data) {
+        const { error: eklemeHatasi } = await istemci.from("user_profiles")
+          .insert({ user_id: userId, ...dersAlanlari });
+        if (eklemeHatasi) throw eklemeHatasi;
+      }
     });
     kayitZinciri = islem;
     return islem;
   }
 
+  async function akademikProfilYukle() {
+    if (!istemci || !kullanici || kullanici.id === "yerel") return null;
+    const { data, error } = await istemci.from("user_profiles")
+      .select("academic_profile").eq("user_id", kullanici.id).maybeSingle();
+    if (error) throw error;
+    return data?.academic_profile || {};
+  }
+
+  async function akademikProfilKaydet(veri) {
+    if (!istemci || !kullanici || kullanici.id === "yerel") return;
+    const { data, error } = await istemci.from("user_profiles")
+      .update({ academic_profile: veri, updated_at: new Date().toISOString() })
+      .eq("user_id", kullanici.id).select("academic_profile").maybeSingle();
+    if (error) throw error;
+    if (!data) throw new Error("Hesap satırı bulunamadı. Sayfayı yenileyip yeniden dene.");
+  }
+
+  async function akademisyenleriYukle() {
+    if (!istemci || !kullanici || kullanici.id === "yerel") return null;
+    const { data, error } = await istemci.from("academics")
+      .select("id,name,title,department,topics,source_url,topic_source_url,verified_on")
+      .eq("department", "kontrol").order("name");
+    if (error) throw error;
+    return data;
+  }
+
   function olaylariBagla() {
     $("#girisSekmesi").addEventListener("click", () => sekmeGoster(false));
     $("#kayitSekmesi").addEventListener("click", () => sekmeGoster(true));
-    $("#profilDugmesi").addEventListener("click", () => $("#profilMenu").classList.toggle("gizli"));
+    $("#profilDugmesi").addEventListener("click", () => {
+      if (window.location.hash === "#profilim") window.dispatchEvent(new Event("hashchange"));
+      else window.location.hash = "#profilim";
+    });
+    $("#hesapMenuDugmesi").addEventListener("click", () => {
+      const kapali = $("#profilMenu").classList.toggle("gizli");
+      $("#hesapMenuDugmesi").setAttribute("aria-expanded", String(!kapali));
+    });
     document.addEventListener("click", (olay) => {
-      if (!olay.target.closest(".profil-alani")) $("#profilMenu").classList.add("gizli");
+      if (!olay.target.closest(".profil-alani")) {
+        $("#profilMenu").classList.add("gizli");
+        $("#hesapMenuDugmesi").setAttribute("aria-expanded", "false");
+      }
     });
 
     $("#girisFormu").addEventListener("submit", async (olay) => {
@@ -204,6 +249,11 @@ const DSPAuth = (() => {
     baslat,
     profilYukle,
     profilKaydet,
+    akademikProfilYukle,
+    akademikProfilKaydet,
+    akademisyenleriYukle,
+    gorunenAdiAyarla: (ad) => { akademikAd = ad; profilAdiniGuncelle(); },
+    varsayilanAd: () => kullanici?.user_metadata?.display_name || kullanici?.email?.split("@")[0] || "Yerel kullanıcı",
     kullaniciId: () => kullanici?.id || null,
     uzakProfil: () => Boolean(istemci && kullanici?.id && kullanici.id !== "yerel"),
   };

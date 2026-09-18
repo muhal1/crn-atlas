@@ -1,0 +1,297 @@
+{
+  "academic_year": "2026-2027",
+  "source_url": "https://www.takvim.sis.itu.edu.tr/AkademikTakvim/TR/akademik-takvim/AkademikTakvimTablo.php?akademikyil=854&takvimadi=19&katagori=&baslangic=&bitis=",
+  "updated_at": "2026-09-18T09:54:45+00:00",
+  "periods": [
+    {
+      "name": "Güz Dönemi",
+      "events": [
+        {
+          "title": "Yüksek Lisans ve Doktora Başvuru Tarihi",
+          "date": "24 Nisan 09:00 - 26 Haziran 2026 17:00"
+        },
+        {
+          "title": "Yüksek Lisans Yatay Geçiş Başvuruları",
+          "date": "24 Nisan 09:00 - 26 Haziran 2026 17:00"
+        },
+        {
+          "title": "Mülakat",
+          "date": "01 - 03 Temmuz 2026"
+        },
+        {
+          "title": "Mülakat Sonuçlarının (Mülakat Komisyonu Tarafından) Öğrenci Bilgi Sistemine Son Giriş Tarihi",
+          "date": "06 Temmuz 2026"
+        },
+        {
+          "title": "Kazananların İlanı",
+          "date": "08 Temmuz 2026"
+        },
+        {
+          "title": "Yeni Alınan Öğrencilerin Kesin Kayıtları (Online)",
+          "date": "09 - 14 Temmuz 2026"
+        },
+        {
+          "title": "Yeni Kayıt Yaptıracak Uluslararası Öğrencilerin Öğrenim Ücretinin Yatırılması",
+          "date": "09 - 14 Temmuz 2026"
+        },
+        {
+          "title": "Yedekten asile geçen öğrencilerin ilanı",
+          "date": "17 Temmuz 2026"
+        },
+        {
+          "title": "Yedekten asile geçen öğrencilerin Kesin Kayıtları (Online)",
+          "date": "20 - 22 Temmuz 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Ders Programlarının İlanı",
+          "date": "12 Ağustos 2026"
+        },
+        {
+          "title": "Asil Listede Olmasına Rağmen Kayıt Yaptıramayan Yaz Öğretimi Mezunlarının Kesin Kayıtları (Online)",
+          "date": "01 - 02 Eylül 2026"
+        },
+        {
+          "title": "Lisans Programından Mezun olup MasterBee Kapsamında İlgili Yüksek Lisans Programına Başvuru",
+          "date": "01 - 03 Eylül 2026"
+        },
+        {
+          "title": "Öğrenci Katkı Payı/Öğrenim Ücretlerinin Yatırılması",
+          "date": "07 - 11 Eylül 2026"
+        },
+        {
+          "title": "Güz Döneminde İlk Defa Ders Alacak Lisansüstü Öğrencilerin Daha Önceki Yükseköğretim Kurumlarından Aldıkları Dersler İçin Ders İntibak Başvurusu",
+          "date": "07 Eylül 09:00 - 18 Eylül 2026 17:00"
+        },
+        {
+          "title": "Lisansüstü öğrencileri için Oryantasyon",
+          "date": "16 Eylül 2026-10:00"
+        },
+        {
+          "title": "Güz Dönemi Lisansüstü Ders İntibak Başvurularının Program Yürütme Kurulu Tarafından Değerlendirilmesi",
+          "date": "22 - 23 Eylül 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Danışman Onayı ile Web'den Ders Kayıtları (Ders-Tez-Yeterlik)",
+          "date": "22 Eylül 10:00 - 25 Eylül 2026 17:00"
+        },
+        {
+          "title": "Güz Dönemi Ders İntibak Raporları İle İlgili Enstitü Yönetim Kurulu Kararlarının Alınması ve Öğrenci İşleri Daire Başkanlığına Bildirilmesi",
+          "date": "25 Eylül 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Başlangıcı",
+          "date": "28 Eylül 2026"
+        },
+        {
+          "title": "Doktora Yeterlik Dersine Kayıtlı Öğrencilerin Yeterlik Sınavına Başvurusu",
+          "date": "28 Eylül - 16 Ekim 2026"
+        },
+        {
+          "title": "Gecikmeli Kayıt Yenilemesi(Öğrenci Katkı Payını Zamanında Yatırmayan ve/veya Ders Kaydını Zamanında Yaptırmayan Öğrenciler İçin)",
+          "date": "28 Eylül 10:00 - 02 Ekim 2026 17:00"
+        },
+        {
+          "title": "Danışman Onayı ile Ders Planındaki Derslerden Birisini Bırakıp Bir Başka Derse Yazılma",
+          "date": "28 Eylül 10:00 - 09 Ekim 2026 17:00"
+        },
+        {
+          "title": "Kapatılacak Derslerin Bildirilmesi",
+          "date": "05 Ekim 2026"
+        },
+        {
+          "title": "Doktora Öğrencilerinin Temmuz-Aralık Dönemi Tez Öneri/Tez İzleme Raporlarının Lisansüstü Eğitim Enstitüsüne Teslimi",
+          "date": "05 Ekim - 31 Aralık 2026 23:59"
+        },
+        {
+          "title": "Yeni Kayıt Yaptıran Uluslararası Öğrencilerin Evrak Asıllarını Teslim Etmesi",
+          "date": "12 - 16 Ekim 2026"
+        },
+        {
+          "title": "Danışman Onayı ile Bir Dersten Tümüyle Çekilme (Öğrenim Belgesinde (T) Harfi ile Gösterilecektir.)",
+          "date": "12 Ekim 10:00 - 16 Ekim 2026 17:00"
+        },
+        {
+          "title": "Ara Tatil",
+          "date": "16 - 20 Kasım 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Mikrokredi Başvuruları",
+          "date": "23 Kasım - 31 Aralık 2026 23:59"
+        },
+        {
+          "title": "Güz Yarıyılı Sınav Programının İlanı",
+          "date": "01 Aralık 2026"
+        },
+        {
+          "title": "Doktora Yeterlik Sınavları",
+          "date": "01 - 31 Aralık 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Sonu",
+          "date": "31 Aralık 2026"
+        },
+        {
+          "title": "Güz Yarıyılı Sonu Sınavları",
+          "date": "02 - 17 Ocak 2027"
+        },
+        {
+          "title": "Güz Yarıyılı Sonu Sınav Notlarının Son Giriş Tarihi",
+          "date": "20 Ocak 2027-17:00"
+        },
+        {
+          "title": "Güz Yarıyılı Mikrokredi Sonuçlarının İlanı",
+          "date": "22 Ocak 2027"
+        },
+        {
+          "title": "Güz Yarıyılı Sonunda Azami Öğrenim Süresi Sona Erecek Lisansüstü Öğrenciler için Tez Teslimi Son Tarihi",
+          "date": "27 Ocak 2027"
+        }
+      ]
+    },
+    {
+      "name": "Bahar Dönemi",
+      "events": [
+        {
+          "title": "Yüksek Lisans ve Doktora Başvuru Tarihi",
+          "date": "02 Kasım 2026 09:00 - 21 Ocak 2027 17:00"
+        },
+        {
+          "title": "Yatay Geçiş Başvuruları",
+          "date": "02 Kasım 2026 09:00 - 21 Ocak 2027 17:00"
+        },
+        {
+          "title": "Bahar Yarıyılı Ders Programlarının İlanı",
+          "date": "04 Ocak 2027"
+        },
+        {
+          "title": "Öğrenci Katkı Paylarının/Öğrenim Ücretlerinin Yatırılması",
+          "date": "21 - 25 Ocak 2027"
+        },
+        {
+          "title": "Mülakat",
+          "date": "25 - 26 Ocak 2027"
+        },
+        {
+          "title": "Mülakat Sonuçlarının (Mülakat Komisyonu Tarafından) Öğrenci Bilgi Sistemine Son Giriş Tarihi",
+          "date": "27 Ocak 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Danışman Onayı ile Web'den Ders Kayıtları (Ders-Tez-Yeterlik)",
+          "date": "28 - 29 Ocak 2027"
+        },
+        {
+          "title": "Doktora Yeterlik Dersine Kayıtlı Öğrencilerin Yeterlik Sınavına Başvurusu",
+          "date": "28 Ocak - 19 Şubat 2027"
+        },
+        {
+          "title": "Kazananların İlanı",
+          "date": "29 Ocak 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Başlangıcı",
+          "date": "01 Şubat 2027"
+        },
+        {
+          "title": "Yeni Alınan Öğrencilerin Kesin Kayıtları (Online)",
+          "date": "01 - 02 Şubat 2027"
+        },
+        {
+          "title": "Yeni kayıt yaptıran öğrencilerin ders kayıtları (Koordinatör ile)",
+          "date": "01 - 05 Şubat 2027"
+        },
+        {
+          "title": "Yeni Kayıt Yaptıracak Uluslararası Öğrencilerin Kesin Kayıtları ve Öğrenim Ücretinin Yatırılması",
+          "date": "01 - 05 Şubat 2027"
+        },
+        {
+          "title": "Bahar Döneminde İlk Defa Ders Alacak Lisansüstü Öğrencilerin Daha Önceki Yükseköğretim Kurumlarından Aldıkları Dersler İçin Ders İntibak Başvurusu",
+          "date": "01 Şubat 09:00 - 05 Şubat 2027 17:00"
+        },
+        {
+          "title": "Gecikmeli Kayıt Yenilemesi - (Öğrenci Katkı Payını Zamanında Yatırmayan ve/veya Ders Kaydını Zamanında Yaptırmayan Öğrenciler İçin)",
+          "date": "01 Şubat 10:00 - 05 Şubat 2027 17:00"
+        },
+        {
+          "title": "Danışman Onayı ile Ders Planındaki Derslerden Birisini Bırakıp Bir Başka Derse Yazılma",
+          "date": "01 Şubat 10:00 - 12 Şubat 2027 17:00"
+        },
+        {
+          "title": "Bahar Dönemi Lisansüstü Ders İntibak Başvurularının Program Yürütme Kurulu Tarafından Değerlendirilmesi",
+          "date": "02 - 08 Şubat 2027"
+        },
+        {
+          "title": "Yedek Listelerin İlanı",
+          "date": "03 Şubat 2027"
+        },
+        {
+          "title": "Lisansüstü öğrencileri için Oryantasyon",
+          "date": "03 Şubat 2027"
+        },
+        {
+          "title": "Kayıt Yaptırmayanların Yerine Yedek Kayıt",
+          "date": "04 Şubat 2027"
+        },
+        {
+          "title": "Lisans Programından Mezun olup MasterBee Kapsamında İlgili Yüksek Lisans Programına Başvuru",
+          "date": "05 Şubat 2027"
+        },
+        {
+          "title": "Kapatılacak Derslerin Bildirilmesi",
+          "date": "08 Şubat 2027"
+        },
+        {
+          "title": "Bahar Dönemi Ders İntibak Raporları İle İlgili Enstitü Yönetim Kurulu Kararlarının Alınması ve Öğrenci İşleri Daire Başkanlığına Bildirilmesi",
+          "date": "08 - 12 Şubat 2027"
+        },
+        {
+          "title": "Danışman Onayı ile Bir Dersten Tümüyle Çekilme (Öğrenim Belgesinde (T) Harfi İle Gösterilecektir.)",
+          "date": "15 Şubat 10:00 - 19 Şubat 2027 17:00"
+        },
+        {
+          "title": "Doktora Öğrencilerinin Ocak-Haziran Dönemi Tez Öneri/Tez İzleme Raporlarının Lisansüstü Eğitim Enstitüsüne Teslimi",
+          "date": "01 Mart - 30 Haziran 2027 23:59"
+        },
+        {
+          "title": "Ara Tatil",
+          "date": "08 - 12 Mart 2027"
+        },
+        {
+          "title": "Yeni Kayıt Yaptıran Uluslararası Öğrencilerin Evrak Asıllarını Teslim Etmesi",
+          "date": "15 - 19 Mart 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Sınav Programlarının İlanı",
+          "date": "22 Mart 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Mikrokredi Başvuruları",
+          "date": "22 Mart - 30 Nisan 2027"
+        },
+        {
+          "title": "Doktora Yeterlik Sınavları",
+          "date": "01 - 30 Nisan 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Sonu",
+          "date": "30 Nisan 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Sonu Sınavları",
+          "date": "02 - 14 Mayıs 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Mikrokredi Sonuçlarının İlanı",
+          "date": "28 Mayıs 2027"
+        },
+        {
+          "title": "Bahar Yarıyılı Sınav Notlarının Son Giriş Tarihi",
+          "date": "28 Mayıs 2027-14:00"
+        },
+        {
+          "title": "Bahar Yarıyılı Sonunda Azami Öğrenim Süresi Sona Erecek Lisansüstü Öğrenciler için Tez Teslimi Son Tarihi",
+          "date": "01 Eylül 2027"
+        }
+      ]
+    }
+  ]
+}
