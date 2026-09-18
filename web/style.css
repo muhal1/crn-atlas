@@ -1190,9 +1190,12 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%);
   z-index: 35;
 }
-.atlas-menu-ust { display: flex; align-items: center; justify-content: space-between; min-height: 42px; gap: 6px; }
-.atlas-menu-marka img { width: 130px; height: auto; }
-.atlas-menu-isaret { display: none; width: 36px; height: 36px; object-fit: contain; }
+/* Menu daralip genislerken logo yerinden oynamasin: her iki durumda da ayni
+   gorsel ayni olcekte ve ayni noktada durur; dar modda yalnizca sarmalayici
+   logotipin ikon kismina kadar kirpilir. */
+.atlas-menu-ust { display: flex; align-items: flex-start; justify-content: space-between; min-height: 42px; gap: 6px; }
+.atlas-menu-marka { flex: none; width: 130px; height: 34px; margin-top: 3px; overflow: hidden; }
+.atlas-menu-marka img { width: 130px; max-width: none; height: auto; }
 .atlas-menu-dugmesi { border: 0; border-radius: 8px; width: 40px; min-width: 40px; height: 40px; color: var(--yazi); background: var(--dugme-yuzey); font: inherit; cursor: pointer; }
 .atlas-menu-dugmesi:hover, .atlas-nav a:hover { background: var(--dugme-yuzey-2); }
 .atlas-nav { display: grid; gap: 5px; }
@@ -1206,9 +1209,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .hesap-menu-dugmesi:hover { background: var(--dugme-yuzey); }
 .atlas-menu .profil-menu { top: auto; bottom: calc(100% + 10px); right: auto; left: 0; max-width: min(270px, 85vw); }
 .atlas-menu .profil-menu .dugme { text-decoration: none; color: var(--yazi); }
-.menu-dar .atlas-menu-marka, .menu-dar .atlas-nav-metin, .menu-dar #profilAdi { display: none; }
-.menu-dar .atlas-menu-isaret { display: block; }
-.menu-dar .atlas-menu-ust { flex-direction: column; justify-content: flex-start; gap: 8px; }
+.menu-dar .atlas-nav-metin, .menu-dar #profilAdi { display: none; }
+.menu-dar .atlas-menu-marka { width: 38px; align-self: flex-start; }
+.menu-dar .atlas-menu-ust { flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; }
 .menu-dar .atlas-nav a { justify-content: center; padding: 0; }
 .menu-dar .atlas-menu > .profil-alani { flex-direction: column-reverse; }
 .menu-dar .atlas-menu .profil-dugmesi { flex: none; justify-content: center; width: 42px; padding: 3px; }
@@ -1297,9 +1300,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   .atlas-kabuk, .atlas-kabuk.menu-dar { display: block; }
   .atlas-menu { position: fixed; left: 0; width: min(280px, 85vw); transform: translateX(-110%); transition: transform .18s ease; box-shadow: 8px 0 30px var(--cam-golge); }
   .atlas-kabuk.menu-mobil-acik .atlas-menu { transform: translateX(0); }
-  .atlas-kabuk .atlas-menu-marka, .atlas-kabuk .atlas-nav-metin, .atlas-kabuk #profilAdi { display: initial; }
-  .atlas-kabuk .atlas-menu-isaret { display: none; }
-  .atlas-kabuk .atlas-menu-ust { flex-direction: row; justify-content: space-between; }
+  .atlas-kabuk .atlas-nav-metin, .atlas-kabuk #profilAdi { display: initial; }
+  .atlas-kabuk .atlas-menu-marka { width: 130px; align-self: auto; }
+  .atlas-kabuk .atlas-menu-ust { flex-direction: row; align-items: flex-start; justify-content: space-between; }
   .atlas-kabuk .atlas-menu > .profil-alani { flex-direction: row; }
   .atlas-kabuk .atlas-nav a { justify-content: flex-start; padding: 0 12px; }
   .atlas-kabuk .atlas-menu .profil-dugmesi { flex: 1; width: auto; padding: 3px 6px 3px 12px; justify-content: flex-start; }
