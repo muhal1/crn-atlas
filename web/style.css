@@ -1362,7 +1362,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .profil-alan-ekle { margin-top: 14px; border-top: 1px solid var(--cizgi); padding-top: 14px; }
 .profil-alan-ekle summary { color: var(--vurgu); font-size: 13px; font-weight: 600; cursor: pointer; }
 .profil-alan-ekle #alanArama { width: min(260px, 100%); margin: 12px 0 10px; font: inherit; }
-#profilAlanSecenekleri { display: flex; flex-wrap: wrap; gap: 8px; }
+#profilAlanSecenekleri { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px; height: 220px; overflow-y: auto; overscroll-behavior: contain; padding: 4px; border: 1px solid var(--cizgi); border-radius: 12px; }
 #profilAlanSecenekleri p { margin: 0; font-size: 13px; }
 
 .profil-form-alt { display: flex; align-items: center; gap: 12px; }
