@@ -43,49 +43,6 @@ Kaydı panel yapmaz — CRN listesini üretir, kaydı ÖBS üzerinden sen yapars
 
 ---
 
-## 🖥️ Yerelde çalıştırma (isteğe bağlı)
-
-Canlı sürüm çoğu kişi için yeterli. Yerel kurulum şu durumlarda işine yarar:
-hesap açmadan, tamamen kendi bilgisayarında çalıştırmak istiyorsan; ya da
-koda dokunacaksan.
-
-**Tek ön koşul:** Python 3.9+. Başka hiçbir şey gerekmez — `pip install` yok.
-
-```bash
-git clone https://github.com/muhal1/crn-atlas
-```
-
-En kolayı, klasördeki [`AGENTS.md`](AGENTS.md) dosyasını bir yapay zekâ
-asistanına (Claude Code, Cursor, Copilot…) verip şunu söylemek:
-
-> *AGENTS.md dosyasındaki adımları izleyerek bu paneli benim bölümüme göre kur.*
-
-Asistan bölümünü sorar, plan numarasını ÖBS'den kendisi bulur, veriyi çeker
-ve paneli tarayıcında açar — senin yapman gereken tek şey birkaç soruya
-cevap vermek.
-
-Elle kurmak istersen:
-
-```bash
-python panel.py ara "bilgisayar" --seviye LS   # 1) plan numaranı bul
-```
-
-Seviye kodları: `LS` lisans · `LU` yüksek lisans/doktora · `OL` ön lisans ·
-`LUI` lisansüstü 2. öğretim. Çıktıdaki `planId`'yi `veri/ayarlar.json`'a yaz:
-
-```json
-{ "bolum": "Bilgisayar Mühendisliği Lisans", "planId": 1561, "seviye": "LS", "ekBransKodlari": [] }
-```
-
-Sonra:
-
-```bash
-python panel.py guncelle   # 2) veriyi çek
-python panel.py            # 3) paneli aç — http://127.0.0.1:8730
-```
-
----
-
 ## Panelde neler var
 
 **Mezuniyet gereksinimleri** — Planındaki her slot (Zorunlu Matematik Dersi,
@@ -115,8 +72,7 @@ birden çok alternatif program tutabilirsin ("Program 1", "Plan B" …). Yanınd
 düğmeler: `+` yeni boş program, `⧉` bu programın kopyası (bir varyantı
 denemenin en hızlı yolu), `✎` adını değiştir, `×` sil. Listede her programın
 kaç ders içerdiği görünür. Profiller arasında geçtiğinde ders listesi, haftalık
-program ve CRN kutusu o profile göre yenilenir. Yerelde `veri/secim.json`, canlı
-sitede giriş yapan kullanıcının özel profil kaydı kullanılır.
+program ve CRN kutusu o profile göre yenilenir. Profillerin hesabına kaydedilir.
 
 **Seçilen dersler + CRN** — Seçimin altında ders kayıt ekranına yapıştırılacak
 CRN listesi hazır durur, "Kopyala" ile panoya alırsın. Aynı dersin başka bir
@@ -140,35 +96,11 @@ plandan otomatik dolar.
 
 <img src="docs/04-alinan.png" alt="Alınan dersleri ekleme ve görüntüleme paneli" width="900">
 
----
-
-## Her dönem tekrarlanan iş
-
-Ders kayıt haftasından önce tek komut:
-
-```bash
-python panel.py guncelle
-```
-
-Bu komut iki şeyi tazeler:
-
-1. **Ders planı** — bölümünün müfredatı (nadiren değişir, ama plan sürümü
-   güncellenirse yakalanır).
-2. **Açılan dersler** — o dönem hangi dersin açıldığı, hangi hocanın verdiği,
-   günü/saati ve kontenjanı. Bu her dönem tamamen değişir.
-
-Kontenjanlar kayıt haftası boyunca hızla dolar. Güncel doluluk için terminale
-dönmene gerek yok: panelin sağ üstündeki **⟳ Kontenjan yenile** düğmesi aynı işi
-yapar (planı yeniden indirmez, yalnızca açılan dersleri ve kontenjanları tazeler,
-genelde bir saniyeden kısa sürer). Aynı iş komut satırından:
-
-```bash
-python panel.py dersler
-```
-
-Panel açıkken ÖBS'ye kendiliğinden bağlanmaz; veri yalnızca bu düğmeye bastığında
-ya da yukarıdaki komutu çalıştırdığında tazelenir. Üst şeritteki "veri: …" yazısı
-elindeki verinin ne zaman çekildiğini gösterir.
+**⟳ Kontenjan yenile** — Kontenjanlar kayıt haftası boyunca hızla dolar. Sağ
+üstteki bu düğme açılan dersleri ve kontenjanları ÖBS'den yeniden çeker; genelde
+bir saniyeden kısa sürer. Panel kendiliğinden ÖBS'ye bağlanmaz, veri yalnızca bu
+düğmeye bastığında tazelenir. Üst şeritteki "veri: …" yazısı elindeki verinin ne
+zaman çekildiğini gösterir.
 
 ---
 
@@ -194,66 +126,10 @@ Yani panelin veri tabanı, planının kendisi tarafından belirlenir. Planında
 olmayan bir branşın dersleri hiç indirilmez.
 
 **Serbest seçmeli istisnası:** "Seçime Bağlı Ders" slotlarının ÖBS'de ders
-listesi yoktur (seviyeye uygun her kredili ders sayılır). Bu slotlar için ders
-görmek istersen ilgilendiğin branşları `veri/ayarlar.json` içine ekle:
-
-```json
-{ "ekBransKodlari": ["BLG", "EHB", "MAT"] }
-```
-
-Bu branşlardan gelen dersler panelde `Seçime Bağlı Ders I-IV` rozetiyle görünür.
-
----
-
-## Klasör düzeni
-
-```
-panel.py            komut satırı arayüzü (tüm komutlar buradan)
-obs_client.py       ÖBS'den veri çekme ve HTML ayrıştırma
-server.py           yerel web sunucusu (statik dosyalar + /api)
-
-web/                arayüz — index.html, style.css, app.js
-
-veri/               ortak ders verileri ve yerel kullanıcı dosyaları
-  ayarlar.json        bölüm, planId, seviye, ek branş kodları
-  plan.json           çekilmiş ders planı
-  dersler.json        bu dönem açılan dersler (CRN'li)
-  alinan.json         yerelde şimdiye kadar aldığın dersler (Git tarafından yok sayılır)
-  secim.json          yerel program profilleri (Git tarafından yok sayılır)
-  gizlenen.json       yerelde gizlenen dersler (Git tarafından yok sayılır)
-  ham/                ÖBS'den inen ham HTML sayfaları
-
-sablon/             boş başlangıç dosyaları (paylaşım için)
-supabase/schema.sql canlı kullanıcı profili tablosu ve güvenlik kuralları
-```
-
-Canlı hesap sisteminin kurulumu için [Kullanıcı Hesapları Kurulumu](docs/ACCOUNT_SETUP.md)
-belgesine bak.
-
-`veri/ham/` klasörü, ÖBS sayfalarının indirildiği andaki ham hâlini tutar.
-ÖBS sayfa yapısını değiştirip ayrıştırma bozulursa hatayı buradan görebilirsin;
-veriyi yeniden çekmeden inceleyebilirsin.
-
----
-
-## Komutlar
-
-| Komut | Ne yapar |
-|---|---|
-| `python panel.py` | Paneli tarayıcıda açar |
-| `python panel.py guncelle` | Plan + açılan dersleri yeniden çeker |
-| `python panel.py plan` | Sadece ders planını çeker |
-| `python panel.py dersler` | Sadece dönemlik açılan dersleri + kontenjanları çeker (hızlı; panelin ⟳ düğmesiyle aynı iş) |
-| `python panel.py ara <bölüm> [--seviye LU]` | Bölümünün `planId`'sini bulur |
-| `python panel.py alinan` | Alınan dersleri listeler |
-| `python panel.py alinan-ekle "KOM 505" --donem "2024-2025 Güz" --not AA` | Alınan ders ekler |
-| `python panel.py alinan-sil "KOM 505"` | Alınan ders siler |
-| `python panel.py sifirla` | Alınan dersleri ve seçimi boşaltır |
-| `python panel.py sifirla --hepsi` | Ayarları da (planId dahil) sıfırlar |
-| `python panel.py paketle` | Paylaşılabilir zip üretir (kişisel veri hariç) |
-
-`--seviye` değerleri: `LS` lisans · `LU` yüksek lisans/doktora ·
-`OL` ön lisans · `LUI` lisansüstü 2. öğretim.
+listesi yoktur (seviyeye uygun her kredili ders sayılır). Bu slotlar için her
+programa ayrıca bir branş listesi tanımlanır; o branşlardan gelen dersler panelde
+`Seçime Bağlı Ders I-IV` rozetiyle görünür. Listede görmek istediğin bir branş
+eksikse [issue aç](../../issues/new), eklensin.
 
 ---
 
@@ -286,7 +162,6 @@ snapshot'lar karşılaştırma için oradadır.
 * Gereksinim eşlemesi açgözlü (greedy) bir eşlemedir: önce listesi belli
   slotlar, sonra serbest seçmeliler doldurulur. Danışman onayı, önşart ve
   kredi üst sınırı gibi kuralları **kontrol etmez** — resmî kaynak ÖBS'dir.
-* Sunucu yalnızca `127.0.0.1` dinler, dışarıya açık değildir.
 
 ---
 
@@ -301,8 +176,12 @@ adlandırma Türkçedir, kaydı panel yapmaz.
   [özel bildirimle](../../security/advisories/new) gönder
 
 ÖBS arayüzü değiştiğinde ayrıştırma kırılabilir; **en değerli katkı bu tür hata
-bildirimleridir.** Bildirirken bölümünü, `planId`'ni ve hata çıktısını eklemen
+bildirimleridir.** Bildirirken bölümünü ve hangi derste ne gördüğünü yazman
 yeterli.
+
+Koda dokunacaksan depoyu klonlayıp [`AGENTS.md`](AGENTS.md) dosyasındaki
+adımları izle; paneli kendi bilgisayarında çalıştırmak için gereken her şey
+orada.
 
 [MIT lisansı](LICENSE) ile dağıtılır. Kısaca: kullanabilir, değiştirebilir,
 kendi bölümüne uyarlayıp paylaşabilirsin; tek şart telif notunu korumak.
