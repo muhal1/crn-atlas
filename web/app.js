@@ -19,6 +19,7 @@ const durum = {
 const HAFTA = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
 const KISA = { Pazartesi: "Pzt", Salı: "Sal", Çarşamba: "Çar", Perşembe: "Per", Cuma: "Cum", Cumartesi: "Cmt", Pazar: "Paz" };
 const BRANS_SUZGECI_KEY = "dersSecimPanel.secimeBagliKapaliBranslar";
+const EPOSTA_BILGILERI_KEY = "dsp_ders_kayit_epostasi";
 let secimeBagliKapaliBranslar = new Set();
 
 const $ = (secici) => document.querySelector(secici);
@@ -180,6 +181,11 @@ const aktifProfil = () =>
 
 const aktifCrnler = () => aktifProfil()?.crnler || [];
 const seciliDersler = () => aktifCrnler().map(dersBul).filter(Boolean);
+
+function secimdeCakismaVar() {
+  const dersler = seciliDersler();
+  return dersler.some((ders, i) => dersler.slice(i + 1).some((diger) => cakisirMi(ders, diger)));
+}
 
 /** Çakışan/boş adları düzelterek benzersiz bir profil adı üretir. */
 function benzersizAd(istenen) {
@@ -1352,6 +1358,92 @@ function cizSecim() {
     return toplam + (plandaki?.kredi || 0);
   }, 0);
   $("#secimOzet").textContent = `${secililer.length} ders${kredi ? `  ·  ${kredi} kredi (plandan)` : ""}`;
+  cizEpostaTaslagi();
+}
+
+/* ---------------------------------------------------- ders kayıt e-postası */
+
+function epostaBilgileriniOku() {
+  try {
+    return JSON.parse(localStorage.getItem(EPOSTA_BILGILERI_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function epostaBilgileriniKaydet() {
+  try {
+    localStorage.setItem(EPOSTA_BILGILERI_KEY, JSON.stringify({
+      adSoyad: $("#epostaAdSoyad").value.trim(),
+      ogrenciNo: $("#epostaOgrenciNo").value.trim(),
+      muhatap: document.querySelector('input[name="epostaMuhatap"]:checked')?.value || "danisman",
+    }));
+  } catch {
+    // Depolama kapalıysa taslak mevcut oturumda yine çalışır.
+  }
+}
+
+function epostaBilgileriniYukle() {
+  const kayitli = epostaBilgileriniOku();
+  const profilAdi = window.DSPAcademic?.aktarimVerisi()?.ad || window.DSPAuth?.varsayilanAd?.() || "";
+  $("#epostaAdSoyad").value = kayitli.adSoyad || profilAdi;
+  $("#epostaOgrenciNo").value = kayitli.ogrenciNo || "";
+  const muhatap = ["danisman", "koordinator"].includes(kayitli.muhatap) ? kayitli.muhatap : "danisman";
+  const secenek = document.querySelector(`input[name="epostaMuhatap"][value="${muhatap}"]`);
+  if (secenek) secenek.checked = true;
+}
+
+function epostaDersSatiri(ders) {
+  const ayrintilar = [ders.ogretimUyesi && ders.ogretimUyesi !== "-" ? ders.ogretimUyesi : "", saatMetni(ders)]
+    .filter(Boolean)
+    .join(" · ");
+  return `- CRN: ${ders.crn} – ${ders.kod} – ${ders.ad}${ayrintilar ? ` – ${ayrintilar}` : ""}`;
+}
+
+function cizEpostaTaslagi() {
+  const dersler = seciliDersler();
+  const bos = !dersler.length;
+  const cakisma = !bos && secimdeCakismaVar();
+  $("#epostaBosUyari").classList.toggle("gizli", !bos);
+  $("#epostaCakismaUyari").classList.toggle("gizli", !cakisma);
+  $("#epostaHazirlayici").classList.toggle("gizli", bos || cakisma);
+  if (bos || cakisma) return;
+
+  const muhatap = document.querySelector('input[name="epostaMuhatap"]:checked')?.value || "danisman";
+  const adSoyad = $("#epostaAdSoyad").value.trim() || "…";
+  const ogrenciNo = $("#epostaOgrenciNo").value.trim() || "…";
+  const donem = durum.dersler?.donem || "İlgili dönem";
+  const bolum = durum.ayarlar?.bolum || durum.plan?.planAdi || "lisansüstü programı";
+  const aciklama = muhatap === "koordinator"
+    ? "İlk dönem öğrencisiyim ve henüz resmi danışmanım atanmadığı için almak istediğim dersleri aşağıda bilgilerinize sunuyorum."
+    : `${donem} kapsamında almak istediğim dersleri aşağıda bilgilerinize sunuyorum.`;
+
+  $("#epostaKonu").value = `${donem} Lisansüstü Ders Kayıt Talebi`;
+  $("#epostaMetni").value = [
+    "Hocam merhaba,",
+    "",
+    `İTÜ ${bolum} öğrencisiyim. ${aciklama}`,
+    "",
+    `Ad Soyad: ${adSoyad}`,
+    `Öğrenci No: ${ogrenciNo}`,
+    "",
+    ...dersler.map(epostaDersSatiri),
+    "",
+    "Uygun görmeniz halinde ders kayıtlarımın gerçekleştirilmesini rica ederim.",
+    "",
+    "Teşekkür ederim.",
+    "İyi çalışmalar dilerim.",
+  ].join("\n");
+}
+
+async function metniPanoyaKopyala(metin, alan) {
+  try {
+    await navigator.clipboard.writeText(metin);
+  } catch {
+    alan.focus();
+    alan.select();
+    document.execCommand("copy");
+  }
 }
 
 /* ---------------------------------------------------- çizim: gizlenenler */
@@ -1771,6 +1863,27 @@ function olaylariBagla() {
     dugme.textContent = "Kopyalandı";
     setTimeout(() => (dugme.textContent = "Kopyala"), 1400);
   });
+
+  for (const alan of [$("#epostaAdSoyad"), $("#epostaOgrenciNo")]) {
+    alan.addEventListener("input", () => {
+      epostaBilgileriniKaydet();
+      cizEpostaTaslagi();
+    });
+  }
+  for (const secenek of document.querySelectorAll('input[name="epostaMuhatap"]')) {
+    secenek.addEventListener("change", () => {
+      epostaBilgileriniKaydet();
+      cizEpostaTaslagi();
+    });
+  }
+  $("#epostaKonuKopyala").addEventListener("click", async () => {
+    await metniPanoyaKopyala($("#epostaKonu").value, $("#epostaKonu"));
+    $("#epostaKopyaDurumu").textContent = "Konu kopyalandı.";
+  });
+  $("#epostaMetniKopyala").addEventListener("click", async () => {
+    await metniPanoyaKopyala($("#epostaMetni").value, $("#epostaMetni"));
+    $("#epostaKopyaDurumu").textContent = "E-posta metni kopyalandı.";
+  });
 }
 
 /* --------------------------------------------------------------------- tema */
@@ -1834,5 +1947,7 @@ function temaBaslat() {
   cizSecenekler();
   ciz();
   await window.DSPAcademic?.init();
+  epostaBilgileriniYukle();
+  cizEpostaTaslagi();
   await window.DSPCalendar?.init();
 })();

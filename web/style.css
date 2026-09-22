@@ -1033,6 +1033,77 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 }
 .yerimi-ipucu b { color: var(--yazi); font-weight: 600; }
 
+.eposta-alani {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--cizgi);
+}
+.eposta-baslik h3 { margin: 0; font-size: 15px; }
+.eposta-baslik p { margin: 4px 0 0; }
+.eposta-durum {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r);
+  background: var(--kart-2);
+}
+.eposta-cakisma {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 3px solid var(--kirmizi);
+  color: var(--yazi);
+}
+.eposta-cakisma span { color: var(--soluk); font-size: 12px; }
+.eposta-muhatap {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+  padding: 0;
+  border: 0;
+}
+.eposta-muhatap legend,
+.eposta-alani > div > label {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  color: var(--soluk);
+  font-size: 12px;
+}
+.eposta-muhatap label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.eposta-kimlik {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, .65fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.eposta-kimlik label { color: var(--soluk); font-size: 12px; }
+.eposta-kimlik input { display: block; width: 100%; margin-top: 6px; }
+.eposta-kopya-satiri { display: flex; gap: 8px; margin-bottom: 14px; }
+.eposta-kopya-satiri input { flex: 1 1 auto; min-width: 0; }
+#epostaMetni {
+  display: block;
+  width: 100%;
+  min-height: 250px;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--r);
+  background: var(--alan-yuzey);
+  color: var(--yazi);
+  font: inherit;
+  font-size: 13px;
+  resize: vertical;
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+#epostaMetni:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 2px; }
+.eposta-eylem { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+
+@media (max-width: 620px) {
+  .eposta-kimlik { grid-template-columns: 1fr; }
+  .eposta-kopya-satiri { align-items: stretch; flex-direction: column; }
+}
+
 /* -------------------------------------------------------------- yan panel */
 
 .perde {

@@ -161,6 +161,16 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   `aralikSutunlariniHesapla` fonksiyonu ile alt sütunlara bölünerek yan yana
   (`.blok.yan-yana`) gösterilir. Hover edildiğinde `z-index: 5` ile öne çıkar.
 
+## Ders Kayıt E-postası
+
+- Seçilen dersler kartında CRN doldurma alanının altında danışman veya program
+  koordinatörü için e-posta taslağı üretilir. Ders satırlarında CRN, kod, ad,
+  öğretim üyesi ve gün/saat bulunur; dönem ve program adı yüklenen veriden gelir.
+- Seçili dersler arasında saat çakışması varsa taslak ve kopyalama eylemleri
+  gösterilmez. Kullanıcı önce haftalık programdaki çakışmayı çözmeye yönlendirilir.
+- Ad soyad, öğrenci numarası ve muhatap tercihi yalnız tarayıcının
+  `dsp_ders_kayit_epostasi` localStorage anahtarında tutulur; sunucuya gönderilmez.
+
 ## Görsel Tercihler
 
 - Koyu temada varsayılan Windows scrollbar çok kalın ve beyaz görünür. Ortak

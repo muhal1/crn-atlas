@@ -228,6 +228,42 @@
           oluşturup adres alanına yapıştırabilirsin.
         </div>
       </div>
+
+      <div class="eposta-alani">
+        <div class="eposta-baslik">
+          <div>
+            <h3>Ders kayıt e-postası</h3>
+            <p class="soluk kucuk-yazi">Seçtiğin derslerle danışmanına veya program koordinatörüne gönderebileceğin taslak.</p>
+          </div>
+        </div>
+        <div id="epostaBosUyari" class="eposta-durum soluk" role="status">E-posta taslağı için önce ders seç.</div>
+        <div id="epostaCakismaUyari" class="eposta-durum eposta-cakisma gizli" role="alert">
+          <strong>Önce program çakışmasını çöz.</strong>
+          <span>Çakışan dersleri haftalık programdan kaldırdıktan sonra e-posta taslağın hazırlanacak.</span>
+        </div>
+        <div id="epostaHazirlayici" class="gizli">
+          <fieldset class="eposta-muhatap">
+            <legend>Kime göndereceksin?</legend>
+            <label><input type="radio" name="epostaMuhatap" value="danisman" checked> Danışman</label>
+            <label><input type="radio" name="epostaMuhatap" value="koordinator"> Program koordinatörü</label>
+          </fieldset>
+          <div class="eposta-kimlik">
+            <label for="epostaAdSoyad">Ad soyad<input id="epostaAdSoyad" type="text" maxlength="100" autocomplete="name" placeholder="Ad Soyad"></label>
+            <label for="epostaOgrenciNo">Öğrenci no<input id="epostaOgrenciNo" type="text" maxlength="16" inputmode="numeric" autocomplete="off" placeholder="Öğrenci numaran"></label>
+          </div>
+          <label for="epostaKonu">Konu</label>
+          <div class="eposta-kopya-satiri">
+            <input id="epostaKonu" type="text" readonly>
+            <button id="epostaKonuKopyala" class="dugme kucuk" type="button">Konuyu kopyala</button>
+          </div>
+          <label for="epostaMetni">E-posta metni</label>
+          <textarea id="epostaMetni" rows="15" readonly></textarea>
+          <div class="eposta-eylem">
+            <button id="epostaMetniKopyala" class="dugme birincil" type="button">Metni kopyala</button>
+            <span id="epostaKopyaDurumu" class="soluk kucuk-yazi" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
