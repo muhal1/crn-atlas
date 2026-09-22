@@ -148,6 +148,8 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
 ## Haftalık Program
 
 - Program bloklarında ders kodu, ders adı ve öğretim üyesi görünür.
+- Blok ipucunda CRN, gün/saat, öğretim üyesi ve dersliğe ek olarak
+  `yazılan / kontenjan` ve kalan boş yer gösterilir; doluysa kırmızı belirtilir.
 - Bloka tıklamak dersi aktif programdan çıkarır. Bu davranış tooltip ve hover
   stiliyle anlaşılır olmalıdır.
 - Uzun ders adları blok içinde taşmamalı; iki satıra kadar kırpılarak

@@ -16,3 +16,6 @@ DersSecimPanel-Paylasim/
 veri/alinan.json
 veri/secim.json
 veri/gizlenen.json
+
+# Supabase CLI yerel önbelleği
+supabase/.temp/

@@ -1,0 +1,4 @@
+project_id = "sdtudewhlgmsxgyeirno"
+
+[functions.refresh-courses]
+verify_jwt = true

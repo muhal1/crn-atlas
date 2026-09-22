@@ -957,6 +957,14 @@ function blokIpucuGoster(blok, aralik) {
     `${KISA[aralik.gun] || aralik.gun} ${dakikaSaati(aralik.bas)}–${dakikaSaati(aralik.bit)}`));
   if (ders.ogretimUyesi) kutu.append(el("div", "blok-ipucu-satir", ders.ogretimUyesi));
   kutu.append(el("div", "blok-ipucu-satir", `Derslik: ${aralik.derslik || "—"}`));
+  const kontenjan = Number(ders.kontenjan) || 0;
+  const yazilan = Number(ders.yazilan) || 0;
+  const kalan = Math.max(0, kontenjan - yazilan);
+  const kontenjanMetni = kontenjan > 0
+    ? `Kontenjan: ${yazilan} / ${kontenjan} · ${kalan > 0 ? `${kalan} boş` : "dolu"}`
+    : "Kontenjan: açıklanmadı";
+  kutu.append(el("div", `blok-ipucu-satir blok-ipucu-kontenjan${kontenjan > 0 && kalan === 0 ? " dolu" : ""}`,
+    kontenjanMetni));
   kutu.append(el("div", "blok-ipucu-ipucu", "Tıklayınca programdan çıkarılır"));
 
   kutu.classList.remove("gizli");
@@ -1651,6 +1659,27 @@ async function verileriYenile() {
   if (dugme.disabled) return;
 
   if (durum.statikMod) {
+    if (window.DSPAuth?.adminMi?.()) {
+      const eskiMetin = dugme.textContent;
+      dugme.disabled = true;
+      dugme.textContent = "⟳ Başlatılıyor…";
+      bilgiGoster("Kontenjan yenileme görevi başlatılıyor…");
+      try {
+        const sonuc = await window.DSPAuth.kontenjanYenilemeyiBaslat();
+        bilgiGoster(
+          sonuc?.zatenCalisiyor
+            ? "Bir kontenjan yenileme görevi zaten çalışıyor. Tamamlandığında site otomatik güncellenecek."
+            : "Kontenjan yenileme başlatıldı. ÖBS verileri çekilip site birkaç dakika içinde yeniden yayımlanacak.",
+          "basari"
+        );
+      } catch (hata) {
+        bilgiGoster(`Yenileme başlatılamadı: ${hata.message}`, "hata");
+      } finally {
+        dugme.disabled = false;
+        dugme.textContent = eskiMetin;
+      }
+      return;
+    }
     const cekilme = durum.dersler?.cekilme || "belirtilmemiş";
     bilgiGoster(
       `Canlı sitede dersler ve kontenjanlar GitHub Actions ile periyodik olarak otomatik güncellenir (Son güncelleme: ${cekilme}).`,
@@ -1945,6 +1974,15 @@ function temaBaslat() {
   temaBaslat();
   const oturumVar = await window.DSPAuth.baslat();
   if (!oturumVar) return;
+  if (window.DSPAuth?.uzakProfil?.()) {
+    const dugme = $("#yenileDugmesi");
+    if (window.DSPAuth.adminMi()) {
+      dugme.title = "ÖBS kontenjan yenilemesini şimdi başlat";
+    } else {
+      dugme.textContent = "⟳ Kontenjan durumu";
+      dugme.title = "Kontenjanların otomatik yenilenme durumunu göster";
+    }
+  }
   olaylariBagla();
   try {
     await veriYukle();

@@ -38,6 +38,24 @@ Variables** bölümüne ekle:
 Publishable key tarayıcı uygulamalarında kullanılmak üzere tasarlanmıştır.
 `service_role` anahtarı bu projeye veya GitHub değişkenlerine kesinlikle eklenmez.
 
+## Yönetici kontenjan yenilemesi
+
+Canlı sitedeki manuel yenileme, `refresh-courses` Edge Function üzerinden
+GitHub Actions iş akışını başlatır. Tarayıcı GitHub anahtarını hiçbir zaman
+görmez. Kurulum için:
+
+1. `muhal1/crn-atlas` deposuyla sınırlı, yalnız **Actions: Read and write**
+   yetkili fine-grained GitHub token oluştur.
+2. Token'ı Supabase Edge Function secret'ı olarak `GITHUB_ACTIONS_TOKEN`
+   adıyla kaydet.
+3. `refresh-courses` fonksiyonunu dağıt; JWT doğrulaması açık kalmalıdır.
+4. Yönetici olacak Auth kullanıcısının `app_metadata.role` değerini `admin`
+   yap. Bu değer `user_metadata` içine konmaz; kullanıcı tarafından
+   değiştirilebilir bir alan yetkilendirmede kullanılmaz.
+
+Otomatik yenileme `.github/workflows/deploy.yml` içindeki zamanlamayla devam
+eder. Manuel istek de aynı `workflow_dispatch` akışını kullanır.
+
 ## 3. İlk dağıtım ve kişisel profil
 
 Değişiklikler `main` dalına gönderildiğinde GitHub Actions yeni `config.js`

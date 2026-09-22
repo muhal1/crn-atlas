@@ -179,6 +179,29 @@ const DSPAuth = (() => {
     return data;
   }
 
+  async function kontenjanYenilemeyiBaslat() {
+    if (!istemci || !kullanici || kullanici.id === "yerel") {
+      throw new Error("Bu işlem yalnızca canlı sitedeki yönetici hesabından başlatılabilir.");
+    }
+    if (kullanici.app_metadata?.role !== "admin") {
+      throw new Error("Bu işlem için yönetici yetkisi gerekiyor.");
+    }
+    const { data, error } = await istemci.functions.invoke("refresh-courses", {
+      body: { action: "dispatch" },
+    });
+    if (error) {
+      let aciklama = error.message;
+      try {
+        const govde = await error.context?.json();
+        aciklama = govde?.hata || govde?.message || aciklama;
+      } catch {
+        // Sunucu JSON döndürmediyse istemci hata metnini kullan.
+      }
+      throw new Error(aciklama);
+    }
+    return data;
+  }
+
   function olaylariBagla() {
     $("#girisSekmesi").addEventListener("click", () => sekmeGoster(false));
     $("#kayitSekmesi").addEventListener("click", () => sekmeGoster(true));
@@ -287,6 +310,8 @@ const DSPAuth = (() => {
     eposta: () => kullanici?.email || null,
     kayitBolumu: () => kullanici?.user_metadata?.bolum || null,
     kullaniciId: () => kullanici?.id || null,
+    adminMi: () => kullanici?.app_metadata?.role === "admin",
+    kontenjanYenilemeyiBaslat,
     uzakProfil: () => Boolean(istemci && kullanici?.id && kullanici.id !== "yerel"),
   };
 })();
