@@ -170,6 +170,10 @@ $env:PYTHONUTF8='1'; python panel.py guncelle
   gösterilmez. Kullanıcı önce haftalık programdaki çakışmayı çözmeye yönlendirilir.
 - Ad soyad, öğrenci numarası ve muhatap tercihi yalnız tarayıcının
   `dsp_ders_kayit_epostasi` localStorage anahtarında tutulur; sunucuya gönderilmez.
+- Eski yerel/uzak profiller CRN'leri JSON içinde sayı olarak saklamış olabilir;
+  güncel ders verisindeki CRN'ler metindir. Seçim yüklenirken tüm profil CRN'leri
+  `secimiNormallestir` ile metne çevrilmelidir. Aksi hâlde program seçicide ders
+  sayısı dolu görünürken seçili ders listesi ve e-posta taslağı boş kalır.
 
 ## Görsel Tercihler
 

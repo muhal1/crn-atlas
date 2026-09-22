@@ -179,8 +179,21 @@ function guncelleGereksinimSuzgeciOzeti() {
 const aktifProfil = () =>
   durum.secim.profiller.find((p) => p.ad === durum.secim.aktif) || durum.secim.profiller[0];
 
-const aktifCrnler = () => aktifProfil()?.crnler || [];
+const aktifCrnler = () => (aktifProfil()?.crnler || []).map(String);
 const seciliDersler = () => aktifCrnler().map(dersBul).filter(Boolean);
+
+function secimiNormallestir(gelen) {
+  const hamProfiller = gelen && Array.isArray(gelen.profiller) ? gelen.profiller : null;
+  const profiller = hamProfiller?.length
+    ? hamProfiller.filter((profil) => profil && typeof profil === "object").map((profil, i) => ({
+        ad: String(profil.ad || `Program ${i + 1}`),
+        crnler: [...new Set((Array.isArray(profil.crnler) ? profil.crnler : []).map(String))],
+      }))
+    : [{ ad: "Program 1", crnler: [...new Set((Array.isArray(gelen) ? gelen : []).map(String))] }];
+  if (!profiller.length) profiller.push({ ad: "Program 1", crnler: [] });
+  const aktif = profiller.some((profil) => profil.ad === gelen?.aktif) ? gelen.aktif : profiller[0].ad;
+  return { aktif, profiller };
+}
 
 function secimdeCakismaVar() {
   const dersler = seciliDersler();
@@ -352,7 +365,7 @@ function bolumVerisiniUygula(veri) {
   const temiz = veri || bosBolumVerisi();
   durum.alinan = normalDizi(temiz.alinan, "alinan");
   durum.gizlenen = normalDizi(temiz.gizlenen, "kodlar");
-  durum.secim = temiz.secim?.profiller?.length ? temiz.secim : bosBolumVerisi().secim;
+  durum.secim = secimiNormallestir(temiz.secim);
   secimeBagliKapaliBranslar = new Set(temiz.kapaliBranslar || []);
 }
 
@@ -517,16 +530,10 @@ async function veriYukle() {
     bransSuzgeciYukle();
   }
 
-  const gelen = veri.secim;
-  if (gelen && Array.isArray(gelen.profiller) && gelen.profiller.length) {
-    durum.secim = gelen;
-  } else {
-    // Eski biçim (düz CRN listesi) ya da boş dosya
-    durum.secim = {
-      aktif: "Program 1",
-      profiller: [{ ad: "Program 1", crnler: Array.isArray(gelen) ? gelen : [] }],
-    };
-  }
+  // Eski profiller CRN'leri sayı olarak saklamış olabilir. Ders verisindeki
+  // CRN'ler metindir; tek biçime getirilmezse profil sayısı dolu görünürken
+  // seçili ders listesi ve e-posta taslağı boş kalır.
+  durum.secim = secimiNormallestir(veri.secim);
 
   storageJsonKaydet(STORAGE_ALINAN_KEY, durum.alinan);
   storageJsonKaydet(STORAGE_SECIM_KEY, durum.secim);
@@ -1102,6 +1109,7 @@ function ipucuGizleGecikmeli() {
 
 function secimDegistir(ders) {
   const profil = aktifProfil();
+  profil.crnler = (profil.crnler || []).map(String);
   if (profil.crnler.includes(ders.crn)) {
     profil.crnler = profil.crnler.filter((c) => c !== ders.crn);
   } else {
