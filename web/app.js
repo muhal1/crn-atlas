@@ -730,7 +730,7 @@ function paketIpucuHazirla() {
 function paketIpucuIcerik(g) {
   const kutu = paketIpucuHazirla();
   kutu.replaceChildren();
-  const acilanKodlar = new Set((durum.dersler?.dersler || []).map((d) => d.kod));
+  const acilanDersler = new Map((durum.dersler?.dersler || []).map((d) => [d.kod, d]));
   const dersler = g.serbest
     ? [...new Map((durum.dersler?.dersler || []).filter((d) => !d.plandaVar).map((d) => [d.kod, { kod: d.kod, ad: d.ad }])).values()]
     : [...(g.dersler || [])];
@@ -751,7 +751,14 @@ function paketIpucuIcerik(g) {
   for (const ders of dersler) {
     const satir = el("div", "paket-ipucu-satir");
     satir.append(el("span", "kod", ders.kod), el("span", "paket-ipucu-ad", ders.ad));
-    if (acilanKodlar.has(ders.kod)) satir.append(el("span", "paket-ipucu-acik", "Açık"));
+    const acilan = acilanDersler.get(ders.kod);
+    if (acilan) {
+      const kontenjan = Number(acilan.kontenjan) || 0;
+      const yazilan = Number(acilan.yazilan) || 0;
+      const dolu = kontenjan > 0 && yazilan >= kontenjan;
+      satir.append(el("span", "paket-ipucu-kontenjan" + (dolu ? " dolu" : ""),
+        kontenjan > 0 ? `${yazilan} / ${kontenjan}` : "Açık"));
+    }
     liste.append(satir);
   }
   kutu.append(liste);

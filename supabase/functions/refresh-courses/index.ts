@@ -87,6 +87,6 @@ export default {
   async fetch(req: Request): Promise<Response> {
     if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
     if (req.method !== "POST") return json(req, { hata: "Yalnızca POST desteklenir." }, 405);
-    return yetkiliIsleyici.fetch(req);
+    return yetkiliIsleyici(req);
   },
 };
